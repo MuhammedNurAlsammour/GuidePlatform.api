@@ -1,0 +1,10 @@
+using MediatR;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Features.Queries.Base;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+	public class {{name}}QueryRequest : BasePaginatedQueryRequest, IRequest<TransactionResultPack<{{name}}QueryResponse>>
+	{
+	}
+}

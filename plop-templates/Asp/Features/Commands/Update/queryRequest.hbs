@@ -1,0 +1,51 @@
+using MediatR;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
+using {{application}}.Application.Features.Commands.Base;
+using O = {{application}}.Domain.Entities.{{name}}ViewModel;
+using Karmed.External.Auth.Library.Services;
+
+namespace {{application}}.Application.Features.Commands.{{folder}}.{{name}}
+{
+  public class {{name}}CommandRequest : BaseCommandRequest, IRequest<TransactionResultPack<{{name}}CommandResponse>>
+  {
+    [Required(ErrorMessage = "Id is required")]
+    [RegularExpression(@"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", 
+      ErrorMessage = "Invalid GUID format")]
+    public string Id { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Name is required")]
+    [StringLength(255, MinimumLength = 1, ErrorMessage = "Name must be between 1 and 255 characters")]
+    public string Name { get; set; } = string.Empty;
+
+    [StringLength(1000, ErrorMessage = "Description cannot exceed 1000 characters")]
+    public string? Description { get; set; }
+
+    public static O Map(O entity, {{name}}CommandRequest request, ICurrentUserService currentUserService)
+    {
+      var (customerId, userId, updateUserId) = request.GetUpdateAuthIds(currentUserService);
+
+      if (customerId.HasValue)
+        entity.AuthCustomerId = customerId.Value;
+      
+      if (userId.HasValue)
+        entity.AuthUserId = userId.Value;
+      
+      if (!string.IsNullOrWhiteSpace(request.Name))
+        entity.Name = request.Name.Trim();
+      
+      if (!string.IsNullOrWhiteSpace(request.Description))
+        entity.Description = request.Description.Trim();
+      else if (request.Description == null)
+        entity.Description = null; // Explicit null assignment
+
+      if (updateUserId.HasValue)
+      {
+        entity.UpdateUserId = updateUserId.Value;
+      }
+
+      return entity;
+    }
+  }
+}

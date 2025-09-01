@@ -1,0 +1,128 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using {{application}}.Application.Abstractions.Contexts;
+using {{application}}.Application.Dtos.Enums;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Abstractions.Services;
+using {{application}}.Application.Operations;
+using {{application}}.Application.Features.Queries.Base;
+using Karmed.External.Auth.Library.Services;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+	public class {{name}}QueryHandler(
+    IApplicationDbContext context,
+    IAuthUserDetailService authUserService,
+    ICurrentUserService currentUserService) : BaseQueryHandler(authUserService, currentUserService), IRequestHandler<{{name}}QueryRequest, TransactionResultPack<{{name}}QueryResponse>>
+	{
+		public async Task<TransactionResultPack<{{name}}QueryResponse>> Handle({{name}}QueryRequest request, CancellationToken cancellationToken)
+		{
+			try
+			{
+				// Base query oluştur
+				var baseQuery = context.{{tableDb}}
+					.Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+				// Token'dan UserId ve CustomerId'yi al
+				var (authUserId, authCustomerId) = GetAuthIdsFromToken(
+					request.GetAuthUserIdAsGuid(),
+					request.GetAuthCustomerIdAsGuid()
+				);
+
+				// AuthUserId filtreleme ekle - zorunlu
+				if (authUserId.HasValue)
+				{
+					baseQuery = baseQuery.Where(x => x.AuthUserId == authUserId.Value);
+				}
+				else
+				{
+					// AuthUserId boş ise hata döndür
+					return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+						null,
+						null,
+						"Hata / İşlem Başarısız",
+						"AuthUserId parametresi zorunludur.",
+						"AuthUserId parameter is required."
+					);
+				}
+
+				// AuthCustomerId filtreleme ekle (isteğe bağlı)
+				if (authCustomerId.HasValue)
+				{
+					baseQuery = baseQuery.Where(x => x.CustomerId == authCustomerId.Value);
+				}
+
+				var totalCount = await baseQuery
+					.AsNoTracking()
+					.CountAsync(cancellationToken);
+
+				var items = await baseQuery
+					.AsNoTracking()
+					.Skip(request.Page * request.Size)
+					.Take(request.Size)
+					.ToListAsync(cancellationToken);
+
+				if (items == null || items.Count == 0)
+				{
+					return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+						request.AuthUserId,
+						null,
+						"Hata / İşlem Başarısız",
+						"Belirtilen {{tableDb}} bulunamadı.",
+						"{{tableDb}} not found."
+					);
+				}
+
+				// Auth kullanıcı bilgilerini service ile al
+				var authUserDetails = await ExtractAuthUserDetailsAsync(items, cancellationToken);
+
+				var {{table}}Details = new List<{{table}}DTO>();
+
+				foreach (var {{table}} in items)
+				{
+					// AuthUserService'den kullanıcı bilgilerini al
+					var (authUserName, authCustomerName) = GetAuthUserInfo({{table}}, authUserDetails);
+
+					var {{table}}Detail = new {{table}}DTO
+					{
+						Id = {{table}}.Id,
+						AuthUserId = {{table}}.AuthUserId,
+						AuthCustomerId = {{table}}.CustomerId,
+						AuthUserName = authUserName,
+						AuthCustomerName = authCustomerName,
+						RowCreatedDate = {{table}}.RowCreatedDate,
+						RowUpdatedDate = {{table}}.RowUpdatedDate,
+						RowIsActive = {{table}}.RowIsActive,
+						RowIsDeleted = {{table}}.RowIsDeleted
+					};
+
+					{{table}}Details.Add({{table}}Detail);
+				}
+
+				return ResultFactory.CreateSuccessResult<{{name}}QueryResponse>(
+					new {{name}}QueryResponse
+					{
+						{{tableDb}} = {{table}}Details,
+						TotalCount = totalCount
+					},
+					null,
+					null,
+					"İşlem Başarılı",
+					"{{tableDb}} başarıyla getirildi.",
+					$"AuthUserId: {request.AuthUserId} ile {{tableDb}} kayıtları başarıyla getirildi."
+				);
+			}
+			catch (Exception ex)
+			{
+				return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+					request.AuthUserId,
+					null,
+					"Hata / İşlem Başarısız",
+					"{{tableDb}} getirilirken bir hata oluştu.",
+					ex.InnerException?.Message ?? ex.Message
+				);
+			}
+		}
+	}
+}
+

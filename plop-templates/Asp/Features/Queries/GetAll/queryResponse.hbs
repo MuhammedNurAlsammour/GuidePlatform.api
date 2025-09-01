@@ -1,0 +1,12 @@
+using {{application}}.Application.Dtos.ResponseDtos.{{folder}};
+using {{application}}.Application.Dtos.Base;
+using E = {{application}}.Domain.Entities;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+  public class {{name}}QueryResponse : BaseResponseDto
+  {
+    public int TotalCount { get; set; }
+    public List<{{table}}DTO> {{tableDb}} { get; set; } = new();
+  }
+}

@@ -1,0 +1,19 @@
+using E = {{application}}.Domain.Entities;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+	public class {{name}}QueryResponse
+	{
+		public List<{{table}}DetailDto> {{tableDb}} { get; set; } = new List<{{table}}DetailDto>();
+	}
+	
+	public class {{table}}DetailDto
+	{
+		public Guid Id { get; set; }
+		public Guid? AuthCustomerId { get; set; }
+		public Guid? AuthUserId { get; set; }
+		public string? AuthUserName { get; set; }
+		public string? AuthCustomerName { get; set; }
+		// Diğer özellikler buraya eklenebilir
+	}
+}

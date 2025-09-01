@@ -1,0 +1,15 @@
+using GuidePlatform.Application.Dtos.Response;
+using MediatR;
+
+namespace GuidePlatform.Application.Features.Commands.Send.SendWpMessage
+{
+	public class SendWpMessageCommandRequest : IRequest<TransactionResultPack<SendWpMessageCommandResponse>>
+	{
+
+		public string Phone { get; set; }
+		public string Message { get; set; }
+		public int WaitTime { get; set; }
+	}
+
+
+}

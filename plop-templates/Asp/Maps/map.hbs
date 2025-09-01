@@ -1,0 +1,59 @@
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using {{application}}.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace {{application}}.Domain.Maps
+{
+	public class {{name}}Map : IEntityTypeConfiguration<{{name}}ViewModel>
+	{
+		public void Configure(EntityTypeBuilder<{{name}}ViewModel> builder)
+		{
+			builder.ToTable("{{tableDb}}", "StorePlatform");
+
+			builder.HasKey(x => x.Id)
+				   .HasName("{{tableDb}}_pkey");
+
+			builder.Property(x => x.Id)
+				   .HasColumnName("id")
+				   .HasDefaultValueSql("gen_random_uuid()")
+				   .IsRequired();
+				   
+			builder.Property(x => x.CreateUserId)
+				   .HasColumnName("create_user_id");
+
+			builder.Property(x => x.UpdateUserId)
+				   .HasColumnName("update_user_id");
+
+			builder.Property(x => x.AuthUserId)
+				   .HasColumnName("auth_user_id")
+
+			builder.Property(x => x.AuthCustomerId)
+				   .HasColumnName("auth_customer_id");
+
+			builder.Property(x => x.RowCreatedDate)
+				   .HasColumnName("row_created_date")
+				   .HasDefaultValueSql("CURRENT_TIMESTAMP")
+				   .IsRequired();
+
+			builder.Property(x => x.RowUpdatedDate)
+				   .HasColumnName("row_updated_date")
+				   .HasDefaultValueSql("CURRENT_TIMESTAMP")
+				   .IsRequired();
+
+			builder.Property(x => x.RowIsActive)
+				   .HasColumnName("row_is_active")
+				   .HasDefaultValue(true)
+				   .IsRequired();
+
+			builder.Property(x => x.RowIsDeleted)
+				   .HasColumnName("row_is_deleted")
+				   .HasDefaultValue(false)
+				   .IsRequired();
+		}
+	}
+}

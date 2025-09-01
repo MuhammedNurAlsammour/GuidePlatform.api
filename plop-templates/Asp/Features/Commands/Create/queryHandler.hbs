@@ -1,0 +1,77 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using System.Net;
+using Karmed.External.Auth.Library.Services;
+using {{application}}.Application.Abstractions.Contexts;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Operations;
+using {{application}}.Application.Features.Commands.Base;
+
+namespace {{application}}.Application.Features.Commands.{{folder}}.{{name}}
+{
+    public class {{name}}CommandHandler : BaseCommandHandler, IRequestHandler<{{name}}CommandRequest, TransactionResultPack<{{name}}CommandResponse>>
+    {
+        private readonly IApplicationDbContext _context;
+        private readonly IMediator _mediator;
+
+        public {{name}}CommandHandler(
+            IApplicationDbContext context,
+            IMediator mediator,
+            ICurrentUserService currentUserService
+        ) : base(currentUserService)
+        {
+            _context = context;
+            _mediator = mediator;
+        }
+
+        public async Task<TransactionResultPack<{{name}}CommandResponse>> Handle({{name}}CommandRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                // Kullanıcı bilgilerini kontrol et
+                var customerIdFromService = _currentUserService.GetCustomerId();
+                var userIdFromService = _currentUserService.GetUserId();
+
+                // 1. {{tableDb}} oluştur
+                var {{table}} = {{name}}CommandRequest.Map(request, _currentUserService);
+                await _context.{{tableDb}}.AddAsync({{table}}, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
+
+                // 2. Ek işlemler buraya eklenebilir (örn: ilişkili kayıtlar, validasyonlar, vb.)
+                // await ProcessAdditionalOperationsAsync({{table}}.Id, request, cancellationToken);
+
+                return ResultFactory.CreateSuccessResult<{{name}}CommandResponse>(
+                    new {{name}}CommandResponse
+                    {
+                        StatusCode = (int)HttpStatusCode.Created,
+                        Id = {{table}}.Id
+                    },
+                    null,
+                    null,
+                    "İşlem Başarılı",
+                    "{{tableDb}} başarıyla oluşturuldu.",
+                    $"{{tableDb}} Id: { {{table}}.Id} başarıyla oluşturuldu."
+                );
+            }
+            catch (Exception ex)
+            {
+                return ResultFactory.CreateErrorResult<{{name}}CommandResponse>(
+                    null,
+                    null,
+                    "Hata / İşlem Başarısız",
+                    "{{tableDb}} oluşturulurken bir hata oluştu.",
+                    ex.InnerException?.Message ?? ex.Message
+                );
+            }
+        }
+
+        /// <summary>
+        /// Ek işlemler için örnek metod - ihtiyaca göre düzenlenebilir
+        /// </summary>
+        // private async Task ProcessAdditionalOperationsAsync(Guid {{table}}Id, {{name}}CommandRequest request, CancellationToken cancellationToken)
+        // {
+        //     // Ek işlemler buraya eklenebilir
+        //     // Örnek: İlişkili kayıtlar oluşturma, validasyonlar, vb.
+        // }
+    }
+}

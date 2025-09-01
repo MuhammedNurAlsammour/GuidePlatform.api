@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "scripts": {
+  "plop-c": "plop c",
+  "plop-bc": "plop component",
+  "plop-lc": "plop lc",
+  "plop-sr": "plop sr",
+  "plop-di": "plop di",
+
+  "plop-controller": "plop controller",
+
+  "plop-getall": "plop getall",
+  "plop-getbyid": "plop getbyid",  
+  "plop-getbyuserid": "plop getbyuserid",  
+  "plop-getalldropboxes": "plop getalldropboxes",
+  "plop-create": "plop create",
+  "plop-delete": "plop delete",
+  "plop-update": "plop update",
+  "plop-viewModel": "plop viewModel",
+  "plop-map": "plop map",
+  "plop-dto": "plop dto"
+
+
+  
+  }
+}

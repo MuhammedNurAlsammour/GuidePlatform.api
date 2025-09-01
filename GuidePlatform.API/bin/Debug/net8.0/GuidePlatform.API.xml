@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GuidePlatform.API</name>
+    </assembly>
+    <members>
+        <member name="T:GuidePlatform.API.Controllers.Base.BaseController">
+            <summary>
+            Base class for all controllers with common functionality
+            </summary>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.Base.BaseController.SendCommand``2(``0)">
+            <summary>
+            Send command and return result with proper status code
+            </summary>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.Base.BaseController.SendCommand``2(``0,System.Net.HttpStatusCode)">
+            <summary>
+            Send command and return result with custom status code
+            </summary>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.Base.BaseController.SendQuery``2(``0)">
+            <summary>
+            Send query and return result
+            </summary>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.GetAllcategories(GuidePlatform.Application.Features.Queries.categories.GetAllCategories.GetAllCategoriesQueryRequest)">
+            <summary>
+            Admin Ana Ekran Kategoriler tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Kategoriler tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Kategoriler tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Kategoriler tablosu listesini döndürür.</returns>
+            <response code="200">Kategoriler tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.GetByIdcategories(GuidePlatform.Application.Features.Queries.categories.GetCategoriesById.GetCategoriesByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Kategoriler tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Kategoriler tablosu kimliğine göre Kategoriler tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Kategoriler tablosu kimliğini içeren istek.</param>
+            <returns>Kategoriler tablosu bilgilerini döndürür.</returns>
+            <response code="200">Kategoriler tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Kategoriler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.GetAllDropboxesCategoriesQueryHandler(GuidePlatform.Application.Features.Queries.categories.GetAllDropboxesCategories.GetAllDropboxesCategoriesQueryRequest)">
+            <summary>
+            Dropboxes Kategoriler tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Kategoriler tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Kategoriler tablosu bilgilerini içeren istek.</param>
+            <returns>Kategoriler tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Kategoriler tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Kategoriler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.Createcategories(GuidePlatform.Application.Features.Commands.categories.CreateCategories.CreateCategoriesCommandRequest)">
+            <summary>
+            Yeni bir Kategoriler tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Kategoriler tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Kategoriler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Kategoriler tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.Updatecategories(GuidePlatform.Application.Features.Commands.categories.UpdateCategories.UpdateCategoriesCommandRequest)">
+            <summary>
+            Mevcut bir Kategoriler tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Kategoriler tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Kategoriler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Kategoriler tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Kategoriler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.Deletecategories(GuidePlatform.Application.Features.Commands.categories.DeleteCategories.DeleteCategoriesCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Kategoriler tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Kategoriler tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Kategoriler tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Kategoriler tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Kategoriler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.DefinitionsController.GetAllDefinitions">
+            <summary>
+            Tanımlar sayfası  için  tanımları yetkiye göre getirir.
+            </summary>
+            <remarks>
+            Bu HTTP GET Tanımlar sayfası  için tanımları yetkiye göre getirir.
+            </remarks>
+            <returns>HTTP 200 OK başarılı yetkilendirme durumunda döner</returns>
+            <response code="200">Yetkilendirme başarılı</response>
+            <response code="401"> yetkili değilse</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.DefinitionsController.GetAllUser">
+            <summary>
+            Tanımlar sayfası  için  kullanıcı  tanımları yetkiye göre getirir.
+            </summary>
+            <remarks>
+            Bu HTTP GET Tanımlar sayfası  için  kullanıcı  tanımları yetkiye göre getirir.
+            </remarks>
+            <returns>HTTP 200 OK başarılı yetkilendirme durumunda döner</returns>
+            <response code="200">Yetkilendirme başarılı</response>
+            <response code="401">Kullanıcı yetkili değilse</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.DefinitionsController.GetAllRoles">
+            <summary>
+            Tanımlar sayfası  için  rol  tanımları yetkiye göre getirir.
+            </summary>
+            <remarks>
+            Bu HTTP GET Tanımlar sayfası  için  rol  tanımları yetkiye göre getirir.
+            </remarks>
+            <returns>HTTP 200 OK başarılı yetkilendirme durumunda döner</returns>
+            <response code="200">Yetkilendirme başarılı</response>
+            <response code="401">Kullanıcı yetkili değilse</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.DefinitionsController.GetAllCustomers">
+            <summary>
+            Tanımlar sayfası  için  müşteri  tanımları yetkiye göre getirir.
+            </summary>
+            <remarks>
+            Bu HTTP GET Tanımlar sayfası  için  müşteri  tanımları yetkiye göre getirir.
+            </remarks>
+            <returns>HTTP 200 OK başarılı yetkilendirme durumunda döner</returns>
+            <response code="200">Yetkilendirme başarılı</response>
+            <response code="401">Kullanıcı yetkili değilse</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SendWpMessageController.Send(GuidePlatform.Application.Features.Commands.Send.SendWpMessage.SendWpMessageCommandRequest)">
+            <summary>
+            Yeni bir personel oluşturur.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir personel ekler.
+            </remarks>
+            <param name="request">Yeni personel bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Personel başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+    </members>
+</doc>

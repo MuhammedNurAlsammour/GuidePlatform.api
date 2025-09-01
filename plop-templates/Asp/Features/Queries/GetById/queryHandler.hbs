@@ -1,0 +1,138 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using {{application}}.Application.Abstractions.Contexts;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Operations;
+using {{application}}.Application.Abstractions.Services;
+using {{application}}.Application.Dtos.ResponseDtos.{{folder}};
+using {{application}}.Application.Features.Queries.Base;
+using Karmed.External.Auth.Library.Services;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+    // Bu handler, bir {{tableDb}} ID'ye göre getirir. Clean Architecture prensiplerine uygun olarak yazılmıştır.
+    public class {{name}}QueryHandler : BaseQueryHandler, IRequestHandler<{{name}}QueryRequest, TransactionResultPack<{{name}}QueryResponse>>
+    {
+        private readonly IApplicationDbContext _context;
+
+        public {{name}}QueryHandler(
+            IApplicationDbContext context,
+            IAuthUserDetailService authUserService,
+            ICurrentUserService currentUserService) : base(currentUserService, authUserService)
+        {
+            _context = context;
+        }
+
+        public async Task<TransactionResultPack<{{name}}QueryResponse>> Handle({{name}}QueryRequest request, CancellationToken cancellationToken)
+        {
+            try
+            {
+                // 🎯 ID doğrulama - ID parametresi kontrolü
+                if (string.IsNullOrEmpty(request.Id))
+                {
+                    // Eksik parametre hatası döndürülüyor
+                    return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+                        request.Id,
+                        null,
+                        "Hata / Eksik Parametre",
+                        "{{tableDb}} ID'si belirtilmedi.",
+                        "{{tableDb}} ID parametresi zorunludur. Lütfen 'Id' parametresini sorguya ekleyin."
+                    );
+                }
+
+                var {{table}}Id = request.GetIdAsGuid();
+                if (!{{table}}Id.HasValue)
+                {
+                    // Geçersiz ID formatı hatası döndürülüyor
+                    return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+                        request.Id,
+                        null,
+                        "Hata / Geçersiz ID",
+                        "Geçersiz {{tableDb}} ID formatı.",
+                        $"Geçersiz {{tableDb}} ID formatı: '{request.Id}'. Lütfen geçerli bir GUID girin."
+                    );
+                }
+
+                // Kullanıcı ve müşteri kimliklerini güvenli şekilde al
+                var authUserId = GetSafeUserId(request.AuthUserId);
+                var authCustomerId = GetSafeCustomerId(request.AuthCustomerId);
+
+                // Temel sorgu oluşturuluyor
+                var baseQuery = _context.{{tableDb}}
+                    .Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+                // Yetkilendirme filtreleri uygulanıyor ve {{tableDb}} çekiliyor
+                var {{table}} = await ApplyAuthFilters(baseQuery, authUserId, authCustomerId)
+                    .Where(x => x.Id == {{table}}Id.Value)
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(cancellationToken);
+
+                if ({{table}} == null)
+                {
+                    // {{tableDb}} bulunamadı hatası döndürülüyor
+                    return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+                        request.Id,
+                        null,
+                        "Hata / {{tableDb}} Bulunamadı",
+                        "Belirtilen ID'ye sahip {{tableDb}} bulunamadı.",
+                        $"ID '{request.Id}' ile eşleşen {{tableDb}} bulunamadı."
+                    );
+                }
+
+                // Auth kullanıcı bilgileri çekiliyor
+                string? authUserName = null;
+                string? authCustomerName = null;
+
+                if ({{table}}.AuthUserId.HasValue)
+                {
+                    var userDetail = await GetAuthUserDetailAsync({{table}}.AuthUserId.Value, cancellationToken);
+                    if (userDetail != null)
+                    {
+                        authUserName = userDetail.AuthUserName;
+                        authCustomerName = userDetail.AuthCustomerName;
+                    }
+                }
+
+                // {{tableDb}} detay DTO'su oluşturuluyor
+                var {{table}}Detail = new {{name}}DetailDto
+                {
+                    Id = {{table}}.Id,
+                    AuthUserId = {{table}}.AuthUserId,
+                    AuthCustomerId = {{table}}.AuthCustomerId,
+                    AuthUserName = authUserName,      // Service'den gelen
+                    AuthCustomerName = authCustomerName, // Service'den gelen
+                    RowCreatedDate = {{table}}.RowCreatedDate,
+                    RowUpdatedDate = {{table}}.RowUpdatedDate,
+                    RowIsActive = {{table}}.RowIsActive,
+                    RowIsDeleted = {{table}}.RowIsDeleted
+                    // Diğer özellikler buraya eklenebilir
+                };
+
+                // Başarılı işlem sonucu döndürülüyor
+                return ResultFactory.CreateSuccessResult<{{name}}QueryResponse>(
+                    new {{name}}QueryResponse
+                    {
+                        {{tableDb}} = {{table}}Detail
+                    },
+                    request.Id,
+                    null,
+                    "İşlem Başarılı",
+                    "{{tableDb}} başarıyla getirildi.",
+                    $"{{tableDb}} Id: { {{{table}}}.Id } başarıyla getirildi."
+                );
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda hata sonucu döndürülüyor
+                return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+                    request.Id,
+                    null,
+                    "Hata / İşlem Başarısız",
+                    "{{tableDb}} getirilirken bir hata oluştu.",
+                    ex.Message
+                );
+            }
+        }
+    }
+}
+

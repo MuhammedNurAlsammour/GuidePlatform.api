@@ -1,0 +1,16 @@
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.csproj.AssemblyReference.cache
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.GeneratedMSBuildEditorConfig.editorconfig
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.AssemblyInfoInputs.cache
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.AssemblyInfo.cs
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.csproj.CoreCompileInputs.cache
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\bin\Debug\net8.0\GuidePlatform.Application.deps.json
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\bin\Debug\net8.0\GuidePlatform.Application.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\bin\Debug\net8.0\GuidePlatform.Application.pdb
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\bin\Debug\net8.0\GuidePlatform.Domain.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\bin\Debug\net8.0\Karmed.External.Auth.Library.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\bin\Debug\net8.0\GuidePlatform.Domain.pdb
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.csproj.CopyComplete
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\refint\GuidePlatform.Application.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\GuidePlatform.Application.pdb
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application\obj\Debug\net8.0\ref\GuidePlatform.Application.dll

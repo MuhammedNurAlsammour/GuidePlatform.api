@@ -1,0 +1,16 @@
+using E = {{application}}.Domain.Entities;
+using {{application}}.Application.Dtos.ResponseDtos;	
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+	public class {{name}}QueryResponse
+	{
+		public {{name}}DetailDto {{tableDb}} { get; set; }
+	}
+	
+	public class {{name}}DetailDto : BaseResponseDTO
+	{
+		public Guid Id { get; set; }
+		// Diğer özellikler buraya eklenebilir
+	}
+}

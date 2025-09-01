@@ -1,0 +1,12 @@
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\bin\Debug\net8.0\GuidePlatform.Domain.deps.json
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\bin\Debug\net8.0\GuidePlatform.Domain.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\bin\Debug\net8.0\GuidePlatform.Domain.pdb
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.csproj.AssemblyReference.cache
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.GeneratedMSBuildEditorConfig.editorconfig
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.AssemblyInfoInputs.cache
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.AssemblyInfo.cs
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.csproj.CoreCompileInputs.cache
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\refint\GuidePlatform.Domain.dll
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.pdb
+A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\ref\GuidePlatform.Domain.dll

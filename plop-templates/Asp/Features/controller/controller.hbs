@@ -1,0 +1,142 @@
+using Karmed.External.Auth.Library.CustomAttributes;
+using Karmed.External.Auth.Library.Enums;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Dtos.ResponseDtos.{{nameController}};
+using {{application}}.Application.Features.Commands.{{name}}.Create{{name}};
+using {{application}}.Application.Features.Commands.{{name}}.Delete{{name}};
+using {{application}}.Application.Features.Commands.{{name}}.Update{{name}};
+using {{application}}.Application.Features.Queries.{{name}}.GetAll{{name}};
+using {{application}}.Application.Features.Queries.{{name}}.Get{{name}}ById;
+using {{application}}.Application.Features.Queries.{{name}}.Get{{name}}ByUserId;
+using {{application}}.Application.Features.Queries.{{name}}.GetAllDropboxes{{name}};
+using {{application}}.Application.Features.Queries.Base;
+using {{application}}.API.Controllers.Base;
+
+using System.Net;
+
+namespace {{application}}.API.Controllers
+{
+  [Route("api/[controller]")]
+  [Authorize(AuthenticationSchemes = "Admin")]
+  public class {{nameController}}Controller : BaseController
+  {
+    public {{nameController}}Controller(IMediator mediator) : base(mediator)
+    {
+    }
+
+    /// <summary>
+    /// Admin Ana Ekran {{nameCon}} Listesi Getirir.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm {{nameCon}}lerin listesini getirir.
+    /// </remarks>
+    /// <param name="request">Tüm {{nameCon}}leri getirme parametrelerini içeren istek.</param>
+    /// <returns>{{nameCon}} listesini döndürür.</returns>
+    /// <response code="200">{{nameCon}} listesini döndürür.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    [HttpGet("[action]")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "{{nameCon}} Listesi Getirir", Menu = "{{nameCon}}")]
+    public async Task<ActionResult<TransactionResultPack<GetAll{{nameController}}QueryResponse>>> GetAll{{nameController}}([FromQuery] GetAll{{nameController}}QueryRequest request)
+    {
+      return await SendQuery<GetAll{{nameController}}QueryRequest, GetAll{{nameController}}QueryResponse>(request);
+    }
+
+    /// <summary>
+    /// Belirtilen ID'ye göre {{nameCon}} bilgilerini getirir.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, belirli bir {{nameCon}} kimliğine göre {{nameCon}} bilgilerini getirir.
+    /// </remarks>
+    /// <param name="request">{{nameCon}} kimliğini içeren istek.</param>
+    /// <returns>{{nameCon}} bilgilerini döndürür.</returns>
+    /// <response code="200">{{nameCon}} bilgilerini döndürür.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    /// <response code="404">{{nameCon}} bulunamazsa.</response>
+    [HttpGet("[action]")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre {{nameCon}} Bilgilerini Görüntüle", Menu = "{{nameCon}}")]
+    public async Task<ActionResult<TransactionResultPack<Get{{nameController}}ByIdQueryResponse>>> GetById{{nameController}}([FromQuery] Get{{nameController}}ByIdQueryRequest request)
+    {
+      return await SendQuery<Get{{nameController}}ByIdQueryRequest, Get{{nameController}}ByIdQueryResponse>(request);
+    }
+
+    /// <summary>
+    /// Dropboxes {{nameCon}} tablosu bilgilerini getirir.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, Dropboxes {{nameCon}} tablosu bilgilerini getirir.
+    /// </remarks>
+    /// <param name="request">Dropboxes {{nameCon}} tablosu bilgilerini içeren istek.</param> 
+    /// <returns>{{nameCon}} tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes {{nameCon}} tablosu bilgilerini döndürür.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    /// <response code="404">{{nameCon}} tablosu bulunamazsa.</response>
+    [HttpGet("[action]")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes {{nameCon}} tablosu Bilgilerini Görüntüle", Menu = "{{nameCon}} tablosu")]
+    public async Task<ActionResult<TransactionResultPack<GetAllDropboxes{{nameController}}QueryResponse>>> GetAllDropboxes{{nameController}}([FromQuery] GetAllDropboxes{{nameController}}QueryRequest request)
+    {
+      return await SendQuery<GetAllDropboxes{{nameController}}QueryRequest, GetAllDropboxes{{nameController}}QueryResponse>(request); 
+    }
+
+    /// <summary>
+    /// Yeni bir {{nameCon}} ekler.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, yeni bir {{nameCon}} ekler.
+    /// </remarks>
+    /// <param name="request">Yeni {{nameCon}} bilgilerini içeren istek.</param>
+    /// <returns>İşlem sonucunu döndürür.</returns>
+    /// <response code="201">{{nameCon}} başarıyla oluşturuldu.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    [HttpPost("[action]")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "{{nameCon}} Eklemek", Menu = "{{nameCon}}")]
+    public async Task<ActionResult<TransactionResultPack<Create{{nameController}}CommandResponse>>> Create{{nameController}}([FromBody] Create{{nameController}}CommandRequest request)
+    {
+      return await SendCommand<Create{{nameController}}CommandRequest, Create{{nameController}}CommandResponse>(request, HttpStatusCode.Created);
+    }
+
+    /// <summary>
+    /// Mevcut bir {{nameCon}} kaydını günceller.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, belirtilen ID'ye sahip {{nameCon}}nin bilgilerini günceller.
+    /// </remarks>
+    /// <param name="request">Güncellenecek {{nameCon}} bilgilerini içeren istek.</param>
+    /// <returns>İşlem sonucunu döndürür.</returns>
+    /// <response code="200">{{nameCon}} başarıyla güncellendi.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    /// <response code="404">Güncellenecek {{nameCon}} bulunamazsa.</response>
+    [HttpPut("[action]")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "{{nameCon}} Güncelemek", Menu = "{{nameCon}}")]
+    public async Task<ActionResult<TransactionResultPack<Update{{nameController}}CommandResponse>>> Update{{nameController}}([FromBody] Update{{nameController}}CommandRequest request)
+    {
+      return await SendCommand<Update{{nameController}}CommandRequest, Update{{nameController}}CommandResponse>(request);
+    }
+
+    /// <summary>
+    /// Belirtilen ID'ye sahip {{nameCon}} kaydını siler.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, belirtilen ID'ye sahip {{nameCon}} kaydını siler.
+    /// </remarks>
+    /// <param name="request">Silinecek {{nameCon}} kimliğini içeren istek.</param>
+    /// <returns>İşlem sonucunu döndürür.</returns>
+    /// <response code="200">{{nameCon}} başarıyla silindi.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    /// <response code="404">Silinecek {{nameCon}} bulunamazsa.</response>
+    [HttpDelete("[action]/{Id}")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "{{nameCon}} Silme", Menu = "{{nameCon}}")]
+    public async Task<ActionResult<TransactionResultPack<Delete{{nameController}}CommandResponse>>> Delete{{nameController}}([FromRoute] Delete{{nameController}}CommandRequest request)
+    {
+      return await SendCommand<Delete{{nameController}}CommandRequest, Delete{{nameController}}CommandResponse>(request);
+    }
+  }
+}

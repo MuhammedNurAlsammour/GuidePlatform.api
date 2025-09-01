@@ -1,0 +1,109 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using {{application}}.Application.Abstractions.Contexts;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Operations;
+using {{application}}.Application.Abstractions.Services;
+using {{application}}.Application.Dtos.ResponseDtos.{{folder}};
+using {{application}}.Application.Features.Queries.Base;
+using Karmed.External.Auth.Library.Services;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+  public class {{name}}QueryHandler : BaseQueryHandler, IRequestHandler<{{name}}QueryRequest, TransactionResultPack<{{name}}QueryResponse>>
+  {
+    private readonly IApplicationDbContext _context;
+
+    public {{name}}QueryHandler(
+      IApplicationDbContext context,
+      IAuthUserDetailService authUserService,
+      ICurrentUserService currentUserService) : base(currentUserService, authUserService)
+    {
+      _context = context;
+    }
+
+    public async Task<TransactionResultPack<{{name}}QueryResponse>> Handle({{name}}QueryRequest request, CancellationToken cancellationToken)
+    {
+      try
+      {
+        // 🎯 Token'dan güvenli bir şekilde Auth bilgilerini al
+        var authUserId = GetSafeUserId(request.AuthUserId);
+        var authCustomerId = GetSafeCustomerId(request.AuthCustomerId);
+
+        // Base query oluştur
+        var baseQuery = _context.{{tableDb}}
+        .Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+        // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
+        var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
+        var totalCount = await totalCountQuery
+            .AsNoTracking()
+            .CountAsync(cancellationToken);
+
+        // 🎯 Verileri getir (filtreleme + sayfalama) - Düzeltilmiş filtreleme
+        var filteredQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
+        var {{table}}s = await ApplyPagination(filteredQuery, request.GetValidatedPage(), request.GetValidatedSize())
+                .AsNoTracking()
+                .ToListAsync(cancellationToken);
+
+        // Auth kullanıcı bilgilerini service ile al
+        var authUserIds = {{table}}s.Select({{table}} => {{table}}.AuthUserId).Where(id => id.HasValue).Select(id => id!.Value).ToList();
+        var authUserDetails = await _authUserService.GetAuthUserDetailsAsync(authUserIds, cancellationToken);
+
+        var {{table}}Details = new List<{{table}}DTO>();  // 🎯 {{table}}DTO listesi oluştur
+
+        foreach (var {{table}} in {{table}}s)
+        {
+          // 🎯 AuthUserService'den kullanıcı bilgilerini al
+          string? authUserName = null;
+          string? authCustomerName = null;
+
+          if ({{table}}.AuthUserId.HasValue && authUserDetails.ContainsKey({{table}}.AuthUserId.Value))
+          {
+            var userDetail = authUserDetails[{{table}}.AuthUserId.Value];
+            authUserName = userDetail.AuthUserName;        // AspNetUsers.UserName
+            authCustomerName = userDetail.AuthCustomerName; // Customers.Name
+          }
+
+          var {{table}}Detail = new {{table}}DTO
+          {
+            Id = {{table}}.Id,
+            AuthUserId = {{table}}.AuthUserId,
+            AuthCustomerId = {{table}}.AuthCustomerId,
+            AuthUserName = authUserName,      // Service'den gelen
+            AuthCustomerName = authCustomerName, // Service'den gelen
+            RowCreatedDate = {{table}}.RowCreatedDate,
+            RowUpdatedDate = {{table}}.RowUpdatedDate,
+            RowIsActive = {{table}}.RowIsActive,
+            RowIsDeleted = {{table}}.RowIsDeleted
+          };
+
+          {{table}}Details.Add({{table}}Detail);
+        }
+
+        return ResultFactory.CreateSuccessResult<{{name}}QueryResponse>(  // 🎯 TransactionResultPack oluştur
+            new {{name}}QueryResponse
+            {
+              TotalCount = totalCount,
+              {{tableDb}} = {{table}}Details  // 🎯 {{table}}DTO listesini döndür
+            },
+            null,
+            null,
+            "İşlem Başarılı",
+            "{{tableDb}} başarıyla getirildi.",
+            $"{{table}}s.Count {{tableDb}} başarıyla getirildi."  // 🎯 {{tableDb}} sayısını göster
+        );
+      }
+      catch (Exception ex)
+      {
+        return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+            null,
+            null,
+            "Hata / İşlem Başarısız",
+            "{{tableDb}} getirilirken bir hata oluştu.",
+            ex.Message
+        );
+      }
+    }
+  }
+}

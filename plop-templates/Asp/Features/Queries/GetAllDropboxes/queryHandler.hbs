@@ -1,0 +1,122 @@
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using {{application}}.Application.Abstractions.Contexts;
+using {{application}}.Application.Dtos.Response;
+using {{application}}.Application.Operations;
+using {{application}}.Application.Abstractions.Services;
+using {{application}}.Application.Dtos.ResponseDtos.{{folder}};
+using {{application}}.Application.Features.Queries.Base;
+using Karmed.External.Auth.Library.Services;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+	// Bu handler, {{tableDb}} dropdown için getirir. Clean Architecture prensiplerine uygun olarak yazılmıştır.
+	public class {{name}}QueryHandler : BaseQueryHandler, IRequestHandler<{{name}}QueryRequest, TransactionResultPack<{{name}}QueryResponse>>
+	{
+		private readonly IApplicationDbContext _context;
+
+		public {{name}}QueryHandler(
+			IApplicationDbContext context,
+			IAuthUserDetailService authUserService,
+			ICurrentUserService currentUserService) : base(currentUserService, authUserService)
+		{
+			_context = context;
+		}
+
+		public async Task<TransactionResultPack<{{name}}QueryResponse>> Handle({{name}}QueryRequest request, CancellationToken cancellationToken)
+		{
+			try
+			{
+				// 🎯 AuthCustomerId'yi önce request'ten al, yoksa token'dan al
+				var authCustomerId = request.GetAuthCustomerIdAsGuid();
+				
+				// Eğer request'te yoksa, token'dan al
+				if (!authCustomerId.HasValue)
+				{
+					authCustomerId = GetSafeCustomerId(request.AuthCustomerId);
+				}
+
+				// Hala yoksa hata döndür
+				if (!authCustomerId.HasValue)
+				{
+					return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+						request.AuthCustomerId,
+						null,
+						"Hata / Eksik Parametre",
+						"Müşteri ID'si belirtilmedi ve token'da bulunamadı.",
+						"Customer ID parameter is required and not found in token."
+					);
+				}
+
+				// Temel sorgu oluşturuluyor
+				var baseQuery = _context.{{tableDb}}
+					.Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+				// Yetkilendirme filtreleri uygulanıyor
+				var filteredQuery = ApplyAuthFilters(baseQuery, null, authCustomerId);
+
+				// Sayfalama uygulanıyor
+				var {{table}}s = await ApplyPagination(filteredQuery, request.Page, request.Size)
+					.AsNoTracking()
+					.ToListAsync(cancellationToken);
+
+				if ({{table}}s == null || {{table}}s.Count == 0)
+				{
+					return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+						request.AuthCustomerId,
+						null,
+						"Hata / {{tableDb}} Bulunamadı",
+						"Belirtilen müşteriye ait {{tableDb}} bulunamadı.",
+						$"No {{tableDb}} found for customer ID: {authCustomerId}"
+					);
+				}
+
+				// Dropdown için sadece gerekli alanları seçiyoruz
+				var {{table}}Detail = {{table}}s.Select({{table}} => new {{table}}DetailDto
+				{
+					Id = {{table}}.Id,
+					AuthCustomerId = {{table}}.AuthCustomerId,
+					AuthUserId = {{table}}.AuthUserId
+					// Diğer özellikler buraya eklenebilir
+				}).ToList();
+
+				// 🎯 Auth kullanıcı bilgilerini service ile al
+				var authUserIds = {{table}}s.Select({{table}} => {{table}}.AuthUserId).Where(id => id.HasValue).Select(id => id!.Value).ToList();
+				var authUserDetails = await _authUserService.GetAuthUserDetailsAsync(authUserIds, cancellationToken);
+
+				// Her {{table}} için kullanıcı bilgilerini ekle
+				foreach (var {{table}} in {{table}}Detail)
+				{
+					if ({{table}}.AuthUserId.HasValue && authUserDetails.ContainsKey({{table}}.AuthUserId.Value))
+					{
+						var userDetail = authUserDetails[{{table}}.AuthUserId.Value];
+						{{table}}.AuthUserName = userDetail.AuthUserName;
+						{{table}}.AuthCustomerName = userDetail.AuthCustomerName;
+					}
+				}
+
+				return ResultFactory.CreateSuccessResult<{{name}}QueryResponse>(
+					new {{name}}QueryResponse
+					{
+						{{tableDb}} = {{table}}Detail
+					},
+					authCustomerId,
+					null,
+					"İşlem Başarılı",
+					"{{tableDb}} başarıyla getirildi.",
+					$"{{tableDetail.Count}} {{tableDb}} başarıyla getirildi."
+				);
+			}
+			catch (Exception ex)
+			{
+				return ResultFactory.CreateErrorResult<{{name}}QueryResponse>(
+					request.AuthCustomerId,
+					null,
+					"Hata / İşlem Başarısız",
+					"{{tableDb}} getirilirken bir hata oluştu.",
+					ex.Message
+				);
+			}
+		}
+	}
+}
