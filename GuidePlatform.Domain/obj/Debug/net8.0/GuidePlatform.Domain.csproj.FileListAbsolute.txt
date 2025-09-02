@@ -10,3 +10,16 @@ A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatf
 A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\refint\GuidePlatform.Domain.dll
 A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.pdb
 A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Domain\obj\Debug\net8.0\ref\GuidePlatform.Domain.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\bin\Debug\net8.0\GuidePlatform.Domain.deps.json
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\bin\Debug\net8.0\GuidePlatform.Domain.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\bin\Debug\net8.0\GuidePlatform.Domain.pdb
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.csproj.AssemblyReference.cache
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.AssemblyInfoInputs.cache
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.AssemblyInfo.cs
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.csproj.CoreCompileInputs.cache
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.sourcelink.json
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\refint\GuidePlatform.Domain.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\GuidePlatform.Domain.pdb
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Domain\obj\Debug\net8.0\ref\GuidePlatform.Domain.dll

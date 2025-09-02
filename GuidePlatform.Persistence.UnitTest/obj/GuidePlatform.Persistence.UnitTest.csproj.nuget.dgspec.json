@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj": {}
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj": {}
   },
   "projects": {
-    "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj",
         "projectName": "GuidePlatform.Persistence.UnitTest",
-        "projectPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj",
-        "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Persistence.UnitTest\\obj\\",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Persistence.UnitTest\\GuidePlatform.Persistence.UnitTest.csproj",
+        "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
+        "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Persistence.UnitTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Muhammed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,6 +25,7 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,6 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -80,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

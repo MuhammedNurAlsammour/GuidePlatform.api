@@ -97,3 +97,12 @@ A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatf
 A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.pdb
 A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.genruntimeconfig.cache
 A:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\ref\GuidePlatform.Application.UnitTest.dll
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.csproj.AssemblyReference.cache
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.AssemblyInfoInputs.cache
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.AssemblyInfo.cs
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.csproj.CoreCompileInputs.cache
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.sourcelink.json
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.dll
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\refint\GuidePlatform.Application.UnitTest.dll
+d:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Application.UnitTest\obj\Debug\net8.0\GuidePlatform.Application.UnitTest.pdb

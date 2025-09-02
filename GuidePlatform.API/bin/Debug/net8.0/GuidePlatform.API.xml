@@ -51,7 +51,7 @@
             <response code="401">Kullanıcı yetkili değilse.</response>
             <response code="404">Kategoriler tablosu bulunamazsa.</response>
         </member>
-        <member name="M:GuidePlatform.API.Controllers.categoriesController.GetAllDropboxesCategoriesQueryHandler(GuidePlatform.Application.Features.Queries.categories.GetAllDropboxesCategories.GetAllDropboxesCategoriesQueryRequest)">
+        <member name="M:GuidePlatform.API.Controllers.categoriesController.GetAllDropboxesCategories(GuidePlatform.Application.Features.Queries.categories.GetAllDropboxesCategories.GetAllDropboxesCategoriesQueryRequest)">
             <summary>
             Dropboxes Kategoriler tablosu bilgilerini getirir.
             </summary>

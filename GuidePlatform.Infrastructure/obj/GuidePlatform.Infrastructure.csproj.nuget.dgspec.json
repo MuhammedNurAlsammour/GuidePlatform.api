@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj": {}
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj": {}
   },
   "projects": {
-    "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Application\\GuidePlatform.Application.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
         "projectName": "GuidePlatform.Application",
-        "projectPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
-        "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Application\\obj\\",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
+        "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
+        "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Muhammed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,14 +25,15 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj": {
-                "projectPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj"
+              "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj": {
+                "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj"
               }
             }
           }
@@ -41,6 +42,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -88,24 +94,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj",
         "projectName": "GuidePlatform.Domain",
-        "projectPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj",
-        "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Domain\\obj\\",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj",
+        "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
+        "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Muhammed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -113,6 +119,7 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -125,6 +132,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -156,24 +168,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj",
         "projectName": "GuidePlatform.Infrastructure",
-        "projectPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Infrastructure\\obj\\",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
+        "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Muhammed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -181,14 +193,15 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Application\\GuidePlatform.Application.csproj": {
-                "projectPath": "A:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform\\GuidePlatform.Application\\GuidePlatform.Application.csproj"
+              "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj": {
+                "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj"
               }
             }
           }
@@ -197,6 +210,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -224,7 +242,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

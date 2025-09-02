@@ -71,11 +71,8 @@ namespace GuidePlatform.Application.Features.Queries.categories.GetAllCategories
             Name = categories.Name,
             Description = categories.Description,
             ParentId = categories.ParentId,
-            ParentName = parentName,
             Icon = categories.Icon,
             SortOrder = categories.SortOrder,
-            ChildrenCount = childrenCount,
-            FullPath = await GetCategoryFullPath(categories, cancellationToken),
             AuthUserId = categories.AuthUserId,
             AuthCustomerId = categories.AuthCustomerId,
             AuthUserName = authUserName,      // Service'den gelen

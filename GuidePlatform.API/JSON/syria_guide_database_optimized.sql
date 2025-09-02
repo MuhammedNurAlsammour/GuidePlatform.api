@@ -57,7 +57,7 @@ CREATE TABLE businesses (
     rating DECIMAL(3,2) DEFAULT 0.00,
     total_reviews INTEGER DEFAULT 0,
     view_count INTEGER DEFAULT 0,
-    subscription_type VARCHAR(20) DEFAULT 'FREE', -- FREE, SILVER, GOLD
+    subscription_type INTEGER DEFAULT 0, -- 0: FREE, 1: SILVER, 2: GOLD
     is_verified BOOLEAN DEFAULT false,
     is_featured BOOLEAN DEFAULT false,
     working_hours TEXT,
@@ -91,9 +91,9 @@ CREATE TABLE business_images (
     thumbnail bytea NULL,
     photo_content_type varchar(50) NULL,    
     alt_text VARCHAR(255),
-    image_type VARCHAR(50) DEFAULT 'gallery', -- profile, gallery, menu, etc.
+    image_type INT DEFAULT 1, -- 0:profile, 1:gallery, 2:menu, 3:banner, 4:logo, 5:interior, 6:exterior, 7:food, 8:kitchen, 9:atmosphere, 10:design, 11:dessert
     is_primary BOOLEAN DEFAULT false,
-    sort_order INTEGER DEFAULT 0,
+    sort_order INT DEFAULT 0,
     icon VARCHAR(100) DEFAULT 'image',
     row_created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
     row_updated_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -785,6 +785,16 @@ INSERT INTO announcements (title, content, priority, is_published, auth_user_id,
 ('Yeni Özellikler', 'Platformumuzda yeni özellikler eklendi. Kontrol edin!', 2, true, '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('Bakım Bildirimi', 'Sistem bakımı nedeniyle kısa süreli kesinti yaşanabilir.', 3, false, '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
+INSERT INTO businesses (name, description, category_id, sub_category_id, province_id, countries_id, district_id, address, phone, mobile, email, website, facebook_url, instagram_url, whatsapp, telegram, latitude, longitude, rating, total_reviews, view_count, subscription_type, is_verified, is_featured, working_hours, icon, auth_user_id, owner_id, auth_customer_id, create_user_id, update_user_id) VALUES
+('Aleppo Kebap House', 'Geleneksel Halep kebap ve mezelerinin sunulduğu restoran', '2a5ce345-d636-437f-9795-1144fcaf7665', null, '6ae34069-3dcf-461c-8c53-af9730699493', 'a2db09e5-910e-4800-a226-68b70c43926e', 'dd9cd864-8c5f-47a6-a3f3-bdbb5b961477', 'Al-Bab Merkez Mah.', '+90 555 123 4567', '+90 555 123 4567', 'info@aleppokebap.com', 'www.aleppokebap.com', 'facebook.com/aleppokebap', 'instagram.com/aleppokebap', '+90 555 123 4567', '@aleppokebap', 36.37321, 37.51672, 4.50, 120, 1500, 2, true, true, '10:00-22:00', 'restaurant', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+('Manbij Lokantası', 'Suriye mutfağının en güzel örneklerini sunan lokanta', '2a5ce345-d636-437f-9795-1144fcaf7665', null, '6ae34069-3dcf-461c-8c53-af9730699493', 'a2db09e5-910e-4800-a226-68b70c43926e', '26610b3a-59bf-49df-953a-ca930d3f1464', 'Manbij Ana Caddesi', '+90 555 234 5678', '+90 555 234 5678', 'info@manbijlokanta.com', 'www.manbijlokanta.com', 'facebook.com/manbijlokanta', 'instagram.com/manbijlokanta', '+90 555 234 5678', '@manbijlokanta', 36.52815, 37.95495, 4.20, 85, 1200, 1, true, false, '09:00-23:00', 'restaurant', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+('Azaz Sofra', 'Ev yapımı Suriye yemekleri sunan aile restoranı', '2a5ce345-d636-437f-9795-1144fcaf7665', null, '6ae34069-3dcf-461c-8c53-af9730699493', 'a2db09e5-910e-4800-a226-68b70c43926e', '94b32542-3c72-45bb-ae5c-37a1b19dc5f3', 'Azaz Çarşı', '+90 555 345 6789', '+90 555 345 6789', 'info@azazsofra.com', 'www.azazsofra.com', 'facebook.com/azazsofra', 'instagram.com/azazsofra', '+90 555 345 6789', '@azazsofra', 36.58671, 37.04751, 4.00, 65, 800, 0, false, false, '11:00-21:00', 'restaurant', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+('Afrin Lezzet', 'Modern Suriye mutfağı konseptli restoran', '2a5ce345-d636-437f-9795-1144fcaf7665', null, '6ae34069-3dcf-461c-8c53-af9730699493', 'a2db09e5-910e-4800-a226-68b70c43926e', 'fae9f919-3e32-42f0-915f-adf23387a17a', 'Afrin Merkez', '+90 555 456 7890', '+90 555 456 7890', 'info@afrinlezzet.com', 'www.afrinlezzet.com', 'facebook.com/afrinlezzet', 'instagram.com/afrinlezzet', '+90 555 456 7890', '@afrinlezzet', 36.51231, 36.86982, 4.30, 95, 1100, 1, true, true, '10:00-22:00', 'restaurant', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+('Jarabulus Mutfak', 'Otantik Suriye lezzetleri ve tatlıları', '2a5ce345-d636-437f-9795-1144fcaf7665', null, '6ae34069-3dcf-461c-8c53-af9730699493', 'a2db09e5-910e-4800-a226-68b70c43926e', '9f83ef0a-48a3-4c4f-83ad-170efe61e8e3', 'Jarabulus Ana Yol', '+90 555 567 8901', '+90 555 567 8901', 'info@jarabulusmutfak.com', 'www.jarabulusmutfak.com', 'facebook.com/jarabulusmutfak', 'instagram.com/jarabulusmutfak', '+90 555 567 8901', '@jarabulusmutfak', 36.81752, 38.01165, 4.10, 75, 950, 0, false, false, '09:00-21:00', 'restaurant', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 -- =====================================================
 -- END OF OPTIMIZED DATABASE
 -- =====================================================

@@ -1,0 +1,326 @@
+[
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.ApplicationServicesController",
+    "Method": "GetAuthorizeDefinitionEndpoints",
+    "RelativePath": "api/ApplicationServices/GetAuthorizeDefinitionEndpoints",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Karmed.External.Auth.Library.DTOs.Menu, Karmed.External.Auth.Library, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.AuthorizationEndpointsController",
+    "Method": "AssignRoleEndpoint2",
+    "RelativePath": "api/AuthorizationEndpoints/AssignRoleEndpoint2",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Karmed.External.Auth.Library.DTOs.AssignEndpointsToRoleDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.AuthorizationEndpointsController",
+    "Method": "UpdateRoleEndpoint",
+    "RelativePath": "api/AuthorizationEndpoints/UpdateRoleEndpoint",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Karmed.External.Auth.Library.DTOs.AssignEndpointsToRoleDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
+    "Method": "Createcategories",
+    "RelativePath": "api/categories/Createcategories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.categories.CreateCategories.CreateCategoriesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.categories.CreateCategories.CreateCategoriesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
+    "Method": "Deletecategories",
+    "RelativePath": "api/categories/Deletecategories/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.categories.DeleteCategories.DeleteCategoriesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
+    "Method": "GetAllcategories",
+    "RelativePath": "api/categories/GetAllcategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.categories.GetAllCategories.GetAllCategoriesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
+    "Method": "GetAllDropboxesCategories",
+    "RelativePath": "api/categories/GetAllDropboxesCategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.categories.GetAllDropboxesCategories.GetAllDropboxesCategoriesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
+    "Method": "GetByIdcategories",
+    "RelativePath": "api/categories/GetByIdcategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.categories.GetCategoriesById.GetCategoriesByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
+    "Method": "Updatecategories",
+    "RelativePath": "api/categories/Updatecategories",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.categories.UpdateCategories.UpdateCategoriesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.categories.UpdateCategories.UpdateCategoriesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.DefinitionsController",
+    "Method": "GetAllCustomers",
+    "RelativePath": "api/Definitions/GetAllCustomers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.DefinitionsController",
+    "Method": "GetAllDefinitions",
+    "RelativePath": "api/Definitions/GetAllDefinitions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.DefinitionsController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/Definitions/GetAllRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.DefinitionsController",
+    "Method": "GetAllUser",
+    "RelativePath": "api/Definitions/GetAllUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.SendWpMessageController",
+    "Method": "Send",
+    "RelativePath": "api/SendWpMessage/Send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.Send.SendWpMessage.SendWpMessageCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
