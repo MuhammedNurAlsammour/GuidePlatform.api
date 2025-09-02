@@ -1016,3 +1016,43 @@ INSERT INTO user_favorites (business_id, icon, auth_user_id, auth_customer_id, c
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'favorite', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
 -- user_favorites tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول المفضلات
+
+-- user_visits table için örnek veriler - بيانات نموذجية لجدول زيارات المستخدمين
+INSERT INTO user_visits (business_id, visit_date, visit_type, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
+
+-- Aleppo Kebap House için kullanıcı ziyaretleri - زيارات المستخدمين لمطعم حلب كباب هاوس
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-15 14:30:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-16 19:45:00+03:00', 'contact', 'contact_phone', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-17 12:15:00+03:00', 'review', 'rate_review', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-18 20:00:00+03:00', 'view', 'visibility', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-19 16:30:00+03:00', 'contact', 'contact_mail', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Manbij Lokantası için kullanıcı ziyaretleri - زيارات المستخدمين لمطعم منبج لوقنتاسي
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-14 11:20:00+03:00', 'view', 'visibility', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-15 18:15:00+03:00', 'contact', 'contact_phone', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-16 13:45:00+03:00', 'view', 'visibility', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-17 21:30:00+03:00', 'review', 'rate_review', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-18 15:00:00+03:00', 'contact', 'contact_web', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Azaz Sofra için kullanıcı ziyaretleri - زيارات المستخدمين لمطعم أعزاز سفرة
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-13 10:45:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-14 17:30:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-15 12:00:00+03:00', 'contact', 'contact_phone', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-16 19:15:00+03:00', 'review', 'rate_review', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-17 14:45:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Afrin Lezzet için kullanıcı ziyaretleri - زيارات المستخدمين لمطعم عفرين لذة
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-12 16:20:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-13 20:30:00+03:00', 'contact', 'contact_phone', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-14 13:15:00+03:00', 'view', 'visibility', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-15 18:45:00+03:00', 'review', 'rate_review', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-16 11:30:00+03:00', 'contact', 'contact_mail', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Jarabulus Mutfak için kullanıcı ziyaretleri - زيارات المستخدمين لمطعم جرابلس مطبخ
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-11 14:00:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-12 19:00:00+03:00', 'view', 'visibility', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-13 15:30:00+03:00', 'contact', 'contact_phone', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-14 12:15:00+03:00', 'review', 'rate_review', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-15 17:45:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
+
+-- user_visits tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول زيارات المستخدمين
