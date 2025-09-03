@@ -45,12 +45,26 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
         var {{table}}s = await ApplyPagination(filteredQuery, request.GetValidatedPage(), request.GetValidatedSize())
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
+  
+        // 🎯 Tüm kullanıcı bilgilerini toplu olarak al (performans için)
+        var allUserIds = new List<Guid>();
 
-        // Auth kullanıcı bilgilerini service ile al
-        var authUserIds = {{table}}s.Select({{table}} => {{table}}.AuthUserId).Where(id => id.HasValue).Select(id => id!.Value).ToList();
-        var authUserDetails = await _authUserService.GetAuthUserDetailsAsync(authUserIds, cancellationToken);
+        // Auth kullanıcı bilgileri
+        var authUserIds = businessess.Where(b => b.AuthUserId.HasValue).Select(b => b.AuthUserId!.Value).ToList();
+        allUserIds.AddRange(authUserIds);
 
-        var {{table}}Details = new List<{{table}}DTO>();  // 🎯 {{table}}DTO listesi oluştur
+        // Create kullanıcı bilgileri
+        var createUserIds = businessess.Where(b => b.CreateUserId.HasValue).Select(b => b.CreateUserId!.Value).ToList();
+        allUserIds.AddRange(createUserIds);
+
+        // Update kullanıcı bilgileri
+        var updateUserIds = businessess.Where(b => b.UpdateUserId.HasValue).Select(b => b.UpdateUserId!.Value).ToList();
+        allUserIds.AddRange(updateUserIds);
+
+        // Tek seferde tüm kullanıcı bilgilerini al
+        var allUserDetails = await _authUserService.GetAuthUserDetailsAsync(allUserIds.Distinct().ToList(), cancellationToken);
+
+        var {{table}}Details = new List<{{tableDb}}DTO>();  // 🎯 {{tableDb}}DTO listesi oluştur
 
         foreach (var {{table}} in {{table}}s)
         {
@@ -58,20 +72,40 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
           string? authUserName = null;
           string? authCustomerName = null;
 
-          if ({{table}}.AuthUserId.HasValue && authUserDetails.ContainsKey({{table}}.AuthUserId.Value))
+          if (businesses.AuthUserId.HasValue && allUserDetails.ContainsKey(businesses.AuthUserId.Value))
           {
-            var userDetail = authUserDetails[{{table}}.AuthUserId.Value];
+            var userDetail = allUserDetails[businesses.AuthUserId.Value];
             authUserName = userDetail.AuthUserName;        // AspNetUsers.UserName
             authCustomerName = userDetail.AuthCustomerName; // Customers.Name
           }
 
-          var {{table}}Detail = new {{table}}DTO
+          // 🎯 Create/Update kullanıcı bilgilerini al
+          string? createUserName = null;
+          string? updateUserName = null;
+
+          if (businesses.CreateUserId.HasValue && allUserDetails.ContainsKey(businesses.CreateUserId.Value))
+          {
+            var createUserDetail = allUserDetails[businesses.CreateUserId.Value];
+            createUserName = createUserDetail.AuthUserName;
+          }
+
+          if (businesses.UpdateUserId.HasValue && allUserDetails.ContainsKey(businesses.UpdateUserId.Value))
+          {
+            var updateUserDetail = allUserDetails[businesses.UpdateUserId.Value];
+            updateUserName = updateUserDetail.AuthUserName;
+          }
+
+          var {{table}}Detail = new {{tableDb}}DTO
           {
             Id = {{table}}.Id,
             AuthUserId = {{table}}.AuthUserId,
             AuthCustomerId = {{table}}.AuthCustomerId,
             AuthUserName = authUserName,      // Service'den gelen
             AuthCustomerName = authCustomerName, // Service'den gelen
+            CreateUserId = {{table}}.CreateUserId,
+            CreateUserName = createUserName,
+            UpdateUserId = {{table}}.UpdateUserId,
+            UpdateUserName = updateUserName,
             RowCreatedDate = {{table}}.RowCreatedDate,
             RowUpdatedDate = {{table}}.RowUpdatedDate,
             RowIsActive = {{table}}.RowIsActive,
@@ -85,7 +119,7 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
             new {{name}}QueryResponse
             {
               TotalCount = totalCount,
-              {{tableDb}} = {{table}}Details  // 🎯 {{table}}DTO listesini döndür
+              {{tableDb}} = {{table}}Details  // 🎯 {{tableDb}}DTO listesini döndür
             },
             null,
             null,

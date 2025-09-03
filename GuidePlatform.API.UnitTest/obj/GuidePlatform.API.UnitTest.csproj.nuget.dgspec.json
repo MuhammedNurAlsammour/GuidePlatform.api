@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj": {}
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj": {}
   },
   "projects": {
-    "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj",
         "projectName": "GuidePlatform.API.UnitTest",
-        "projectPath": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\GuidePlatform.API.UnitTest.csproj",
         "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
-        "outputPath": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API.UnitTest\\obj\\",
+        "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.API.UnitTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

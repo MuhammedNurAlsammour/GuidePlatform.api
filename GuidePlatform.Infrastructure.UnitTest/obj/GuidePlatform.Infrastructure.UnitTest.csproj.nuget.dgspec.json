@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj": {}
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj": {}
   },
   "projects": {
-    "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj",
         "projectName": "GuidePlatform.Infrastructure.UnitTest",
-        "projectPath": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\GuidePlatform.Infrastructure.UnitTest.csproj",
         "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
-        "outputPath": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure.UnitTest\\obj\\",
+        "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure.UnitTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

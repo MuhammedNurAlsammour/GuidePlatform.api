@@ -10,20 +10,20 @@ namespace GuidePlatform.Persistence.Contexts
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
 		public DbSet<CategoriesViewModel> categories { get; set; }
+        public DbSet<BusinessesViewModel> businesses { get; set; }
 
 
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.HasDefaultSchema("guideplatform");
 			base.OnModelCreating(modelBuilder);
 
 			modelBuilder.ApplyConfiguration(new CategoriesMap());
-
-			// EmployeeMap kaldırıldı, sadece AuthUserId kullanılıyor
-			// modelBuilder.ApplyConfiguration(new EmployeeMap());
-		}
-	}
+            modelBuilder.ApplyConfiguration(new BusinessesMap());
+        }
+    }
 
 
 

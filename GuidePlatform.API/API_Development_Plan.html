@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GuidePlatform API Geliştirme Planı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .task-item {
+        transition: all 0.3s ease;
+      }
+      .task-item:hover {
+        transform: translateX(10px);
+      }
+      .priority-high {
+        border-left: 4px solid #ef4444;
+      }
+      .priority-medium {
+        border-left: 4px solid #f59e0b;
+      }
+      .priority-low {
+        border-left: 4px solid #10b981;
+      }
+      .status-pending {
+        background-color: #fef3c7;
+      }
+      .status-in-progress {
+        background-color: #dbeafe;
+      }
+      .status-completed {
+        background-color: #d1fae5;
+      }
+      .status-blocked {
+        background-color: #fecaca;
+      }
+      .table-priority {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header -->
+      <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+          🚀 GuidePlatform API Geliştirme Planı
+        </h1>
+        <p class="text-xl text-gray-600">
+          Clean Architecture ile Syria-Turkey HR & Business Guide Platform
+        </p>
+        <div class="mt-6 flex justify-center space-x-4">
+          <span
+            class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+          >
+            Clean Architecture
+          </span>
+          <span
+            class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium"
+          >
+            C# Web API
+          </span>
+          <span
+            class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium"
+          >
+            PostgreSQL
+          </span>
+          <span
+            class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium"
+          >
+            Docker
+          </span>
+        </div>
+      </header>
+
+      <!-- Database Tables Priority Analysis -->
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          🗄️ Veritabanı Tabloları Öncelik Analizi
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div
+            class="text-center p-4 bg-red-50 rounded-lg border-l-4 border-red-500"
+          >
+            <div class="text-2xl font-bold text-red-600">1. Seviye</div>
+            <div class="text-sm text-red-800">Kritik Tablolar</div>
+            <div class="text-xs text-red-700 mt-2">
+              categories, businesses, users
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500"
+          >
+            <div class="text-2xl font-bold text-yellow-600">2. Seviye</div>
+            <div class="text-sm text-yellow-800">İş Mantığı</div>
+            <div class="text-xs text-yellow-700 mt-2">
+              reviews, subscriptions, payments
+            </div>
+          </div>
+          <div
+            class="text-center p-4 bg-green-50 rounded-lg border-l-4 border-green-500"
+          >
+            <div class="text-2xl font-bold text-green-600">3. Seviye</div>
+            <div class="text-sm text-green-800">Destek Tabloları</div>
+            <div class="text-xs text-green-700 mt-2">
+              analytics, logs, files
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Overview -->
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">📊 Genel İlerleme</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="text-center p-4 bg-blue-50 rounded-lg">
+            <div class="text-3xl font-bold text-blue-600">0%</div>
+            <div class="text-sm text-blue-800">Tamamlanan</div>
+          </div>
+          <div class="text-center p-4 bg-yellow-50 rounded-lg">
+            <div class="text-3xl font-bold text-yellow-600">0</div>
+            <div class="text-sm text-yellow-800">Devam Eden</div>
+          </div>
+          <div class="text-center p-4 bg-red-50 rounded-lg">
+            <div class="text-3xl font-bold text-red-600">0</div>
+            <div class="text-sm text-red-800">Bloke</div>
+          </div>
+          <div class="text-center p-4 bg-green-50 rounded-lg">
+            <div class="text-3xl font-bold text-green-600">0</div>
+            <div class="text-sm text-green-800">Bekleyen</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Development Phases -->
+      <div class="space-y-8">
+        <!-- Phase 1: Core Database Tables -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="table-priority px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              🗄️ Faz 1: Temel Veritabanı Tabloları (Kritik)
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Categories Entity & Repository
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Kategori yönetimi için temel CRUD operasyonları
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: categories
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Businesses Entity & Repository
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      İşletme yönetimi için temel CRUD operasyonları
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: businesses, business_images, business_contacts
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      User Management Entities
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Kullanıcı yönetimi ve kimlik doğrulama entegrasyonu
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: user_favorites, user_visits
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Base Entity Infrastructure
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Ortak alanlar için base entity sınıfları
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: Tüm tablolar için ortak alanlar
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2: Business Logic Tables -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              🏗️ Faz 2: İş Mantığı Tabloları
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Business Services & Working Hours
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      İşletme hizmetleri ve çalışma saatleri yönetimi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: business_services, business_working_hours
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Reviews & Ratings System
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Değerlendirme ve puanlama sistemi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: business_reviews
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Subscription Management
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Abonelik yönetimi ve ödeme sistemi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: subscriptions, payments
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Notification System
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Bildirim sistemi ve ayarları
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: notifications, notification_settings
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3: Content Management -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-purple-500 to-purple-600 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              📝 Faz 3: İçerik Yönetimi
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Articles & Pages Management
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Makale ve sayfa yönetimi sistemi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: articles, pages
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Banners & Announcements
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Banner ve duyuru yönetimi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: banners, announcements
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-low status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      File Management System
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Dosya yönetimi ve depolama sistemi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: files
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium"
+                    >Düşük Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4: Analytics & Search -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              🔍 Faz 4: Analitik ve Arama
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Search & Filter System
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Gelişmiş arama ve filtreleme sistemi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: search_logs
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Business Analytics
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      İşletme analitikleri ve raporlama
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">
+                      Tablolar: business_analytics
+                    </div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-low status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">System Logging</h3>
+                    <p class="text-sm text-gray-600">
+                      Sistem logları ve hata takibi
+                    </p>
+                    <div class="text-xs text-gray-500 mt-1">Tablolar: logs</div>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium"
+                    >Düşük Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 5: Application Layer Implementation -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              ⚡ Faz 5: Uygulama Katmanı
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      CQRS Pattern Implementation
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      MediatR ile Command ve Query ayrımı
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      DTO & AutoMapper Profiles
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Request/Response DTO'ları ve mapping profilleri
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Validation Rules
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      FluentValidation ile input validation
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 6: API Controllers -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-teal-500 to-teal-600 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              🌐 Faz 6: API Controller'ları
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Base Controller & Common CRUD
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Ortak CRUD operasyonları için base controller
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Business Management API
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      İşletme CRUD ve yönetim API'leri
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Category Management API
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Kategori yönetimi ve hiyerarşik yapı API'leri
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Search & Filter API
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Gelişmiş arama ve filtreleme API'leri
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 7: Infrastructure & Testing -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="bg-gradient-to-r from-pink-500 to-pink-600 px-6 py-4">
+            <h2 class="text-2xl font-bold text-white">
+              🔧 Faz 7: Altyapı ve Test
+            </h2>
+          </div>
+          <div class="p-6">
+            <div class="space-y-4">
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      DbContext & Migrations
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Entity Framework yapılandırması ve migration'lar
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-high status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Repository Pattern
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Generic Repository ve Unit of Work pattern
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-medium"
+                    >Yüksek Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-medium status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Unit Test Infrastructure
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      xUnit, Moq ile test altyapısı
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
+                    >Orta Öncelik</span
+                  >
+                </div>
+              </div>
+
+              <div
+                class="task-item priority-low status-pending p-4 rounded-lg border"
+              >
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-semibold text-gray-800">
+                      Docker & Deployment
+                    </h3>
+                    <p class="text-sm text-gray-600">
+                      Docker yapılandırması ve deployment
+                    </p>
+                  </div>
+                  <span
+                    class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium"
+                    >Düşük Öncelik</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database Tables Summary -->
+      <div class="bg-white rounded-lg shadow-lg p-6 mt-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          📋 Veritabanı Tabloları Özeti
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="p-4 bg-blue-50 rounded-lg">
+            <h3 class="font-semibold text-blue-800 mb-2">
+              🏢 İşletme Yönetimi
+            </h3>
+            <ul class="text-sm text-blue-700 space-y-1">
+              <li>• businesses (Ana tablo)</li>
+              <li>• business_images (Resimler)</li>
+              <li>• business_contacts (İletişim)</li>
+              <li>• business_services (Hizmetler)</li>
+              <li>• business_working_hours (Çalışma saatleri)</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-green-50 rounded-lg">
+            <h3 class="font-semibold text-green-800 mb-2">
+              📂 Kategori Sistemi
+            </h3>
+            <ul class="text-sm text-green-700 space-y-1">
+              <li>• categories (Ana kategoriler)</li>
+              <li>• Hiyerarşik yapı (parent_id)</li>
+              <li>• Alt kategoriler desteği</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-purple-50 rounded-lg">
+            <h3 class="font-semibold text-purple-800 mb-2">
+              👥 Kullanıcı Yönetimi
+            </h3>
+            <ul class="text-sm text-purple-700 space-y-1">
+              <li>• user_favorites (Favoriler)</li>
+              <li>• user_visits (Ziyaretler)</li>
+              <li>• Auth sistemi entegrasyonu</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-yellow-50 rounded-lg">
+            <h3 class="font-semibold text-yellow-800 mb-2">
+              ⭐ Değerlendirme Sistemi
+            </h3>
+            <ul class="text-sm text-yellow-700 space-y-1">
+              <li>• business_reviews (Değerlendirmeler)</li>
+              <li>• Rating hesaplama</li>
+              <li>• Doğrulama sistemi</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-orange-50 rounded-lg">
+            <h3 class="font-semibold text-orange-800 mb-2">
+              💳 Abonelik & Ödeme
+            </h3>
+            <ul class="text-sm text-orange-700 space-y-1">
+              <li>• subscriptions (Abonelikler)</li>
+              <li>• payments (Ödemeler)</li>
+              <li>• Farklı para birimleri</li>
+            </ul>
+          </div>
+          <div class="p-4 bg-red-50 rounded-lg">
+            <h3 class="font-semibold text-red-800 mb-2">📊 Analitik & Arama</h3>
+            <ul class="text-sm text-red-700 space-y-1">
+              <li>• business_analytics (Analitik)</li>
+              <li>• search_logs (Arama logları)</li>
+              <li>• Performance tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="bg-white rounded-lg shadow-lg p-6 mt-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          ⚡ Hızlı Aksiyonlar
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <button
+            class="p-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-colors"
+          >
+            🚀 Projeyi Başlat
+          </button>
+          <button
+            class="p-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium transition-colors"
+          >
+            📊 İlerlemeyi Güncelle
+          </button>
+          <button
+            class="p-4 bg-purple-500 hover:bg-purple-600 text-white rounded-lg font-medium transition-colors"
+          >
+            📝 Not Ekle
+          </button>
+          <button
+            class="p-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-medium transition-colors"
+          >
+            🔍 Görev Ara
+          </button>
+          <button
+            class="p-4 bg-red-500 hover:bg-red-600 text-white rounded-lg font-medium transition-colors"
+          >
+            ⚠️ Bloke Durumları
+          </button>
+          <button
+            class="p-4 bg-teal-500 hover:bg-teal-600 text-white rounded-lg font-medium transition-colors"
+          >
+            📋 Rapor Oluştur
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="text-center mt-12 text-gray-600">
+        <p>
+          GuidePlatform API Development Plan - Clean Architecture ile
+          Geliştirildi
+        </p>
+        <p class="text-sm mt-2">
+          Son güncelleme: <span id="lastUpdate"></span>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Son güncelleme tarihini ayarla
+      document.getElementById("lastUpdate").textContent =
+        new Date().toLocaleDateString("tr-TR");
+
+      // Görev durumlarını güncelle
+      function updateTaskStatus(taskElement, newStatus) {
+        taskElement.className = taskElement.className.replace(
+          /status-\w+/,
+          `status-${newStatus}`
+        );
+      }
+
+      // Öncelik filtreleme
+      function filterByPriority(priority) {
+        const tasks = document.querySelectorAll(".task-item");
+        tasks.forEach((task) => {
+          if (
+            priority === "all" ||
+            task
+              .querySelector(".bg-red-100, .bg-yellow-100, .bg-green-100")
+              .textContent.includes(priority)
+          ) {
+            task.style.display = "block";
+          } else {
+            task.style.display = "none";
+          }
+        });
+      }
+
+      // Hızlı aksiyon butonları
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const action = this.textContent.trim();
+          alert(`${action} aksiyonu tetiklendi!`);
+        });
+      });
+    </script>
+  </body>
+</html>

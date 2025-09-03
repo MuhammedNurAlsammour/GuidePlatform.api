@@ -1,0 +1,89 @@
+version: "3.8"
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: guideplatform_postgres
+    environment:
+      POSTGRES_DB: guideplatform
+      POSTGRES_USER: guideplatform_user
+      POSTGRES_PASSWORD: GuidePlatform2024!
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./JSON/syria_guide_database_optimized.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - guideplatform_network
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: guideplatform_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - guideplatform_network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # API Application
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: guideplatform_api
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=guideplatform;Username=guideplatform_user;Password=GuidePlatform2024!
+      - ConnectionStrings__Redis=redis:6379
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - guideplatform_network
+    restart: unless-stopped
+    volumes:
+      - ./appsettings.json:/app/appsettings.json:ro
+      - ./appsettings.Development.json:/app/appsettings.Development.json:ro
+
+  # pgAdmin (Optional - Database Management)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: guideplatform_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@guideplatform.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - guideplatform_network
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  guideplatform_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

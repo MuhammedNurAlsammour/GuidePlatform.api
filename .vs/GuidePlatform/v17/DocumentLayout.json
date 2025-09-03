@@ -3,132 +3,44 @@
   "WorkspaceRootPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getcategoriesbyid\\getcategoriesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getcategoriesbyid\\getcategoriesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businesses\\updatebusinesses\\updatebusinessesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businesses\\updatebusinesses\\updatebusinessesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businesses\\createbusinesses\\createbusinessesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businesses\\createbusinesses\\createbusinessesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{650E7D5A-A358-4228-A880-6DF2466A7916}|GuidePlatform.Domain\\GuidePlatform.Domain.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.domain\\entities\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{650E7D5A-A358-4228-A880-6DF2466A7916}|GuidePlatform.Domain\\GuidePlatform.Domain.csproj|solutionrelative:guideplatform.domain\\entities\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businesses\\updatebusinesses\\updatebusinessesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businesses\\updatebusinesses\\updatebusinessesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businesses\\createbusinesses\\createbusinessesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businesses\\createbusinesses\\createbusinessesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getcategoriesbyid\\getcategoriesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getcategoriesbyid\\getcategoriesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getcategoriesbyid\\getcategoriesbyidqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getcategoriesbyid\\getcategoriesbyidqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\updatecategories\\updatecategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\updatecategories\\updatecategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{650E7D5A-A358-4228-A880-6DF2466A7916}|GuidePlatform.Domain\\GuidePlatform.Domain.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.domain\\maps\\categoriesmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{650E7D5A-A358-4228-A880-6DF2466A7916}|GuidePlatform.Domain\\GuidePlatform.Domain.csproj|solutionrelative:guideplatform.domain\\maps\\categoriesmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\base\\basecommandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\base\\basecommandrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0333DB07-51F6-4214-AF46-D49FA3F80917}|GuidePlatform.Persistence\\GuidePlatform.Persistence.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0333DB07-51F6-4214-AF46-D49FA3F80917}|GuidePlatform.Persistence\\GuidePlatform.Persistence.csproj|solutionrelative:guideplatform.persistence\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\updatecategories\\updatecategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\updatecategories\\updatecategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\dtos\\responsedtos\\baseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\dtos\\responsedtos\\baseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\dtos\\responsedtos\\categories\\categoriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\dtos\\responsedtos\\categories\\categoriesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getalldropboxescategories\\getalldropboxescategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getalldropboxescategories\\getalldropboxescategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businesses\\createbusinesses\\createbusinessesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businesses\\createbusinesses\\createbusinessesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businesses\\getbusinessesbyid\\getbusinessesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businesses\\getbusinessesbyid\\getbusinessesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\serviceregistiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\serviceregistiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businesses\\getallbusinesses\\getallbusinessesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businesses\\getallbusinesses\\getallbusinessesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\dtos\\responsedtos\\baseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\dtos\\responsedtos\\baseresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\base\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\base\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\guideplatform.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\guideplatform.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\deletecategories\\deletecategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\deletecategories\\deletecategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0333DB07-51F6-4214-AF46-D49FA3F80917}|GuidePlatform.Persistence\\GuidePlatform.Persistence.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.persistence\\contexts\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0333DB07-51F6-4214-AF46-D49FA3F80917}|GuidePlatform.Persistence\\GuidePlatform.Persistence.csproj|solutionrelative:guideplatform.persistence\\contexts\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\abstractions\\contexts\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\abstractions\\contexts\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\abstractions\\rabbitmq\\irabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\abstractions\\rabbitmq\\irabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B354A153-4A6A-4057-8897-432413EE256A}|GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.infrastructure\\rabbitmq\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B354A153-4A6A-4057-8897-432413EE256A}|GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj|solutionrelative:guideplatform.infrastructure\\rabbitmq\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\send\\sendwpmessage\\sendwpmessagecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\send\\sendwpmessage\\sendwpmessagecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B354A153-4A6A-4057-8897-432413EE256A}|GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.infrastructure\\serviceregistiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B354A153-4A6A-4057-8897-432413EE256A}|GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj|solutionrelative:guideplatform.infrastructure\\serviceregistiration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businesses\\getbusinessesbyid\\getbusinessesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businesses\\getbusinessesbyid\\getbusinessesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -150,391 +62,133 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CreateCategoriesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryHandler.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCUAAABdAAAA",
+              "DocumentIndex": 1,
+              "Title": "CreateBusinessesQueryResponse.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryResponse.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryResponse.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryResponse.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.025Z"
+              "WhenOpened": "2025-09-03T16:36:18.28Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GetCategoriesByIdQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryHandler.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAawHsAAAArAAAA",
+              "Title": "UpdateBusinessesQueryResponse.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryResponse.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryResponse.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryResponse.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.03Z",
+              "WhenOpened": "2025-09-03T16:35:51.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetAllCategoriesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAAjwEsAAAAvAAAA",
+              "DocumentIndex": 2,
+              "Title": "UpdateBusinessesQueryRequest.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryRequest.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryRequest.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryRequest.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Businesses\\UpdateBusinesses\\UpdateBusinessesQueryRequest.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAAAC8AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.018Z",
+              "WhenOpened": "2025-09-03T16:33:25.618Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "categoriesMap.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain\\Maps\\categoriesMap.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Domain\\Maps\\categoriesMap.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain\\Maps\\categoriesMap.cs",
-              "RelativeToolTip": "GuidePlatform.Domain\\Maps\\categoriesMap.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:33:59.977Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GetCategoriesByIdQueryResponse.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryResponse.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryResponse.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryResponse.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAABFAAAA",
+              "Title": "CreateBusinessesQueryRequest.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryRequest.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryRequest.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryRequest.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryRequest.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAmwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.037Z"
+              "WhenOpened": "2025-09-03T16:23:34.065Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "categoriesController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\categoriesController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\categoriesController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\categoriesController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\categoriesController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAwwEEAAAAAAAAA",
+              "Title": "CreateBusinessesQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Businesses\\CreateBusinesses\\CreateBusinessesQueryHandler.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCMAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.043Z",
+              "WhenOpened": "2025-09-03T16:23:29.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GetCategoriesByIdQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetCategoriesById\\GetCategoriesByIdQueryRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.05Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "categories.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain\\Entities\\categories.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Domain\\Entities\\categories.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain\\Entities\\categories.cs",
-              "RelativeToolTip": "GuidePlatform.Domain\\Entities\\categories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UpdateCategoriesQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryRequest.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAawDQAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.064Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UpdateCategoriesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\UpdateCategories\\UpdateCategoriesQueryHandler.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAowFkAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GetAllCategoriesQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.074Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Program.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Program.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Program.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Program.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAawEIAAABjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.079Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BaseResponseDTO.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "categoriesDTO.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Dtos\\ResponseDtos\\categories\\categoriesDTO.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Dtos\\ResponseDtos\\categories\\categoriesDTO.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Dtos\\ResponseDtos\\categories\\categoriesDTO.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Dtos\\ResponseDtos\\categories\\categoriesDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseCommandRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Base\\BaseCommandRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Base\\BaseCommandRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Base\\BaseCommandRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Base\\BaseCommandRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Persistence\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Persistence\\ServiceRegistration.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Persistence\\ServiceRegistration.cs",
-              "RelativeToolTip": "GuidePlatform.Persistence\\ServiceRegistration.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACQAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GetAllCategoriesQueryResponse.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryResponse.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryResponse.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryResponse.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GetAllDropboxesCategoriesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllDropboxesCategories\\GetAllDropboxesCategoriesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllDropboxesCategories\\GetAllDropboxesCategoriesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllDropboxesCategories\\GetAllDropboxesCategoriesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllDropboxesCategories\\GetAllDropboxesCategoriesQueryHandler.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwEoAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.114Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "CreateCategoriesQueryRequest.cs",
               "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
               "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
               "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
               "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAxAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.12Z"
+              "WhenOpened": "2025-09-03T16:22:44.752Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CreateCategoriesQueryResponse.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryResponse.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryResponse.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryResponse.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "BaseResponseDTO.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Dtos\\ResponseDtos\\BaseResponseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.125Z"
+              "WhenOpened": "2025-09-03T15:58:50.623Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ServiceRegistiration.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\ServiceRegistiration.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\ServiceRegistiration.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\ServiceRegistiration.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\ServiceRegistiration.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAD4vxIAAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "GetBusinessesByIdQueryResponse.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryResponse.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryResponse.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryResponse.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.131Z"
+              "WhenOpened": "2025-09-03T15:46:22.072Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "GuidePlatform.API\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-01T09:34:00.136Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "GuidePlatform.API.csproj",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.API\\GuidePlatform.API.csproj",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\GuidePlatform.API.csproj",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.API\\GuidePlatform.API.csproj",
-              "RelativeToolTip": "GuidePlatform.API\\GuidePlatform.API.csproj",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-01T09:34:00.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\Base\\BaseController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\Base\\BaseController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\Base\\BaseController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\Base\\BaseController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowAAAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "GetAllBusinessesQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Businesses\\GetAllBusinesses\\GetAllBusinessesQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\Businesses\\GetAllBusinesses\\GetAllBusinessesQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Businesses\\GetAllBusinesses\\GetAllBusinessesQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\Businesses\\GetAllBusinesses\\GetAllBusinessesQueryHandler.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAA5wDUAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.221Z"
+              "WhenOpened": "2025-09-03T15:44:42.296Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\appsettings.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.json",
-              "RelativeToolTip": "GuidePlatform.API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-01T09:34:00.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "DeleteCategoriesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\DeleteCategories\\DeleteCategoriesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\DeleteCategories\\DeleteCategoriesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\DeleteCategories\\DeleteCategoriesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\DeleteCategories\\DeleteCategoriesQueryHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
+              "DocumentIndex": 6,
+              "Title": "GetBusinessesByIdQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\Businesses\\GetBusinessesById\\GetBusinessesByIdQueryHandler.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAAwEAAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.235Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
-              "RelativeToolTip": "GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "IApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "IRabbitMQService.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Abstractions\\RabbitMQ\\IRabbitMQService.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Abstractions\\RabbitMQ\\IRabbitMQService.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Abstractions\\RabbitMQ\\IRabbitMQService.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Abstractions\\RabbitMQ\\IRabbitMQService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.257Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "ServiceRegistiration.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure\\ServiceRegistiration.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Infrastructure\\ServiceRegistiration.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure\\ServiceRegistiration.cs",
-              "RelativeToolTip": "GuidePlatform.Infrastructure\\ServiceRegistiration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.264Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "RabbitMQService.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure\\RabbitMQ\\RabbitMQService.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Infrastructure\\RabbitMQ\\RabbitMQService.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure\\RabbitMQ\\RabbitMQService.cs",
-              "RelativeToolTip": "GuidePlatform.Infrastructure\\RabbitMQ\\RabbitMQService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.469Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "SendWpMessageCommandHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Send\\SendWpMessage\\SendWpMessageCommandHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\Send\\SendWpMessage\\SendWpMessageCommandHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\Send\\SendWpMessage\\SendWpMessageCommandHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\Send\\SendWpMessage\\SendWpMessageCommandHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T09:34:00.475Z"
+              "WhenOpened": "2025-09-03T15:44:08.837Z",
+              "EditorCaption": ""
             }
           ]
         }

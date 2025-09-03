@@ -291,7 +291,7 @@ CREATE TABLE notifications (
 CREATE TABLE notification_settings (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID NOT NULL,
-    setting_type VARCHAR(50) NOT NULL, -- email, push, sms
+    setting_type INTEGER NOT NULL, -- 0:email, 1:push, 2:sms, 3:whatsapp, 4:telegram, etc.
     is_enabled BOOLEAN DEFAULT true,
     icon VARCHAR(100) DEFAULT 'settings',
     row_created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -338,6 +338,7 @@ CREATE TABLE search_logs (
     FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
     FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
 );
+
 -- business_analytics table - جدول تحليلات الأعمال
 CREATE TABLE business_analytics (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -368,31 +369,35 @@ CREATE TABLE business_analytics (
 -- SUBSCRIPTION AND PAYMENT TABLES - جداول الاشتراكات والمدفوعات
 -- =====================================================
 
--- subscriptions table - جدول الاشتراكات
+-- guideplatform.subscriptions definition
+
+-- Drop table
+
+-- DROP TABLE guideplatform.subscriptions;
+-- DROP TABLE guideplatform.subscriptions;
 CREATE TABLE subscriptions (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    business_id UUID NOT NULL,
-    subscription_type VARCHAR(20) NOT NULL, -- FREE, SILVER, GOLD
-    start_date DATE NOT NULL,
-    end_date DATE NOT NULL,
-    amount DECIMAL(12,2) NOT NULL,
-    currency VARCHAR(3) DEFAULT 'SYP',
-    status VARCHAR(20) DEFAULT 'active', -- active, expired, cancelled
-    payment_status VARCHAR(20) DEFAULT 'pending', -- pending, paid, failed
-    icon VARCHAR(100) DEFAULT 'subscriptions',
-    row_created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    row_updated_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    row_is_active BOOLEAN DEFAULT true NOT NULL,
-    row_is_deleted BOOLEAN DEFAULT false NOT NULL,
-    auth_user_id UUID,
-    auth_customer_id UUID, -- Reference to auth."Customers"."Id"
-    create_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
-    update_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
-    FOREIGN KEY (business_id) REFERENCES businesses(id) ON DELETE CASCADE,
-    FOREIGN KEY (auth_user_id) REFERENCES auth."AspNetUsers"("Id"),
-    FOREIGN KEY (auth_customer_id) REFERENCES auth."Customers"("Id"),
-    FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
-    FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
+	id uuid DEFAULT gen_random_uuid() NOT NULL,
+	business_id uuid NOT NULL, -- İşletme kimliği
+	start_date date NOT NULL, -- Başlangıç tarihi
+	end_date date NOT NULL, -- Bitiş tarihi
+	amount numeric(12, 2) NOT NULL, -- Abonelik tutarı
+	payment_status int4 DEFAULT 0 NULL, -- Ödeme durumu (0: bekliyor, 1: tamamlandı, 2: başarısız, 3: iade edildi)
+	icon varchar(100) DEFAULT 'subscriptions'::character varying NULL, -- Bu satır kaldırıldı
+	row_created_date timestamptz DEFAULT CURRENT_TIMESTAMP NOT NULL, -- Oluşturulma tarihi
+	row_updated_date timestamptz DEFAULT CURRENT_TIMESTAMP NOT NULL, -- Güncellenme tarihi
+	row_is_active bool DEFAULT true NOT NULL, -- Aktif mi?
+	row_is_deleted bool DEFAULT false NOT NULL, -- Silindi mi?
+	auth_user_id uuid NULL, -- Kimlik doğrulama kullanıcı kimliği
+	auth_customer_id uuid NULL, -- Müşteri kimliği
+	create_user_id uuid NULL, -- Oluşturan kullanıcı kimliği
+	update_user_id uuid NULL, -- Güncelleyen kullanıcı kimliği
+	currency int4 DEFAULT 1 NULL, -- Para birimi (1: SYP, 2: TRY, 3: USD, 4: EUR)
+	status int4 DEFAULT 1 NULL, -- Abonelik durumu (1: aktif, 2: pasif, 3: iptal edildi)
+	subscription_type int4 NOT NULL, -- Abonelik türü (1: ücretsiz, 2: gümüş, 3: altın)
+	CONSTRAINT chk_currency_values CHECK ((currency = ANY (ARRAY[1, 2, 3, 4]))),
+	CONSTRAINT chk_status_values CHECK ((status = ANY (ARRAY[1, 2, 3]))),
+	CONSTRAINT chk_subscription_type_values CHECK ((subscription_type = ANY (ARRAY[1, 2, 3]))),
+	CONSTRAINT subscriptions_pkey PRIMARY KEY (id)
 );
 
 -- payments table - جدول المدفوعات
@@ -493,7 +498,7 @@ CREATE TABLE banners (
     description TEXT,
     photo bytea NULL,
     thumbnail bytea NULL,
-    photo_content_type varchar(50) NULL,
+    photo_content_type int4 NULL,
     link_url VARCHAR(500),
     start_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     end_date TIMESTAMPTZ,
@@ -513,6 +518,7 @@ CREATE TABLE banners (
     FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
     FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
 );
+
 
 -- announcements table - جدول الإعلانات
 CREATE TABLE announcements (
@@ -568,7 +574,7 @@ CREATE TABLE parameters (
 CREATE TABLE files (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     file_name VARCHAR(255) NOT NULL,
-    file_path VARCHAR(500) NOT NULL,
+    file_path BYTEA NOT NULL, -- Binary data for file content
     file_size BIGINT,
     mime_type VARCHAR(100),
     file_type VARCHAR(50), -- image, document, video, audio
@@ -587,7 +593,6 @@ CREATE TABLE files (
     FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
     FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
 );
-
 -- logs table - جدول السجلات
 CREATE TABLE logs (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -616,6 +621,19 @@ CREATE TABLE logs (
 -- INDEXES - الفهارس
 -- =====================================================
 
+CREATE INDEX idx_subscriptions_business_id ON guideplatform.subscriptions USING btree (business_id);
+CREATE INDEX idx_subscriptions_create_user ON guideplatform.subscriptions USING btree (create_user_id);
+CREATE INDEX idx_subscriptions_end_date ON guideplatform.subscriptions USING btree (end_date);
+CREATE INDEX idx_subscriptions_update_user ON guideplatform.subscriptions USING btree (update_user_id);
+
+
+-- guideplatform.subscriptions foreign keys
+
+ALTER TABLE guideplatform.subscriptions ADD CONSTRAINT subscriptions_auth_customer_id_fkey FOREIGN KEY (auth_customer_id) REFERENCES auth."Customers"("Id");
+ALTER TABLE guideplatform.subscriptions ADD CONSTRAINT subscriptions_auth_user_id_fkey FOREIGN KEY (auth_user_id) REFERENCES auth."AspNetUsers"("Id");
+ALTER TABLE guideplatform.subscriptions ADD CONSTRAINT subscriptions_business_id_fkey FOREIGN KEY (business_id) REFERENCES guideplatform.businesses(id) ON DELETE CASCADE;
+ALTER TABLE guideplatform.subscriptions ADD CONSTRAINT subscriptions_create_user_id_fkey FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id");
+ALTER TABLE guideplatform.subscriptions ADD CONSTRAINT subscriptions_update_user_id_fkey FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id");
 -- Categories indexes
 CREATE INDEX idx_categories_active_deleted ON categories USING btree (row_is_active, row_is_deleted);
 CREATE INDEX idx_categories_auth_customer ON categories USING btree (auth_customer_id) WHERE (auth_customer_id IS NOT NULL);
@@ -1056,3 +1074,119 @@ INSERT INTO user_visits (business_id, visit_date, visit_type, icon, auth_user_id
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-15 17:45:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
 -- user_visits tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول زيارات المستخدمين
+
+-- notifications table için örnek veriler - بيانات نموذجية لجدول الإشعارات
+INSERT INTO notifications (recipient_user_id, title, message, notification_type, is_read, read_date, action_url, related_entity_id, related_entity_type, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
+
+-- Aleppo Kebap House için bildirimler - إشعارات مطعم حلب كباب هاوس
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Yeni Değerlendirme', 'Aleppo Kebap House için yeni bir değerlendirme eklendi. 5 yıldız aldı!', 'info', false, NULL, '/businesses/978bea96-ec7f-461b-aefa-deaac61df09e', '978bea96-ec7f-461b-aefa-deaac61df09e', 'business', 'rate_review', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Çalışma Saatleri Güncellendi', 'Aleppo Kebap House çalışma saatleri güncellendi. Artık 10:00-22:00 arası açık.', 'success', true, '2025-01-20 09:15:00+03:00', '/businesses/978bea96-ec7f-461b-aefa-deaac61df09e', '978bea96-ec7f-461b-aefa-deaac61df09e', 'business', 'schedule', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Yeni Hizmet Eklendi', 'Aleppo Kebap House menüsüne yeni hizmetler eklendi. Halep Kebap artık mevcut!', 'info', false, NULL, '/businesses/978bea96-ec7f-461b-aefa-deaac61df09e/services', '978bea96-ec7f-461b-aefa-deaac61df09e', 'business', 'restaurant_menu', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Manbij Lokantası için bildirimler - إشعارات مطعم منبج لوقنتاسي
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Rezervasyon Onayı', 'Manbij Lokantası için yaptığınız rezervasyon onaylandı. 20 Ocak 19:00 için masa hazır.', 'success', true, '2025-01-19 14:30:00+03:00', '/businesses/005542a0-ce29-4aa9-b71e-442dd007de67', '005542a0-ce29-4aa9-b71e-442dd007de67', 'business', 'event_available', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Özel Menü Duyurusu', 'Manbij Lokantası özel Suriye menüsü sunuyor. Bu hafta sonu %20 indirim!', 'info', false, NULL, '/businesses/005542a0-ce29-4aa9-b71e-442dd007de67', '005542a0-ce29-4aa9-b71e-442dd007de67', 'business', 'restaurant_menu', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Yeni İletişim Bilgisi', 'Manbij Lokantası WhatsApp numarası güncellendi. Artık +90 555 234 5678 üzerinden ulaşabilirsiniz.', 'info', false, NULL, '/businesses/005542a0-ce29-4aa9-b71e-442dd007de67/contact', '005542a0-ce29-4aa9-b71e-442dd007de67', 'business', 'contact_whatsapp', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Azaz Sofra için bildirimler - إشعارات مطعم أعزاز سفرة
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Aile Menüsü Hatırlatması', 'Azaz Sofra aile menüsü için rezervasyon yapmayı unutmayın. 4 kişilik paket sadece 120 TL!', 'warning', false, NULL, '/businesses/f60578b0-ca95-4b3f-b2e9-b66679e8f88c', 'f60578b0-ca95-4b3f-b2e9-b66679e8f88c', 'business', 'family_restroom', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Yeni Çalışma Saatleri', 'Azaz Sofra artık 11:00-21:00 arası açık. Hafta sonu da aynı saatlerde hizmet veriyor.', 'info', true, '2025-01-18 16:45:00+03:00', '/businesses/f60578b0-ca95-4b3f-b2e9-b66679e8f88c', 'f60578b0-ca95-4b3f-b2e9-b66679e8f88c', 'business', 'schedule', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Toplu Sipariş İndirimi', 'Azaz Sofra toplu siparişlerde %15 indirim sunuyor. 10 kişi ve üzeri siparişlerde geçerli.', 'success', false, NULL, '/businesses/f60578b0-ca95-4b3f-b2e9-b66679e8f88c', 'f60578b0-ca95-4b3f-b2e9-b66679e8f88c', 'business', 'group', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Afrin Lezzet için bildirimler - إشعارات مطعم عفرين لذة
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Özel Gün Menüsü', 'Afrin Lezzet özel günler için özel menü sunuyor. Doğum günü, evlilik teklifi gibi özel anlar için rezervasyon yapın.', 'info', false, NULL, '/businesses/f76e31c4-3e4e-4a58-a5bb-3a57597603f6', 'f76e31c4-3e4e-4a58-a5bb-3a57597603f6', 'business', 'celebration', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Wine Pairing Etkinliği', 'Afrin Lezzet şarap eşleştirme etkinliği düzenliyor. 25 Ocak Cumartesi 20:00. Sınırlı kontenjan!', 'success', false, NULL, '/businesses/f76e31c4-3e4e-4a58-a5bb-3a57597603f6', 'f76e31c4-3e4e-4a58-a5bb-3a57597603f6', 'business', 'wine_bar', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Vejetaryen Menü Güncellendi', 'Afrin Lezzet vejetaryen menüsü güncellendi. Yeni sebze yemekleri ve protein açısından zengin seçenekler eklendi.', 'info', true, '2025-01-17 12:20:00+03:00', '/businesses/f76e31c4-3e4e-4a58-a5bb-3a57597603f6', 'f76e31c4-3e4e-4a58-a5bb-3a57597603f6', 'business', 'restaurant_menu', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Jarabulus Mutfak için bildirimler - إشعارات مطعم جرابلس مطبخ
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Tatlı Menüsü Genişletildi', 'Jarabulus Mutfak tatlı menüsü genişletildi. Yeni baklava çeşitleri ve künefe seçenekleri eklendi.', 'info', false, NULL, '/businesses/7fb6d642-528b-4dcd-8e58-785b7c9542f4', '7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'business', 'cake', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Kahve Servisi Hatırlatması', 'Jarabulus Mutfak geleneksel Suriye kahvesi servisi sunuyor. Türk kahvesi tarzında hazırlanan özel karışım.', 'warning', false, NULL, '/businesses/7fb6d642-528b-4dcd-8e58-785b7c9542f4', '7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'business', 'coffee', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 'Çorba Çeşitleri Güncellendi', 'Jarabulus Mutfak günlük çorba önerileri güncellendi. Her gün farklı çorba çeşidi sunuluyor.', 'info', true, '2025-01-16 18:10:00+03:00', '/businesses/7fb6d642-528b-4dcd-8e58-785b7c9542f4', '7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'business', 'restaurant_menu', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
+
+-- notifications tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول الإشعارات
+
+-- notification_settings table için örnek veriler - بيانات نموذجية لجدول إعدادات الإشعارات
+INSERT INTO notification_settings (user_id, setting_type, is_enabled, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
+
+-- Ana kullanıcı için bildirim ayarları - إعدادات الإشعارات للمستخدم الرئيسي
+('19a8b428-a57e-4a24-98e3-470258d3d83e', 0, true, 'mail', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('19a8b428-a57e-4a24-98e3-470258d3d83e', 1, true, 'notifications_active', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('19a8b428-a57e-4a24-98e3-470258d3d83e', 2, false, 'sms', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Diğer kullanıcılar için bildirim ayarları - إعدادات الإشعارات للمستخدمين الآخرين
+('129b3784-b9e7-4872-bdab-1666625890b6', 0, true, 'mail', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '129b3784-b9e7-4872-bdab-1666625890b6', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 1, true, 'notifications_active', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('129b3784-b9e7-4872-bdab-1666625890b6', 2, true, 'sms', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e')
+-- notification_settings tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول إعدادات الإشعارات
+
+
+
+-- Sample data for business_analytics - بيانات نموذجية لتحليلات الأعمال
+INSERT INTO business_analytics (business_id, date, views_count, contacts_count, reviews_count, favorites_count, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
+-- Aleppo Kebap House - تحليلات مطعم حلب كباب هاوس
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-01', 156, 23, 8, 45, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-02', 189, 31, 12, 52, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-03', 234, 28, 15, 67, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-04', 198, 35, 9, 58, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('978bea96-ec7f-461b-aefa-deaac61df09e', '2025-01-05', 267, 42, 18, 73, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Manbij Lokantası - تحليلات مطعم منبج
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-01', 98, 15, 6, 28, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-02', 124, 22, 8, 35, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-03', 156, 19, 11, 42, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-04', 112, 26, 7, 31, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('005542a0-ce29-4aa9-b71e-442dd007de67', '2025-01-05', 189, 33, 14, 48, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Azaz Sofra - تحليلات مطعم أعزاز سفرة
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-01', 67, 8, 3, 15, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-02', 89, 12, 5, 22, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-03', 112, 16, 7, 28, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-04', 78, 9, 4, 18, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f60578b0-ca95-4b3f-b2e9-b66679e8f88c', '2025-01-05', 134, 21, 9, 35, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Afrin Lezzet - تحليلات مطعم عفرين لذة
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-01', 145, 19, 7, 38, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-02', 178, 25, 10, 45, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-03', 203, 31, 13, 52, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-04', 167, 22, 8, 41, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('f76e31c4-3e4e-4a58-a5bb-3a57597603f6', '2025-01-05', 234, 38, 16, 58, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+
+-- Jarabulus Mutfak - تحليلات مطعم جرابلس مطبخ
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-01', 89, 12, 4, 23, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-02', 112, 18, 6, 29, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-03', 145, 24, 9, 36, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-04', 98, 14, 5, 25, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
+('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-05', 167, 28, 11, 42, 'analytics', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
+
+
+{
+  "name": "Raqqa Mutfak Evi",
+  "description": "Rakka bölgesinin geleneksel lezzetlerini sunan ev yapımı restoran",
+  "categoryId": "2a5ce345-d636-437f-9795-1144fcaf7665",
+  "subCategoryId": null,
+  "provinceId": "6ae34069-3dcf-461c-8c53-af9730699493",
+  "countriesId": "a2db09e5-910e-4800-a226-68b70c43926e",
+  "districtId": "dd9cd864-8c5f-47a6-a3f3-bdbb5b961477",
+  "address": "Raqqa Çarşı Mahallesi No:8",
+  "phone": "+90 555 678 9012",
+  "mobile": "+90 555 678 9012",
+  "email": "info@raqqamutfak.com",
+  "website": "www.raqqamutfak.com",
+  "facebookUrl": "facebook.com/raqqamutfak",
+  "instagramUrl": "instagram.com/raqqamutfak",
+  "whatsapp": "+90 555 678 9012",
+  "telegram": "@raqqamutfak",
+  "latitude": 35.94944,
+  "longitude": 39.00944,
+  "rating": 4.4,
+  "totalReviews": 110,
+  "viewCount": 1350,
+  "subscriptionType": 1,
+  "isVerified": true,
+  "isFeatured": false,
+  "workingHours": "08:00-22:00",
+  "icon": "restaurant",
+  "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+  "ownerId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+  "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325"
+}

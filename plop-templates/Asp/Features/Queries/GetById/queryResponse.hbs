@@ -3,14 +3,9 @@ using {{application}}.Application.Dtos.ResponseDtos;
 
 namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
 {
-	public class {{name}}QueryResponse
-	{
-		public {{name}}DetailDto {{tableDb}} { get; set; }
-	}
-	
-	public class {{name}}DetailDto : BaseResponseDTO
-	{
-		public Guid Id { get; set; }
-		// Diğer özellikler buraya eklenebilir
-	}
+    public class {{name}}QueryResponse : BaseResponseDto
+    {
+        public int TotalCount { get; set; }
+        public {{tableDb}}DTO {{table}} { get; set; } = new();
+    }
 }

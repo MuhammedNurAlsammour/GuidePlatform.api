@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PoXmikcV3LX8fDItTQzohreWb1j/uRxY7b7TrdPleVjFmXpGwV+1y6/yF1yZJYF8Gabdn846jK+111r1uMvbbg==",
+  "dgSpecHash": "e2qqKXIhHS5r/LXMIepuB41zXjuC1qY2VzN/RJLlYsb+SYiWsAMKQtwL1cBXBYPX8ZXKvCjWDhjOh6yQegTDug==",
   "success": true,
-  "projectFilePath": "d:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\GuidePlatform.API.csproj",
+  "projectFilePath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\GuidePlatform.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Muhammed\\.nuget\\packages\\efcore.namingconventions\\8.0.2\\efcore.namingconventions.8.0.2.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",

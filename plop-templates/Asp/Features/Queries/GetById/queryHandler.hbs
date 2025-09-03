@@ -61,6 +61,13 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
                 var baseQuery = _context.{{tableDb}}
                     .Where(x => x.RowIsActive && !x.RowIsDeleted);
 
+                // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
+                var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
+                var totalCount = await totalCountQuery
+                    .Where(x => x.Id == businessesId.Value)
+                    .AsNoTracking()
+                    .CountAsync(cancellationToken);
+
                 // Yetkilendirme filtreleri uygulanıyor ve {{tableDb}} çekiliyor
                 var {{table}} = await ApplyAuthFilters(baseQuery, authUserId, authCustomerId)
                     .Where(x => x.Id == {{table}}Id.Value)
@@ -79,40 +86,75 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
                     );
                 }
 
-                // Auth kullanıcı bilgileri çekiliyor
+                // 🎯 Tüm kullanıcı bilgilerini toplu olarak al (performans için)
+                var allUserIds = new List<Guid>();
+                
+                // Auth kullanıcı bilgileri
+                if ({{table}}.AuthUserId.HasValue)
+                    allUserIds.Add({{table}}.AuthUserId.Value);
+                
+                // Create kullanıcı bilgileri
+                if ({{table}}.CreateUserId.HasValue)
+                    allUserIds.Add({{table}}.CreateUserId.Value);
+                
+                // Update kullanıcı bilgileri
+                if ({{table}}.UpdateUserId.HasValue)
+                    allUserIds.Add({{table}}.UpdateUserId.Value);
+                
+                // Tek seferde tüm kullanıcı bilgilerini al
+                var allUserDetails = await _authUserService.GetAuthUserDetailsAsync(allUserIds.Distinct().ToList(), cancellationToken);
+
+                // 🎯 Auth kullanıcı bilgilerini al
                 string? authUserName = null;
                 string? authCustomerName = null;
 
-                if ({{table}}.AuthUserId.HasValue)
+                if ({{table}}.AuthUserId.HasValue && allUserDetails.ContainsKey({{table}}.AuthUserId.Value))
                 {
-                    var userDetail = await GetAuthUserDetailAsync({{table}}.AuthUserId.Value, cancellationToken);
-                    if (userDetail != null)
-                    {
-                        authUserName = userDetail.AuthUserName;
-                        authCustomerName = userDetail.AuthCustomerName;
-                    }
+                    var userDetail = allUserDetails[{{table}}.AuthUserId.Value];
+                    authUserName = userDetail.AuthUserName;
+                    authCustomerName = userDetail.AuthCustomerName;
+                }
+
+                // 🎯 Create/Update kullanıcı bilgilerini al
+                string? createUserName = null;
+                string? updateUserName = null;
+
+                if ({{table}}.CreateUserId.HasValue && allUserDetails.ContainsKey({{table}}.CreateUserId.Value))
+                {
+                    var createUserDetail = allUserDetails[{{table}}.CreateUserId.Value];
+                    createUserName = createUserDetail.AuthUserName;
+                }
+
+                if ({{table}}.UpdateUserId.HasValue && allUserDetails.ContainsKey({{table}}.UpdateUserId.Value))
+                {
+                    var updateUserDetail = allUserDetails[{{table}}.UpdateUserId.Value];
+                    updateUserName = updateUserDetail.AuthUserName;
                 }
 
                 // {{tableDb}} detay DTO'su oluşturuluyor
-                var {{table}}Detail = new {{name}}DetailDto
+                var {{table}}Detail = new {{tableDb}}DTO
                 {
-                    Id = {{table}}.Id,
-                    AuthUserId = {{table}}.AuthUserId,
-                    AuthCustomerId = {{table}}.AuthCustomerId,
-                    AuthUserName = authUserName,      // Service'den gelen
-                    AuthCustomerName = authCustomerName, // Service'den gelen
-                    RowCreatedDate = {{table}}.RowCreatedDate,
-                    RowUpdatedDate = {{table}}.RowUpdatedDate,
-                    RowIsActive = {{table}}.RowIsActive,
-                    RowIsDeleted = {{table}}.RowIsDeleted
-                    // Diğer özellikler buraya eklenebilir
+                  Id = {{table}}.Id,
+                  AuthUserId = {{table}}.AuthUserId,
+                  AuthCustomerId = {{table}}.AuthCustomerId,
+                  AuthUserName = authUserName,      // Service'den gelen
+                  AuthCustomerName = authCustomerName, // Service'den gelen
+                  CreateUserName = createUserName,  // Service'den gelen
+                  UpdateUserName = updateUserName,  // Service'den gelen
+                  CreateUserId = {{table}}.CreateUserId,
+                  UpdateUserId = {{table}}.UpdateUserId,
+                  RowCreatedDate = {{table}}.RowCreatedDate,
+                  RowUpdatedDate = {{table}}.RowUpdatedDate,
+                  RowIsActive = {{table}}.RowIsActive,
+                  RowIsDeleted = {{table}}.RowIsDeleted
                 };
 
                 // Başarılı işlem sonucu döndürülüyor
                 return ResultFactory.CreateSuccessResult<{{name}}QueryResponse>(
                     new {{name}}QueryResponse
                     {
-                        {{tableDb}} = {{table}}Detail
+                        {{tableDb}} = {{table}}Detail,
+                        TotalCount = totalCount
                     },
                     request.Id,
                     null,
