@@ -13,6 +13,8 @@ namespace GuidePlatform.Persistence.Contexts
     public DbSet<BusinessesViewModel> businesses { get; set; }
     public DbSet<BusinessImagesViewModel> businessImages { get; set; }
     public DbSet<BusinessContactsViewModel> businessContacts { get; set; }
+    public DbSet<BusinessServicesViewModel> businessServices { get; set; }
+    public DbSet<BusinessWorkingHoursViewModel> businessWorkingHours { get; set; }
     public DbSet<UserFavoritesViewModel> userFavorites { get; set; }
     public DbSet<UserVisitsViewModel> userVisits { get; set; }
 
@@ -27,6 +29,8 @@ namespace GuidePlatform.Persistence.Contexts
       modelBuilder.ApplyConfiguration(new BusinessesMap());
       modelBuilder.ApplyConfiguration(new BusinessImagesMap());
       modelBuilder.ApplyConfiguration(new BusinessContactsMap());
+      modelBuilder.ApplyConfiguration(new BusinessServicesMap());
+      modelBuilder.ApplyConfiguration(new BusinessWorkingHoursMap());
       modelBuilder.ApplyConfiguration(new UserFavoritesMap());
       modelBuilder.ApplyConfiguration(new UserVisitsMap());
     }

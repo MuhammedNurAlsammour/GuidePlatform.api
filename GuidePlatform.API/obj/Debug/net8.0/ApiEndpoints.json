@@ -670,6 +670,428 @@
     ]
   },
   {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessServicesController",
+    "Method": "CreateBusinessServices",
+    "RelativePath": "api/BusinessServices/CreateBusinessServices",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessServices.CreateBusinessServices.CreateBusinessServicesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessServices.CreateBusinessServices.CreateBusinessServicesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessServicesController",
+    "Method": "DeleteBusinessServices",
+    "RelativePath": "api/BusinessServices/DeleteBusinessServices/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessServices.DeleteBusinessServices.DeleteBusinessServicesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessServicesController",
+    "Method": "GetAllBusinessServices",
+    "RelativePath": "api/BusinessServices/GetAllBusinessServices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessServices.GetAllBusinessServices.GetAllBusinessServicesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessServicesController",
+    "Method": "GetAllDropboxesBusinessServices",
+    "RelativePath": "api/BusinessServices/GetAllDropboxesBusinessServices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessServices.GetAllDropboxesBusinessServices.GetAllDropboxesBusinessServicesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessServicesController",
+    "Method": "GetByIdBusinessServices",
+    "RelativePath": "api/BusinessServices/GetByIdBusinessServices",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessServices.GetBusinessServicesById.GetBusinessServicesByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessServicesController",
+    "Method": "UpdateBusinessServices",
+    "RelativePath": "api/BusinessServices/UpdateBusinessServices",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessServices.UpdateBusinessServices.UpdateBusinessServicesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessServices.UpdateBusinessServices.UpdateBusinessServicesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessWorkingHoursController",
+    "Method": "CreateBusinessWorkingHours",
+    "RelativePath": "api/BusinessWorkingHours/CreateBusinessWorkingHours",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessWorkingHours.CreateBusinessWorkingHours.CreateBusinessWorkingHoursCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessWorkingHours.CreateBusinessWorkingHours.CreateBusinessWorkingHoursCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessWorkingHoursController",
+    "Method": "DeleteBusinessWorkingHours",
+    "RelativePath": "api/BusinessWorkingHours/DeleteBusinessWorkingHours/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessWorkingHours.DeleteBusinessWorkingHours.DeleteBusinessWorkingHoursCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessWorkingHoursController",
+    "Method": "GetAllBusinessWorkingHours",
+    "RelativePath": "api/BusinessWorkingHours/GetAllBusinessWorkingHours",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BusinessId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAllBusinessWorkingHours.GetAllBusinessWorkingHoursQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessWorkingHoursController",
+    "Method": "GetAllDropboxesBusinessWorkingHours",
+    "RelativePath": "api/BusinessWorkingHours/GetAllDropboxesBusinessWorkingHours",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAllDropboxesBusinessWorkingHours.GetAllDropboxesBusinessWorkingHoursQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessWorkingHoursController",
+    "Method": "GetByIdBusinessWorkingHours",
+    "RelativePath": "api/BusinessWorkingHours/GetByIdBusinessWorkingHours",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BusinessId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetBusinessWorkingHoursById.GetBusinessWorkingHoursByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessWorkingHoursController",
+    "Method": "UpdateBusinessWorkingHours",
+    "RelativePath": "api/BusinessWorkingHours/UpdateBusinessWorkingHours",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessWorkingHours.UpdateBusinessWorkingHours.UpdateBusinessWorkingHoursCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessWorkingHours.UpdateBusinessWorkingHours.UpdateBusinessWorkingHoursCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "GuidePlatform.API.Controllers.categoriesController",
     "Method": "Createcategories",
     "RelativePath": "api/categories/Createcategories",

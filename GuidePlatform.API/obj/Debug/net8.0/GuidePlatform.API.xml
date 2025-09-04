@@ -270,6 +270,170 @@
             <response code="401">Kullanıcı yetkili değilse.</response>
             <response code="404">Silinecek BusinessImages İşletme Görselleri tablosu bulunamazsa.</response>
         </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessServicesController.GetAllBusinessServices(GuidePlatform.Application.Features.Queries.BusinessServices.GetAllBusinessServices.GetAllBusinessServicesQueryRequest)">
+            <summary>
+            Admin Ana Ekran BusinessServices İşletme Hizmetleri tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessServices İşletme Hizmetleri tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm BusinessServices İşletme Hizmetleri tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>BusinessServices İşletme Hizmetleri tablosu listesini döndürür.</returns>
+            <response code="200">BusinessServices İşletme Hizmetleri tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessServicesController.GetByIdBusinessServices(GuidePlatform.Application.Features.Queries.BusinessServices.GetBusinessServicesById.GetBusinessServicesByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre BusinessServices İşletme Hizmetleri tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir BusinessServices İşletme Hizmetleri tablosu kimliğine göre BusinessServices İşletme Hizmetleri tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">BusinessServices İşletme Hizmetleri tablosu kimliğini içeren istek.</param>
+            <returns>BusinessServices İşletme Hizmetleri tablosu bilgilerini döndürür.</returns>
+            <response code="200">BusinessServices İşletme Hizmetleri tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessServices İşletme Hizmetleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessServicesController.GetAllDropboxesBusinessServices(GuidePlatform.Application.Features.Queries.BusinessServices.GetAllDropboxesBusinessServices.GetAllDropboxesBusinessServicesQueryRequest)">
+            <summary>
+            Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessServices İşletme Hizmetleri tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessServicesController.CreateBusinessServices(GuidePlatform.Application.Features.Commands.BusinessServices.CreateBusinessServices.CreateBusinessServicesCommandRequest)">
+            <summary>
+            Yeni bir BusinessServices İşletme Hizmetleri tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir BusinessServices İşletme Hizmetleri tablosu ekler.
+            </remarks>
+            <param name="request">Yeni BusinessServices İşletme Hizmetleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">BusinessServices İşletme Hizmetleri tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessServicesController.UpdateBusinessServices(GuidePlatform.Application.Features.Commands.BusinessServices.UpdateBusinessServices.UpdateBusinessServicesCommandRequest)">
+            <summary>
+            Mevcut bir BusinessServices İşletme Hizmetleri tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessServices İşletme Hizmetleri tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek BusinessServices İşletme Hizmetleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessServices İşletme Hizmetleri tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek BusinessServices İşletme Hizmetleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessServicesController.DeleteBusinessServices(GuidePlatform.Application.Features.Commands.BusinessServices.DeleteBusinessServices.DeleteBusinessServicesCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip BusinessServices İşletme Hizmetleri tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessServices İşletme Hizmetleri tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek BusinessServices İşletme Hizmetleri tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessServices İşletme Hizmetleri tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek BusinessServices İşletme Hizmetleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessWorkingHoursController.GetAllBusinessWorkingHours(GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAllBusinessWorkingHours.GetAllBusinessWorkingHoursQueryRequest)">
+            <summary>
+            Admin Ana Ekran BusinessWorkingHours İşletme Çalışma Saatleri tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessWorkingHours İşletme Çalışma Saatleri tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm BusinessWorkingHours İşletme Çalışma Saatleri tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>BusinessWorkingHours İşletme Çalışma Saatleri tablosu listesini döndürür.</returns>
+            <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessWorkingHoursController.GetByIdBusinessWorkingHours(GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetBusinessWorkingHoursById.GetBusinessWorkingHoursByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu kimliğine göre BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">BusinessWorkingHours İşletme Çalışma Saatleri tablosu kimliğini içeren istek.</param>
+            <returns>BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini döndürür.</returns>
+            <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessWorkingHoursController.GetAllDropboxesBusinessWorkingHours(GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAllDropboxesBusinessWorkingHours.GetAllDropboxesBusinessWorkingHoursQueryRequest)">
+            <summary>
+            Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>BusinessWorkingHours İşletme Çalışma Saatleri tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessWorkingHours İşletme Çalışma Saatleri tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessWorkingHoursController.CreateBusinessWorkingHours(GuidePlatform.Application.Features.Commands.BusinessWorkingHours.CreateBusinessWorkingHours.CreateBusinessWorkingHoursCommandRequest)">
+            <summary>
+            Yeni bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu ekler.
+            </remarks>
+            <param name="request">Yeni BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">BusinessWorkingHours İşletme Çalışma Saatleri tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessWorkingHoursController.UpdateBusinessWorkingHours(GuidePlatform.Application.Features.Commands.BusinessWorkingHours.UpdateBusinessWorkingHours.UpdateBusinessWorkingHoursCommandRequest)">
+            <summary>
+            Mevcut bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessWorkingHoursController.DeleteBusinessWorkingHours(GuidePlatform.Application.Features.Commands.BusinessWorkingHours.DeleteBusinessWorkingHours.DeleteBusinessWorkingHoursCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+        </member>
         <member name="M:GuidePlatform.API.Controllers.categoriesController.GetAllcategories(GuidePlatform.Application.Features.Queries.categories.GetAllCategories.GetAllCategoriesQueryRequest)">
             <summary>
             Admin Ana Ekran Kategoriler tablosu Listesi Getirir.
