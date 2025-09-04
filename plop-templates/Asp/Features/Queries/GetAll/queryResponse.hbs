@@ -7,6 +7,6 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
   public class {{name}}QueryResponse : BaseResponseDto
   {
     public int TotalCount { get; set; }
-    public List<{{tableDb}}DTO> {{tableDb}} { get; set; } = new();
+    public List<{{folder}}DTO> {{tableDb}} { get; set; } = new();
   }
 }

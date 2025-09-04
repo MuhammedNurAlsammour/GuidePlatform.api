@@ -19,6 +19,7 @@
     <Folder Include="Dtos\RequestDtos\" />
     <Folder Include="Dtos\Response\NewFolder\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Features\Commands\BusinessImages\" />
     <Folder Include="Validators\" />
   </ItemGroup>
 

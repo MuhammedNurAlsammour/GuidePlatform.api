@@ -5,20 +5,22 @@ using System.Reflection;
 
 namespace GuidePlatform.Application
 {
-	public static class ServiceRegistiration
-	{
-		public static void AddApplicationServices(this IServiceCollection services)
-		{
-			services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ServiceRegistiration).GetTypeInfo().Assembly));
+  public static class ServiceRegistiration
+  {
+    public static void AddApplicationServices(this IServiceCollection services)
+    {
+      services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ServiceRegistiration).GetTypeInfo().Assembly));
 
-			// 🎯 AuthUserDetailService'i kaydet
-			services.AddScoped<IAuthUserDetailService, AuthUserDetailService>();
+      // 🎯 AuthUserDetailService'i kaydet
+      services.AddScoped<IAuthUserDetailService, AuthUserDetailService>();
 
-			//  ImageService'i kaydet (temel resim işleme servisi)
-			services.AddScoped<IImageService, ImageService>();
+      //  ImageService'i kaydet (temel resim işleme servisi)
+      services.AddScoped<IImageService, ImageService>();
 
+      // BusinessImageService'i kaydet
+      services.AddScoped<IBusinessImageService, BusinessImageService>();
 
-			// 🎯 Diğer application services buraya eklenebilir
-		}
-	}
+      // 🎯 Diğer application services buraya eklenebilir
+    }
+  }
 }

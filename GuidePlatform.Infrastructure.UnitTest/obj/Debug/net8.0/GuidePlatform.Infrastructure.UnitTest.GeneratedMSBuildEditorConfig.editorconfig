@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GuidePlatform.Infrastructure.UnitTest
-build_property.ProjectDir = D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.api\GuidePlatform.Infrastructure.UnitTest\
+build_property.ProjectDir = D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Infrastructure.UnitTest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

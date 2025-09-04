@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wpHQnFEc7RhlGnXP8+n+1YI8cCgHpxDxJdwIcnQfUEhGbddCxuyBwTsFYmXrNix6/gkLkwYr88uwy522/5ow0w==",
+  "dgSpecHash": "+fRcL/iF9F6yhMFWvIpQAImDLKF+zsu5KEKsgag6eDL6uV9hPgo2/Iv1XqII1BVmur3YotsF4N/94u+u4T4zSA==",
   "success": true,
-  "projectFilePath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj",
+  "projectFilePath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Infrastructure\\GuidePlatform.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Muhammed\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\Muhammed\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",

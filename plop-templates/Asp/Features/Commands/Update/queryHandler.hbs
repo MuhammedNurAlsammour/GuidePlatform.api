@@ -42,23 +42,19 @@ namespace {{application}}.Application.Features.Commands.{{folder}}.{{name}}
           );
         }
 
-        // 🎯 2. Eski durumu kaydet (gerekirse) - 2. Eski durumu kaydet (gerekirse)
-        var oldName = {{table}}.Name;
-        var oldDescription = {{table}}.Description;
-
-        // 🎯 3. Güncellemeleri uygula - 3. Güncellemeleri uygula
+        // 🎯 2. Güncellemeleri uygula - 3. Güncellemeleri uygula
         {{name}}CommandRequest.Map({{table}}, request, _currentUserService);
 
-        // 🎯 4. Entity'yi context'e ekle - 4. Entity'yi context'e ekle
+        // 🎯 3. Entity'yi context'e ekle - 3. Entity'yi context'e ekle
         _context.{{tableDb}}.Update({{table}});
 
-        // 🎯 5. Değişiklikleri kaydet - 5. Değişiklikleri kaydet
+        // 🎯 4. Değişiklikleri kaydet - 4. Değişiklikleri kaydet
         await _context.SaveChangesAsync(cancellationToken);
 
-        // 🎯 4. 🎯 Ek işlemler buraya eklenebilir (örn: ilişkili kayıtlar, validasyonlar, vb.)
+        // 🎯 5. 🎯 Ek işlemler buraya eklenebilir (örn: ilişkili kayıtlar, validasyonlar, vb.)
         // await ProcessAdditionalOperationsAsync({{table}}.Id, request, cancellationToken);
 
-        // 🎯 5. 🎯 Durum değişikliği kontrolü (gerekirse)
+        // 🎯 6. 🎯 Durum değişikliği kontrolü (gerekirse)
         // if (request.Status != null && oldStatus != request.Status)
         // {
         //   await ProcessStatusChangeAsync({{table}}.Id, oldStatus, request.Status, cancellationToken);

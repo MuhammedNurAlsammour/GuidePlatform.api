@@ -64,7 +64,7 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
                 // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
                 var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
                 var totalCount = await totalCountQuery
-                    .Where(x => x.Id == businessesId.Value)
+                    .Where(x => x.Id == {{table}}Id.Value)
                     .AsNoTracking()
                     .CountAsync(cancellationToken);
 
@@ -132,7 +132,7 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
                 }
 
                 // {{tableDb}} detay DTO'su oluşturuluyor
-                var {{table}}Detail = new {{tableDb}}DTO
+                var {{table}}Detail = new {{folder}}DTO
                 {
                   Id = {{table}}.Id,
                   AuthUserId = {{table}}.AuthUserId,

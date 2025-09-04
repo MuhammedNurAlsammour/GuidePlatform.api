@@ -52,6 +52,212 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessContactsController",
+    "Method": "CreateBusinessContacts",
+    "RelativePath": "api/BusinessContacts/CreateBusinessContacts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessContacts.CreateBusinessContacts.CreateBusinessContactsCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessContacts.CreateBusinessContacts.CreateBusinessContactsCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessContactsController",
+    "Method": "DeleteBusinessContacts",
+    "RelativePath": "api/BusinessContacts/DeleteBusinessContacts/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessContacts.DeleteBusinessContacts.DeleteBusinessContactsCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessContactsController",
+    "Method": "GetAllBusinessContacts",
+    "RelativePath": "api/BusinessContacts/GetAllBusinessContacts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllBusinessContacts.GetAllBusinessContactsQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessContactsController",
+    "Method": "GetAllDropboxesBusinessContacts",
+    "RelativePath": "api/BusinessContacts/GetAllDropboxesBusinessContacts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllDropboxesBusinessContacts.GetAllDropboxesBusinessContactsQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessContactsController",
+    "Method": "GetByIdBusinessContacts",
+    "RelativePath": "api/BusinessContacts/GetByIdBusinessContacts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessContacts.GetBusinessContactsById.GetBusinessContactsByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessContactsController",
+    "Method": "UpdateBusinessContacts",
+    "RelativePath": "api/BusinessContacts/UpdateBusinessContacts",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessContacts.UpdateBusinessContacts.UpdateBusinessContactsCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessContacts.UpdateBusinessContacts.UpdateBusinessContactsCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "GuidePlatform.API.Controllers.BusinessesController",
     "Method": "CreateBusinesses",
     "RelativePath": "api/Businesses/CreateBusinesses",
@@ -248,6 +454,212 @@
     "ReturnTypes": [
       {
         "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.Businesses.UpdateBusinesses.UpdateBusinessesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessImagesController",
+    "Method": "CreateBusinessImages",
+    "RelativePath": "api/BusinessImages/CreateBusinessImages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusinessImages.CreateBusinessImagesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusinessImages.CreateBusinessImagesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessImagesController",
+    "Method": "DeleteBusinessImages",
+    "RelativePath": "api/BusinessImages/DeleteBusinessImages/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessImages.DeleteBusinessImages.DeleteBusinessImagesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessImagesController",
+    "Method": "GetAllBusinessImages",
+    "RelativePath": "api/BusinessImages/GetAllBusinessImages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusinessImages.GetAllBusinessImagesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessImagesController",
+    "Method": "GetAllDropboxesBusinessImages",
+    "RelativePath": "api/BusinessImages/GetAllDropboxesBusinessImages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessImages.GetAllDropboxesBusinessImages.GetAllDropboxesBusinessImagesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessImagesController",
+    "Method": "GetByIdBusinessImages",
+    "RelativePath": "api/BusinessImages/GetByIdBusinessImages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.BusinessImages.GetBusinessImagesById.GetBusinessImagesByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.BusinessImagesController",
+    "Method": "UpdateBusinessImages",
+    "RelativePath": "api/BusinessImages/UpdateBusinessImages",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.BusinessImages.UpdateBusinessImages.UpdateBusinessImagesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.BusinessImages.UpdateBusinessImages.UpdateBusinessImagesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -520,6 +932,418 @@
     "ReturnTypes": [
       {
         "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserFavoritesController",
+    "Method": "CreateUserFavorites",
+    "RelativePath": "api/UserFavorites/CreateUserFavorites",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.UserFavorites.CreateUserFavorites.CreateUserFavoritesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.UserFavorites.CreateUserFavorites.CreateUserFavoritesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserFavoritesController",
+    "Method": "DeleteUserFavorites",
+    "RelativePath": "api/UserFavorites/DeleteUserFavorites/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.UserFavorites.DeleteUserFavorites.DeleteUserFavoritesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserFavoritesController",
+    "Method": "GetAllDropboxesUserFavorites",
+    "RelativePath": "api/UserFavorites/GetAllDropboxesUserFavorites",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.UserFavorites.GetAllDropboxesUserFavorites.GetAllDropboxesUserFavoritesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserFavoritesController",
+    "Method": "GetAllUserFavorites",
+    "RelativePath": "api/UserFavorites/GetAllUserFavorites",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.UserFavorites.GetAllUserFavorites.GetAllUserFavoritesQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserFavoritesController",
+    "Method": "GetByIdUserFavorites",
+    "RelativePath": "api/UserFavorites/GetByIdUserFavorites",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.UserFavorites.GetUserFavoritesById.GetUserFavoritesByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserFavoritesController",
+    "Method": "UpdateUserFavorites",
+    "RelativePath": "api/UserFavorites/UpdateUserFavorites",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.UserFavorites.UpdateUserFavorites.UpdateUserFavoritesCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.UserFavorites.UpdateUserFavorites.UpdateUserFavoritesCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserVisitsController",
+    "Method": "CreateUserVisits",
+    "RelativePath": "api/UserVisits/CreateUserVisits",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.UserVisits.CreateUserVisits.CreateUserVisitsCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.UserVisits.CreateUserVisits.CreateUserVisitsCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserVisitsController",
+    "Method": "DeleteUserVisits",
+    "RelativePath": "api/UserVisits/DeleteUserVisits/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.UserVisits.DeleteUserVisits.DeleteUserVisitsCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserVisitsController",
+    "Method": "GetAllDropboxesUserVisits",
+    "RelativePath": "api/UserVisits/GetAllDropboxesUserVisits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.UserVisits.GetAllDropboxesUserVisits.GetAllDropboxesUserVisitsQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserVisitsController",
+    "Method": "GetAllUserVisits",
+    "RelativePath": "api/UserVisits/GetAllUserVisits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Size",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.UserVisits.GetAllUserVisits.GetAllUserVisitsQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserVisitsController",
+    "Method": "GetByIdUserVisits",
+    "RelativePath": "api/UserVisits/GetByIdUserVisits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AuthCustomerId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AuthUserId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Queries.UserVisits.GetUserVisitsById.GetUserVisitsByIdQueryResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GuidePlatform.API.Controllers.UserVisitsController",
+    "Method": "UpdateUserVisits",
+    "RelativePath": "api/UserVisits/UpdateUserVisits",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GuidePlatform.Application.Features.Commands.UserVisits.UpdateUserVisits.UpdateUserVisitsCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GuidePlatform.Application.Dtos.Response.TransactionResultPack\u00601[[GuidePlatform.Application.Features.Commands.UserVisits.UpdateUserVisits.UpdateUserVisitsCommandResponse, GuidePlatform.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

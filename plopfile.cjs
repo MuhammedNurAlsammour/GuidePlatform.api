@@ -10,30 +10,30 @@ module.exports = function (plop) {
   let controllerName = "StockAlertsRepairProcess";
   let destPath = "src/app";
 
-  //Asp
-  // controller BusinessImages
-  //npm run plop-controller  -- --name=BusinessImages   --path=GuidePlatform.API\Controllers
-  //npm run plop-getall -- --name=BetAllbusinessImages  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getalldropboxes -- --name=BetAllDropboxesbusinessImages  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getbyid -- --name=BetbusinessImagesById  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-update -- --name=BpdatebusinessImages  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-delete -- --name=BeletebusinessImages  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-create -- --name=BreatebusinessImages  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-viewModel -- --name=BusinessImages  --path=GuidePlatform.Domain/Entities
-  //npm run plop-map -- --name=BusinessImages  --path=GuidePlatform.Domain/Maps
-  //npm run plop-dto -- --name=BusinessImages  --path=GuidePlatform.Application/Dtos/ResponseDtos
+  //Asp UserVisits
+  // controller UserVisits
+  //npm run plop-controller  -- --name=UserVisits   --path=GuidePlatform.API\Controllers
+  //npm run plop-getall -- --name=GetAllUserVisits  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getalldropboxes -- --name=GetAllDropboxesUserVisits  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getbyid -- --name=GetUserVisitsById  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-update -- --name=UpdateUserVisits  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-delete -- --name=DeleteUserVisits  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-create -- --name=CreateUserVisits  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-viewModel -- --name=UserVisits  --path=GuidePlatform.Domain/Entities
+  //npm run plop-map -- --name=UserVisits  --path=GuidePlatform.Domain/Maps
+  //npm run plop-dto -- --name=UserVisits  --path=GuidePlatform.Application/Dtos/ResponseDtos
 
   //npm run plop-getbyuserid -- --name=GetcategoriesByUserId  --path=GuidePlatform.Application/Features/Queries
 
   //Asp
   let application = "GuidePlatform";
-  let folder = "BusinessImages";
-  let tableDb = "businesses";
-  let table = "businesses";
+  let folder = "UserVisits";
+  let tableDb = "userVisits";
+  let table = "userVisits";
 
   //Asp Controller
-  let nameController = "BusinessImages"; //{{nameController}}Controller
-  let nameCon = "BusinessImages İşletmeler ve Organizasyonlar tablosu";
+  let nameController = "UserVisits"; //{{nameController}}Controller
+  let nameCon = "UserVisits Kullanıcı Ziyaretleri tablosu";
 
   args.forEach((arg) => {
     if (arg.startsWith("--name=")) {

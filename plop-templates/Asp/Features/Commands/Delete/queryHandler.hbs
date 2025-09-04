@@ -25,11 +25,11 @@ namespace {{application}}.Application.Features.Commands.{{folder}}.{{name}}
     {
       try
       {
-        var {{table}} = await _context.{{tableDb}}
+        var {{table}}s = await _context.{{tableDb}}
           .Where(x => x.Id == Guid.Parse(request.Id))
           .FirstOrDefaultAsync(cancellationToken);
 
-        if ({{table}} == null)
+        if ({{table}}s == null)
         {
           return ResultFactory.CreateErrorResult<{{name}}CommandResponse>(
             request.Id,
@@ -44,7 +44,7 @@ namespace {{application}}.Application.Features.Commands.{{folder}}.{{name}}
         await Process{{table}}AdditionalOperationsAsync(Guid.Parse(request.Id), cancellationToken);
 
         // Siparişi sil
-        _context.{{table}}.Remove({{table}});
+        _context.{{table}}.Remove({{table}}s);
         await _context.SaveChangesAsync(cancellationToken);
 
         return ResultFactory.CreateSuccessResult<{{name}}CommandResponse>(
@@ -55,8 +55,8 @@ namespace {{application}}.Application.Features.Commands.{{folder}}.{{name}}
           null,
           null,
           "İşlem Başarılı",
-          "{{table}} silindi ve stok geri iade edildi.",
-          $"{{table}} Id: {{table}}.Id başarıyla silindi ve envanter güncellendi."
+          "{{table}} silindi.",
+          $"{{table}} Id: {{table}}.Id başarıyla silindi."  // 
         );
       }
       catch (Exception ex)

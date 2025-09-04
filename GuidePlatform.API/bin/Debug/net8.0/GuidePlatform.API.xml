@@ -24,6 +24,88 @@
             Send query and return result
             </summary>
         </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessContactsController.GetAllBusinessContacts(GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllBusinessContacts.GetAllBusinessContactsQueryRequest)">
+            <summary>
+            Admin Ana Ekran BusinessContacts İşletme İletişim Bilgileri tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessContacts İşletme İletişim Bilgileri tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm BusinessContacts İşletme İletişim Bilgileri tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>BusinessContacts İşletme İletişim Bilgileri tablosu listesini döndürür.</returns>
+            <response code="200">BusinessContacts İşletme İletişim Bilgileri tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessContactsController.GetByIdBusinessContacts(GuidePlatform.Application.Features.Queries.BusinessContacts.GetBusinessContactsById.GetBusinessContactsByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir BusinessContacts İşletme İletişim Bilgileri tablosu kimliğine göre BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">BusinessContacts İşletme İletişim Bilgileri tablosu kimliğini içeren istek.</param>
+            <returns>BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini döndürür.</returns>
+            <response code="200">BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessContacts İşletme İletişim Bilgileri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessContactsController.GetAllDropboxesBusinessContacts(GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllDropboxesBusinessContacts.GetAllDropboxesBusinessContactsQueryRequest)">
+            <summary>
+            Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessContactsController.CreateBusinessContacts(GuidePlatform.Application.Features.Commands.BusinessContacts.CreateBusinessContacts.CreateBusinessContactsCommandRequest)">
+            <summary>
+            Yeni bir BusinessContacts İşletme İletişim Bilgileri tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir BusinessContacts İşletme İletişim Bilgileri tablosu ekler.
+            </remarks>
+            <param name="request">Yeni BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">BusinessContacts İşletme İletişim Bilgileri tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessContactsController.UpdateBusinessContacts(GuidePlatform.Application.Features.Commands.BusinessContacts.UpdateBusinessContacts.UpdateBusinessContactsCommandRequest)">
+            <summary>
+            Mevcut bir BusinessContacts İşletme İletişim Bilgileri tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessContacts İşletme İletişim Bilgileri tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessContacts İşletme İletişim Bilgileri tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek BusinessContacts İşletme İletişim Bilgileri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessContactsController.DeleteBusinessContacts(GuidePlatform.Application.Features.Commands.BusinessContacts.DeleteBusinessContacts.DeleteBusinessContactsCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip BusinessContacts İşletme İletişim Bilgileri tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessContacts İşletme İletişim Bilgileri tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek BusinessContacts İşletme İletişim Bilgileri tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessContacts İşletme İletişim Bilgileri tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek BusinessContacts İşletme İletişim Bilgileri tablosu bulunamazsa.</response>
+        </member>
         <member name="M:GuidePlatform.API.Controllers.BusinessesController.GetAllBusinesses(GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses.GetAllBusinessesQueryRequest)">
             <summary>
             Admin Ana Ekran Businesses İşletmeler ve Organizasyonlar tablosu Listesi Getirir.
@@ -105,6 +187,88 @@
             <response code="400">İstek geçersizse.</response>
             <response code="401">Kullanıcı yetkili değilse.</response>
             <response code="404">Silinecek Businesses İşletmeler ve Organizasyonlar tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessImagesController.GetAllBusinessImages(GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusinessImages.GetAllBusinessImagesQueryRequest)">
+            <summary>
+            Admin Ana Ekran BusinessImages İşletme Görselleri tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessImages İşletme Görselleri tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm BusinessImages İşletme Görselleri tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>BusinessImages İşletme Görselleri tablosu listesini döndürür.</returns>
+            <response code="200">BusinessImages İşletme Görselleri tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessImagesController.GetByIdBusinessImages(GuidePlatform.Application.Features.Queries.BusinessImages.GetBusinessImagesById.GetBusinessImagesByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre BusinessImages İşletme Görselleri tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir BusinessImages İşletme Görselleri tablosu kimliğine göre BusinessImages İşletme Görselleri tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">BusinessImages İşletme Görselleri tablosu kimliğini içeren istek.</param>
+            <returns>BusinessImages İşletme Görselleri tablosu bilgilerini döndürür.</returns>
+            <response code="200">BusinessImages İşletme Görselleri tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessImages İşletme Görselleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessImagesController.GetAllDropboxesBusinessImages(GuidePlatform.Application.Features.Queries.BusinessImages.GetAllDropboxesBusinessImages.GetAllDropboxesBusinessImagesQueryRequest)">
+            <summary>
+            Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>BusinessImages İşletme Görselleri tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">BusinessImages İşletme Görselleri tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessImagesController.CreateBusinessImages(GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusinessImages.CreateBusinessImagesCommandRequest)">
+            <summary>
+            Yeni bir BusinessImages İşletme Görselleri tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir BusinessImages İşletme Görselleri tablosu ekler.
+            </remarks>
+            <param name="request">Yeni BusinessImages İşletme Görselleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">BusinessImages İşletme Görselleri tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessImagesController.UpdateBusinessImages(GuidePlatform.Application.Features.Commands.BusinessImages.UpdateBusinessImages.UpdateBusinessImagesCommandRequest)">
+            <summary>
+            Mevcut bir BusinessImages İşletme Görselleri tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessImages İşletme Görselleri tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek BusinessImages İşletme Görselleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessImages İşletme Görselleri tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek BusinessImages İşletme Görselleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BusinessImagesController.DeleteBusinessImages(GuidePlatform.Application.Features.Commands.BusinessImages.DeleteBusinessImages.DeleteBusinessImagesCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip BusinessImages İşletme Görselleri tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip BusinessImages İşletme Görselleri tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek BusinessImages İşletme Görselleri tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">BusinessImages İşletme Görselleri tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek BusinessImages İşletme Görselleri tablosu bulunamazsa.</response>
         </member>
         <member name="M:GuidePlatform.API.Controllers.categoriesController.GetAllcategories(GuidePlatform.Application.Features.Queries.categories.GetAllCategories.GetAllCategoriesQueryRequest)">
             <summary>
@@ -244,6 +408,170 @@
             <response code="201">Personel başarıyla oluşturuldu.</response>
             <response code="400">İstek geçersizse.</response>
             <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.GetAllUserFavorites(GuidePlatform.Application.Features.Queries.UserFavorites.GetAllUserFavorites.GetAllUserFavoritesQueryRequest)">
+            <summary>
+            Admin Ana Ekran UserFavorites Kullanıcı Favorileri tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm UserFavorites Kullanıcı Favorileri tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm UserFavorites Kullanıcı Favorileri tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>UserFavorites Kullanıcı Favorileri tablosu listesini döndürür.</returns>
+            <response code="200">UserFavorites Kullanıcı Favorileri tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.GetByIdUserFavorites(GuidePlatform.Application.Features.Queries.UserFavorites.GetUserFavoritesById.GetUserFavoritesByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre UserFavorites Kullanıcı Favorileri tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir UserFavorites Kullanıcı Favorileri tablosu kimliğine göre UserFavorites Kullanıcı Favorileri tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">UserFavorites Kullanıcı Favorileri tablosu kimliğini içeren istek.</param>
+            <returns>UserFavorites Kullanıcı Favorileri tablosu bilgilerini döndürür.</returns>
+            <response code="200">UserFavorites Kullanıcı Favorileri tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">UserFavorites Kullanıcı Favorileri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.GetAllDropboxesUserFavorites(GuidePlatform.Application.Features.Queries.UserFavorites.GetAllDropboxesUserFavorites.GetAllDropboxesUserFavoritesQueryRequest)">
+            <summary>
+            Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">UserFavorites Kullanıcı Favorileri tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.CreateUserFavorites(GuidePlatform.Application.Features.Commands.UserFavorites.CreateUserFavorites.CreateUserFavoritesCommandRequest)">
+            <summary>
+            Yeni bir UserFavorites Kullanıcı Favorileri tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir UserFavorites Kullanıcı Favorileri tablosu ekler.
+            </remarks>
+            <param name="request">Yeni UserFavorites Kullanıcı Favorileri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">UserFavorites Kullanıcı Favorileri tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.UpdateUserFavorites(GuidePlatform.Application.Features.Commands.UserFavorites.UpdateUserFavorites.UpdateUserFavoritesCommandRequest)">
+            <summary>
+            Mevcut bir UserFavorites Kullanıcı Favorileri tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip UserFavorites Kullanıcı Favorileri tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek UserFavorites Kullanıcı Favorileri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">UserFavorites Kullanıcı Favorileri tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek UserFavorites Kullanıcı Favorileri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.DeleteUserFavorites(GuidePlatform.Application.Features.Commands.UserFavorites.DeleteUserFavorites.DeleteUserFavoritesCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip UserFavorites Kullanıcı Favorileri tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip UserFavorites Kullanıcı Favorileri tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek UserFavorites Kullanıcı Favorileri tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">UserFavorites Kullanıcı Favorileri tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek UserFavorites Kullanıcı Favorileri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserVisitsController.GetAllUserVisits(GuidePlatform.Application.Features.Queries.UserVisits.GetAllUserVisits.GetAllUserVisitsQueryRequest)">
+            <summary>
+            Admin Ana Ekran UserVisits Kullanıcı Ziyaretleri tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm UserVisits Kullanıcı Ziyaretleri tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm UserVisits Kullanıcı Ziyaretleri tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>UserVisits Kullanıcı Ziyaretleri tablosu listesini döndürür.</returns>
+            <response code="200">UserVisits Kullanıcı Ziyaretleri tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserVisitsController.GetByIdUserVisits(GuidePlatform.Application.Features.Queries.UserVisits.GetUserVisitsById.GetUserVisitsByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir UserVisits Kullanıcı Ziyaretleri tablosu kimliğine göre UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">UserVisits Kullanıcı Ziyaretleri tablosu kimliğini içeren istek.</param>
+            <returns>UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini döndürür.</returns>
+            <response code="200">UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">UserVisits Kullanıcı Ziyaretleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserVisitsController.GetAllDropboxesUserVisits(GuidePlatform.Application.Features.Queries.UserVisits.GetAllDropboxesUserVisits.GetAllDropboxesUserVisitsQueryRequest)">
+            <summary>
+            Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">UserVisits Kullanıcı Ziyaretleri tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserVisitsController.CreateUserVisits(GuidePlatform.Application.Features.Commands.UserVisits.CreateUserVisits.CreateUserVisitsCommandRequest)">
+            <summary>
+            Yeni bir UserVisits Kullanıcı Ziyaretleri tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir UserVisits Kullanıcı Ziyaretleri tablosu ekler.
+            </remarks>
+            <param name="request">Yeni UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">UserVisits Kullanıcı Ziyaretleri tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserVisitsController.UpdateUserVisits(GuidePlatform.Application.Features.Commands.UserVisits.UpdateUserVisits.UpdateUserVisitsCommandRequest)">
+            <summary>
+            Mevcut bir UserVisits Kullanıcı Ziyaretleri tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip UserVisits Kullanıcı Ziyaretleri tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">UserVisits Kullanıcı Ziyaretleri tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek UserVisits Kullanıcı Ziyaretleri tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.UserVisitsController.DeleteUserVisits(GuidePlatform.Application.Features.Commands.UserVisits.DeleteUserVisits.DeleteUserVisitsCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip UserVisits Kullanıcı Ziyaretleri tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip UserVisits Kullanıcı Ziyaretleri tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek UserVisits Kullanıcı Ziyaretleri tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">UserVisits Kullanıcı Ziyaretleri tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek UserVisits Kullanıcı Ziyaretleri tablosu bulunamazsa.</response>
         </member>
     </members>
 </doc>

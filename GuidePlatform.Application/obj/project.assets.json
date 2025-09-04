@@ -1043,9 +1043,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
+      "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
       "projectName": "GuidePlatform.Application",
-      "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
+      "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Application\\GuidePlatform.Application.csproj",
       "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
       "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\obj\\",
       "projectStyle": "PackageReference",
@@ -1068,8 +1068,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj": {
-              "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj"
+            "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj": {
+              "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain\\GuidePlatform.Domain.csproj"
             }
           }
         }

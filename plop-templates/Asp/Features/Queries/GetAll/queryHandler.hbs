@@ -50,21 +50,21 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
         var allUserIds = new List<Guid>();
 
         // Auth kullanıcı bilgileri
-        var authUserIds = businessess.Where(b => b.AuthUserId.HasValue).Select(b => b.AuthUserId!.Value).ToList();
+        var authUserIds = {{table}}s.Where(b => b.AuthUserId.HasValue).Select(b => b.AuthUserId!.Value).ToList();
         allUserIds.AddRange(authUserIds);
 
         // Create kullanıcı bilgileri
-        var createUserIds = businessess.Where(b => b.CreateUserId.HasValue).Select(b => b.CreateUserId!.Value).ToList();
+        var createUserIds = {{table}}s.Where(b => b.CreateUserId.HasValue).Select(b => b.CreateUserId!.Value).ToList();
         allUserIds.AddRange(createUserIds);
 
         // Update kullanıcı bilgileri
-        var updateUserIds = businessess.Where(b => b.UpdateUserId.HasValue).Select(b => b.UpdateUserId!.Value).ToList();
+        var updateUserIds = {{table}}s.Where(b => b.UpdateUserId.HasValue).Select(b => b.UpdateUserId!.Value).ToList();
         allUserIds.AddRange(updateUserIds);
 
         // Tek seferde tüm kullanıcı bilgilerini al
         var allUserDetails = await _authUserService.GetAuthUserDetailsAsync(allUserIds.Distinct().ToList(), cancellationToken);
 
-        var {{table}}Details = new List<{{tableDb}}DTO>();  // 🎯 {{tableDb}}DTO listesi oluştur
+        var {{table}}Details = new List<{{folder}}DTO>();  // 🎯 {{tableDb}}DTO listesi oluştur
 
         foreach (var {{table}} in {{table}}s)
         {
@@ -72,9 +72,9 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
           string? authUserName = null;
           string? authCustomerName = null;
 
-          if (businesses.AuthUserId.HasValue && allUserDetails.ContainsKey(businesses.AuthUserId.Value))
+          if ({{table}}.AuthUserId.HasValue && allUserDetails.ContainsKey({{table}}.AuthUserId.Value))
           {
-            var userDetail = allUserDetails[businesses.AuthUserId.Value];
+            var userDetail = allUserDetails[{{table}}.AuthUserId.Value];
             authUserName = userDetail.AuthUserName;        // AspNetUsers.UserName
             authCustomerName = userDetail.AuthCustomerName; // Customers.Name
           }
@@ -83,19 +83,19 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
           string? createUserName = null;
           string? updateUserName = null;
 
-          if (businesses.CreateUserId.HasValue && allUserDetails.ContainsKey(businesses.CreateUserId.Value))
+          if ({{table}}.CreateUserId.HasValue && allUserDetails.ContainsKey({{table}}.CreateUserId.Value))
           {
-            var createUserDetail = allUserDetails[businesses.CreateUserId.Value];
+            var createUserDetail = allUserDetails[{{table}}.CreateUserId.Value];
             createUserName = createUserDetail.AuthUserName;
           }
 
-          if (businesses.UpdateUserId.HasValue && allUserDetails.ContainsKey(businesses.UpdateUserId.Value))
+          if ({{table}}.UpdateUserId.HasValue && allUserDetails.ContainsKey({{table}}.UpdateUserId.Value))
           {
-            var updateUserDetail = allUserDetails[businesses.UpdateUserId.Value];
+            var updateUserDetail = allUserDetails[{{table}}.UpdateUserId.Value];
             updateUserName = updateUserDetail.AuthUserName;
           }
 
-          var {{table}}Detail = new {{tableDb}}DTO
+          var {{table}}Detail = new {{folder}}DTO
           {
             Id = {{table}}.Id,
             AuthUserId = {{table}}.AuthUserId,

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj": {}
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj": {}
   },
   "projects": {
-    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj": {
+    "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj",
+        "projectUniqueName": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj",
         "projectName": "GuidePlatform.Domain.UnitTest",
-        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj",
+        "projectPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain.UnitTest\\GuidePlatform.Domain.UnitTest.csproj",
         "packagesPath": "C:\\Users\\Muhammed\\.nuget\\packages\\",
         "outputPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.API\\GuidePlatform.Domain.UnitTest\\obj\\",
         "projectStyle": "PackageReference",
