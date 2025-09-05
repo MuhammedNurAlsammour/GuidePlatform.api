@@ -10,30 +10,30 @@ module.exports = function (plop) {
   let controllerName = "StockAlertsRepairProcess";
   let destPath = "src/app";
 
-  //Asp BusinessWorkingHours
-  // controller BusinessWorkingHours
-  //npm run plop-controller  -- --name=BusinessWorkingHours   --path=GuidePlatform.API\Controllers
-  //npm run plop-getall -- --name=GetAllBusinessWorkingHours  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getalldropboxes -- --name=GetAllDropboxesBusinessWorkingHours  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getbyid -- --name=GetBusinessWorkingHoursById  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-update -- --name=UpdateBusinessWorkingHours  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-delete -- --name=DeleteBusinessWorkingHours  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-create -- --name=CreateBusinessWorkingHours  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-viewModel -- --name=BusinessWorkingHours  --path=GuidePlatform.Domain/Entities
-  //npm run plop-map -- --name=BusinessWorkingHours  --path=GuidePlatform.Domain/Maps
-  //npm run plop-dto -- --name=BusinessWorkingHours  --path=GuidePlatform.Application/Dtos/ResponseDtos
+  //Asp BusinessReviews
+  // controller BusinessReviews
+  //npm run plop-controller  -- --name=BusinessReviews   --path=GuidePlatform.API\Controllers
+  //npm run plop-getall -- --name=GetAllBusinessReviews  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getalldropboxes -- --name=GetAllDropboxesBusinessReviews  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getbyid -- --name=GetBusinessReviewsById  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-update -- --name=UpdateBusinessReviews  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-delete -- --name=DeleteBusinessReviews  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-create -- --name=CreateBusinessReviews  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-viewModel -- --name=BusinessReviews  --path=GuidePlatform.Domain/Entities
+  //npm run plop-map -- --name=BusinessReviews  --path=GuidePlatform.Domain/Maps
+  //npm run plop-dto -- --name=BusinessReviews  --path=GuidePlatform.Application/Dtos/ResponseDtos
 
   //npm run plop-getbyuserid -- --name=GetcategoriesByUserId  --path=GuidePlatform.Application/Features/Queries
 
   //Asp
   let application = "GuidePlatform";
-  let folder = "BusinessWorkingHours";
-  let tableDb = "businessWorkingHours";
-  let table = "businessWorkingHours";
+  let folder = "BusinessReviews";
+  let tableDb = "businessReviews";
+  let table = "businessReviews";
 
   //Asp Controller
-  let nameController = "BusinessWorkingHours"; //{{nameController}}Controller
-  let nameCon = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu";
+  let nameController = "BusinessReviews"; //{{nameController}}Controller
+  let nameCon = "BusinessReviews İşletme Değerlendirmeleri tablosu";
 
   args.forEach((arg) => {
     if (arg.startsWith("--name=")) {

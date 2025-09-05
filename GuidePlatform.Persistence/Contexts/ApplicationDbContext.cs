@@ -1,6 +1,7 @@
 ﻿using GuidePlatform.Application.Abstractions.Contexts;
 using GuidePlatform.Domain.Entities;
 using GuidePlatform.Domain.Maps;
+using Karmed.External.Auth.Library.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace GuidePlatform.Persistence.Contexts
@@ -15,6 +16,7 @@ namespace GuidePlatform.Persistence.Contexts
     public DbSet<BusinessContactsViewModel> businessContacts { get; set; }
     public DbSet<BusinessServicesViewModel> businessServices { get; set; }
     public DbSet<BusinessWorkingHoursViewModel> businessWorkingHours { get; set; }
+    public DbSet<BusinessReviewsViewModel> businessReviews { get; set; }
     public DbSet<UserFavoritesViewModel> userFavorites { get; set; }
     public DbSet<UserVisitsViewModel> userVisits { get; set; }
 
@@ -31,6 +33,7 @@ namespace GuidePlatform.Persistence.Contexts
       modelBuilder.ApplyConfiguration(new BusinessContactsMap());
       modelBuilder.ApplyConfiguration(new BusinessServicesMap());
       modelBuilder.ApplyConfiguration(new BusinessWorkingHoursMap());
+      modelBuilder.ApplyConfiguration(new BusinessReviewsMap());
       modelBuilder.ApplyConfiguration(new UserFavoritesMap());
       modelBuilder.ApplyConfiguration(new UserVisitsMap());
     }

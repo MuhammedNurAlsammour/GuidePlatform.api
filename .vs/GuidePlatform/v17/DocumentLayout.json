@@ -3,60 +3,48 @@
   "WorkspaceRootPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\base\\basequeryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\base\\basequeryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessreviews\\getodatabusinessreviews\\getodatabusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessreviews\\getodatabusinessreviews\\getodatabusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessservices\\getbusinessservicesbyid\\getbusinessservicesbyidqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessservices\\getbusinessservicesbyid\\getbusinessservicesbyidqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\businessreviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\businessreviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessservices\\getbusinessservicesbyid\\getbusinessservicesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessservices\\getbusinessservicesbyid\\getbusinessservicesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessreviews\\getallbusinessreviews\\getallbusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessreviews\\getallbusinessreviews\\getallbusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\uservisitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\uservisitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessreviews\\getodatabusinessreviews\\getodatabusinessreviewsqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessreviews\\getodatabusinessreviews\\getodatabusinessreviewsqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\uservisits\\updateuservisits\\updateuservisitsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\uservisits\\updateuservisits\\updateuservisitsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0333DB07-51F6-4214-AF46-D49FA3F80917}|GuidePlatform.Persistence\\GuidePlatform.Persistence.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.persistence\\contexts\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0333DB07-51F6-4214-AF46-D49FA3F80917}|GuidePlatform.Persistence\\GuidePlatform.Persistence.csproj|solutionrelative:guideplatform.persistence\\contexts\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\userfavoritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\userfavoritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businessreviews\\deletebusinessreviews\\deletebusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businessreviews\\deletebusinessreviews\\deletebusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\userfavorites\\updateuserfavorites\\updateuserfavoritesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\userfavorites\\updateuserfavorites\\updateuserfavoritesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessreviews\\getbusinessreviewsbyid\\getbusinessreviewsbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessreviews\\getbusinessreviewsbyid\\getbusinessreviewsbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businesscontacts\\getbusinesscontactsbyid\\getbusinesscontactsbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businesscontacts\\getbusinesscontactsbyid\\getbusinesscontactsbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businessreviews\\updatebusinessreviews\\updatebusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businessreviews\\updatebusinessreviews\\updatebusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessimages\\getbusinessimagesbyid\\getbusinessimagesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessimages\\getbusinessimagesbyid\\getbusinessimagesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessreviews\\getalldropboxesbusinessreviews\\getalldropboxesbusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessreviews\\getalldropboxesbusinessreviews\\getalldropboxesbusinessreviewsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businesscontacts\\getbusinesscontactsbyid\\getbusinesscontactsbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businesscontacts\\getbusinesscontactsbyid\\getbusinesscontactsbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\abstractions\\contexts\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\abstractions\\contexts\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessimages\\getbusinessimagesbyid\\getbusinessimagesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessimages\\getbusinessimagesbyid\\getbusinessimagesbyidqueryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\businessimages\\getallbusinessimages\\getallbusinessimagesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\businessimages\\getallbusinessimages\\getallbusinessimagesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\businesscontactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\businesscontactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\businesscontacts\\updatebusinesscontacts\\updatebusinesscontactsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\businesscontacts\\updatebusinesscontacts\\updatebusinesscontactsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\configurations\\odataconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\configurations\\odataconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,21 +54,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BaseQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Base\\BaseQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\Base\\BaseQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\Base\\BaseQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\Base\\BaseQueryRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T20:54:42.275Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -91,171 +66,145 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetBusinessServicesByIdQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T20:54:34.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetBusinessServicesByIdQueryResponse.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryResponse.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryResponse.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryResponse.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessServices\\GetBusinessServicesById\\GetBusinessServicesByIdQueryResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T20:27:08.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserVisitsController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\UserVisitsController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\UserVisitsController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\UserVisitsController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\UserVisitsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABSAAAA",
+              "Title": "GetODataBusinessReviewsQueryRequest.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryRequest.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryRequest.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryRequest.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:57:35.409Z",
+              "WhenOpened": "2025-09-05T17:52:58.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UpdateUserVisitsQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\UserVisits\\UpdateUserVisits\\UpdateUserVisitsQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\UserVisits\\UpdateUserVisits\\UpdateUserVisitsQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\UserVisits\\UpdateUserVisits\\UpdateUserVisitsQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\UserVisits\\UpdateUserVisits\\UpdateUserVisitsQueryHandler.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAUwCsAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "GetODataBusinessReviewsQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetODataBusinessReviews\\GetODataBusinessReviewsQueryHandler.cs",
+              "ViewState": "AQIAALwAAAAAAAAAAAAIwAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:57:12.751Z",
+              "WhenOpened": "2025-09-05T17:52:41.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "UserFavoritesController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\UserFavoritesController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\UserFavoritesController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\UserFavoritesController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\UserFavoritesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAApAAAA",
+              "Title": "DeleteBusinessReviewsQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\DeleteBusinessReviews\\DeleteBusinessReviewsQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\DeleteBusinessReviews\\DeleteBusinessReviewsQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\DeleteBusinessReviews\\DeleteBusinessReviewsQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\DeleteBusinessReviews\\DeleteBusinessReviewsQueryHandler.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAkwBsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:30:10.077Z",
+              "WhenOpened": "2025-09-05T17:21:21.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UpdateUserFavoritesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\UserFavorites\\UpdateUserFavorites\\UpdateUserFavoritesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\UserFavorites\\UpdateUserFavorites\\UpdateUserFavoritesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\UserFavorites\\UpdateUserFavorites\\UpdateUserFavoritesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\UserFavorites\\UpdateUserFavorites\\UpdateUserFavoritesQueryHandler.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAUwCsAAAAAAAAA",
+              "Title": "GetBusinessReviewsByIdQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetBusinessReviewsById\\GetBusinessReviewsByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetBusinessReviewsById\\GetBusinessReviewsByIdQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetBusinessReviewsById\\GetBusinessReviewsByIdQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetBusinessReviewsById\\GetBusinessReviewsByIdQueryHandler.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAUwDwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:29:37.421Z",
+              "WhenOpened": "2025-09-05T17:21:18.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "GetBusinessContactsByIdQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryHandler.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAowIYAAAA8AAAA",
+              "Title": "UpdateBusinessReviewsQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\UpdateBusinessReviews\\UpdateBusinessReviewsQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\UpdateBusinessReviews\\UpdateBusinessReviewsQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\UpdateBusinessReviews\\UpdateBusinessReviewsQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\BusinessReviews\\UpdateBusinessReviews\\UpdateBusinessReviewsQueryHandler.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAUwDAAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:12:07.961Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GetBusinessContactsByIdQueryResponse.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryResponse.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryResponse.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryResponse.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessContacts\\GetBusinessContactsById\\GetBusinessContactsByIdQueryResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:12:02.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GetBusinessImagesByIdQueryResponse.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryResponse.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryResponse.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryResponse.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:08:29.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GetAllBusinessImagesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetAllBusinessImages\\GetAllBusinessImagesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetAllBusinessImages\\GetAllBusinessImagesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetAllBusinessImages\\GetAllBusinessImagesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetAllBusinessImages\\GetAllBusinessImagesQueryHandler.cs",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAowH8AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:08:09.31Z",
+              "WhenOpened": "2025-09-05T17:21:16.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "GetBusinessImagesByIdQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessImages\\GetBusinessImagesById\\GetBusinessImagesByIdQueryHandler.cs",
-              "ViewState": "AQIAAIMAAAAAAAAAAAAAAIYAAAA4AAAA",
+              "Title": "GetAllDropboxesBusinessReviewsQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllDropboxesBusinessReviews\\GetAllDropboxesBusinessReviewsQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllDropboxesBusinessReviews\\GetAllDropboxesBusinessReviewsQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllDropboxesBusinessReviews\\GetAllDropboxesBusinessReviewsQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllDropboxesBusinessReviews\\GetAllDropboxesBusinessReviewsQueryHandler.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAUwDMAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:07:51.332Z",
+              "WhenOpened": "2025-09-05T17:21:11.883Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UpdateBusinessContactsQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\BusinessContacts\\UpdateBusinessContacts\\UpdateBusinessContactsQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\BusinessContacts\\UpdateBusinessContacts\\UpdateBusinessContactsQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\BusinessContacts\\UpdateBusinessContacts\\UpdateBusinessContactsQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\BusinessContacts\\UpdateBusinessContacts\\UpdateBusinessContactsQueryHandler.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAjwCoAAAAJAAAA",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
+              "RelativeToolTip": "GuidePlatform.Persistence\\Contexts\\ApplicationDbContext.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAADwvwUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:04:21.276Z",
+              "WhenOpened": "2025-09-05T17:18:37.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "BusinessContactsController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\BusinessContactsController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\BusinessContactsController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\BusinessContactsController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\BusinessContactsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABeAAAA",
+              "DocumentIndex": 9,
+              "Title": "IApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Abstractions\\Contexts\\IApplicationDbContext.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T19:04:17.49Z",
+              "WhenOpened": "2025-09-05T17:17:55.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetAllBusinessReviewsQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllBusinessReviews\\GetAllBusinessReviewsQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllBusinessReviews\\GetAllBusinessReviewsQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllBusinessReviews\\GetAllBusinessReviewsQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\BusinessReviews\\GetAllBusinessReviews\\GetAllBusinessReviewsQueryHandler.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAkwKAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T17:17:42.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BusinessReviewsController.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\BusinessReviewsController.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\BusinessReviewsController.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\BusinessReviewsController.cs",
+              "RelativeToolTip": "GuidePlatform.API\\Controllers\\BusinessReviewsController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAADwv0QAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T17:16:48.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ODataConfiguration.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Configurations\\ODataConfiguration.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.API\\Configurations\\ODataConfiguration.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Configurations\\ODataConfiguration.cs",
+              "RelativeToolTip": "GuidePlatform.API\\Configurations\\ODataConfiguration.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAowAMAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-05T17:16:42.625Z",
               "EditorCaption": ""
             }
           ]

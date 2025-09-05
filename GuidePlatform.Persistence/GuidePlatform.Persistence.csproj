@@ -25,4 +25,10 @@
     <ProjectReference Include="..\GuidePlatform.Application\GuidePlatform.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Karmed.External.Auth.Library">
+      <HintPath>..\GuidePlatform.API\Auth_Library\Karmed.External.Auth.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

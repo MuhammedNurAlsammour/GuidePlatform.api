@@ -14,7 +14,8 @@
           "Microsoft.EntityFrameworkCore.Design": "8.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.2",
           "Newtonsoft.Json": "13.0.3",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.2"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.2",
+          "Karmed.External.Auth.Library": "1.0.0.0"
         },
         "runtime": {
           "GuidePlatform.Persistence.dll": {}
