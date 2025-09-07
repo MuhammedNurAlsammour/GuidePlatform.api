@@ -16,6 +16,9 @@ namespace GuidePlatform.Application.Abstractions.Contexts
     public DbSet<BusinessReviewsViewModel> businessReviews { get; set; }
     public DbSet<UserFavoritesViewModel> userFavorites { get; set; }
     public DbSet<UserVisitsViewModel> userVisits { get; set; }
+    public DbSet<SubscriptionsViewModel> subscriptions { get; set; }
+    public DbSet<PaymentsViewModel> payments { get; set; }
+
 
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
   }

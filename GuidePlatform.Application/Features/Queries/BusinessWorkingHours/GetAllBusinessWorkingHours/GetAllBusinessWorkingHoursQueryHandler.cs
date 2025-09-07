@@ -7,6 +7,7 @@ using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Dtos.ResponseDtos.BusinessWorkingHours;
 using GuidePlatform.Application.Features.Queries.Base;
 using Karmed.External.Auth.Library.Services;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAllBusinessWorkingHours
 {
@@ -34,12 +35,8 @@ namespace GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAll
         var baseQuery = _context.businessWorkingHours
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
 
-        // BusinessId filtresi ekle (eğer verilmişse)
-        if (!string.IsNullOrWhiteSpace(request.BusinessId))
-        {
-          var businessId = Guid.Parse(request.BusinessId);
-          baseQuery = baseQuery.Where(x => x.BusinessId == businessId);
-        }
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = ApplyBusinessWorkingHoursFilters(baseQuery, request);
 
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
@@ -162,6 +159,39 @@ namespace GuidePlatform.Application.Features.Queries.BusinessWorkingHours.GetAll
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// İşletme çalışma saatleri filtrelerini uygular - Applies business working hours filters
+    /// </summary>
+    private IQueryable<BusinessWorkingHoursViewModel> ApplyBusinessWorkingHoursFilters(
+        IQueryable<BusinessWorkingHoursViewModel> query,
+        GetAllBusinessWorkingHoursQueryRequest request)
+    {
+      // 🏢 İşletme bilgileri filtreleri - Business information filters
+      if (!string.IsNullOrWhiteSpace(request.BusinessId))
+      {
+        var businessId = Guid.Parse(request.BusinessId);
+        query = query.Where(x => x.BusinessId == businessId);
+      }
+
+      // ⏰ Çalışma saatleri bilgileri filtreleri - Working hours information filters
+      if (request.DayOfWeek.HasValue)
+        query = query.Where(x => x.DayOfWeek == request.DayOfWeek.Value);
+
+      if (request.OpenTime.HasValue)
+        query = query.Where(x => x.OpenTime == request.OpenTime.Value);
+
+      if (request.CloseTime.HasValue)
+        query = query.Where(x => x.CloseTime == request.CloseTime.Value);
+
+      if (request.IsClosed.HasValue)
+        query = query.Where(x => x.IsClosed == request.IsClosed.Value);
+
+      if (!string.IsNullOrEmpty(request.Icon))
+        query = query.Where(x => x.Icon != null && x.Icon.Contains(request.Icon));
+
+      return query;
     }
   }
 }

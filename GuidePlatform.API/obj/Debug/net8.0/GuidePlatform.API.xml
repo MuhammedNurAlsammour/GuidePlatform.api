@@ -290,7 +290,7 @@
             <response code="401">Kullanıcı yetkili değilse.</response>
             <response code="404">Silinecek BusinessImages İşletme Görselleri tablosu bulunamazsa.</response>
         </member>
-        <member name="M:GuidePlatform.API.Controllers.BusinessReviewsController.GetODataBusinessReviews">
+        <member name="M:GuidePlatform.API.Controllers.BusinessReviewsController.GetODataBusinessReviews(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean})">
             <summary>
             OData endpoint - BusinessReviews için gelişmiş filtreleme ve sorgulama
             </summary>
@@ -680,6 +680,88 @@
             <response code="200">Yetkilendirme başarılı</response>
             <response code="401">Kullanıcı yetkili değilse</response>
         </member>
+        <member name="M:GuidePlatform.API.Controllers.PaymentsController.GetAllPayments(GuidePlatform.Application.Features.Queries.Payments.GetAllPayments.GetAllPaymentsQueryRequest)">
+            <summary>
+            Admin Ana Ekran Payments Ödemeler tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Payments Ödemeler tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Payments Ödemeler tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Payments Ödemeler tablosu listesini döndürür.</returns>
+            <response code="200">Payments Ödemeler tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PaymentsController.GetByIdPayments(GuidePlatform.Application.Features.Queries.Payments.GetPaymentsById.GetPaymentsByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Payments Ödemeler tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Payments Ödemeler tablosu kimliğine göre Payments Ödemeler tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Payments Ödemeler tablosu kimliğini içeren istek.</param>
+            <returns>Payments Ödemeler tablosu bilgilerini döndürür.</returns>
+            <response code="200">Payments Ödemeler tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Payments Ödemeler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PaymentsController.GetAllDropboxesPayments(GuidePlatform.Application.Features.Queries.Payments.GetAllDropboxesPayments.GetAllDropboxesPaymentsQueryRequest)">
+            <summary>
+            Dropboxes Payments Ödemeler tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Payments Ödemeler tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Payments Ödemeler tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>Payments Ödemeler tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Payments Ödemeler tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Payments Ödemeler tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PaymentsController.CreatePayments(GuidePlatform.Application.Features.Commands.Payments.CreatePayments.CreatePaymentsCommandRequest)">
+            <summary>
+            Yeni bir Payments Ödemeler tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Payments Ödemeler tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Payments Ödemeler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Payments Ödemeler tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PaymentsController.UpdatePayments(GuidePlatform.Application.Features.Commands.Payments.UpdatePayments.UpdatePaymentsCommandRequest)">
+            <summary>
+            Mevcut bir Payments Ödemeler tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Payments Ödemeler tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Payments Ödemeler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Payments Ödemeler tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Payments Ödemeler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PaymentsController.DeletePayments(GuidePlatform.Application.Features.Commands.Payments.DeletePayments.DeletePaymentsCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Payments Ödemeler tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Payments Ödemeler tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Payments Ödemeler tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Payments Ödemeler tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Payments Ödemeler tablosu bulunamazsa.</response>
+        </member>
         <member name="M:GuidePlatform.API.Controllers.SendWpMessageController.Send(GuidePlatform.Application.Features.Commands.Send.SendWpMessage.SendWpMessageCommandRequest)">
             <summary>
             Yeni bir personel oluşturur.
@@ -692,6 +774,88 @@
             <response code="201">Personel başarıyla oluşturuldu.</response>
             <response code="400">İstek geçersizse.</response>
             <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SubscriptionsController.GetAllSubscriptions(GuidePlatform.Application.Features.Queries.Subscriptions.GetAllSubscriptions.GetAllSubscriptionsQueryRequest)">
+            <summary>
+            Admin Ana Ekran Subscriptions Abonelikler tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Subscriptions Abonelikler tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Subscriptions Abonelikler tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Subscriptions Abonelikler tablosu listesini döndürür.</returns>
+            <response code="200">Subscriptions Abonelikler tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SubscriptionsController.GetByIdSubscriptions(GuidePlatform.Application.Features.Queries.Subscriptions.GetSubscriptionsById.GetSubscriptionsByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Subscriptions Abonelikler tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Subscriptions Abonelikler tablosu kimliğine göre Subscriptions Abonelikler tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Subscriptions Abonelikler tablosu kimliğini içeren istek.</param>
+            <returns>Subscriptions Abonelikler tablosu bilgilerini döndürür.</returns>
+            <response code="200">Subscriptions Abonelikler tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Subscriptions Abonelikler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SubscriptionsController.GetAllDropboxesSubscriptions(GuidePlatform.Application.Features.Queries.Subscriptions.GetAllDropboxesSubscriptions.GetAllDropboxesSubscriptionsQueryRequest)">
+            <summary>
+            Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>Subscriptions Abonelikler tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Subscriptions Abonelikler tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SubscriptionsController.CreateSubscriptions(GuidePlatform.Application.Features.Commands.Subscriptions.CreateSubscriptions.CreateSubscriptionsCommandRequest)">
+            <summary>
+            Yeni bir Subscriptions Abonelikler tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Subscriptions Abonelikler tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Subscriptions Abonelikler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Subscriptions Abonelikler tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SubscriptionsController.UpdateSubscriptions(GuidePlatform.Application.Features.Commands.Subscriptions.UpdateSubscriptions.UpdateSubscriptionsCommandRequest)">
+            <summary>
+            Mevcut bir Subscriptions Abonelikler tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Subscriptions Abonelikler tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Subscriptions Abonelikler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Subscriptions Abonelikler tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Subscriptions Abonelikler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.SubscriptionsController.DeleteSubscriptions(GuidePlatform.Application.Features.Commands.Subscriptions.DeleteSubscriptions.DeleteSubscriptionsCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Subscriptions Abonelikler tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Subscriptions Abonelikler tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Subscriptions Abonelikler tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Subscriptions Abonelikler tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Subscriptions Abonelikler tablosu bulunamazsa.</response>
         </member>
         <member name="M:GuidePlatform.API.Controllers.UserFavoritesController.GetAllUserFavorites(GuidePlatform.Application.Features.Queries.UserFavorites.GetAllUserFavorites.GetAllUserFavoritesQueryRequest)">
             <summary>

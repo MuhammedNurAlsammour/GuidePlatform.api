@@ -7,6 +7,7 @@ using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Dtos.ResponseDtos.BusinessImages;
 using GuidePlatform.Application.Features.Queries.Base;
 using Karmed.External.Auth.Library.Services;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusinessImages
 {
@@ -33,6 +34,9 @@ namespace GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusine
         // Base query oluştur
         var baseQuery = _context.businessImages
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = ApplyBusinessImagesFilters(baseQuery, request);
 
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
@@ -147,6 +151,27 @@ namespace GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusine
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// İşletme resim filtrelerini uygular - Applies business images filters
+    /// </summary>
+    private IQueryable<BusinessImagesViewModel> ApplyBusinessImagesFilters(
+        IQueryable<BusinessImagesViewModel> query,
+        GetAllBusinessImagesQueryRequest request)
+    {
+      // 🏢 İşletme bilgileri filtreleri - Business information filters
+      if (request.BusinessId.HasValue)
+        query = query.Where(x => x.BusinessId == request.BusinessId.Value);
+
+      // 🖼️ Resim bilgileri filtreleri - Image information filters
+      if (request.IsPrimary.HasValue)
+        query = query.Where(x => x.IsPrimary == request.IsPrimary.Value);
+
+      if (request.SortOrder.HasValue)
+        query = query.Where(x => x.SortOrder == request.SortOrder.Value);
+
+      return query;
     }
   }
 }

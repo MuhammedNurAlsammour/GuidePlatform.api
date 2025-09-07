@@ -5,14 +5,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OData.Query;
 using Microsoft.AspNetCore.OData.Routing.Controllers;
+using Microsoft.EntityFrameworkCore;
 using GuidePlatform.Application.Dtos.Response;
 using GuidePlatform.Application.Dtos.ResponseDtos.BusinessReviews;
+using GuidePlatform.Application.Dtos.Enums;
 using GuidePlatform.Application.Features.Commands.BusinessReviews.CreateBusinessReviews;
 using GuidePlatform.Application.Features.Commands.BusinessReviews.DeleteBusinessReviews;
 using GuidePlatform.Application.Features.Commands.BusinessReviews.UpdateBusinessReviews;
 using GuidePlatform.Application.Features.Queries.BusinessReviews.GetAllBusinessReviews;
 using GuidePlatform.Application.Features.Queries.BusinessReviews.GetBusinessReviewsById;
 using GuidePlatform.Application.Features.Queries.BusinessReviews.GetAllDropboxesBusinessReviews;
+using GuidePlatform.Application.Features.Queries.BusinessReviews.GetODataBusinessReviews;
 using GuidePlatform.Application.Features.Queries.Base;
 using GuidePlatform.API.Controllers.Base;
 using GuidePlatform.Application.Abstractions.Contexts;
@@ -52,22 +55,29 @@ namespace GuidePlatform.API.Controllers
     /// <response code="400">OData sorgusu geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("odata")]
-    [EnableQuery(
-        MaxExpansionDepth = 3, 
-        MaxAnyAllExpressionDepth = 3, 
-        MaxNodeCount = 1000,
-        AllowedQueryOptions = AllowedQueryOptions.All,
-        AllowedArithmeticOperators = AllowedArithmeticOperators.All,
-        AllowedFunctions = AllowedFunctions.AllStringFunctions | AllowedFunctions.AllDateTimeFunctions | AllowedFunctions.AllMathFunctions,
-        AllowedLogicalOperators = AllowedLogicalOperators.All,
-        AllowedOrderByProperties = "Id,BusinessId,BusinessName,ReviewerId,ReviewerName,Rating,Comment,IsVerified,IsApproved,Icon,AuthUserId,AuthCustomerId,AuthUserName,AuthCustomerName,CreateUserId,CreateUserName,UpdateUserId,UpdateUserName,RowCreatedDate,RowUpdatedDate,RowIsActive,RowIsDeleted"
-    )]
     [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "OData BusinessReviews Sorgulama", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
-    public async Task<IQueryable<BusinessReviewsDTO>> GetODataBusinessReviews()
+    public async Task<ActionResult<TransactionResultPack<GetODataBusinessReviewsQueryResponse>>> GetODataBusinessReviews(
+      [FromQuery(Name = "$filter")] string? filter = null,
+      [FromQuery(Name = "$orderby")] string? orderby = null,
+      [FromQuery(Name = "$select")] string? select = null,
+      [FromQuery(Name = "$top")] int? top = null,
+      [FromQuery(Name = "$skip")] int? skip = null,
+      [FromQuery(Name = "$count")] bool? count = null)
     {
-      var response = await _mediator.Send(new GetODataBusinessReviewsQueryRequest());
-      return response?.OperationStatus == true && response.Result != null ? response.Result : new List<BusinessReviewsDTO>().AsQueryable();
+      var request = new GetODataBusinessReviewsQueryRequest
+      {
+        Filter = filter,
+        OrderBy = orderby,
+        Select = select,
+        Top = top,
+        Skip = skip,
+        Count = count
+      };
+
+      var response = await _mediator.Send(request);
+      return response;
     }
+
 
     /// <summary>
     /// Admin Ana Ekran BusinessReviews İşletme Değerlendirmeleri tablosu Listesi Getirir.

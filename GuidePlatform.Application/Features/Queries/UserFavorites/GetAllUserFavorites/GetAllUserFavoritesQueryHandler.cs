@@ -7,6 +7,7 @@ using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Dtos.ResponseDtos.UserFavorites;
 using GuidePlatform.Application.Features.Queries.Base;
 using Karmed.External.Auth.Library.Services;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Features.Queries.UserFavorites.GetAllUserFavorites
 {
@@ -33,6 +34,9 @@ namespace GuidePlatform.Application.Features.Queries.UserFavorites.GetAllUserFav
         // Base query oluştur
         var baseQuery = _context.userFavorites
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = ApplyUserFavoritesFilters(baseQuery, request);
 
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
@@ -140,6 +144,24 @@ namespace GuidePlatform.Application.Features.Queries.UserFavorites.GetAllUserFav
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// Kullanıcı favori filtrelerini uygular - Applies user favorites filters
+    /// </summary>
+    private IQueryable<UserFavoritesViewModel> ApplyUserFavoritesFilters(
+        IQueryable<UserFavoritesViewModel> query,
+        GetAllUserFavoritesQueryRequest request)
+    {
+      // 🏢 İşletme bilgileri filtreleri - Business information filters
+      if (request.BusinessId.HasValue)
+        query = query.Where(x => x.BusinessId == request.BusinessId.Value);
+
+      // ⭐ Favori bilgileri filtreleri - Favorite information filters
+      if (!string.IsNullOrEmpty(request.Icon))
+        query = query.Where(x => x.Icon != null && x.Icon.Contains(request.Icon));
+
+      return query;
     }
   }
 }

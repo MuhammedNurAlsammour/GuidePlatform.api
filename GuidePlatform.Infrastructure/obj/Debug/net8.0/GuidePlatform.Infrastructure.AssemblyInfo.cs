@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GuidePlatform.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d952cc127a1500e942b32d58394eb8a34191f37")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49cef3f6b926d7d792411aa9bf6bffb0dfee533d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GuidePlatform.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GuidePlatform.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

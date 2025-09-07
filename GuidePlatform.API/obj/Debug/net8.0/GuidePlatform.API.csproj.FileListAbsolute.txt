@@ -266,7 +266,6 @@ D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuideP
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.AssemblyInfoInputs.cache
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.AssemblyInfo.cs
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.csproj.CoreCompileInputs.cache
-D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.MvcApplicationPartsAssemblyInfo.cs
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.sourcelink.json
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\staticwebassets.build.json
@@ -284,3 +283,5 @@ D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuideP
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.pdb
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.genruntimeconfig.cache
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\ref\GuidePlatform.API.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\obj\Debug\net8.0\GuidePlatform.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.API\bin\Debug\net8.0\JSON\plop.json

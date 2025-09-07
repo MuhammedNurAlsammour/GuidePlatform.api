@@ -34,6 +34,9 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
         var baseQuery = _context.{{tableDb}}
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
 
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = Apply{{folder}}Filters(baseQuery, request);
+
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
         var totalCount = await totalCountQuery
@@ -138,6 +141,18 @@ namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// Kullanıcı {{folder}} filtrelerini uygular - Applies {{folder}} filters
+    /// </summary>
+    private IQueryable<{{folder}}ViewModel> Apply{{folder}}Filters(
+        IQueryable<{{folder}}ViewModel> query,
+        {{name}}QueryRequest request)
+    {
+  
+  
+      return query;
     }
   }
 }

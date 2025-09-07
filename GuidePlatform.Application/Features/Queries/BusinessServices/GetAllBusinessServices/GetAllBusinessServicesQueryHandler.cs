@@ -7,6 +7,7 @@ using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Dtos.ResponseDtos.BusinessServices;
 using GuidePlatform.Application.Features.Queries.Base;
 using Karmed.External.Auth.Library.Services;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Features.Queries.BusinessServices.GetAllBusinessServices
 {
@@ -34,6 +35,9 @@ namespace GuidePlatform.Application.Features.Queries.BusinessServices.GetAllBusi
         var baseQuery = _context.businessServices
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
 
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = ApplyBusinessServicesFilters(baseQuery, request);
+
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
         var totalCount = await totalCountQuery
@@ -45,7 +49,7 @@ namespace GuidePlatform.Application.Features.Queries.BusinessServices.GetAllBusi
         var businessServicess = await ApplyPagination(filteredQuery, request.GetValidatedPage(), request.GetValidatedSize())
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
-  
+
         // 🎯 Tüm kullanıcı bilgilerini toplu olarak al (performans için)
         var allUserIds = new List<Guid>();
 
@@ -145,6 +149,42 @@ namespace GuidePlatform.Application.Features.Queries.BusinessServices.GetAllBusi
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// İşletme hizmet filtrelerini uygular - Applies business services filters
+    /// </summary>
+    private IQueryable<BusinessServicesViewModel> ApplyBusinessServicesFilters(
+        IQueryable<BusinessServicesViewModel> query,
+        GetAllBusinessServicesQueryRequest request)
+    {
+      // 🏢 İşletme bilgileri filtreleri - Business information filters
+      if (request.BusinessId.HasValue)
+        query = query.Where(x => x.BusinessId == request.BusinessId.Value);
+
+      // 💼 Hizmet bilgileri filtreleri - Service information filters
+      if (!string.IsNullOrEmpty(request.ServiceName))
+        query = query.Where(x => x.ServiceName != null && x.ServiceName.Contains(request.ServiceName));
+
+      if (!string.IsNullOrEmpty(request.ServiceDescription))
+        query = query.Where(x => x.ServiceDescription != null && x.ServiceDescription.Contains(request.ServiceDescription));
+
+      if (request.MinPrice.HasValue)
+        query = query.Where(x => x.Price >= request.MinPrice.Value);
+
+      if (request.MaxPrice.HasValue)
+        query = query.Where(x => x.Price <= request.MaxPrice.Value);
+
+      if (!string.IsNullOrEmpty(request.Currency))
+        query = query.Where(x => x.Currency != null && x.Currency.Contains(request.Currency));
+
+      if (request.IsAvailable.HasValue)
+        query = query.Where(x => x.IsAvailable == request.IsAvailable.Value);
+
+      if (!string.IsNullOrEmpty(request.Icon))
+        query = query.Where(x => x.Icon != null && x.Icon.Contains(request.Icon));
+
+      return query;
     }
   }
 }

@@ -7,6 +7,7 @@ using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Dtos.ResponseDtos.UserVisits;
 using GuidePlatform.Application.Features.Queries.Base;
 using Karmed.External.Auth.Library.Services;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Features.Queries.UserVisits.GetAllUserVisits
 {
@@ -33,6 +34,9 @@ namespace GuidePlatform.Application.Features.Queries.UserVisits.GetAllUserVisits
         // Base query oluştur
         var baseQuery = _context.userVisits
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = ApplyUserVisitsFilters(baseQuery, request);
 
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
@@ -142,6 +146,29 @@ namespace GuidePlatform.Application.Features.Queries.UserVisits.GetAllUserVisits
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// Kullanıcı ziyaret filtrelerini uygular - Applies user visits filters
+    /// </summary>
+    private IQueryable<UserVisitsViewModel> ApplyUserVisitsFilters(
+        IQueryable<UserVisitsViewModel> query,
+        GetAllUserVisitsQueryRequest request)
+    {
+      // 🏢 İşletme bilgileri filtreleri - Business information filters
+      if (request.BusinessId.HasValue)
+        query = query.Where(x => x.BusinessId == request.BusinessId.Value);
+
+      if (request.VisitDate.HasValue)
+        query = query.Where(x => x.VisitDate >= request.VisitDate.Value);
+
+      if (!string.IsNullOrEmpty(request.VisitType))
+        query = query.Where(x => x.VisitType != null && x.VisitType.Contains(request.VisitType));
+
+      if (!string.IsNullOrEmpty(request.Icon))
+        query = query.Where(x => x.Icon != null && x.Icon.Contains(request.Icon));
+
+      return query;
     }
   }
 }

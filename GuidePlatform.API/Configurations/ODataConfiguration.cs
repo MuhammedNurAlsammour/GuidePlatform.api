@@ -56,28 +56,28 @@ namespace GuidePlatform.API.Configurations
       businessReviewsEntityType.Property(x => x.CreateUserId);
       businessReviewsEntityType.Property(x => x.UpdateUserId);
 
-      // String alanları - OData için optimize edilmiş
-      businessReviewsEntityType.Property(x => x.BusinessName).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.ReviewerName).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.Comment).IsFilterable();
+      // String alanları
+      businessReviewsEntityType.Property(x => x.BusinessName);
+      businessReviewsEntityType.Property(x => x.ReviewerName);
+      businessReviewsEntityType.Property(x => x.Comment);
       businessReviewsEntityType.Property(x => x.Icon);
-      businessReviewsEntityType.Property(x => x.AuthUserName).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.AuthCustomerName).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.CreateUserName).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.UpdateUserName).IsFilterable().IsSortable();
+      businessReviewsEntityType.Property(x => x.AuthUserName);
+      businessReviewsEntityType.Property(x => x.AuthCustomerName);
+      businessReviewsEntityType.Property(x => x.CreateUserName);
+      businessReviewsEntityType.Property(x => x.UpdateUserName);
 
-      // Numeric alanları - OData için optimize edilmiş
-      businessReviewsEntityType.Property(x => x.Rating).IsRequired().IsFilterable().IsSortable();
+      // Numeric alanları
+      businessReviewsEntityType.Property(x => x.Rating).IsRequired();
 
-      // Boolean alanları - OData için optimize edilmiş
-      businessReviewsEntityType.Property(x => x.IsVerified).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.IsApproved).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.RowIsActive).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.RowIsDeleted).IsFilterable().IsSortable();
+      // Boolean alanları
+      businessReviewsEntityType.Property(x => x.IsVerified);
+      businessReviewsEntityType.Property(x => x.IsApproved);
+      businessReviewsEntityType.Property(x => x.RowIsActive);
+      businessReviewsEntityType.Property(x => x.RowIsDeleted);
 
-      // DateTime alanları - OData için optimize edilmiş
-      businessReviewsEntityType.Property(x => x.RowCreatedDate).IsFilterable().IsSortable();
-      businessReviewsEntityType.Property(x => x.RowUpdatedDate).IsFilterable().IsSortable();
+      // DateTime alanları
+      businessReviewsEntityType.Property(x => x.RowCreatedDate);
+      businessReviewsEntityType.Property(x => x.RowUpdatedDate);
 
       // Özel fonksiyonlar ekle
       AddCustomFunctions(builder);

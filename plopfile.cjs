@@ -10,30 +10,30 @@ module.exports = function (plop) {
   let controllerName = "StockAlertsRepairProcess";
   let destPath = "src/app";
 
-  //Asp BusinessReviews
-  // controller BusinessReviews
-  //npm run plop-controller  -- --name=BusinessReviews   --path=GuidePlatform.API\Controllers
-  //npm run plop-getall -- --name=GetAllBusinessReviews  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getalldropboxes -- --name=GetAllDropboxesBusinessReviews  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getbyid -- --name=GetBusinessReviewsById  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-update -- --name=UpdateBusinessReviews  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-delete -- --name=DeleteBusinessReviews  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-create -- --name=CreateBusinessReviews  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-viewModel -- --name=BusinessReviews  --path=GuidePlatform.Domain/Entities
-  //npm run plop-map -- --name=BusinessReviews  --path=GuidePlatform.Domain/Maps
-  //npm run plop-dto -- --name=BusinessReviews  --path=GuidePlatform.Application/Dtos/ResponseDtos
+  //Asp Payments
+  // controller Payments
+  //npm run plop-controller  -- --name=Payments   --path=GuidePlatform.API\Controllers
+  //npm run plop-getall -- --name=GetAllPayments  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getalldropboxes -- --name=GetAllDropboxesPayments  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getbyid -- --name=GetPaymentsById  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-update -- --name=UpdatePayments  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-delete -- --name=DeletePayments  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-create -- --name=CreatePayments  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-viewModel -- --name=Payments  --path=GuidePlatform.Domain/Entities
+  //npm run plop-map -- --name=Payments  --path=GuidePlatform.Domain/Maps
+  //npm run plop-dto -- --name=Payments  --path=GuidePlatform.Application/Dtos/ResponseDtos
 
   //npm run plop-getbyuserid -- --name=GetcategoriesByUserId  --path=GuidePlatform.Application/Features/Queries
 
   //Asp
   let application = "GuidePlatform";
-  let folder = "BusinessReviews";
-  let tableDb = "businessReviews";
-  let table = "businessReviews";
+  let folder = "Payments";
+  let tableDb = "payments";
+  let table = "payments";
 
   //Asp Controller
-  let nameController = "BusinessReviews"; //{{nameController}}Controller
-  let nameCon = "BusinessReviews İşletme Değerlendirmeleri tablosu";
+  let nameController = "Payments"; //{{nameController}}Controller
+  let nameCon = "Payments Ödemeler tablosu";
 
   args.forEach((arg) => {
     if (arg.startsWith("--name=")) {

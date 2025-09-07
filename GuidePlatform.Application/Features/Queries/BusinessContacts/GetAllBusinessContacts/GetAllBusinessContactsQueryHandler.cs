@@ -7,6 +7,7 @@ using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Dtos.ResponseDtos.BusinessContacts;
 using GuidePlatform.Application.Features.Queries.Base;
 using Karmed.External.Auth.Library.Services;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllBusinessContacts
 {
@@ -33,6 +34,9 @@ namespace GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllBusi
         // Base query oluştur
         var baseQuery = _context.businessContacts
         .Where(x => x.RowIsActive && !x.RowIsDeleted);
+
+        // 🎯 Filtreleme uygula - Apply filtering
+        baseQuery = ApplyBusinessContactsFilters(baseQuery, request);
 
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
@@ -143,6 +147,30 @@ namespace GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllBusi
             ex.Message
         );
       }
+    }
+
+    /// <summary>
+    /// İşletme iletişim filtrelerini uygular - Applies business contacts filters
+    /// </summary>
+    private IQueryable<BusinessContactsViewModel> ApplyBusinessContactsFilters(
+        IQueryable<BusinessContactsViewModel> query,
+        GetAllBusinessContactsQueryRequest request)
+    {
+      // 🏢 İşletme bilgileri filtreleri - Business information filters
+      if (request.BusinessId.HasValue)
+        query = query.Where(x => x.BusinessId == request.BusinessId.Value);
+
+      // 📞 İletişim bilgileri filtreleri - Contact information filters
+      if (!string.IsNullOrEmpty(request.ContactType))
+        query = query.Where(x => x.ContactType != null && x.ContactType.Contains(request.ContactType));
+
+      if (!string.IsNullOrEmpty(request.ContactValue))
+        query = query.Where(x => x.ContactValue != null && x.ContactValue.Contains(request.ContactValue));
+
+      if (request.IsPrimary.HasValue)
+        query = query.Where(x => x.IsPrimary == request.IsPrimary.Value);
+
+      return query;
     }
   }
 }

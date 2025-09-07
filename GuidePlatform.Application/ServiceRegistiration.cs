@@ -1,5 +1,6 @@
 ﻿using GuidePlatform.Application.Abstractions.Services;
 using GuidePlatform.Application.Services;
+using Karmed.External.Auth.Library.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -19,6 +20,10 @@ namespace GuidePlatform.Application
 
       // BusinessImageService'i kaydet
       services.AddScoped<IBusinessImageService, BusinessImageService>();
+
+      // 🎯 OData Handler'ları için gerekli servisleri kaydet
+      // Bu servisler Program.cs'de zaten kayıtlı ama emin olmak için buraya da ekliyoruz
+      services.AddScoped<ICurrentUserService, CurrentUserService>();
 
       // 🎯 Diğer application services buraya eklenebilir
     }

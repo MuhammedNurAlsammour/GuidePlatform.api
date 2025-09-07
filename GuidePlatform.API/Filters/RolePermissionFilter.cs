@@ -12,23 +12,23 @@ using System.Reflection;
 
 namespace GuidePlatform.API.Filters
 {
-	public class RolePermissionFilter(UserManager<AppUser> userManager) : IAsyncActionFilter
-	{
-		readonly UserManager<AppUser> _userManager = userManager;
+  public class RolePermissionFilter(UserManager<AppUser> userManager) : IAsyncActionFilter
+  {
+    readonly UserManager<AppUser> _userManager = userManager;
 
 
-		public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
-		{
-			var descriptor = context.ActionDescriptor as ControllerActionDescriptor;
+    public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+    {
+      var descriptor = context.ActionDescriptor as ControllerActionDescriptor;
 
-			var attribute = descriptor.MethodInfo.GetCustomAttribute(typeof(AuthorizeDefinitionAttribute)) as AuthorizeDefinitionAttribute;
+      var attribute = descriptor.MethodInfo.GetCustomAttribute(typeof(AuthorizeDefinitionAttribute)) as AuthorizeDefinitionAttribute;
 
-			var name = context.HttpContext.User.Identity?.Name;
-
-
-
-		}
+      var name = context.HttpContext.User.Identity?.Name;
 
 
-	}
+
+    }
+
+
+  }
 }

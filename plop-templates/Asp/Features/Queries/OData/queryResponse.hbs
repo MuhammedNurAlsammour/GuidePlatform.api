@@ -1,0 +1,19 @@
+using {{application}}.Application.Dtos.ResponseDtos.{{folder}};
+using {{application}}.Application.Dtos.Base;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+  /// <summary>
+  /// OData {{folder}} için Response
+  /// </summary>
+  public class {{name}}QueryResponse : BaseResponseDto
+  {
+    public int StatusCode { get; set; }
+    public string Message { get; set; } = string.Empty;
+    public DateTime Timestamp { get; set; }
+    public int TotalCount { get; set; }
+    public List<{{folder}}DTO> {{tableDb}} { get; set; } = new();
+    public int? Count { get; set; }
+    public object? Pagination { get; set; }
+  }
+}

@@ -7,5 +7,13 @@ namespace GuidePlatform.Application.Features.Queries.BusinessContacts.GetAllBusi
   public class GetAllBusinessContactsQueryRequest : BasePaginatedQueryRequest, IRequest<TransactionResultPack<GetAllBusinessContactsQueryResponse>>
   {
     // Page ve Size artık BasePaginatedQueryRequest'ten geliyor
+
+    // 🏢 İşletme bilgileri - Business information
+    public Guid? BusinessId { get; set; }                // İşletme ID - Business ID
+
+    // 📞 İletişim bilgileri - Contact information
+    public string? ContactType { get; set; }              // İletişim türü - Contact type
+    public string? ContactValue { get; set; }             // İletişim değeri - Contact value
+    public bool? IsPrimary { get; set; }                 // Ana iletişim mi - Is primary contact
   }
 }

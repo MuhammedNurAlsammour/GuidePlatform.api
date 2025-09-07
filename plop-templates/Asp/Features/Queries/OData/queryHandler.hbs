@@ -1,0 +1,526 @@
+using Microsoft.EntityFrameworkCore;
+using {{application}}.Application.Abstractions.Contexts;
+using {{application}}.Application.Abstractions.Services;
+using {{application}}.Application.Dtos.ResponseDtos.{{folder}};
+using {{application}}.Application.Features.Queries.Base;
+using Karmed.External.Auth.Library.Contexts;
+using Karmed.External.Auth.Library.Services;
+using Karmed.External.Auth.Library.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
+using MediatR;
+
+namespace {{application}}.Application.Features.Queries.{{folder}}.{{name}}
+{
+  /// <summary>
+  /// OData {{folder}} için Handler
+  /// </summary>
+  public class {{name}}QueryHandler : BaseQueryHandler, IRequestHandler<{{name}}QueryRequest, TransactionResultPack<{{name}}QueryResponse>>
+  {
+    private readonly IApplicationDbContext _context;
+    private readonly AuthDbContext _authContext;
+    private readonly UserManager<AppUser> _userManager;
+
+    public {{name}}QueryHandler(
+        IApplicationDbContext context,
+        AuthDbContext authContext,
+        UserManager<AppUser> userManager,
+        ICurrentUserService currentUserService,
+        IAuthUserDetailService authUserService) : base(currentUserService, authUserService)
+    {
+      _context = context;
+      _authContext = authContext;
+      _userManager = userManager;
+    }
+
+    public async Task<TransactionResultPack<{{name}}QueryResponse>> Handle({{name}}QueryRequest request, CancellationToken cancellationToken)
+    {
+      try
+      {
+        // Context kontrolleri
+        if (_context == null)
+          throw new InvalidOperationException("ApplicationDbContext null");
+
+        if (_context.{{tableDb}} == null)
+          throw new InvalidOperationException("{{tableDb}} DbSet null");
+
+        // {{folder}} OData query'sini oluştur
+        var query = Get{{folder}}ODataQuery();
+
+        // Debug logging
+        System.Diagnostics.Debug.WriteLine($"Handler received filter: '{request.Filter}'");
+
+        // Apply OData filters first (before enriching user names)
+        var filteredQuery = ApplyODataFilters(query, request);
+        System.Diagnostics.Debug.WriteLine($"Filtered query type: {filteredQuery.GetType().Name}");
+
+        // Execute filtered query first to get the actual filtered results
+        var filteredResults = await filteredQuery.ToListAsync(cancellationToken);
+        System.Diagnostics.Debug.WriteLine($"Filtered results count: {filteredResults.Count}");
+
+        // Kullanıcı adlarını doldur (multiple context sorunu nedeniyle ayrı işlem)
+        var enrichedResults = await EnrichWithUserNamesAsync(filteredResults, cancellationToken);
+
+        // Create response object
+        var response = new {{name}}QueryResponse
+        {
+          StatusCode = 200,
+          Message = "Success",
+          Timestamp = DateTime.UtcNow,
+          TotalCount = enrichedResults.Count,
+          {{tableDb}} = enrichedResults
+        };
+
+        // TransactionResultPack ile sarmala
+        var result = new TransactionResultPack<{{name}}QueryResponse>
+        {
+          Result = response,
+          OperationResult = new TransactionResult
+          {
+            Result = TransactionResultEnm.Success,
+            MessageTitle = "İşlem Başarılı",
+            MessageContent = "{{folder}} başarıyla getirildi.",
+            MessageDetail = $"{response.TotalCount} {{folder}} başarıyla getirildi."
+          }
+        };
+
+        return result;
+      }
+      catch (Exception ex)
+      {
+        var errorResponse = new {{name}}QueryResponse
+        {
+          StatusCode = 400,
+          Message = "Error",
+          Timestamp = DateTime.UtcNow,
+          TotalCount = 0,
+          {{tableDb}} = new List<{{folder}}DTO>()
+        };
+
+        var errorResult = new TransactionResultPack<{{name}}QueryResponse>
+        {
+          Result = errorResponse,
+          OperationResult = new TransactionResult
+          {
+            Result = TransactionResultEnm.Error,
+            MessageTitle = "Hata",
+            MessageContent = "OData query oluşturulurken hata oluştu",
+            MessageDetail = ex.Message + " | InnerException: " + (ex.InnerException?.Message ?? "None")
+          }
+        };
+
+        return errorResult;
+      }
+    }
+
+    /// <summary>
+    /// {{folder}} OData query'sini oluşturur
+    /// </summary>
+    private IQueryable<{{folder}}DTO> Get{{folder}}ODataQuery()
+    {
+      // TODO: {{folder}} için özel query implementasyonu
+      // Örnek:
+      // var query = from item in _context.{{tableDb}}
+      //             where item.RowIsActive && !item.RowIsDeleted
+      //             select new {{folder}}DTO
+      //             {
+      //               // DTO mapping
+      //             };
+      // return query;
+      
+      throw new NotImplementedException("Get{{folder}}ODataQuery method must be implemented");
+    }
+
+    /// <summary>
+    /// Kullanıcı adlarını ayrı context ile doldurur (multiple context sorunu nedeniyle)
+    /// </summary>
+    private async Task<List<{{folder}}DTO>> EnrichWithUserNamesAsync(List<{{folder}}DTO> results, CancellationToken cancellationToken)
+    {
+      try
+      {
+        // Tüm user ID'leri topla
+        var allUserIds = new HashSet<Guid>();
+
+        foreach (var item in results)
+        {
+          if (item.AuthUserId.HasValue) allUserIds.Add(item.AuthUserId.Value);
+          if (item.CreateUserId.HasValue) allUserIds.Add(item.CreateUserId.Value);
+          if (item.UpdateUserId.HasValue) allUserIds.Add(item.UpdateUserId.Value);
+          // TODO: Diğer user ID field'ları ekle
+        }
+
+        // UserManager ile kullanıcı bilgilerini al
+        var userDetails = new Dictionary<Guid, string>();
+        if (allUserIds.Any())
+        {
+          var users = await _userManager.Users
+            .Where(u => allUserIds.Contains(u.Id))
+            .Select(u => new { u.Id, u.UserName })
+            .ToListAsync(cancellationToken);
+
+          foreach (var user in users)
+          {
+            userDetails[user.Id] = user.UserName;
+          }
+        }
+
+        // AuthUserDetailDto'dan customer bilgilerini al (AuthCustomerName için)
+        var authCustomerDetails = new Dictionary<Guid, string>();
+
+        if (allUserIds.Any())
+        {
+          var authUserDetails = await _authUserService.GetAuthUserDetailsAsync(allUserIds.ToList(), cancellationToken);
+          foreach (var userDetail in authUserDetails.Values)
+          {
+            if (!string.IsNullOrEmpty(userDetail.AuthCustomerName))
+            {
+              authCustomerDetails[userDetail.AuthUserId] = userDetail.AuthCustomerName;
+            }
+          }
+        }
+
+        // Kullanıcı adlarını doldur
+        foreach (var item in results)
+        {
+          item.AuthUserName = item.AuthUserId.HasValue && userDetails.ContainsKey(item.AuthUserId.Value) ? userDetails[item.AuthUserId.Value] : null;
+          item.AuthCustomerName = item.AuthUserId.HasValue && authCustomerDetails.ContainsKey(item.AuthUserId.Value) ? authCustomerDetails[item.AuthUserId.Value] : null;
+          item.CreateUserName = item.CreateUserId.HasValue && userDetails.ContainsKey(item.CreateUserId.Value) ? userDetails[item.CreateUserId.Value] : null;
+          item.UpdateUserName = item.UpdateUserId.HasValue && userDetails.ContainsKey(item.UpdateUserId.Value) ? userDetails[item.UpdateUserId.Value] : null;
+          // TODO: Diğer user name field'ları ekle
+        }
+
+        return results;
+      }
+      catch (Exception)
+      {
+        // Hata durumunda orijinal results'u döndür
+        return results;
+      }
+    }
+
+    /// <summary>
+    /// OData filters'ı uygular - Comprehensive OData support
+    /// </summary>
+    private IQueryable<{{folder}}DTO> ApplyODataFilters(IQueryable<{{folder}}DTO> query, {{name}}QueryRequest request)
+    {
+      // Apply filters with comprehensive OData support
+      if (!string.IsNullOrEmpty(request.Filter))
+      {
+        // Debug logging
+        System.Diagnostics.Debug.WriteLine($"Applying filter: {request.Filter}");
+        query = ApplyFilterExpression(query, request.Filter);
+        System.Diagnostics.Debug.WriteLine($"Filter applied. Query type: {query.GetType().Name}");
+      }
+
+      // Apply ordering
+      if (!string.IsNullOrEmpty(request.OrderBy))
+      {
+        query = ApplyOrderBy(query, request.OrderBy);
+      }
+
+      // Apply paging
+      if (request.Skip.HasValue && request.Skip > 0)
+      {
+        query = query.Skip(request.Skip.Value);
+      }
+
+      if (request.Top.HasValue && request.Top > 0)
+      {
+        query = query.Take(request.Top.Value);
+      }
+
+      return query;
+    }
+
+    /// <summary>
+    /// Filter expression parser
+    /// </summary>
+    private IQueryable<{{folder}}DTO> ApplyFilterExpression(IQueryable<{{folder}}DTO> query, string filter)
+    {
+      try
+      {
+        System.Diagnostics.Debug.WriteLine($"ApplyFilterExpression: filter='{filter}'");
+
+        // Handle multiple conditions with 'and' and 'or'
+        if (filter.Contains(" and "))
+        {
+          var conditions = filter.Split(new[] { " and " }, StringSplitOptions.RemoveEmptyEntries);
+          foreach (var condition in conditions)
+          {
+            query = ApplySingleFilter(query, condition.Trim());
+          }
+        }
+        else if (filter.Contains(" or "))
+        {
+          var conditions = filter.Split(new[] { " or " }, StringSplitOptions.RemoveEmptyEntries);
+          var firstQuery = ApplySingleFilter(query, conditions[0].Trim());
+          for (int i = 1; i < conditions.Length; i++)
+          {
+            var orQuery = ApplySingleFilter(query, conditions[i].Trim());
+            // Note: OR operations are complex with IQueryable, this is a simplified approach
+            query = firstQuery.Union(orQuery);
+          }
+        }
+        else
+        {
+          query = ApplySingleFilter(query, filter);
+        }
+
+        return query;
+      }
+      catch (Exception)
+      {
+        // If parsing fails, return original query
+        return query;
+      }
+    }
+
+    /// <summary>
+    /// Apply single filter condition
+    /// </summary>
+    private IQueryable<{{folder}}DTO> ApplySingleFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      System.Diagnostics.Debug.WriteLine($"ApplySingleFilter: condition='{condition}'");
+
+      // String operations
+      if (condition.Contains("contains("))
+      {
+        return ApplyContainsFilter(query, condition);
+      }
+      else if (condition.Contains("startswith("))
+      {
+        return ApplyStartsWithFilter(query, condition);
+      }
+      else if (condition.Contains("endswith("))
+      {
+        return ApplyEndsWithFilter(query, condition);
+      }
+      // Comparison operations
+      else if (condition.Contains(" eq "))
+      {
+        return ApplyEqualsFilter(query, condition);
+      }
+      else if (condition.Contains(" ne "))
+      {
+        return ApplyNotEqualsFilter(query, condition);
+      }
+      else if (condition.Contains(" gt "))
+      {
+        return ApplyGreaterThanFilter(query, condition);
+      }
+      else if (condition.Contains(" ge "))
+      {
+        return ApplyGreaterThanOrEqualFilter(query, condition);
+      }
+      else if (condition.Contains(" lt "))
+      {
+        return ApplyLessThanFilter(query, condition);
+      }
+      else if (condition.Contains(" le "))
+      {
+        return ApplyLessThanOrEqualFilter(query, condition);
+      }
+      // Default: try to parse as simple condition
+      else
+      {
+        return ApplySimpleCondition(query, condition);
+      }
+    }
+
+    /// <summary>
+    /// OrderBy uygular - {{folder}} için özel implementasyon
+    /// </summary>
+    private IQueryable<{{folder}}DTO> ApplyOrderBy(IQueryable<{{folder}}DTO> query, string orderBy)
+    {
+      // TODO: {{folder}} için özel OrderBy implementasyonu
+      // Örnek:
+      // if (orderBy.Contains("Name desc"))
+      // {
+      //   query = query.OrderByDescending(x => x.Name);
+      // }
+      // else if (orderBy.Contains("Name asc"))
+      // {
+      //   query = query.OrderBy(x => x.Name);
+      // }
+      // else
+      // {
+      //   query = query.OrderByDescending(x => x.RowCreatedDate);
+      // }
+      // return query;
+      
+      return query.OrderByDescending(x => x.RowCreatedDate);
+    }
+
+    /// <summary>
+    /// Contains filter uygular - {{folder}} için özel implementasyon
+    /// </summary>
+    private IQueryable<{{folder}}DTO> ApplyContainsFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var match = System.Text.RegularExpressions.Regex.Match(condition, @"contains\((\w+),\s*'([^']+)'\)");
+      if (match.Success)
+      {
+        var property = match.Groups[1].Value;
+        var value = match.Groups[2].Value;
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel Contains filter implementasyonu
+          // Örnek:
+          // "name" => query.Where(x => x.Name.Contains(value)),
+          // "description" => query.Where(x => x.Description.Contains(value)),
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    /// <summary>
+    /// Equals filter uygular - {{folder}} için özel implementasyon
+    /// </summary>
+    private IQueryable<{{folder}}DTO> ApplyEqualsFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var parts = condition.Split(new string[] { " eq " }, 2, StringSplitOptions.None);
+      if (parts.Length == 2)
+      {
+        var property = parts[0].Trim();
+        var value = parts[1].Trim().Trim('\'');
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel Equals filter implementasyonu
+          // Örnek:
+          // "id" => query.Where(x => x.Id == Guid.Parse(value)),
+          // "name" => query.Where(x => x.Name == value),
+          // "isactive" => query.Where(x => x.IsActive == bool.Parse(value)),
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    // Additional filter methods for other operations
+    private IQueryable<{{folder}}DTO> ApplyStartsWithFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var match = System.Text.RegularExpressions.Regex.Match(condition, @"startswith\((\w+),\s*'([^']+)'\)");
+      if (match.Success)
+      {
+        var property = match.Groups[1].Value;
+        var value = match.Groups[2].Value;
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel StartsWith filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplyEndsWithFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var match = System.Text.RegularExpressions.Regex.Match(condition, @"endswith\((\w+),\s*'([^']+)'\)");
+      if (match.Success)
+      {
+        var property = match.Groups[1].Value;
+        var value = match.Groups[2].Value;
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel EndsWith filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplyNotEqualsFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var parts = condition.Split(new string[] { " ne " }, 2, StringSplitOptions.None);
+      if (parts.Length == 2)
+      {
+        var property = parts[0].Trim();
+        var value = parts[1].Trim().Trim('\'');
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel NotEquals filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplyGreaterThanFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var parts = condition.Split(new string[] { " gt " }, 2, StringSplitOptions.None);
+      if (parts.Length == 2)
+      {
+        var property = parts[0].Trim();
+        var value = parts[1].Trim();
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel GreaterThan filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplyGreaterThanOrEqualFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var parts = condition.Split(new string[] { " ge " }, 2, StringSplitOptions.None);
+      if (parts.Length == 2)
+      {
+        var property = parts[0].Trim();
+        var value = parts[1].Trim();
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel GreaterThanOrEqual filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplyLessThanFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var parts = condition.Split(new string[] { " lt " }, 2, StringSplitOptions.None);
+      if (parts.Length == 2)
+      {
+        var property = parts[0].Trim();
+        var value = parts[1].Trim();
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel LessThan filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplyLessThanOrEqualFilter(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      var parts = condition.Split(new string[] { " le " }, 2, StringSplitOptions.None);
+      if (parts.Length == 2)
+      {
+        var property = parts[0].Trim();
+        var value = parts[1].Trim();
+
+        return property.ToLower() switch
+        {
+          // TODO: {{folder}} için özel LessThanOrEqual filter implementasyonu
+          _ => query
+        };
+      }
+      return query;
+    }
+
+    private IQueryable<{{folder}}DTO> ApplySimpleCondition(IQueryable<{{folder}}DTO> query, string condition)
+    {
+      // Default implementation - her entity için override edilmeli
+      return query;
+    }
+  }
+}
