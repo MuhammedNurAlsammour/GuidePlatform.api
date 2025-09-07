@@ -39,3 +39,4 @@ D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuideP
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Persistence\obj\Debug\net8.0\GuidePlatform.Persistence.pdb
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Persistence\obj\Debug\net8.0\GuidePlatform.Persistence.genruntimeconfig.cache
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Persistence\obj\Debug\net8.0\ref\GuidePlatform.Persistence.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Persistence\bin\Debug\net8.0\GuidePlatform.Application.xml

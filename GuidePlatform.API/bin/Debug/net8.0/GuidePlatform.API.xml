@@ -24,6 +24,170 @@
             Özel OData fonksiyonları ekle
             </summary>
         </member>
+        <member name="M:GuidePlatform.API.Controllers.ArticlesController.GetAllArticles(GuidePlatform.Application.Features.Queries.Articles.GetAllArticles.GetAllArticlesQueryRequest)">
+            <summary>
+            Admin Ana Ekran Articles Makaleler tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Articles Makaleler tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Articles Makaleler tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Articles Makaleler tablosu listesini döndürür.</returns>
+            <response code="200">Articles Makaleler tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.ArticlesController.GetByIdArticles(GuidePlatform.Application.Features.Queries.Articles.GetArticlesById.GetArticlesByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Articles Makaleler tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Articles Makaleler tablosu kimliğine göre Articles Makaleler tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Articles Makaleler tablosu kimliğini içeren istek.</param>
+            <returns>Articles Makaleler tablosu bilgilerini döndürür.</returns>
+            <response code="200">Articles Makaleler tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Articles Makaleler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.ArticlesController.GetAllDropboxesArticles(GuidePlatform.Application.Features.Queries.Articles.GetAllDropboxesArticles.GetAllDropboxesArticlesQueryRequest)">
+            <summary>
+            Dropboxes Articles Makaleler tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Articles Makaleler tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Articles Makaleler tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>Articles Makaleler tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Articles Makaleler tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Articles Makaleler tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.ArticlesController.CreateArticles(GuidePlatform.Application.Features.Commands.Articles.CreateArticles.CreateArticlesCommandRequest)">
+            <summary>
+            Yeni bir Articles Makaleler tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Articles Makaleler tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Articles Makaleler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Articles Makaleler tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.ArticlesController.UpdateArticles(GuidePlatform.Application.Features.Commands.Articles.UpdateArticles.UpdateArticlesCommandRequest)">
+            <summary>
+            Mevcut bir Articles Makaleler tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Articles Makaleler tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Articles Makaleler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Articles Makaleler tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Articles Makaleler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.ArticlesController.DeleteArticles(GuidePlatform.Application.Features.Commands.Articles.DeleteArticles.DeleteArticlesCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Articles Makaleler tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Articles Makaleler tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Articles Makaleler tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Articles Makaleler tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Articles Makaleler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BannersController.GetAllBanners(GuidePlatform.Application.Features.Queries.Banners.GetAllBanners.GetAllBannersQueryRequest)">
+            <summary>
+            Admin Ana Ekran Banners Bannerlar tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Banners Bannerlar tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Banners Bannerlar tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Banners Bannerlar tablosu listesini döndürür.</returns>
+            <response code="200">Banners Bannerlar tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BannersController.GetByIdBanners(GuidePlatform.Application.Features.Queries.Banners.GetBannersById.GetBannersByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Banners Bannerlar tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Banners Bannerlar tablosu kimliğine göre Banners Bannerlar tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Banners Bannerlar tablosu kimliğini içeren istek.</param>
+            <returns>Banners Bannerlar tablosu bilgilerini döndürür.</returns>
+            <response code="200">Banners Bannerlar tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Banners Bannerlar tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BannersController.GetAllDropboxesBanners(GuidePlatform.Application.Features.Queries.Banners.GetAllDropboxesBanners.GetAllDropboxesBannersQueryRequest)">
+            <summary>
+            Dropboxes Banners Bannerlar tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Banners Bannerlar tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Banners Bannerlar tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>Banners Bannerlar tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Banners Bannerlar tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Banners Bannerlar tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BannersController.CreateBanners(GuidePlatform.Application.Features.Commands.Banners.CreateBanners.CreateBannersCommandRequest)">
+            <summary>
+            Yeni bir Banners Bannerlar tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Banners Bannerlar tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Banners Bannerlar tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Banners Bannerlar tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BannersController.UpdateBanners(GuidePlatform.Application.Features.Commands.Banners.UpdateBanners.UpdateBannersCommandRequest)">
+            <summary>
+            Mevcut bir Banners Bannerlar tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Banners Bannerlar tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Banners Bannerlar tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Banners Bannerlar tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Banners Bannerlar tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.BannersController.DeleteBanners(GuidePlatform.Application.Features.Commands.Banners.DeleteBanners.DeleteBannersCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Banners Bannerlar tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Banners Bannerlar tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Banners Bannerlar tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Banners Bannerlar tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Banners Bannerlar tablosu bulunamazsa.</response>
+        </member>
         <member name="T:GuidePlatform.API.Controllers.Base.BaseController">
             <summary>
             Base class for all controllers with common functionality
@@ -679,6 +843,254 @@
             <returns>HTTP 200 OK başarılı yetkilendirme durumunda döner</returns>
             <response code="200">Yetkilendirme başarılı</response>
             <response code="401">Kullanıcı yetkili değilse</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationsController.GetAllNotifications(GuidePlatform.Application.Features.Queries.Notifications.GetAllNotifications.GetAllNotificationsQueryRequest)">
+            <summary>
+            Admin Ana Ekran Notifications Bildirimler tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Notifications Bildirimler tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Notifications Bildirimler tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Notifications Bildirimler tablosu listesini döndürür.</returns>
+            <response code="200">Notifications Bildirimler tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationsController.GetByIdNotifications(GuidePlatform.Application.Features.Queries.Notifications.GetNotificationsById.GetNotificationsByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Notifications Bildirimler tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Notifications Bildirimler tablosu kimliğine göre Notifications Bildirimler tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Notifications Bildirimler tablosu kimliğini içeren istek.</param>
+            <returns>Notifications Bildirimler tablosu bilgilerini döndürür.</returns>
+            <response code="200">Notifications Bildirimler tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Notifications Bildirimler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationsController.GetAllDropboxesNotifications(GuidePlatform.Application.Features.Queries.Notifications.GetAllDropboxesNotifications.GetAllDropboxesNotificationsQueryRequest)">
+            <summary>
+            Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>Notifications Bildirimler tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Notifications Bildirimler tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationsController.CreateNotifications(GuidePlatform.Application.Features.Commands.Notifications.CreateNotifications.CreateNotificationsCommandRequest)">
+            <summary>
+            Yeni bir Notifications Bildirimler tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Notifications Bildirimler tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Notifications Bildirimler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Notifications Bildirimler tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationsController.UpdateNotifications(GuidePlatform.Application.Features.Commands.Notifications.UpdateNotifications.UpdateNotificationsCommandRequest)">
+            <summary>
+            Mevcut bir Notifications Bildirimler tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Notifications Bildirimler tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Notifications Bildirimler tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Notifications Bildirimler tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Notifications Bildirimler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationsController.DeleteNotifications(GuidePlatform.Application.Features.Commands.Notifications.DeleteNotifications.DeleteNotificationsCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Notifications Bildirimler tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Notifications Bildirimler tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Notifications Bildirimler tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Notifications Bildirimler tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Notifications Bildirimler tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationSettingsController.GetAllNotificationSettings(GuidePlatform.Application.Features.Queries.NotificationSettings.GetAllNotificationSettings.GetAllNotificationSettingsQueryRequest)">
+            <summary>
+            Admin Ana Ekran NotificationSettings Bildirim Ayarları tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm NotificationSettings Bildirim Ayarları tablosulerin listesini getirir.
+            🔍 Ayar türü filtresi - Setting type filter
+            setting_type 0:email, 1:push, 2:sms, 3:whatsapp, 4:telegram, etc.
+            </remarks>
+            <param name="request">Tüm NotificationSettings Bildirim Ayarları tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>NotificationSettings Bildirim Ayarları tablosu listesini döndürür.</returns>
+            <response code="200">NotificationSettings Bildirim Ayarları tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationSettingsController.GetByIdNotificationSettings(GuidePlatform.Application.Features.Queries.NotificationSettings.GetNotificationSettingsById.GetNotificationSettingsByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre NotificationSettings Bildirim Ayarları tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir NotificationSettings Bildirim Ayarları tablosu kimliğine göre NotificationSettings Bildirim Ayarları tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">NotificationSettings Bildirim Ayarları tablosu kimliğini içeren istek.</param>
+            <returns>NotificationSettings Bildirim Ayarları tablosu bilgilerini döndürür.</returns>
+            <response code="200">NotificationSettings Bildirim Ayarları tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">NotificationSettings Bildirim Ayarları tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationSettingsController.GetAllDropboxesNotificationSettings(GuidePlatform.Application.Features.Queries.NotificationSettings.GetAllDropboxesNotificationSettings.GetAllDropboxesNotificationSettingsQueryRequest)">
+            <summary>
+            Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">NotificationSettings Bildirim Ayarları tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationSettingsController.CreateNotificationSettings(GuidePlatform.Application.Features.Commands.NotificationSettings.CreateNotificationSettings.CreateNotificationSettingsCommandRequest)">
+            <summary>
+            Yeni bir NotificationSettings Bildirim Ayarları tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir NotificationSettings Bildirim Ayarları tablosu ekler.
+            </remarks>
+            <param name="request">Yeni NotificationSettings Bildirim Ayarları tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">NotificationSettings Bildirim Ayarları tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationSettingsController.UpdateNotificationSettings(GuidePlatform.Application.Features.Commands.NotificationSettings.UpdateNotificationSettings.UpdateNotificationSettingsCommandRequest)">
+            <summary>
+            Mevcut bir NotificationSettings Bildirim Ayarları tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip NotificationSettings Bildirim Ayarları tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek NotificationSettings Bildirim Ayarları tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">NotificationSettings Bildirim Ayarları tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek NotificationSettings Bildirim Ayarları tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.NotificationSettingsController.DeleteNotificationSettings(GuidePlatform.Application.Features.Commands.NotificationSettings.DeleteNotificationSettings.DeleteNotificationSettingsCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip NotificationSettings Bildirim Ayarları tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip NotificationSettings Bildirim Ayarları tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek NotificationSettings Bildirim Ayarları tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">NotificationSettings Bildirim Ayarları tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek NotificationSettings Bildirim Ayarları tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PagesController.GetAllPages(GuidePlatform.Application.Features.Queries.Pages.GetAllPages.GetAllPagesQueryRequest)">
+            <summary>
+            Admin Ana Ekran Pages Sayfalar tablosu Listesi Getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Pages Sayfalar tablosulerin listesini getirir.
+            </remarks>
+            <param name="request">Tüm Pages Sayfalar tablosuleri getirme parametrelerini içeren istek.</param>
+            <returns>Pages Sayfalar tablosu listesini döndürür.</returns>
+            <response code="200">Pages Sayfalar tablosu listesini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PagesController.GetByIdPages(GuidePlatform.Application.Features.Queries.Pages.GetPagesById.GetPagesByIdQueryRequest)">
+            <summary>
+            Belirtilen ID'ye göre Pages Sayfalar tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirli bir Pages Sayfalar tablosu kimliğine göre Pages Sayfalar tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Pages Sayfalar tablosu kimliğini içeren istek.</param>
+            <returns>Pages Sayfalar tablosu bilgilerini döndürür.</returns>
+            <response code="200">Pages Sayfalar tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Pages Sayfalar tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PagesController.GetAllDropboxesPages(GuidePlatform.Application.Features.Queries.Pages.GetAllDropboxesPages.GetAllDropboxesPagesQueryRequest)">
+            <summary>
+            Dropboxes Pages Sayfalar tablosu tablosu bilgilerini getirir.
+            </summary>
+            <remarks>
+            Bu uç nokta, Dropboxes Pages Sayfalar tablosu tablosu bilgilerini getirir.
+            </remarks>
+            <param name="request">Dropboxes Pages Sayfalar tablosu tablosu bilgilerini içeren istek.</param> 
+            <returns>Pages Sayfalar tablosu tablosu bilgilerini döndürür.</returns>
+            <response code="200">Dropboxes Pages Sayfalar tablosu tablosu bilgilerini döndürür.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Pages Sayfalar tablosu tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PagesController.CreatePages(GuidePlatform.Application.Features.Commands.Pages.CreatePages.CreatePagesCommandRequest)">
+            <summary>
+            Yeni bir Pages Sayfalar tablosu ekler.
+            </summary>
+            <remarks>
+            Bu uç nokta, yeni bir Pages Sayfalar tablosu ekler.
+            </remarks>
+            <param name="request">Yeni Pages Sayfalar tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="201">Pages Sayfalar tablosu başarıyla oluşturuldu.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PagesController.UpdatePages(GuidePlatform.Application.Features.Commands.Pages.UpdatePages.UpdatePagesCommandRequest)">
+            <summary>
+            Mevcut bir Pages Sayfalar tablosu kaydını günceller.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Pages Sayfalar tablosunin bilgilerini günceller.
+            </remarks>
+            <param name="request">Güncellenecek Pages Sayfalar tablosu bilgilerini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Pages Sayfalar tablosu başarıyla güncellendi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Güncellenecek Pages Sayfalar tablosu bulunamazsa.</response>
+        </member>
+        <member name="M:GuidePlatform.API.Controllers.PagesController.DeletePages(GuidePlatform.Application.Features.Commands.Pages.DeletePages.DeletePagesCommandRequest)">
+            <summary>
+            Belirtilen ID'ye sahip Pages Sayfalar tablosu kaydını siler.
+            </summary>
+            <remarks>
+            Bu uç nokta, belirtilen ID'ye sahip Pages Sayfalar tablosu kaydını siler.
+            </remarks>
+            <param name="request">Silinecek Pages Sayfalar tablosu kimliğini içeren istek.</param>
+            <returns>İşlem sonucunu döndürür.</returns>
+            <response code="200">Pages Sayfalar tablosu başarıyla silindi.</response>
+            <response code="400">İstek geçersizse.</response>
+            <response code="401">Kullanıcı yetkili değilse.</response>
+            <response code="404">Silinecek Pages Sayfalar tablosu bulunamazsa.</response>
         </member>
         <member name="M:GuidePlatform.API.Controllers.PaymentsController.GetAllPayments(GuidePlatform.Application.Features.Queries.Payments.GetAllPayments.GetAllPaymentsQueryRequest)">
             <summary>

@@ -35,3 +35,4 @@ D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuideP
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Infrastructure\obj\Debug\net8.0\refint\GuidePlatform.Infrastructure.dll
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Infrastructure\obj\Debug\net8.0\GuidePlatform.Infrastructure.pdb
 D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Infrastructure\obj\Debug\net8.0\ref\GuidePlatform.Infrastructure.dll
+D:\Development\Personal\Platforms\GuidePlatform\backend\GuidePlatform.API\GuidePlatform.Infrastructure\bin\Debug\net8.0\GuidePlatform.Application.xml

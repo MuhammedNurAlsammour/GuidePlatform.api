@@ -10,30 +10,30 @@ module.exports = function (plop) {
   let controllerName = "StockAlertsRepairProcess";
   let destPath = "src/app";
 
-  //Asp Payments
-  // controller Payments
-  //npm run plop-controller  -- --name=Payments   --path=GuidePlatform.API\Controllers
-  //npm run plop-getall -- --name=GetAllPayments  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getalldropboxes -- --name=GetAllDropboxesPayments  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-getbyid -- --name=GetPaymentsById  --path=GuidePlatform.Application/Features/Queries
-  //npm run plop-update -- --name=UpdatePayments  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-delete -- --name=DeletePayments  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-create -- --name=CreatePayments  --path=GuidePlatform.Application/Features/Commands
-  //npm run plop-viewModel -- --name=Payments  --path=GuidePlatform.Domain/Entities
-  //npm run plop-map -- --name=Payments  --path=GuidePlatform.Domain/Maps
-  //npm run plop-dto -- --name=Payments  --path=GuidePlatform.Application/Dtos/ResponseDtos
+  //Asp Banners
+  // controller Banners
+  //npm run plop-controller  -- --name=Banners   --path=GuidePlatform.API\Controllers
+  //npm run plop-getall -- --name=GetAllBanners  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getalldropboxes -- --name=GetAllDropboxesBanners  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-getbyid -- --name=GetBannersById  --path=GuidePlatform.Application/Features/Queries
+  //npm run plop-update -- --name=UpdateBanners  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-delete -- --name=DeleteBanners  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-create -- --name=CreateBanners  --path=GuidePlatform.Application/Features/Commands
+  //npm run plop-viewModel -- --name=Banners  --path=GuidePlatform.Domain/Entities
+  //npm run plop-map -- --name=Banners  --path=GuidePlatform.Domain/Maps
+  //npm run plop-dto -- --name=Banners  --path=GuidePlatform.Application/Dtos/ResponseDtos
 
   //npm run plop-getbyuserid -- --name=GetcategoriesByUserId  --path=GuidePlatform.Application/Features/Queries
 
   //Asp
   let application = "GuidePlatform";
-  let folder = "Payments";
-  let tableDb = "payments";
-  let table = "payments";
+  let folder = "Banners";
+  let tableDb = "banners";
+  let table = "banners";
 
   //Asp Controller
-  let nameController = "Payments"; //{{nameController}}Controller
-  let nameCon = "Payments Ödemeler tablosu";
+  let nameController = "Banners"; //{{nameController}}Controller
+  let nameCon = "Banners Bannerlar tablosu"; 
 
   args.forEach((arg) => {
     if (arg.startsWith("--name=")) {

@@ -21,6 +21,11 @@ namespace GuidePlatform.Persistence.Contexts
     public DbSet<UserVisitsViewModel> userVisits { get; set; }
     public DbSet<SubscriptionsViewModel> subscriptions { get; set; }
     public DbSet<PaymentsViewModel> payments { get; set; }
+    public DbSet<NotificationsViewModel> notifications { get; set; }
+    public DbSet<NotificationSettingsViewModel> notificationSettings { get; set; }
+    public DbSet<ArticlesViewModel> articles { get; set; }
+    public DbSet<PagesViewModel> pages { get; set; }
+    public DbSet<BannersViewModel> banners { get; set; }
 
 
 
@@ -40,6 +45,11 @@ namespace GuidePlatform.Persistence.Contexts
       modelBuilder.ApplyConfiguration(new UserVisitsMap());
       modelBuilder.ApplyConfiguration(new SubscriptionsMap());
       modelBuilder.ApplyConfiguration(new PaymentsMap());
+      modelBuilder.ApplyConfiguration(new NotificationsMap());
+      modelBuilder.ApplyConfiguration(new NotificationSettingsMap());
+      modelBuilder.ApplyConfiguration(new ArticlesMap());
+      modelBuilder.ApplyConfiguration(new PagesMap());
+      modelBuilder.ApplyConfiguration(new BannersMap());
     }
   }
 

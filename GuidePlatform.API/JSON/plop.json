@@ -5,4 +5,28 @@
 {
   "name": "Subscriptions",
   "application": "GuidePlatform"
+},
+{
+  "name": "Payments",
+  "application": "GuidePlatform"
+},
+{
+  "name": "Notifications",
+  "application": "GuidePlatform"
+},
+{
+  "name": "NotificationSettings",
+  "application": "GuidePlatform"
+},
+{
+  "name": "Articles",
+  "application": "GuidePlatform"
+},
+{
+  "name": "Pages",
+  "application": "GuidePlatform"
+},
+{
+  "name": "Banners",
+  "application": "GuidePlatform"
 }

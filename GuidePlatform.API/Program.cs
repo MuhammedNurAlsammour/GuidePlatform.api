@@ -238,9 +238,21 @@ builder.Services.AddSwaggerGen(opt =>
   }
   });
 
-  var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
-  var xmlPath = System.IO.Path.Combine(AppContext.BaseDirectory, xmlFile);
-  opt.IncludeXmlComments(xmlPath);
+  // Include XML comments from all referenced projects
+  var xmlFiles = new[]
+  {
+    $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml",
+    "GuidePlatform.Application.xml"
+  };
+
+  foreach (var xmlFile in xmlFiles)
+  {
+    var xmlPath = System.IO.Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (System.IO.File.Exists(xmlPath))
+    {
+      opt.IncludeXmlComments(xmlPath);
+    }
+  }
 });
 
 builder.Services.AddHttpContextAccessor();
