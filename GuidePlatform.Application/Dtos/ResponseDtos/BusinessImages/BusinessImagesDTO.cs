@@ -12,11 +12,17 @@ namespace GuidePlatform.Application.Dtos.ResponseDtos.BusinessImages
     // İşletme ID'si - business_id
     public Guid BusinessId { get; set; }
 
-    // Fotoğraf verisi - photo (genellikle API'de base64 string olarak gönderilir)
+    // Fotoğraf verisi - photo (eski sistem için korunuyor - base64)
     public string? Photo { get; set; }
 
-    // Küçük resim verisi - thumbnail (genellikle API'de base64 string olarak gönderilir)
+    // Küçük resim verisi - thumbnail (eski sistem için korunuyor - base64)
     public string? Thumbnail { get; set; }
+
+    // Fotoğraf URL'si - photo_url (yeni sistem)
+    public string? PhotoUrl { get; set; }
+
+    // Küçük resim URL'si - thumbnail_url (yeni sistem)
+    public string? ThumbnailUrl { get; set; }
 
     // Fotoğraf içerik tipi - photo_content_type
     public string? PhotoContentType { get; set; }

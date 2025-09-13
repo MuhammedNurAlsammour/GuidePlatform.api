@@ -36,6 +36,16 @@ namespace GuidePlatform.Domain.Maps
       builder.Property(x => x.Thumbnail)
            .HasColumnName("thumbnail");
 
+      // Fotoğraf URL'si - photo_url (yeni sistem)
+      builder.Property(x => x.PhotoUrl)
+           .HasColumnName("photo_url")
+           .HasMaxLength(500);
+
+      // Küçük resim URL'si - thumbnail_url (yeni sistem)
+      builder.Property(x => x.ThumbnailUrl)
+           .HasColumnName("thumbnail_url")
+           .HasMaxLength(500);
+
       // Fotoğraf içerik tipi - photo_content_type
       builder.Property(x => x.PhotoContentType)
            .HasColumnName("photo_content_type")

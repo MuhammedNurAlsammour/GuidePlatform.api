@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini getirir.
+    /// Dropboxes Subscriptions Abonelikler tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Subscriptions Abonelikler tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Subscriptions Abonelikler tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Subscriptions Abonelikler tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Subscriptions Abonelikler tablosu bilgilerini içeren istek.</param> 
+    /// <returns>Subscriptions Abonelikler tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Subscriptions Abonelikler tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Subscriptions Abonelikler tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">Subscriptions Abonelikler tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Subscriptions Abonelikler tablosu tablosu Bilgilerini Görüntüle", Menu = "Subscriptions Abonelikler tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Subscriptions Abonelikler tablosu Bilgilerini Görüntüle", Menu = "Subscriptions Abonelikler tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesSubscriptionsQueryResponse>>> GetAllDropboxesSubscriptions([FromQuery] GetAllDropboxesSubscriptionsQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesSubscriptionsQueryRequest, GetAllDropboxesSubscriptionsQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesSubscriptionsQueryRequest, GetAllDropboxesSubscriptionsQueryResponse>(request);
     }
 
     /// <summary>

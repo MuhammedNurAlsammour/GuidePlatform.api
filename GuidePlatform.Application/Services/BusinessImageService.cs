@@ -4,12 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using GuidePlatform.Application.Abstractions.Contexts;
 using GuidePlatform.Application.Dtos.Response;
 using GuidePlatform.Application.Operations;
+using GuidePlatform.Domain.Entities;
 
 namespace GuidePlatform.Application.Services
 {
   public class BusinessImageUploadDto : ImageUploadDto
   {
     public Guid BusinessId { get; set; }
+    public Guid? BusinessImageId { get; set; } // Hangi kaydı güncelleyeceğimizi belirtmek için
   }
 
   public interface IBusinessImageService
@@ -23,11 +25,13 @@ namespace GuidePlatform.Application.Services
   {
     private readonly IApplicationDbContext _context;
     private readonly IImageService _imageService;
+    private readonly IFileStorageService _fileStorageService;
 
-    public BusinessImageService(IApplicationDbContext context, IImageService imageService)
+    public BusinessImageService(IApplicationDbContext context, IImageService imageService, IFileStorageService fileStorageService)
     {
       _context = context;
       _imageService = imageService;
+      _fileStorageService = fileStorageService;
     }
 
     public async Task<TransactionResultPack<bool>> UpdateBusinessImageAsync(BusinessImageUploadDto businessImageUploadDto)
@@ -84,7 +88,7 @@ namespace GuidePlatform.Application.Services
         }
 
         var (photoData, thumbnailData) = await _imageService.ProcessImageAsync(businessImageUploadDto);
-        await SaveImageToDatabaseAsync(photoData, thumbnailData, businessImageUploadDto.BusinessId);
+        await SaveImageToFileSystemAsync(photoData, thumbnailData, businessImageUploadDto);
 
         return ResultFactory.CreateSuccessResult<bool>(
             true,
@@ -209,29 +213,10 @@ namespace GuidePlatform.Application.Services
       }
     }
 
-    private async Task SaveImageToDatabaseAsync(byte[] photoData, byte[] thumbnailData, Guid businessId)
+    private async Task SaveImageToFileSystemAsync(byte[] photoData, byte[] thumbnailData, BusinessImageUploadDto businessImageUploadDto)
     {
       try
       {
-        // إنشاء BusinessImagesViewModel جديد
-        var businessImage = new Domain.Entities.BusinessImagesViewModel
-        {
-          Id = Guid.NewGuid(),
-          BusinessId = businessId,
-          Photo = photoData,
-          Thumbnail = thumbnailData,
-          PhotoContentType = "image/jpeg",
-          AltText = "Business Image",
-          IsPrimary = true,
-          SortOrder = 1,
-          Icon = "image",
-          ImageType = 1,
-          RowIsActive = true,
-          RowIsDeleted = false,
-          RowCreatedDate = DateTime.UtcNow,
-          RowUpdatedDate = DateTime.UtcNow
-        };
-
         // التحقق من حجم البيانات
         if (photoData.Length > 10 * 1024 * 1024) // 10MB
         {
@@ -243,7 +228,52 @@ namespace GuidePlatform.Application.Services
           throw new ArgumentException("Küçük resim çok büyük! Maksimum 1MB olabilir.");
         }
 
-        await _context.businessImages.AddAsync(businessImage);
+        // Dosya adlarını oluştur - Create file names
+        var photoFileName = $"business_{businessImageUploadDto.BusinessId}_photo_{DateTime.UtcNow:yyyyMMddHHmmss}.jpg";
+        var thumbnailFileName = $"business_{businessImageUploadDto.BusinessId}_thumb_{DateTime.UtcNow:yyyyMMddHHmmss}.jpg";
+
+        // wwwroot'a kaydet - Save to wwwroot
+        var photoResult = await _fileStorageService.SaveImageAsync(photoData, photoFileName, "images/businesses");
+        var thumbnailResult = await _fileStorageService.SaveImageAsync(thumbnailData, thumbnailFileName, "images/businesses");
+
+        if (!photoResult.OperationStatus || !thumbnailResult.OperationStatus)
+        {
+          throw new Exception($"Resimler wwwroot'a kaydedilemedi. Photo: {photoResult.OperationResult.MessageContent}, Thumbnail: {thumbnailResult.OperationResult.MessageContent}");
+        }
+
+        // Mevcut business image kaydını bul ve güncelle - Find and update existing business image record
+        BusinessImagesViewModel? existingBusinessImage = null;
+
+        if (businessImageUploadDto.BusinessImageId.HasValue)
+        {
+          // Belirli bir kaydı güncelle - Update specific record
+          existingBusinessImage = await _context.businessImages
+              .FirstOrDefaultAsync(bi => bi.Id == businessImageUploadDto.BusinessImageId.Value);
+        }
+        else
+        {
+          // En son oluşturulan kaydı bul (aynı business_id için) - Find the most recently created record for the same business_id
+          existingBusinessImage = await _context.businessImages
+              .Where(bi => bi.BusinessId == businessImageUploadDto.BusinessId)
+              .OrderByDescending(bi => bi.RowCreatedDate)
+              .FirstOrDefaultAsync();
+        }
+
+        if (existingBusinessImage != null)
+        {
+          // Mevcut kaydı güncelle - Update existing record
+          existingBusinessImage.PhotoUrl = photoResult.Result;
+          existingBusinessImage.ThumbnailUrl = thumbnailResult.Result;
+          existingBusinessImage.PhotoContentType = "image/jpeg";
+          existingBusinessImage.RowUpdatedDate = DateTime.UtcNow;
+        }
+        else
+        {
+          // Bu durumda yeni kayıt oluşturmaya gerek yok çünkü CreateBusinessImagesQueryHandler zaten oluşturdu
+          // Bu durum sadece BusinessImageService doğrudan çağrıldığında olur
+          throw new Exception("Business image kaydı bulunamadı! Önce CreateBusinessImages API'sini kullanın.");
+        }
+
         var result = await _context.SaveChangesAsync();
 
         if (result == 0)
@@ -253,7 +283,7 @@ namespace GuidePlatform.Application.Services
       }
       catch (Exception ex)
       {
-        throw new Exception($"Fotoğraf veritabanına kaydedilirken hata oluştu: {ex.Message}", ex);
+        throw new Exception($"Fotoğraf wwwroot'a kaydedilirken hata oluştu: {ex.Message}", ex);
       }
     }
   }

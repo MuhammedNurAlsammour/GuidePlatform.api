@@ -11,6 +11,7 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
     // 🏢 Temel iş bilgileri - Basic business information
     public string? Name { get; set; }                    // İşletme adı - Business name
     public string? Description { get; set; }             // İşletme açıklaması - Business description
+    public string? SubDescription { get; set; }          // وصف فرعي - Sub description
     public Guid? CategoryId { get; set; }                // Kategori ID - Category ID
     public Guid? SubCategoryId { get; set; }             // Alt kategori ID - Sub category ID
 
@@ -29,6 +30,12 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
     public string? InstagramUrl { get; set; }            // Instagram URL
     public string? WhatsApp { get; set; }                // WhatsApp
     public string? Telegram { get; set; }                // Telegram
+
+    // 🎯 Ana iletişim bilgileri - Primary contact information
+    public int? PrimaryContactType1 { get; set; }        // Ana iletişim türü 1 - Primary contact type 1
+    public string? PrimaryContactValue1 { get; set; }    // Ana iletişim değeri 1 - Primary contact value 1
+    public int? PrimaryContactType2 { get; set; }        // Ana iletişim türü 2 - Primary contact type 2
+    public string? PrimaryContactValue2 { get; set; }    // Ana iletişim değeri 2 - Primary contact value 2
 
     // ⭐ Değerlendirme ve istatistikler - Rating and statistics
     public decimal? MinRating { get; set; }              // Minimum puan - Minimum rating

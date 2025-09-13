@@ -11,6 +11,7 @@ namespace GuidePlatform.Application.Dtos.ResponseDtos.Businesses
     // 🏢 Temel iş bilgileri - Basic business information
     public string Name { get; set; } = string.Empty;
     public string? Description { get; set; }
+    public string? SubDescription { get; set; } // وصف فرعي أو مختصر
     public Guid? CategoryId { get; set; }
     public Guid? SubCategoryId { get; set; }
 
@@ -32,6 +33,12 @@ namespace GuidePlatform.Application.Dtos.ResponseDtos.Businesses
     public string? WhatsApp { get; set; }
     public string? Telegram { get; set; }
 
+    // 🎯 Ana iletişim bilgileri - Primary contact information
+    public int? PrimaryContactType1 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+    public string? PrimaryContactValue1 { get; set; }  // Ana iletişim değeri 1 - Primary contact value 1
+    public int? PrimaryContactType2 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+    public string? PrimaryContactValue2 { get; set; }  // Ana iletişim değeri 2 - Primary contact value 2
+
     // ⭐ Değerlendirme ve istatistikler - Rating and statistics
     public decimal Rating { get; set; } = 0.00m;
     public int TotalReviews { get; set; } = 0;
@@ -46,5 +53,9 @@ namespace GuidePlatform.Application.Dtos.ResponseDtos.Businesses
 
     // 👤 Sahiplik bilgileri - Ownership information
     public Guid? OwnerId { get; set; }
+
+    // 📸 Resim bilgileri - Image information
+    public string? MainPhoto { get; set; }
+    public List<string> BannerPhotos { get; set; } = new List<string>();
   }
 }

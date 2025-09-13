@@ -14,6 +14,7 @@ namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
     [RegularExpression(@"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
       ErrorMessage = "Invalid GUID format")]
     public string Id { get; set; } = string.Empty;
+    public Guid? ProvinceId { get; set; }
 
     // Banner ile ilgili güncellenebilir alanlar - Updatable banner fields
     [StringLength(255, MinimumLength = 1, ErrorMessage = "Title must be between 1 and 255 characters")]
@@ -21,9 +22,14 @@ namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
 
     public string? Description { get; set; }
 
-    public byte[]? Photo { get; set; }
+    public byte[]? Photo { get; set; } // Eski sistem için korunuyor
 
-    public byte[]? Thumbnail { get; set; }
+    public byte[]? Thumbnail { get; set; } // Eski sistem için korunuyor
+
+    // Yeni sistem: URL alanları - New system: URL fields
+    public string? PhotoUrl { get; set; }
+
+    public string? ThumbnailUrl { get; set; }
 
     [StringLength(50, ErrorMessage = "Photo content type cannot exceed 50 characters")]
     public string? PhotoContentType { get; set; }
@@ -61,11 +67,27 @@ namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
       else if (request.Description == null)
         entity.Description = null;
 
-      if (request.Photo != null)
-        entity.Photo = request.Photo;
+      // Photo ve Thumbnail byte[] alanları artık kullanılmıyor - sadece URL'ler kullanılıyor
+      // Photo and Thumbnail byte[] fields are no longer used - only URLs are used
+      // if (request.Photo != null)
+      //   entity.Photo = request.Photo; // Eski sistem için korunuyor
 
-      if (request.Thumbnail != null)
-        entity.Thumbnail = request.Thumbnail;
+      // if (request.Thumbnail != null)
+      //   entity.Thumbnail = request.Thumbnail; // Eski sistem için korunuyor
+
+      // Yeni sistem: URL alanlarını güncelle - New system: Update URL fields
+      if (!string.IsNullOrWhiteSpace(request.PhotoUrl))
+        entity.PhotoUrl = request.PhotoUrl.Trim();
+      else if (request.PhotoUrl == null)
+        entity.PhotoUrl = null;
+
+      if (!string.IsNullOrWhiteSpace(request.ThumbnailUrl))
+        entity.ThumbnailUrl = request.ThumbnailUrl.Trim();
+      else if (request.ThumbnailUrl == null)
+        entity.ThumbnailUrl = null;
+
+      if (request.ProvinceId.HasValue)
+        entity.ProvinceId = request.ProvinceId.Value;
 
       if (!string.IsNullOrWhiteSpace(request.PhotoContentType))
         entity.PhotoContentType = request.PhotoContentType.Trim();

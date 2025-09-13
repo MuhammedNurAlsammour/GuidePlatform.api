@@ -172,6 +172,10 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetBusinessesByI
           InstagramUrl = businesses.InstagramUrl,
           WhatsApp = businesses.WhatsApp,
           Telegram = businesses.Telegram,
+          PrimaryContactType1 = businesses.PrimaryContactType1,
+          PrimaryContactValue1 = businesses.PrimaryContactValue1,
+          PrimaryContactType2 = businesses.PrimaryContactType2,
+          PrimaryContactValue2 = businesses.PrimaryContactValue2,
 
           // ⭐ Değerlendirme ve istatistikler - Rating and statistics
           Rating = businesses.Rating,

@@ -19,11 +19,17 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.UpdateBusin
     [Required(ErrorMessage = "BusinessId is required")]
     public Guid BusinessId { get; set; }
 
-    // Fotoğraf verisi - photo
+    // Fotoğraf verisi - photo (eski sistem için)
     public byte[]? Photo { get; set; }
 
-    // Küçük resim verisi - thumbnail
+    // Küçük resim verisi - thumbnail (eski sistem için)
     public byte[]? Thumbnail { get; set; }
+
+    // Fotoğraf URL'si - photo_url (yeni sistem için)
+    public string? PhotoUrl { get; set; }
+
+    // Küçük resim URL'si - thumbnail_url (yeni sistem için)
+    public string? ThumbnailUrl { get; set; }
 
     // Fotoğraf içerik tipi - photo_content_type
     [StringLength(50, ErrorMessage = "PhotoContentType cannot exceed 50 characters")]
@@ -53,8 +59,10 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.UpdateBusin
 
       // Güncelleme bilgileri
       entity.BusinessId = request.BusinessId;
-      entity.Photo = request.Photo;
-      entity.Thumbnail = request.Thumbnail;
+      entity.Photo = request.Photo; // Eski sistem için korunuyor
+      entity.Thumbnail = request.Thumbnail; // Eski sistem için korunuyor
+      entity.PhotoUrl = request.PhotoUrl; // Yeni sistem: URL'yi güncelle
+      entity.ThumbnailUrl = request.ThumbnailUrl; // Yeni sistem: URL'yi güncelle
       entity.PhotoContentType = request.PhotoContentType;
       entity.AltText = request.AltText;
       entity.IsPrimary = request.IsPrimary;

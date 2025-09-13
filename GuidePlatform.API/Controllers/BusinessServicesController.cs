@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini getirir.
+    /// Dropboxes BusinessServices İşletme Hizmetleri tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes BusinessServices İşletme Hizmetleri tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes BusinessServices İşletme Hizmetleri tablosu bilgilerini içeren istek.</param> 
+    /// <returns>BusinessServices İşletme Hizmetleri tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes BusinessServices İşletme Hizmetleri tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessServices İşletme Hizmetleri tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessServices İşletme Hizmetleri tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessServices İşletme Hizmetleri tablosu tablosu Bilgilerini Görüntüle", Menu = "BusinessServices İşletme Hizmetleri tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessServices İşletme Hizmetleri tablosu Bilgilerini Görüntüle", Menu = "BusinessServices İşletme Hizmetleri tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessServicesQueryResponse>>> GetAllDropboxesBusinessServices([FromQuery] GetAllDropboxesBusinessServicesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesBusinessServicesQueryRequest, GetAllDropboxesBusinessServicesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesBusinessServicesQueryRequest, GetAllDropboxesBusinessServicesQueryResponse>(request);
     }
 
     /// <summary>

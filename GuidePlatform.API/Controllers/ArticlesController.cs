@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes Articles Makaleler tablosu tablosu bilgilerini getirir.
+    /// Dropboxes Articles Makaleler tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Articles Makaleler tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Articles Makaleler tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Articles Makaleler tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Articles Makaleler tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Articles Makaleler tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Articles Makaleler tablosu bilgilerini içeren istek.</param> 
+    /// <returns>Articles Makaleler tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Articles Makaleler tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Articles Makaleler tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">Articles Makaleler tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Articles Makaleler tablosu tablosu Bilgilerini Görüntüle", Menu = "Articles Makaleler tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Articles Makaleler tablosu Bilgilerini Görüntüle", Menu = "Articles Makaleler tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesArticlesQueryResponse>>> GetAllDropboxesArticles([FromQuery] GetAllDropboxesArticlesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesArticlesQueryRequest, GetAllDropboxesArticlesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesArticlesQueryRequest, GetAllDropboxesArticlesQueryResponse>(request);
     }
 
     /// <summary>

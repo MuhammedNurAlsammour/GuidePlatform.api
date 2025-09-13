@@ -17,11 +17,17 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusin
     [Required(ErrorMessage = "BusinessId is required")]
     public Guid BusinessId { get; set; }
 
-    // Fotoğraf yolu - photo_path
+    // Fotoğraf yolu - photo_path (eski sistem için)
     public string? PhotoPath { get; set; }
 
-    // Fotoğraf Base64 - photo_base64
+    // Fotoğraf Base64 - photo_base64 (eski sistem için)
     public string? PhotoBase64 { get; set; }
+
+    // Fotoğraf URL'si - photo_url (yeni sistem için)
+    public string? PhotoUrl { get; set; }
+
+    // Küçük resim URL'si - thumbnail_url (yeni sistem için)
+    public string? ThumbnailUrl { get; set; }
 
     // Alternatif metin - alt_text
     [StringLength(255, ErrorMessage = "AltText cannot exceed 255 characters")]
@@ -50,8 +56,10 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusin
       return new()
       {
         BusinessId = request.BusinessId,
-        Photo = null, // Bu artık Service tarafından işlenecek
-        Thumbnail = null, // Bu artık Service tarafından işlenecek
+        Photo = null, // Eski sistem için korunuyor
+        Thumbnail = null, // Eski sistem için korunuyor
+        PhotoUrl = request.PhotoUrl, // Yeni sistem: URL'yi kaydet
+        ThumbnailUrl = request.ThumbnailUrl, // Yeni sistem: URL'yi kaydet
         PhotoContentType = "image/jpeg", // Service tarafından ayarlanacak
         AltText = request.AltText,
         IsPrimary = request.IsPrimary,
@@ -66,11 +74,12 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusin
       };
     }
 
-    public BusinessImageUploadDto ToPhotoUploadDto(Guid businessId)
+    public BusinessImageUploadDto ToPhotoUploadDto(Guid businessId, Guid businessImageId)
     {
       return new BusinessImageUploadDto
       {
         BusinessId = businessId,
+        BusinessImageId = businessImageId,
         PhotoPath = PhotoPath,
         PhotoBase64 = PhotoBase64
       };

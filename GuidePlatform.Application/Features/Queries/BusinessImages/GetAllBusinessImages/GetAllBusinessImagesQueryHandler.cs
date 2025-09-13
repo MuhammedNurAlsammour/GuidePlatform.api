@@ -103,6 +103,10 @@ namespace GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusine
           {
             Id = businessImages.Id,
             BusinessId = businessImages.BusinessId,
+            // Yeni sistem: URL'leri kullan - New system: Use URLs
+            PhotoUrl = businessImages.PhotoUrl,
+            ThumbnailUrl = businessImages.ThumbnailUrl,
+            // Eski sistem: Base64'ü koru (geriye dönük uyumluluk için) - Old system: Keep Base64 (for backward compatibility)
             Photo = businessImages.Photo != null ? Convert.ToBase64String(businessImages.Photo) : null,
             Thumbnail = businessImages.Thumbnail != null ? Convert.ToBase64String(businessImages.Thumbnail) : null,
             PhotoContentType = businessImages.PhotoContentType,
@@ -170,6 +174,9 @@ namespace GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusine
 
       if (request.SortOrder.HasValue)
         query = query.Where(x => x.SortOrder == request.SortOrder.Value);
+
+      if (request.ImageType.HasValue)
+        query = query.Where(x => x.ImageType == request.ImageType.Value);
 
       return query;
     }

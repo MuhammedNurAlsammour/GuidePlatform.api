@@ -46,6 +46,12 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
 
         // 🎯 Verileri getir (filtreleme + sayfalama) - Düzeltilmiş filtreleme
         var filteredQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
+        // 🎯 SubscriptionType'a göre sıralama (2 -> 1 -> 0) - Order by SubscriptionType (2 -> 1 -> 0)
+        filteredQuery = filteredQuery.OrderByDescending(x => x.SubscriptionType)
+                                   .ThenByDescending(x => x.IsFeatured)
+                                   .ThenByDescending(x => x.IsVerified)
+                                   .ThenByDescending(x => x.Rating);
+
         var businessess = await ApplyPagination(filteredQuery, request.GetValidatedPage(), request.GetValidatedSize())
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
@@ -67,6 +73,14 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
 
         // Tek seferde tüm kullanıcı bilgilerini al
         var allUserDetails = await _authUserService.GetAuthUserDetailsAsync(allUserIds.Distinct().ToList(), cancellationToken);
+
+        // 📸 İşletmelerin resimlerini toplu olarak al (performans için)
+        var businessIds = businessess.Select(b => b.Id).ToList();
+        var businessImages = await _context.businessImages
+            .Where(bi => businessIds.Contains(bi.BusinessId) && bi.RowIsActive && !bi.RowIsDeleted)
+            .OrderBy(bi => bi.SortOrder)
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
 
         var businessesDetails = new List<BusinessesDTO>();  // 🎯 BusinessesDTO listesi oluştur
 
@@ -99,6 +113,49 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
             updateUserName = updateUserDetail.AuthUserName;
           }
 
+          // 📸 İşletme resimlerini filtrele ve ayır
+          var currentBusinessImages = businessImages.Where(bi => bi.BusinessId == businesses.Id).ToList();
+
+          // Ana resim (is_primary = true)
+          var mainImage = currentBusinessImages.FirstOrDefault(bi => bi.IsPrimary);
+          string? mainPhoto = null;
+          if (mainImage != null)
+          {
+            // PhotoUrl varsa onu kullan, yoksa base64 formatında Photo'yu kullan
+            if (!string.IsNullOrEmpty(mainImage.PhotoUrl))
+            {
+              mainPhoto = mainImage.PhotoUrl;
+            }
+            else if (mainImage.Photo != null && mainImage.Photo.Length > 0)
+            {
+              mainPhoto = $"data:{mainImage.PhotoContentType ?? "image/jpeg"};base64,{Convert.ToBase64String(mainImage.Photo)}";
+            }
+          }
+
+          // Banner resimleri (is_primary = false)
+          var bannerImages = currentBusinessImages.Where(bi => !bi.IsPrimary).OrderBy(bi => bi.SortOrder).ToList();
+          var bannerPhotos = new List<string>();
+
+          foreach (var bannerImage in bannerImages)
+          {
+            string? bannerPhotoUrl = null;
+
+            // PhotoUrl varsa onu kullan, yoksa base64 formatında Photo'yu kullan
+            if (!string.IsNullOrEmpty(bannerImage.PhotoUrl))
+            {
+              bannerPhotoUrl = bannerImage.PhotoUrl;
+            }
+            else if (bannerImage.Photo != null && bannerImage.Photo.Length > 0)
+            {
+              bannerPhotoUrl = $"data:{bannerImage.PhotoContentType ?? "image/jpeg"};base64,{Convert.ToBase64String(bannerImage.Photo)}";
+            }
+
+            if (!string.IsNullOrEmpty(bannerPhotoUrl))
+            {
+              bannerPhotos.Add(bannerPhotoUrl);
+            }
+          }
+
           var businessesDetail = new BusinessesDTO
           {
             Id = businesses.Id,
@@ -119,6 +176,7 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
             // 🏢 Temel iş bilgileri - Basic business information
             Name = businesses.Name,
             Description = businesses.Description,
+            SubDescription = businesses.SubDescription,
             CategoryId = businesses.CategoryId,
             SubCategoryId = businesses.SubCategoryId,
 
@@ -139,6 +197,10 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
             InstagramUrl = businesses.InstagramUrl,
             WhatsApp = businesses.WhatsApp,
             Telegram = businesses.Telegram,
+            PrimaryContactType1 = businesses.PrimaryContactType1,
+            PrimaryContactValue1 = businesses.PrimaryContactValue1,
+            PrimaryContactType2 = businesses.PrimaryContactType2,
+            PrimaryContactValue2 = businesses.PrimaryContactValue2,
 
             // ⭐ Değerlendirme ve istatistikler - Rating and statistics
             Rating = businesses.Rating,
@@ -153,7 +215,11 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
             Icon = businesses.Icon,
 
             // 👤 Sahiplik bilgileri - Ownership information
-            OwnerId = businesses.OwnerId
+            OwnerId = businesses.OwnerId,
+
+            // 📸 Resim bilgileri - Image information
+            MainPhoto = mainPhoto,
+            BannerPhotos = bannerPhotos
           };
 
           businessesDetails.Add(businessesDetail);
@@ -198,6 +264,9 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
       if (!string.IsNullOrEmpty(request.Description))
         query = query.Where(x => x.Description != null && x.Description.Contains(request.Description));
 
+      if (!string.IsNullOrEmpty(request.SubDescription))
+        query = query.Where(x => x.SubDescription != null && x.SubDescription.Contains(request.SubDescription));
+
       if (request.CategoryId.HasValue)
         query = query.Where(x => x.CategoryId == request.CategoryId.Value);
 
@@ -241,6 +310,19 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
 
       if (!string.IsNullOrEmpty(request.Telegram))
         query = query.Where(x => x.Telegram != null && x.Telegram.Contains(request.Telegram));
+
+      // 🎯 Ana iletişim bilgileri filtreleri - Primary contact information filters
+      if (request.PrimaryContactType1.HasValue)
+        query = query.Where(x => x.PrimaryContactType1 == request.PrimaryContactType1.Value);
+
+      if (!string.IsNullOrEmpty(request.PrimaryContactValue1))
+        query = query.Where(x => x.PrimaryContactValue1 != null && x.PrimaryContactValue1.Contains(request.PrimaryContactValue1));
+
+      if (request.PrimaryContactType2.HasValue)
+        query = query.Where(x => x.PrimaryContactType2 == request.PrimaryContactType2.Value);
+
+      if (!string.IsNullOrEmpty(request.PrimaryContactValue2))
+        query = query.Where(x => x.PrimaryContactValue2 != null && x.PrimaryContactValue2.Contains(request.PrimaryContactValue2));
 
       // ⭐ Değerlendirme ve istatistikler filtreleri - Rating and statistics filters
       if (request.MinRating.HasValue)
@@ -307,6 +389,7 @@ namespace GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses
         query = query.Where(x =>
           (x.Name != null && x.Name.ToLower().Contains(searchTerm)) ||
           (x.Description != null && x.Description.ToLower().Contains(searchTerm)) ||
+          (x.SubDescription != null && x.SubDescription.ToLower().Contains(searchTerm)) ||
           (x.Address != null && x.Address.ToLower().Contains(searchTerm)) ||
           (x.Phone != null && x.Phone.ToLower().Contains(searchTerm)) ||
           (x.Mobile != null && x.Mobile.ToLower().Contains(searchTerm)) ||

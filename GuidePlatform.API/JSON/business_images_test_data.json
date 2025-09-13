@@ -1,0 +1,164 @@
+{
+  "testData": [
+    {
+      "description": "Aleppo Kebap House - Ana Fotoğraf",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "businessId": "978bea96-ec7f-461b-aefa-deaac61df09e",
+        "photoPath": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoBase64": null,
+        "photoUrl": "https://guideplatform.com/uploads/businesses/aleppo-kebap/main.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/businesses/aleppo-kebap/thumb_main.jpg",
+        "altText": "Aleppo Kebap House - المطعم الرئيسي",
+        "isPrimary": true,
+        "sortOrder": 1,
+        "icon": "restaurant",
+        "imageType": 0
+      }
+    },
+    {
+      "description": "Aleppo Kebap House - Galeri Fotoğrafı",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "businessId": "978bea96-ec7f-461b-aefa-deaac61df09e",
+        "photoPath": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoBase64": null,
+        "photoUrl": "https://guideplatform.com/uploads/businesses/aleppo-kebap/kebap.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/businesses/aleppo-kebap/thumb_kebap.jpg",
+        "altText": "Halep Kebap - طبق الكباب الحلبي",
+        "isPrimary": false,
+        "sortOrder": 2,
+        "icon": "food",
+        "imageType": 1
+      }
+    },
+    {
+      "description": "Manbij Lokantası - Ana Fotoğraf",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "businessId": "005542a0-ce29-4aa9-b71e-442dd007de67",
+        "photoPath": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoBase64": null,
+        "photoUrl": "https://guideplatform.com/uploads/businesses/manbij-lokantasi/main.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/businesses/manbij-lokantasi/thumb_main.jpg",
+        "altText": "Manbij Lokantası - مطعم منبج",
+        "isPrimary": true,
+        "sortOrder": 1,
+        "icon": "restaurant",
+        "imageType": 0
+      }
+    },
+    {
+      "description": "Azaz Sofra - Ana Fotoğraf",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "businessId": "f60578b0-ca95-4b3f-b2e9-b66679e8f88c",
+        "photoPath": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoBase64": null,
+        "photoUrl": "https://guideplatform.com/uploads/businesses/azaz-sofra/main.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/businesses/azaz-sofra/thumb_main.jpg",
+        "altText": "Azaz Sofra - مطبخ أعزاز",
+        "isPrimary": true,
+        "sortOrder": 1,
+        "icon": "restaurant",
+        "imageType": 0
+      }
+    },
+    {
+      "description": "Afrin Lezzet - Menü Fotoğrafı",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "businessId": "f76e31c4-3e4e-4a58-a5bb-3a57597603f6",
+        "photoPath": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoBase64": null,
+        "photoUrl": "https://guideplatform.com/uploads/businesses/afrin-lezzet/menu.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/businesses/afrin-lezzet/thumb_menu.jpg",
+        "altText": "Afrin Menüsü - قائمة عفرين",
+        "isPrimary": false,
+        "sortOrder": 5,
+        "icon": "menu",
+        "imageType": 2
+      }
+    },
+    {
+      "description": "Jarabulus Mutfak - Galeri Fotoğrafı",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "businessId": "7fb6d642-528b-4dcd-8e58-785b7c9542f4",
+        "photoPath": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoBase64": null,
+        "photoUrl": "https://guideplatform.com/uploads/businesses/jarabulus-mutfak/kitchen.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/businesses/jarabulus-mutfak/thumb_kitchen.jpg",
+        "altText": "Şef Mutfağı - مطبخ الشيف",
+        "isPrimary": false,
+        "sortOrder": 5,
+        "icon": "kitchen",
+        "imageType": 1
+      }
+    }
+  ],
+  "imageTypes": {
+    "0": "Ana Fotoğraf (Primary Image)",
+    "1": "Galeri Fotoğrafı (Gallery Image)",
+    "2": "Menü Fotoğrafı (Menu Image)",
+    "3": "Logo (Logo)",
+    "4": "Profil Fotoğrafı (Profile Image)",
+    "5": "Kapak Fotoğrafı (Cover Image)",
+    "6": "Ürün Fotoğrafı (Product Image)",
+    "7": "Hizmet Fotoğrafı (Service Image)",
+    "8": "Etkinlik Fotoğrafı (Event Image)",
+    "9": "Promosyon Fotoğrafı (Promotion Image)",
+    "10": "Sertifika Fotoğrafı (Certificate Image)",
+    "11": "Diğer (Other)"
+  },
+  "icons": {
+    "restaurant": "Restoran",
+    "food": "Yemek",
+    "menu": "Menü",
+    "kitchen": "Mutfak",
+    "interior": "İç Mekan",
+    "exterior": "Dış Görünüm",
+    "atmosphere": "Atmosfer",
+    "design": "Tasarım",
+    "dessert": "Tatlı",
+    "image": "Genel Resim"
+  },
+  "usage": {
+    "description": "Bu JSON dosyası BusinessImages API'sini test etmek için kullanılır",
+    "endpoints": {
+      "create": "POST /api/BusinessImages/Create",
+      "update": "PUT /api/BusinessImages/Update",
+      "getAll": "GET /api/BusinessImages/GetAll",
+      "getById": "GET /api/BusinessImages/GetById/{id}",
+      "delete": "DELETE /api/BusinessImages/Delete/{id}"
+    },
+    "notes": [
+      "authCustomerId ve authUserId genellikle JWT token'dan otomatik alınır",
+      "createUserId ve updateUserId de token'dan otomatik alınır",
+      "photoPath: Gerçek dosya yolu kullanılır (örn: C:\\Users\\Muhammed\\Pictures\\...)",
+      "photoBase64: null olarak ayarlanır (artık kullanılmaz)",
+      "photoUrl ve thumbnailUrl yeni sistem için kullanılır",
+      "imageType 0-11 arasında olmalıdır",
+      "isPrimary sadece bir fotoğraf için true olabilir",
+      "Dosya yolu Windows formatında (\\\\) kullanılmalıdır"
+    ]
+  }
+}

@@ -80,6 +80,28 @@ namespace GuidePlatform.Application.Features.Queries.BusinessReviews.GetAllBusin
         // 🎯 Base Handler'ın ExtractAuthUserDetailsAsync method'unu kullan
         var allUserDetails = await ExtractAuthUserDetailsAsync(businessReviewss, cancellationToken);
 
+        // 🎯 Business isimlerini toplu olarak al (performans için)
+        var businessIds = businessReviewss.Select(br => br.BusinessId).Distinct().ToList();
+        var businessNames = await _context.businesses
+            .Where(b => businessIds.Contains(b.Id) && b.RowIsActive && !b.RowIsDeleted)
+            .Select(b => new { b.Id, b.Name })
+            .AsNoTracking()
+            .ToDictionaryAsync(b => b.Id, b => b.Name, cancellationToken);
+
+        // 🎯 Reviewer isimlerini toplu olarak al (performans için) - AspNetUsers'dan NameSurname
+        var reviewerIds = businessReviewss.Select(br => br.ReviewerId).Distinct().ToList();
+        var reviewerNames = new Dictionary<Guid, string>();
+
+        if (reviewerIds.Any())
+        {
+          // AuthUserService'den reviewer bilgilerini al
+          var reviewerDetails = await _authUserService.GetAuthUserDetailsAsync(reviewerIds, cancellationToken);
+          reviewerNames = reviewerDetails.ToDictionary(
+              kvp => kvp.Key,
+              kvp => kvp.Value.AuthUserFullName ?? kvp.Value.AuthUserName ?? "Unknown User"
+          );
+        }
+
         var businessReviewsDetails = new List<BusinessReviewsDTO>();  // 🎯 businessReviewsDTO listesi oluştur
 
         foreach (var businessReviews in businessReviewss)
@@ -103,13 +125,17 @@ namespace GuidePlatform.Application.Features.Queries.BusinessReviews.GetAllBusin
             updateUserName = updateUserDetail.AuthUserName;
           }
 
+          // 🎯 BusinessName ve ReviewerName bilgilerini al
+          var businessName = businessNames.GetValueOrDefault(businessReviews.BusinessId, "Unknown Business");
+          var reviewerName = reviewerNames.GetValueOrDefault(businessReviews.ReviewerId, "Unknown User");
+
           var businessReviewsDetail = new BusinessReviewsDTO
           {
             Id = businessReviews.Id,
             BusinessId = businessReviews.BusinessId,
-            BusinessName = null, // TODO: İş yeri adını join ile al
+            BusinessName = businessName, // Business adı
             ReviewerId = businessReviews.ReviewerId,
-            ReviewerName = null, // TODO: Yorum yapan kullanıcı adını join ile al
+            ReviewerName = reviewerName, // Reviewer NameSurname
             Rating = businessReviews.Rating,
             Comment = businessReviews.Comment,
             IsVerified = businessReviews.IsVerified,

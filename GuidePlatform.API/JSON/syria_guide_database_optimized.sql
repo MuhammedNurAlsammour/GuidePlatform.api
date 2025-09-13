@@ -87,8 +87,10 @@ CREATE TABLE businesses (
 CREATE TABLE business_images (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     business_id UUID NOT NULL,
-    photo bytea NULL,
-    thumbnail bytea NULL,
+    photo bytea NULL, -- Eski sistem için korunuyor - Kept for old system
+    thumbnail bytea NULL, -- Eski sistem için korunuyor - Kept for old system
+    photo_url VARCHAR(500) NULL, -- Yeni sistem: Fotoğraf URL'si - New system: Photo URL
+    thumbnail_url VARCHAR(500) NULL, -- Yeni sistem: Küçük resim URL'si - New system: Thumbnail URL
     photo_content_type varchar(50) NULL,    
     alt_text VARCHAR(255),
     image_type INT DEFAULT 1, -- 0:profile, 1:gallery, 2:menu, 3:banner, 4:logo, 5:interior, 6:exterior, 7:food, 8:kitchen, 9:atmosphere, 10:design, 11:dessert
@@ -496,9 +498,11 @@ CREATE TABLE banners (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     title VARCHAR(255) NOT NULL,
     description TEXT,
-    photo bytea NULL,
-    thumbnail bytea NULL,
-    photo_content_type int4 NULL,
+    photo bytea NULL, -- Eski sistem için korunuyor - Kept for old system
+    thumbnail bytea NULL, -- Eski sistem için korunuyor - Kept for old system
+    photo_url VARCHAR(500) NULL, -- Yeni sistem: Fotoğraf URL'si - New system: Photo URL
+    thumbnail_url VARCHAR(500) NULL, -- Yeni sistem: Küçük resim URL'si - New system: Thumbnail URL
+    photo_content_type VARCHAR(50) NULL,
     link_url VARCHAR(500),
     start_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     end_date TIMESTAMPTZ,
@@ -513,10 +517,12 @@ CREATE TABLE banners (
     auth_customer_id UUID, -- Reference to auth."Customers"."Id"
     create_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
     update_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    province_id UUID, -- Reference to provinces."Id"
     FOREIGN KEY (auth_user_id) REFERENCES auth."AspNetUsers"("Id"),
     FOREIGN KEY (auth_customer_id) REFERENCES auth."Customers"("Id"),
     FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
-    FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
+    FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id"),
+    FOREIGN KEY (province_id) REFERENCES provinces("Id")
 );
 
 
@@ -723,6 +729,8 @@ CREATE INDEX idx_businesses_create_user ON businesses(create_user_id);
 CREATE INDEX idx_businesses_update_user ON businesses(update_user_id);
 CREATE INDEX idx_business_images_create_user ON business_images(create_user_id);
 CREATE INDEX idx_business_images_update_user ON business_images(update_user_id);
+CREATE INDEX idx_business_images_photo_url ON business_images(photo_url) WHERE photo_url IS NOT NULL;
+CREATE INDEX idx_business_images_thumbnail_url ON business_images(thumbnail_url) WHERE thumbnail_url IS NOT NULL;
 CREATE INDEX idx_business_contacts_create_user ON business_contacts(create_user_id);
 CREATE INDEX idx_business_contacts_update_user ON business_contacts(update_user_id);
 CREATE INDEX idx_business_services_create_user ON business_services(create_user_id);
@@ -753,6 +761,8 @@ CREATE INDEX idx_pages_create_user ON pages(create_user_id);
 CREATE INDEX idx_pages_update_user ON pages(update_user_id);
 CREATE INDEX idx_banners_create_user ON banners(create_user_id);
 CREATE INDEX idx_banners_update_user ON banners(update_user_id);
+CREATE INDEX idx_banners_photo_url ON banners(photo_url) WHERE photo_url IS NOT NULL;
+CREATE INDEX idx_banners_thumbnail_url ON banners(thumbnail_url) WHERE thumbnail_url IS NOT NULL;
 CREATE INDEX idx_announcements_create_user ON announcements(create_user_id);
 CREATE INDEX idx_announcements_update_user ON announcements(update_user_id);
 CREATE INDEX idx_parameters_create_user ON parameters(create_user_id);
@@ -1190,3 +1200,285 @@ INSERT INTO business_analytics (business_id, date, views_count, contacts_count, 
   "ownerId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
   "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325"
 }
+
+-- =====================================================
+-- COLUMN COMMENTS - تعليقات الأعمدة
+-- =====================================================
+
+-- business_images table comments
+COMMENT ON COLUMN guideplatform.business_images.photo IS 'Fotoğraf verisi (bytea) - Photo data (bytea) - Eski sistem için korunuyor';
+COMMENT ON COLUMN guideplatform.business_images.thumbnail IS 'Küçük resim verisi (bytea) - Thumbnail data (bytea) - Eski sistem için korunuyor';
+COMMENT ON COLUMN guideplatform.business_images.photo_url IS 'Fotoğraf URL''si - Photo URL - Yeni sistem için wwwroot''ta saklanan dosya yolu';
+COMMENT ON COLUMN guideplatform.business_images.thumbnail_url IS 'Küçük resim URL''si - Thumbnail URL - Yeni sistem için wwwroot''ta saklanan dosya yolu';
+COMMENT ON COLUMN guideplatform.business_images.photo_content_type IS 'Fotoğraf içerik tipi - Photo content type (image/jpeg, image/png, vb.)';
+COMMENT ON COLUMN guideplatform.business_images.alt_text IS 'Alternatif metin - Alt text for accessibility';
+COMMENT ON COLUMN guideplatform.business_images.image_type IS 'Resim tipi - Image type (0:profile, 1:gallery, 2:menu, 3:banner, 4:logo, 5:interior, 6:exterior, 7:food, 8:kitchen, 9:atmosphere, 10:design, 11:dessert)';
+COMMENT ON COLUMN guideplatform.business_images.is_primary IS 'Ana fotoğraf mı - Is primary image';
+COMMENT ON COLUMN guideplatform.business_images.sort_order IS 'Sıralama düzeni - Sort order';
+COMMENT ON COLUMN guideplatform.business_images.icon IS 'İkon - Icon name';
+
+-- banners table comments
+COMMENT ON COLUMN guideplatform.banners.photo IS 'Fotoğraf verisi (bytea) - Photo data (bytea) - Eski sistem için korunuyor';
+COMMENT ON COLUMN guideplatform.banners.thumbnail IS 'Küçük resim verisi (bytea) - Thumbnail data (bytea) - Eski sistem için korunuyor';
+COMMENT ON COLUMN guideplatform.banners.photo_url IS 'Fotoğraf URL''si - Photo URL - Yeni sistem için wwwroot''ta saklanan dosya yolu';
+COMMENT ON COLUMN guideplatform.banners.thumbnail_url IS 'Küçük resim URL''si - Thumbnail URL - Yeni sistem için wwwroot''ta saklanan dosya yolu';
+COMMENT ON COLUMN guideplatform.banners.photo_content_type IS 'Fotoğraf içerik tipi - Photo content type (image/jpeg, image/png, vb.)';
+COMMENT ON COLUMN guideplatform.banners.title IS 'Banner başlığı - Banner title';
+COMMENT ON COLUMN guideplatform.banners.description IS 'Banner açıklaması - Banner description';
+COMMENT ON COLUMN guideplatform.banners.link_url IS 'Banner link URL''si - Banner link URL';
+COMMENT ON COLUMN guideplatform.banners.start_date IS 'Başlangıç tarihi - Start date';
+COMMENT ON COLUMN guideplatform.banners.end_date IS 'Bitiş tarihi - End date';
+COMMENT ON COLUMN guideplatform.banners.is_active IS 'Aktif mi - Is active';
+COMMENT ON COLUMN guideplatform.banners.order_index IS 'Sıralama indeksi - Order index';
+
+-- =====================================================
+-- JOB SEEKERS TABLE - İş Arayanlar Tablosu
+-- =====================================================
+CREATE TABLE job_seekers (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    business_id UUID NOT NULL, -- İşletme referansı
+    full_name VARCHAR(255) NOT NULL, -- İş arayanın tam adı
+    description TEXT, -- İş arayan açıklaması
+    phone VARCHAR(20), -- Telefon numarası
+    is_sponsored BOOLEAN DEFAULT false, -- Sponsorlu ilan mı
+    province_id UUID,
+    row_created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    row_updated_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    row_is_active BOOLEAN DEFAULT true NOT NULL,
+    row_is_deleted BOOLEAN DEFAULT false NOT NULL,
+    auth_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    auth_customer_id UUID, -- Reference to auth."Customers"."Id"
+    create_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    update_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    FOREIGN KEY (business_id) REFERENCES businesses(id) ON DELETE CASCADE,
+    FOREIGN KEY (province_id) REFERENCES storeplatformh."provinces"("id"),
+    FOREIGN KEY (auth_user_id) REFERENCES auth."AspNetUsers"("Id"),
+    FOREIGN KEY (auth_customer_id) REFERENCES auth."Customers"("Id"),
+    FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
+    FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
+);
+
+-- =====================================================
+-- JOB OPPORTUNITIES TABLE - İş İmkanları Tablosu
+-- =====================================================
+CREATE TABLE job_opportunities (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    business_id UUID NOT NULL, -- İşletme referansı
+    title VARCHAR(255) NOT NULL, -- İş ilanı başlığı
+    description TEXT NOT NULL, -- İş tanımı
+    phone VARCHAR(20), -- İletişim telefonu
+    duration INT4 DEFAULT 0, -- İlan süresi (gün cinsinden)
+    is_sponsored BOOLEAN DEFAULT false, -- Sponsorlu ilan mı
+    province_id UUID,
+    row_created_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    row_updated_date TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    row_is_active BOOLEAN DEFAULT true NOT NULL,
+    row_is_deleted BOOLEAN DEFAULT false NOT NULL,
+    auth_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    auth_customer_id UUID, -- Reference to auth."Customers"."Id"
+    create_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    update_user_id UUID, -- Reference to auth."AspNetUsers"."Id"
+    FOREIGN KEY (business_id) REFERENCES businesses(id) ON DELETE CASCADE,
+    FOREIGN KEY (province_id) REFERENCES storeplatformh."provinces"("id"),
+    FOREIGN KEY (auth_user_id) REFERENCES auth."AspNetUsers"("Id"),
+    FOREIGN KEY (auth_customer_id) REFERENCES auth."Customers"("Id"),
+    FOREIGN KEY (create_user_id) REFERENCES auth."AspNetUsers"("Id"),
+    FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
+);
+
+-- =====================================================
+-- INDEXES FOR JOB TABLES - İş Tabloları İndeksleri
+-- =====================================================
+
+-- job_seekers indexes
+CREATE INDEX idx_job_seekers_business_id ON job_seekers(business_id);
+CREATE INDEX idx_job_seekers_auth_user_id ON job_seekers(auth_user_id);
+CREATE INDEX idx_job_seekers_active ON job_seekers(row_is_active, row_is_deleted);
+CREATE INDEX idx_job_seekers_sponsored ON job_seekers(is_sponsored);
+
+-- job_opportunities indexes
+CREATE INDEX idx_job_opportunities_business_id ON job_opportunities(business_id);
+CREATE INDEX idx_job_opportunities_auth_user_id ON job_opportunities(auth_user_id);
+CREATE INDEX idx_job_opportunities_active ON job_opportunities(row_is_active, row_is_deleted);
+CREATE INDEX idx_job_opportunities_sponsored ON job_opportunities(is_sponsored);
+
+-- =====================================================
+-- COMMENTS FOR JOB TABLES - İş Tabloları Yorumları
+-- =====================================================
+
+-- job_seekers table comments
+COMMENT ON TABLE job_seekers IS 'İş arayanların bilgilerini saklayan tablo - Table storing job seekers information';
+COMMENT ON COLUMN job_seekers.business_id IS 'İşletme referansı - Business reference';
+COMMENT ON COLUMN job_seekers.full_name IS 'İş arayanın tam adı - Job seeker full name';
+COMMENT ON COLUMN job_seekers.description IS 'İş arayan açıklaması - Job seeker description';
+COMMENT ON COLUMN job_seekers.phone IS 'Telefon numarası - Phone number';
+COMMENT ON COLUMN job_seekers.is_sponsored IS 'Sponsorlu ilan mı - Is sponsored advertisement';
+COMMENT ON COLUMN job_seekers.province_id IS 'İl referansı - Province reference';
+
+-- job_opportunities table comments
+COMMENT ON TABLE job_opportunities IS 'İş ilanlarını saklayan tablo - Table storing job opportunities';
+COMMENT ON COLUMN job_opportunities.business_id IS 'İşletme referansı - Business reference';
+COMMENT ON COLUMN job_opportunities.title IS 'İş ilanı başlığı - Job title';
+COMMENT ON COLUMN job_opportunities.description IS 'İş tanımı - Job description';
+COMMENT ON COLUMN job_opportunities.phone IS 'İletişim telefonu - Contact phone';
+COMMENT ON COLUMN job_opportunities.duration IS 'İlan süresi (gün) - Advertisement duration (days)';
+COMMENT ON COLUMN job_opportunities.is_sponsored IS 'Sponsorlu ilan mı - Is sponsored advertisement';
+COMMENT ON COLUMN job_opportunities.province_id IS 'İl referansı - Province reference';
+
+-- =====================================================
+-- SAMPLE DATA FOR JOB TABLES - İş Tabloları Örnek Verileri
+-- =====================================================
+
+-- Sample data for job_seekers
+INSERT INTO job_seekers (
+    business_id, 
+    full_name, 
+    description, 
+    phone, 
+    is_sponsored, 
+    province_id, 
+    auth_user_id, 
+    auth_customer_id, 
+    create_user_id, 
+    update_user_id
+) VALUES 
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Ahmed Hassan',
+    'Merhaba, ben 25 yaşında genç bir adamım ve Mersin''de yaşıyorum. Türkçe ve İngilizce konuşabiliyorum. İş arıyorum.',
+    '+90 552 123 4567',
+    true, -- Sponsored
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Fatma Yılmaz',
+    'Deneyimli muhasebeci. 5 yıl deneyim. Excel ve SAP biliyorum. Tam zamanlı iş arıyorum.',
+    '+90 532 987 6543',
+    false,
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Mehmet Özkan',
+    'Grafik tasarımcı. Adobe programları kullanıyorum. Freelance veya tam zamanlı çalışabilirim.',
+    '+90 505 456 7890',
+    true, -- Sponsored
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Ayşe Demir',
+    'İngilizce öğretmeni. Üniversite mezunu. Özel ders veya okul pozisyonu arıyorum.',
+    '+90 543 234 5678',
+    false,
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Omar Al-Rashid',
+    'Yazılım geliştirici. React, Node.js, Python biliyorum. Remote çalışmayı tercih ediyorum.',
+    '+90 555 678 9012',
+    false,
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+);
+
+-- Sample data for job_opportunities
+INSERT INTO job_opportunities (
+    business_id, 
+    title, 
+    description, 
+    phone, 
+    duration, 
+    is_sponsored, 
+    province_id, 
+    auth_user_id, 
+    auth_customer_id, 
+    create_user_id, 
+    update_user_id
+) VALUES 
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Satış Danışmanı',
+    'Deneyimli satış danışmanı aranıyor. Müşteri ilişkileri konusunda deneyimli, iletişimi güçlü adaylar başvurabilir.',
+    '+90 324 123 4567',
+    30, -- 30 gün
+    true, -- Sponsored
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Muhasebe Elemanı',
+    'Tam zamanlı muhasebe elemanı aranıyor. Excel ve muhasebe programları bilgisi şart. Deneyimli adaylar tercih edilir.',
+    '+90 324 234 5678',
+    15, -- 15 gün
+    false,
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Garson/Garson Kız',
+    'Restoran için deneyimli garson aranıyor. Vardiyalı çalışma. İyi iletişim becerileri gerekli.',
+    '+90 324 345 6789',
+    7, -- 7 gün
+    true, -- Sponsored
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Şoför (Ehliyet B)',
+    'Şirket aracı için şoför aranıyor. B sınıfı ehliyet şart. Temiz sürücü belgesi olan adaylar başvurabilir.',
+    '+90 324 456 7890',
+    20, -- 20 gün
+    false,
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+),
+(
+    '565d34c8-6bbf-4b68-9cd4-17511e6b954b',
+    'Web Tasarımcı',
+    'Kreatif web tasarımcı aranıyor. HTML, CSS, JavaScript bilgisi şart. Portfolio sahibi adaylar tercih edilir.',
+    '+90 324 567 8901',
+    45, -- 45 gün
+    false,
+    '6ae34069-3dcf-461c-8c53-af9730699493',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '72c54b1a-8e1c-45ea-8edd-b5da1091e325',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e',
+    '19a8b428-a57e-4a24-98e3-470258d3d83e'
+);

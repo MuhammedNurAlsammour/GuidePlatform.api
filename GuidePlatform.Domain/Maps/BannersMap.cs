@@ -30,6 +30,10 @@ namespace GuidePlatform.Domain.Maps
            .HasMaxLength(255)
            .IsRequired();
 
+      builder.Property(x => x.ProvinceId)
+           .HasColumnName("province_id");
+
+
       builder.Property(x => x.Description)
            .HasColumnName("description");
 
@@ -38,6 +42,15 @@ namespace GuidePlatform.Domain.Maps
 
       builder.Property(x => x.Thumbnail)
            .HasColumnName("thumbnail");
+
+      // Yeni sistem: URL alanları - New system: URL fields
+      builder.Property(x => x.PhotoUrl)
+           .HasColumnName("photo_url")
+           .HasMaxLength(500);
+
+      builder.Property(x => x.ThumbnailUrl)
+           .HasColumnName("thumbnail_url")
+           .HasMaxLength(500);
 
       builder.Property(x => x.PhotoContentType)
            .HasColumnName("photo_content_type")
@@ -119,6 +132,16 @@ namespace GuidePlatform.Domain.Maps
 
       builder.HasIndex(x => x.UpdateUserId)
            .HasDatabaseName("idx_banners_update_user");
+
+      builder.HasIndex(x => x.ProvinceId)
+           .HasDatabaseName("idx_banners_province");
+
+      // Yeni sistem: URL indeksleri - New system: URL indexes
+      builder.HasIndex(x => x.PhotoUrl)
+           .HasDatabaseName("idx_banners_photo_url");
+
+      builder.HasIndex(x => x.ThumbnailUrl)
+           .HasDatabaseName("idx_banners_thumbnail_url");
     }
   }
 }

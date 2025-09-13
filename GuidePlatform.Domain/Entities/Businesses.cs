@@ -12,6 +12,7 @@ namespace GuidePlatform.Domain.Entities
     // 🏢 Temel iş bilgileri - Basic business information
     public string Name { get; set; } = string.Empty;
     public string? Description { get; set; }
+    public string? SubDescription { get; set; } // Wصف فرعي أو مختصر
     public Guid? CategoryId { get; set; }
     public Guid? SubCategoryId { get; set; }
 
@@ -32,6 +33,12 @@ namespace GuidePlatform.Domain.Entities
     public string? InstagramUrl { get; set; }
     public string? WhatsApp { get; set; }
     public string? Telegram { get; set; }
+
+    // 🎯 Ana iletişim bilgileri - Primary contact information
+    public int? PrimaryContactType1 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+    public string? PrimaryContactValue1 { get; set; }  // Ana iletişim değeri 1 - Primary contact value 1
+    public int? PrimaryContactType2 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+    public string? PrimaryContactValue2 { get; set; }  // Ana iletişim değeri 2 - Primary contact value 2
 
     // ⭐ Değerlendirme ve istatistikler - Rating and statistics
     public decimal Rating { get; set; } = 0.00m;

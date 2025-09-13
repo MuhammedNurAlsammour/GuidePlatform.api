@@ -8,6 +8,7 @@ using GuidePlatform.Application.Dtos.ResponseDtos.Businesses;
 using GuidePlatform.Application.Features.Commands.Businesses.CreateBusinesses;
 using GuidePlatform.Application.Features.Commands.Businesses.DeleteBusinesses;
 using GuidePlatform.Application.Features.Commands.Businesses.UpdateBusinesses;
+using GuidePlatform.Application.Features.Commands.Businesses.IncrementViewCount;
 using GuidePlatform.Application.Features.Queries.Businesses.GetAllBusinesses;
 using GuidePlatform.Application.Features.Queries.Businesses.GetBusinessesById;
 using GuidePlatform.Application.Features.Queries.Businesses.GetAllDropboxesBusinesses;
@@ -64,22 +65,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu tablosu bilgilerini getirir.
+    /// Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Businesses İşletmeler ve Organizasyonlar tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini içeren istek.</param> 
+    /// <returns>Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Businesses İşletmeler ve Organizasyonlar tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">Businesses İşletmeler ve Organizasyonlar tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu tablosu Bilgilerini Görüntüle", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu Bilgilerini Görüntüle", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessesQueryResponse>>> GetAllDropboxesBusinesses([FromQuery] GetAllDropboxesBusinessesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesBusinessesQueryRequest, GetAllDropboxesBusinessesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesBusinessesQueryRequest, GetAllDropboxesBusinessesQueryResponse>(request);
     }
 
     /// <summary>
@@ -136,6 +137,35 @@ namespace GuidePlatform.API.Controllers
     public async Task<ActionResult<TransactionResultPack<DeleteBusinessesCommandResponse>>> DeleteBusinesses([FromRoute] DeleteBusinessesCommandRequest request)
     {
       return await SendCommand<DeleteBusinessesCommandRequest, DeleteBusinessesCommandResponse>(request);
+    }
+
+    /// <summary>
+    /// İşletme görüntüleme sayısını bir artırır (ViewCount).
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, belirtilen işletmenin görüntüleme sayısını bir artırır. 
+    /// Kullanıcı işletme detay sayfasını ziyaret ettiğinde çağrılmalıdır.
+    /// Yetkilendirme gerektirmez - herkese açık endpoint.
+    /// </remarks>
+    /// <param name="businessId">Görüntüleme sayısı artırılacak işletme ID'si.</param>
+    /// <returns>İşlem sonucunu ve yeni görüntüleme sayısını döndürür.</returns>
+    /// <response code="200">Görüntüleme sayısı başarıyla artırıldı.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="404">İşletme bulunamazsa.</response>
+    [HttpPatch("[action]/{businessId}")]
+    [AllowAnonymous] // Herkese açık - yetkilendirme gerektirmez
+    public async Task<ActionResult<TransactionResultPack<IncrementViewCountCommandResponse>>> IncrementViewCount([FromRoute] Guid businessId)
+    {
+      // İsteğe bağlı: Client bilgilerini al (analytics için)
+      var request = new IncrementViewCountCommandRequest
+      {
+        BusinessId = businessId,
+        IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+        UserAgent = HttpContext.Request.Headers["User-Agent"].FirstOrDefault(),
+        RefererUrl = HttpContext.Request.Headers["Referer"].FirstOrDefault()
+      };
+
+      return await SendCommand<IncrementViewCountCommandRequest, IncrementViewCountCommandResponse>(request);
     }
   }
 }

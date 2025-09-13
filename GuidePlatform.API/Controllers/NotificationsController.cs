@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini getirir.
+    /// Dropboxes Notifications Bildirimler tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Notifications Bildirimler tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Notifications Bildirimler tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Notifications Bildirimler tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Notifications Bildirimler tablosu bilgilerini içeren istek.</param> 
+    /// <returns>Notifications Bildirimler tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Notifications Bildirimler tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Notifications Bildirimler tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">Notifications Bildirimler tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Notifications Bildirimler tablosu tablosu Bilgilerini Görüntüle", Menu = "Notifications Bildirimler tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Notifications Bildirimler tablosu Bilgilerini Görüntüle", Menu = "Notifications Bildirimler tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesNotificationsQueryResponse>>> GetAllDropboxesNotifications([FromQuery] GetAllDropboxesNotificationsQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesNotificationsQueryRequest, GetAllDropboxesNotificationsQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesNotificationsQueryRequest, GetAllDropboxesNotificationsQueryResponse>(request);
     }
 
     /// <summary>

@@ -117,6 +117,10 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetAllBanners
             // Banner özel alanları - Banner specific fields
             Title = banners.Title,
             Description = banners.Description,
+            // Yeni sistem: URL'leri kullan - New system: Use URLs
+            PhotoUrl = banners.PhotoUrl,
+            ThumbnailUrl = banners.ThumbnailUrl,
+            // Eski sistem: Base64'ü koru (geriye dönük uyumluluk için) - Old system: Keep Base64 (for backward compatibility)
             Photo = banners.Photo,
             Thumbnail = banners.Thumbnail,
             PhotoContentType = banners.PhotoContentType,
@@ -125,6 +129,7 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetAllBanners
             EndDate = banners.EndDate,
             IsActive = banners.IsActive,
             OrderIndex = banners.OrderIndex,
+            ProvinceId = banners.ProvinceId,
             Icon = banners.Icon
           };
 
@@ -167,6 +172,12 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetAllBanners
       if (request.IsActive.HasValue)
       {
         query = query.Where(x => x.IsActive == request.IsActive.Value);
+      }
+
+      // 🔍 il durumu filtresi - Province status filter
+      if (request.ProvinceId.HasValue)
+      {
+        query = query.Where(x => x.ProvinceId == request.ProvinceId.Value);
       }
 
       // 🔍 Başlık filtresi - Title filter (içerik arama)

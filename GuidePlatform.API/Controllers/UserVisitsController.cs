@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini getirir.
+    /// Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini içeren istek.</param> 
+    /// <returns>UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">UserVisits Kullanıcı Ziyaretleri tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">UserVisits Kullanıcı Ziyaretleri tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu tablosu Bilgilerini Görüntüle", Menu = "UserVisits Kullanıcı Ziyaretleri tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes UserVisits Kullanıcı Ziyaretleri tablosu Bilgilerini Görüntüle", Menu = "UserVisits Kullanıcı Ziyaretleri tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesUserVisitsQueryResponse>>> GetAllDropboxesUserVisits([FromQuery] GetAllDropboxesUserVisitsQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesUserVisitsQueryRequest, GetAllDropboxesUserVisitsQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesUserVisitsQueryRequest, GetAllDropboxesUserVisitsQueryResponse>(request);
     }
 
     /// <summary>

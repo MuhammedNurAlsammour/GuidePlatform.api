@@ -29,4 +29,30 @@
 {
   "name": "Banners",
   "application": "GuidePlatform"
+},
+{
+  "name": "Announcements",
+  "application": "GuidePlatform"
+},
+{
+  "name": "Files",
+  "application": "GuidePlatform"
+},
+{
+  "name": "SearchLogs",
+  "application": "GuidePlatform"
+},
+//YÜKLEDİM
+{
+  "name": "BusinessAnalytics",
+  "application": "GuidePlatform"
+},
+{
+  "name": "JobOpportunities",
+  "application": "GuidePlatform"
+},
+{
+  "name": "JobSeekers",
+  "application": "GuidePlatform"
 }
+

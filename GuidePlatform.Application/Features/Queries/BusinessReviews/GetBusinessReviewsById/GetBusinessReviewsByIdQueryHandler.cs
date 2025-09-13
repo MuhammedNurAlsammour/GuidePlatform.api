@@ -131,14 +131,36 @@ namespace GuidePlatform.Application.Features.Queries.BusinessReviews.GetBusiness
           updateUserName = updateUserDetail.AuthUserName;
         }
 
+        // 🎯 BusinessName bilgisini al
+        string? businessName = null;
+        var business = await _context.businesses
+            .Where(b => b.Id == businessReviews.BusinessId && b.RowIsActive && !b.RowIsDeleted)
+            .Select(b => b.Name)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(cancellationToken);
+        businessName = business ?? "Unknown Business";
+
+        // 🎯 ReviewerName bilgisini al (NameSurname)
+        string? reviewerName = null;
+        var reviewerDetails = await _authUserService.GetAuthUserDetailsAsync(new List<Guid> { businessReviews.ReviewerId }, cancellationToken);
+        if (reviewerDetails.ContainsKey(businessReviews.ReviewerId))
+        {
+          var reviewerDetail = reviewerDetails[businessReviews.ReviewerId];
+          reviewerName = reviewerDetail.AuthUserFullName ?? reviewerDetail.AuthUserName ?? "Unknown User";
+        }
+        else
+        {
+          reviewerName = "Unknown User";
+        }
+
         // businessReviews detay DTO'su oluşturuluyor
         var businessReviewsDetail = new BusinessReviewsDTO
         {
           Id = businessReviews.Id,
           BusinessId = businessReviews.BusinessId,
-          BusinessName = null, // TODO: İş yeri adını join ile al
+          BusinessName = businessName, // Business adı
           ReviewerId = businessReviews.ReviewerId,
-          ReviewerName = null, // TODO: Yorum yapan kullanıcı adını join ile al
+          ReviewerName = reviewerName, // Reviewer NameSurname
           Rating = businessReviews.Rating,
           Comment = businessReviews.Comment,
           IsVerified = businessReviews.IsVerified,

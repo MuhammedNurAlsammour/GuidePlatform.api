@@ -23,6 +23,9 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.UpdateBusinesse
     [StringLength(1000, ErrorMessage = "Description cannot exceed 1000 characters")]
     public string? Description { get; set; }
 
+    [StringLength(1000, ErrorMessage = "SubDescription cannot exceed 1000 characters")]
+    public string? SubDescription { get; set; } // وصف فرعي أو مختصر
+
     public Guid? CategoryId { get; set; }
     public Guid? SubCategoryId { get; set; }
 
@@ -60,6 +63,19 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.UpdateBusinesse
     [StringLength(100, ErrorMessage = "Telegram cannot exceed 100 characters")]
     public string? Telegram { get; set; }
 
+    // 🎯 Ana iletişim bilgileri - Primary contact information
+    [Range(1, 8, ErrorMessage = "Primary contact type 1 must be between 1 and 8")]
+    public int? PrimaryContactType1 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+
+    [StringLength(500, ErrorMessage = "Primary contact value 1 cannot exceed 500 characters")]
+    public string? PrimaryContactValue1 { get; set; }  // Ana iletişim değeri 1 - Primary contact value 1
+
+    [Range(1, 8, ErrorMessage = "Primary contact type 2 must be between 1 and 8")]
+    public int? PrimaryContactType2 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+
+    [StringLength(500, ErrorMessage = "Primary contact value 2 cannot exceed 500 characters")]
+    public string? PrimaryContactValue2 { get; set; }  // Ana iletişim değeri 2 - Primary contact value 2
+
     // 💼 İş özellikleri - Business features
     [Range(0, 10, ErrorMessage = "Subscription type must be between 0 and 10")]
     public int? SubscriptionType { get; set; }
@@ -94,6 +110,11 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.UpdateBusinesse
         entity.Description = request.Description.Trim();
       else if (request.Description == null)
         entity.Description = null; // Explicit null assignment
+
+      if (!string.IsNullOrWhiteSpace(request.SubDescription))
+        entity.SubDescription = request.SubDescription.Trim();
+      else if (request.SubDescription == null)
+        entity.SubDescription = null; // Explicit null assignment
 
       if (request.CategoryId.HasValue)
         entity.CategoryId = request.CategoryId.Value;
@@ -144,6 +165,19 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.UpdateBusinesse
 
       if (!string.IsNullOrWhiteSpace(request.Telegram))
         entity.Telegram = request.Telegram.Trim();
+
+      // 🎯 Ana iletişim bilgileri - Primary contact information
+      if (request.PrimaryContactType1.HasValue)
+        entity.PrimaryContactType1 = request.PrimaryContactType1.Value;
+
+      if (!string.IsNullOrWhiteSpace(request.PrimaryContactValue1))
+        entity.PrimaryContactValue1 = request.PrimaryContactValue1.Trim();
+
+      if (request.PrimaryContactType2.HasValue)
+        entity.PrimaryContactType2 = request.PrimaryContactType2.Value;
+
+      if (!string.IsNullOrWhiteSpace(request.PrimaryContactValue2))
+        entity.PrimaryContactValue2 = request.PrimaryContactValue2.Trim();
 
       // 💼 İş özellikleri - Business features
       if (request.SubscriptionType.HasValue)

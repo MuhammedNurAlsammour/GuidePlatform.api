@@ -26,7 +26,12 @@ namespace GuidePlatform.Persistence.Contexts
     public DbSet<ArticlesViewModel> articles { get; set; }
     public DbSet<PagesViewModel> pages { get; set; }
     public DbSet<BannersViewModel> banners { get; set; }
-
+    public DbSet<AnnouncementsViewModel> announcements { get; set; }
+    public DbSet<FilesViewModel> files { get; set; }
+    public DbSet<SearchLogsViewModel> searchLogs { get; set; }
+    public DbSet<BusinessAnalyticsViewModel> businessAnalytics { get; set; }
+    public DbSet<JobOpportunitiesViewModel> jobOpportunities { get; set; }
+    public DbSet<JobSeekersViewModel> jobSeekers { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,6 +55,12 @@ namespace GuidePlatform.Persistence.Contexts
       modelBuilder.ApplyConfiguration(new ArticlesMap());
       modelBuilder.ApplyConfiguration(new PagesMap());
       modelBuilder.ApplyConfiguration(new BannersMap());
+      modelBuilder.ApplyConfiguration(new AnnouncementsMap());
+      modelBuilder.ApplyConfiguration(new FilesMap());
+      modelBuilder.ApplyConfiguration(new SearchLogsMap());
+      modelBuilder.ApplyConfiguration(new BusinessAnalyticsMap());
+      modelBuilder.ApplyConfiguration(new JobOpportunitiesMap());
+      modelBuilder.ApplyConfiguration(new JobSeekersMap());
     }
   }
 

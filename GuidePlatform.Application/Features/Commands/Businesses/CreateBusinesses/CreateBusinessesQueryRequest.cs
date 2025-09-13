@@ -17,6 +17,7 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.CreateBusinesse
     public string Name { get; set; } = string.Empty;
 
     public string? Description { get; set; }
+    public string? SubDescription { get; set; } // وصف فرعي أو مختصر
 
     public Guid? CategoryId { get; set; }
     public Guid? SubCategoryId { get; set; }
@@ -38,6 +39,12 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.CreateBusinesse
     public string? InstagramUrl { get; set; }
     public string? WhatsApp { get; set; }
     public string? Telegram { get; set; }
+
+    // 🎯 Ana iletişim bilgileri - Primary contact information
+    public int? PrimaryContactType1 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+    public string? PrimaryContactValue1 { get; set; }  // Ana iletişim değeri 1 - Primary contact value 1
+    public int? PrimaryContactType2 { get; set; }      // 1:WhatsApp, 2:Phone, 3:Mobile, 4:Email, 5:Facebook, 6:Instagram, 7:Telegram, 8:Website
+    public string? PrimaryContactValue2 { get; set; }  // Ana iletişim değeri 2 - Primary contact value 2
 
     // 💼 İş özellikleri - Business features
     public int SubscriptionType { get; set; } = 0;
@@ -61,6 +68,7 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.CreateBusinesse
         CreateUserId = createUserId, // 🎯 Otomatik token'dan alınan CreateUserId - CreateUserId from automatic token
         Name = request.Name,
         Description = request.Description,
+        SubDescription = request.SubDescription,
         CategoryId = request.CategoryId,
         SubCategoryId = request.SubCategoryId,
         ProvinceId = request.ProvinceId,
@@ -77,6 +85,10 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.CreateBusinesse
         InstagramUrl = request.InstagramUrl,
         WhatsApp = request.WhatsApp,
         Telegram = request.Telegram,
+        PrimaryContactType1 = request.PrimaryContactType1,
+        PrimaryContactValue1 = request.PrimaryContactValue1,
+        PrimaryContactType2 = request.PrimaryContactType2,
+        PrimaryContactValue2 = request.PrimaryContactValue2,
         SubscriptionType = request.SubscriptionType,
         IsVerified = request.IsVerified,
         IsFeatured = request.IsFeatured,

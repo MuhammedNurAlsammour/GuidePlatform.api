@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes Pages Sayfalar tablosu tablosu bilgilerini getirir.
+    /// Dropboxes Pages Sayfalar tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Pages Sayfalar tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Pages Sayfalar tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Pages Sayfalar tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Pages Sayfalar tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Pages Sayfalar tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Pages Sayfalar tablosu bilgilerini içeren istek.</param> 
+    /// <returns>Pages Sayfalar tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Pages Sayfalar tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Pages Sayfalar tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">Pages Sayfalar tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Pages Sayfalar tablosu tablosu Bilgilerini Görüntüle", Menu = "Pages Sayfalar tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Pages Sayfalar tablosu Bilgilerini Görüntüle", Menu = "Pages Sayfalar tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesPagesQueryResponse>>> GetAllDropboxesPages([FromQuery] GetAllDropboxesPagesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesPagesQueryRequest, GetAllDropboxesPagesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesPagesQueryRequest, GetAllDropboxesPagesQueryResponse>(request);
     }
 
     /// <summary>

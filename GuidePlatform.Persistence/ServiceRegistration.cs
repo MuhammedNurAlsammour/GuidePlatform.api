@@ -39,6 +39,34 @@ namespace GuidePlatform.Persistence
 			}, ServiceLifetime.Scoped);
 
 			services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
+			// 🎯 SharedDbContext'i kaydet (storeplatformh schema için)
+			services.AddDbContext<SharedDbContext>((sp, options) =>
+			{
+				var createAndUpdateDateInterceptor = sp.GetRequiredService<CreateAndUpdateDateInterceptor>();
+
+				// 🎯 PostgreSQL bağlantı ayarları - Shared schema için aynı bağlantı
+				var connectionString = configuration.GetConnectionString("PostgreSQL");
+				
+				options.UseNpgsql(connectionString, npgsqlOptions =>
+				{
+					// 🎯 Timeout ayarları - Timeout ayarları
+					npgsqlOptions.CommandTimeout(60); // 60 saniye komut timeout'u
+					npgsqlOptions.EnableRetryOnFailure(
+						maxRetryCount: 5, // Maksimum 5 deneme
+						maxRetryDelay: TimeSpan.FromSeconds(30), // Maksimum 30 saniye bekleme
+						errorCodesToAdd: null // Tüm hatalar için retry
+					);
+					
+				})
+				.UseSnakeCaseNamingConvention()
+				.AddInterceptors(createAndUpdateDateInterceptor)
+				.EnableSensitiveDataLogging(false) // Production'da false olmalı
+				.EnableDetailedErrors(true); // Development için true
+
+			}, ServiceLifetime.Scoped);
+
+			services.AddScoped<ISharedDbContext, SharedDbContext>();
 		}
 	}
 }

@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini getirir.
+    /// Dropboxes UserFavorites Kullanıcı Favorileri tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes UserFavorites Kullanıcı Favorileri tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes UserFavorites Kullanıcı Favorileri tablosu bilgilerini içeren istek.</param> 
+    /// <returns>UserFavorites Kullanıcı Favorileri tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes UserFavorites Kullanıcı Favorileri tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">UserFavorites Kullanıcı Favorileri tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">UserFavorites Kullanıcı Favorileri tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes UserFavorites Kullanıcı Favorileri tablosu tablosu Bilgilerini Görüntüle", Menu = "UserFavorites Kullanıcı Favorileri tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes UserFavorites Kullanıcı Favorileri tablosu Bilgilerini Görüntüle", Menu = "UserFavorites Kullanıcı Favorileri tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesUserFavoritesQueryResponse>>> GetAllDropboxesUserFavorites([FromQuery] GetAllDropboxesUserFavoritesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesUserFavoritesQueryRequest, GetAllDropboxesUserFavoritesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesUserFavoritesQueryRequest, GetAllDropboxesUserFavoritesQueryResponse>(request);
     }
 
     /// <summary>

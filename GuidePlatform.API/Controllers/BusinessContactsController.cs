@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini getirir.
+    /// Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini içeren istek.</param> 
+    /// <returns>BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessContacts İşletme İletişim Bilgileri tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessContacts İşletme İletişim Bilgileri tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu tablosu Bilgilerini Görüntüle", Menu = "BusinessContacts İşletme İletişim Bilgileri tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessContacts İşletme İletişim Bilgileri tablosu Bilgilerini Görüntüle", Menu = "BusinessContacts İşletme İletişim Bilgileri tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessContactsQueryResponse>>> GetAllDropboxesBusinessContacts([FromQuery] GetAllDropboxesBusinessContactsQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesBusinessContactsQueryRequest, GetAllDropboxesBusinessContactsQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesBusinessContactsQueryRequest, GetAllDropboxesBusinessContactsQueryResponse>(request);
     }
 
     /// <summary>

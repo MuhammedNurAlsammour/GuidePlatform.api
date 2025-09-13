@@ -50,6 +50,10 @@ namespace GuidePlatform.Domain.Maps
            .HasColumnName("description")
            .HasColumnType("text");
 
+      builder.Property(x => x.SubDescription)
+           .HasColumnName("sub_description")
+           .HasColumnType("text");
+
       builder.Property(x => x.CategoryId)
            .HasColumnName("category_id");
 
@@ -110,6 +114,21 @@ namespace GuidePlatform.Domain.Maps
       builder.Property(x => x.Telegram)
            .HasColumnName("telegram")
            .HasMaxLength(100);
+
+      // 🎯 Ana iletişim bilgileri - Primary contact information
+      builder.Property(x => x.PrimaryContactType1)
+           .HasColumnName("primary_contact_type_1");
+
+      builder.Property(x => x.PrimaryContactValue1)
+           .HasColumnName("primary_contact_value_1")
+           .HasMaxLength(500);
+
+      builder.Property(x => x.PrimaryContactType2)
+           .HasColumnName("primary_contact_type_2");
+
+      builder.Property(x => x.PrimaryContactValue2)
+           .HasColumnName("primary_contact_value_2")
+           .HasMaxLength(500);
 
       // ⭐ Değerlendirme ve istatistikler - Rating and statistics
       builder.Property(x => x.Rating)

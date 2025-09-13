@@ -41,7 +41,8 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetBannersById
         }
 
         var bannersId = request.GetIdAsGuid();
-        if (!bannersId.HasValue)
+        var provinceId = request.GetIdAsGuid();
+        if (!bannersId.HasValue || !provinceId.HasValue)
         {
           // Geçersiz ID formatı hatası döndürülüyor
           return ResultFactory.CreateErrorResult<GetBannersByIdQueryResponse>(
@@ -51,6 +52,10 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetBannersById
               "Geçersiz banners ID formatı.",
               $"Geçersiz banners ID formatı: '{request.Id}'. Lütfen geçerli bir GUID girin."
           );
+        }
+        if (request.ProvinceId.HasValue)
+        {
+          provinceId = request.ProvinceId.Value;
         }
 
         // Kullanıcı ve müşteri kimliklerini güvenli şekilde al
@@ -64,13 +69,13 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetBannersById
         // 🎯 Toplam sayıyı hesapla (filtreleme sonrası) - Düzeltilmiş filtreleme
         var totalCountQuery = ApplyAuthFilters(baseQuery, authUserId, authCustomerId);
         var totalCount = await totalCountQuery
-            .Where(x => x.Id == bannersId.Value)
+            .Where(x => x.Id == bannersId.Value && x.ProvinceId == provinceId.Value)
             .AsNoTracking()
             .CountAsync(cancellationToken);
 
         // Yetkilendirme filtreleri uygulanıyor ve banners çekiliyor
         var banners = await ApplyAuthFilters(baseQuery, authUserId, authCustomerId)
-            .Where(x => x.Id == bannersId.Value)
+            .Where(x => x.Id == bannersId.Value && x.ProvinceId == provinceId.Value)
             .AsNoTracking()
             .FirstOrDefaultAsync(cancellationToken);
 
@@ -82,7 +87,7 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetBannersById
               null,
               "Hata / banners Bulunamadı",
               "Belirtilen ID'ye sahip banners bulunamadı.",
-              $"ID '{request.Id}' ile eşleşen banners bulunamadı."
+              $"ID '{request.Id}' ve '{request.ProvinceId}' ile eşleşen banners bulunamadı."
           );
         }
 
@@ -150,6 +155,11 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetBannersById
           // Banner özel alanları - Banner specific fields
           Title = banners.Title,
           Description = banners.Description,
+          ProvinceId = banners.ProvinceId,
+          // Yeni sistem: URL'leri kullan - New system: Use URLs
+          PhotoUrl = banners.PhotoUrl,
+          ThumbnailUrl = banners.ThumbnailUrl,
+          // Eski sistem: Base64'ü koru (geriye dönük uyumluluk için) - Old system: Keep Base64 (for backward compatibility)
           Photo = banners.Photo,
           Thumbnail = banners.Thumbnail,
           PhotoContentType = banners.PhotoContentType,

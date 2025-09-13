@@ -1,6 +1,25 @@
 # .NET Core ve C# için .gitignore dosyası
 # GuidePlatform API projesi için özel ayarlar
 
+# C# Build artifacts - öncelikli kurallar
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+**/Any CPU/
+*.dll
+*.pdb
+*.exe
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+*.xml
+*.cache
+*.tmp
+*.temp
+
 ## Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -451,3 +470,24 @@ Auth_library/
 !appsettings.json
 !appsettings.Example.json
 !appsettings.Template.json
+
+# Images and media files - ignore all uploaded images
+GuidePlatform.API/wwwroot/images/
+GuidePlatform.API/wwwroot/uploads/
+**/wwwroot/images/
+**/wwwroot/uploads/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.webp
+*.ico
+
+# Business images with long names
+**/business_*_image_*.jpeg
+**/business_*_image_*.jpg
+**/business_*_thumb_*.jpeg
+**/business_*_thumb_*.jpg

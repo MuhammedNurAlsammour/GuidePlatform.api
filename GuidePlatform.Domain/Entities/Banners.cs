@@ -11,9 +11,13 @@ namespace GuidePlatform.Domain.Entities
   {
     // Banner ile ilgili temel bilgiler - Basic banner information
     public string Title { get; set; } = string.Empty;
+    // 📍 Konum bilgileri - Location information
+    public Guid? ProvinceId { get; set; }
     public string? Description { get; set; }
-    public byte[]? Photo { get; set; }
-    public byte[]? Thumbnail { get; set; }
+    public byte[]? Photo { get; set; } // Eski sistem için korunuyor
+    public byte[]? Thumbnail { get; set; } // Eski sistem için korunuyor
+    public string? PhotoUrl { get; set; } // Yeni sistem: Fotoğraf URL'si
+    public string? ThumbnailUrl { get; set; } // Yeni sistem: Küçük resim URL'si
     public string? PhotoContentType { get; set; }
     public string? LinkUrl { get; set; }
     public DateTime StartDate { get; set; } = DateTime.UtcNow;

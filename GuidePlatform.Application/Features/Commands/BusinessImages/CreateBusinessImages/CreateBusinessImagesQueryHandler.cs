@@ -37,15 +37,15 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusin
         await _context.businessImages.AddAsync(businessImages, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
 
-        // 2. Fotoğraf yükleme işlemi
+        // 2. Fotoğraf yükleme işlemi (eski sistem için)
         if (!string.IsNullOrEmpty(request.PhotoPath) || !string.IsNullOrEmpty(request.PhotoBase64))
         {
-          var photoUploadDto = request.ToPhotoUploadDto(businessImages.Id);
+          var photoUploadDto = request.ToPhotoUploadDto(businessImages.BusinessId, businessImages.Id);
           // Fotoğraf güncelleme sonucu kontrol ediliyor
           var photoResult = await _businessImageService.UpdateBusinessImageAsync(photoUploadDto);
 
-          // photoResult.Success özelliği ile kontrol ediliyor
-          if (photoResult.StatusCode != 200)
+          // photoResult.OperationStatus özelliği ile kontrol ediliyor
+          if (!photoResult.OperationStatus)
           {
             return ResultFactory.CreateErrorResult<CreateBusinessImagesCommandResponse>(
                 businessImages.Id,
@@ -56,6 +56,7 @@ namespace GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusin
             );
           }
         }
+        // Yeni sistem: PhotoUrl ve ThumbnailUrl zaten Map method'unda kaydedildi
 
         return ResultFactory.CreateSuccessResult<CreateBusinessImagesCommandResponse>(
             new CreateBusinessImagesCommandResponse

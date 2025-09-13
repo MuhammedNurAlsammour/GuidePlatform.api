@@ -6,17 +6,20 @@ using GuidePlatform.Application.Operations;
 using GuidePlatform.Application.Features.Commands.Base;
 using Karmed.External.Auth.Library.Services;
 using System.Net;
+using GuidePlatform.Application.Services;
 
 namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
 {
   public class UpdateBannersCommandHandler : BaseCommandHandler, IRequestHandler<UpdateBannersCommandRequest, TransactionResultPack<UpdateBannersCommandResponse>>
   {
     private readonly IApplicationDbContext _context;
+    private readonly IBannerImageService _bannerImageService;
 
-    public UpdateBannersCommandHandler(IApplicationDbContext context, ICurrentUserService currentUserService)
+    public UpdateBannersCommandHandler(IApplicationDbContext context, ICurrentUserService currentUserService, IBannerImageService bannerImageService)
       : base(currentUserService)
     {
       _context = context;
+      _bannerImageService = bannerImageService;
     }
 
     public async Task<TransactionResultPack<UpdateBannersCommandResponse>> Handle(UpdateBannersCommandRequest request, CancellationToken cancellationToken)
@@ -45,7 +48,14 @@ namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
         // 🎯 2. Güncellemeleri uygula - 3. Güncellemeleri uygula
         UpdateBannersCommandRequest.Map(banners, request, _currentUserService);
 
-        // 🎯 3. Entity'yi context'e ekle - 3. Entity'yi context'e ekle
+        // 🎯 3. Yeni sistem: Eğer PhotoUrl veya ThumbnailUrl güncelleniyorsa, eski dosyaları sil
+        if (!string.IsNullOrEmpty(request.PhotoUrl) || !string.IsNullOrEmpty(request.ThumbnailUrl))
+        {
+          // Eski dosyaları sil (opsiyonel - gerekirse)
+          // await DeleteOldImageFiles(banners);
+        }
+
+        // 🎯 4. Entity'yi context'e ekle - 3. Entity'yi context'e ekle
         _context.banners.Update(banners);
 
         // 🎯 4. Değişiklikleri kaydet - 4. Değişiklikleri kaydet
@@ -68,7 +78,7 @@ namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
           null,
           "İşlem Başarılı",
           "banners başarıyla güncellendi.",
-          $"banners Id: { banners.Id} başarıyla güncellendi."
+          $"banners Id: {banners.Id} başarıyla güncellendi."
         );
       }
       catch (Exception ex)
@@ -99,6 +109,40 @@ namespace GuidePlatform.Application.Features.Commands.Banners.UpdateBanners
     // {
     //   // Durum değişikliği işlemleri buraya eklenebilir
     //   // Örnek: Envanter güncelleme, bildirim gönderme, vb.
+    // }
+
+    /// <summary>
+    /// Eski resim dosyalarını sil - Delete old image files
+    /// </summary>
+    // private async Task DeleteOldImageFiles(BannersViewModel banners)
+    // {
+    //   try
+    //   {
+    //     // Eski photo dosyasını sil
+    //     if (!string.IsNullOrEmpty(banners.PhotoUrl))
+    //     {
+    //       var photoDeleteResult = _fileStorageService.DeleteImageAsync(banners.PhotoUrl);
+    //       if (!photoDeleteResult.OperationStatus)
+    //       {
+    //         // Log warning: Could not delete old photo file
+    //       }
+    //     }
+
+    //     // Eski thumbnail dosyasını sil
+    //     if (!string.IsNullOrEmpty(banners.ThumbnailUrl))
+    //     {
+    //       var thumbnailDeleteResult = _fileStorageService.DeleteImageAsync(banners.ThumbnailUrl);
+    //       if (!thumbnailDeleteResult.OperationStatus)
+    //       {
+    //         // Log warning: Could not delete old thumbnail file
+    //       }
+    //     }
+    //   }
+    //   catch (Exception ex)
+    //   {
+    //     // Log error: Could not delete old image files
+    //     // Don't throw exception as this is not critical
+    //   }
     // }
   }
 }

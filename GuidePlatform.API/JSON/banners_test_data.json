@@ -1,0 +1,147 @@
+{
+  "testData": [
+    {
+      "description": "Ana Banner - Suriye Rehberi",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "title": "Suriye ve Türkiye Rehberi",
+        "description": "Suriye ve Türkiye'deki en iyi işletmeleri keşfedin. Restoranlar, oteller, turistik yerler ve daha fazlası.",
+        "photo": null,
+        "thumbnail": null,
+        "photoUrl": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg", 
+        "thumbnailUrl": "C:\\Users\\Muhammed\\Pictures\\Camera Roll\\WIN_20241003_17_56_00_Pro.jpg",
+        "photoContentType": "image/jpeg",
+        "linkUrl": "https://guideplatform.com/explore",
+        "startDate": "2025-01-01T00:00:00.000Z",
+        "endDate": "2025-12-31T23:59:59.000Z",
+        "isActive": true,
+        "orderIndex": 1,
+        "icon": "guide"
+      }
+    },
+    {
+      "description": "Promosyon Banner - Restoranlar",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "title": "En İyi Restoranlar",
+        "description": "Suriye ve Türkiye'nin en lezzetli restoranlarını keşfedin. Geleneksel ve modern mutfaklar.",
+        "photo": null,
+        "thumbnail": null,
+        "photoUrl": "https://guideplatform.com/uploads/banners/best-restaurants.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/banners/best-restaurants-thumb.jpg",
+        "photoContentType": "image/jpeg",
+        "linkUrl": "https://guideplatform.com/restaurants",
+        "startDate": "2025-01-01T00:00:00.000Z",
+        "endDate": "2025-06-30T23:59:59.000Z",
+        "isActive": true,
+        "orderIndex": 2,
+        "icon": "restaurant"
+      }
+    },
+    {
+      "description": "Etkinlik Banner - Festival",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "title": "Halep Kültür Festivali",
+        "description": "Geleneksel Suriye kültürünü keşfedin. Müzik, dans, yemek ve el sanatları.",
+        "photo": null,
+        "thumbnail": null,
+        "photoUrl": "https://guideplatform.com/uploads/banners/aleppo-festival.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/banners/aleppo-festival-thumb.jpg",
+        "photoContentType": "image/jpeg",
+        "linkUrl": "https://guideplatform.com/events/aleppo-festival",
+        "startDate": "2025-03-01T00:00:00.000Z",
+        "endDate": "2025-03-31T23:59:59.000Z",
+        "isActive": true,
+        "orderIndex": 3,
+        "icon": "event"
+      }
+    },
+    {
+      "description": "Turizm Banner - Antakya",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "title": "Antakya Turizm Rehberi",
+        "description": "Antakya'nın tarihi ve doğal güzelliklerini keşfedin. Tarihi yerler, doğa yürüyüşleri ve daha fazlası.",
+        "photo": null,
+        "thumbnail": null,
+        "photoUrl": "https://guideplatform.com/uploads/banners/antakya-tourism.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/banners/antakya-tourism-thumb.jpg",
+        "photoContentType": "image/jpeg",
+        "linkUrl": "https://guideplatform.com/tourism/antakya",
+        "startDate": "2025-01-01T00:00:00.000Z",
+        "endDate": "2025-12-31T23:59:59.000Z",
+        "isActive": true,
+        "orderIndex": 4,
+        "icon": "tourism"
+      }
+    },
+    {
+      "description": "Özel Promosyon - İndirim",
+      "data": {
+        "authCustomerId": "72c54b1a-8e1c-45ea-8edd-b5da1091e325",
+        "authUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "createUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "updateUserId": "19a8b428-a57e-4a24-98e3-470258d3d83e",
+        "title": "%50 İndirim Fırsatı",
+        "description": "Seçili restoranlarda %50'ye varan indirimler. Sınırlı süre!",
+        "photo": null,
+        "thumbnail": null,
+        "photoUrl": "https://guideplatform.com/uploads/banners/discount-offer.jpg",
+        "thumbnailUrl": "https://guideplatform.com/uploads/banners/discount-offer-thumb.jpg",
+        "photoContentType": "image/jpeg",
+        "linkUrl": "https://guideplatform.com/offers",
+        "startDate": "2025-02-01T00:00:00.000Z",
+        "endDate": "2025-02-28T23:59:59.000Z",
+        "isActive": true,
+        "orderIndex": 5,
+        "icon": "discount"
+      }
+    }
+  ],
+  "icons": {
+    "guide": "Rehber",
+    "restaurant": "Restoran",
+    "event": "Etkinlik",
+    "tourism": "Turizm",
+    "discount": "İndirim",
+    "hotel": "Otel",
+    "shopping": "Alışveriş",
+    "transport": "Ulaşım",
+    "health": "Sağlık",
+    "education": "Eğitim",
+    "image": "Genel Resim"
+  },
+  "usage": {
+    "description": "Bu JSON dosyası Banners API'sini test etmek için kullanılır",
+    "endpoints": {
+      "create": "POST /api/Banners/CreateBanners",
+      "update": "PUT /api/Banners/UpdateBanners",
+      "getAll": "GET /api/Banners/GetAllBanners",
+      "getById": "GET /api/Banners/GetBannersById/{id}",
+      "delete": "DELETE /api/Banners/DeleteBanners/{id}"
+    },
+    "notes": [
+      "authCustomerId ve authUserId genellikle JWT token'dan otomatik alınır",
+      "createUserId ve updateUserId de token'dan otomatik alınır",
+      "photo ve thumbnail eski sistem için korunuyor (byte[] formatında)",
+      "photoUrl ve thumbnailUrl yeni sistem için kullanılır",
+      "startDate ve endDate banner'ın aktif olacağı tarih aralığını belirler",
+      "orderIndex banner'ların görüntülenme sırasını belirler",
+      "isActive banner'ın aktif olup olmadığını belirler",
+      "linkUrl banner'a tıklandığında yönlendirilecek URL"
+    ]
+  }
+}

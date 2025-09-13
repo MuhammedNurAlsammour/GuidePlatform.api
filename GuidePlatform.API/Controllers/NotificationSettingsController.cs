@@ -66,19 +66,19 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini getirir.
+    /// Dropboxes NotificationSettings Bildirim Ayarları tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes NotificationSettings Bildirim Ayarları tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes NotificationSettings Bildirim Ayarları tablosu bilgilerini içeren istek.</param> 
+    /// <returns>NotificationSettings Bildirim Ayarları tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes NotificationSettings Bildirim Ayarları tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">NotificationSettings Bildirim Ayarları tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">NotificationSettings Bildirim Ayarları tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes NotificationSettings Bildirim Ayarları tablosu tablosu Bilgilerini Görüntüle", Menu = "NotificationSettings Bildirim Ayarları tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes NotificationSettings Bildirim Ayarları tablosu Bilgilerini Görüntüle", Menu = "NotificationSettings Bildirim Ayarları tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesNotificationSettingsQueryResponse>>> GetAllDropboxesNotificationSettings([FromQuery] GetAllDropboxesNotificationSettingsQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesNotificationSettingsQueryRequest, GetAllDropboxesNotificationSettingsQueryResponse>(request);

@@ -64,22 +64,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes Payments Ödemeler tablosu tablosu bilgilerini getirir.
+    /// Dropboxes Payments Ödemeler tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Payments Ödemeler tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Payments Ödemeler tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Payments Ödemeler tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Payments Ödemeler tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Payments Ödemeler tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Payments Ödemeler tablosu bilgilerini içeren istek.</param> 
+    /// <returns>Payments Ödemeler tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Payments Ödemeler tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Payments Ödemeler tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">Payments Ödemeler tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Payments Ödemeler tablosu tablosu Bilgilerini Görüntüle", Menu = "Payments Ödemeler tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Payments Ödemeler tablosu Bilgilerini Görüntüle", Menu = "Payments Ödemeler tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesPaymentsQueryResponse>>> GetAllDropboxesPayments([FromQuery] GetAllDropboxesPaymentsQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesPaymentsQueryRequest, GetAllDropboxesPaymentsQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesPaymentsQueryRequest, GetAllDropboxesPaymentsQueryResponse>(request);
     }
 
     /// <summary>

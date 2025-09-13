@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using GuidePlatform.Application.Dtos.Response;
 using GuidePlatform.Application.Dtos.ResponseDtos.BusinessImages;
 using GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusinessImages;
+using GuidePlatform.Application.Features.Commands.BusinessImages.CreateBusinessImagesWithImage;
 using GuidePlatform.Application.Features.Commands.BusinessImages.DeleteBusinessImages;
 using GuidePlatform.Application.Features.Commands.BusinessImages.UpdateBusinessImages;
 using GuidePlatform.Application.Features.Queries.BusinessImages.GetAllBusinessImages;
@@ -64,22 +65,22 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini getirir.
+    /// Dropboxes BusinessImages İşletme Görselleri tablosu bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes BusinessImages İşletme Görselleri tablosu bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini içeren istek.</param> 
-    /// <returns>BusinessImages İşletme Görselleri tablosu tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes BusinessImages İşletme Görselleri tablosu tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes BusinessImages İşletme Görselleri tablosu bilgilerini içeren istek.</param> 
+    /// <returns>BusinessImages İşletme Görselleri tablosu bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes BusinessImages İşletme Görselleri tablosu bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessImages İşletme Görselleri tablosu tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessImages İşletme Görselleri tablosu bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessImages İşletme Görselleri tablosu tablosu Bilgilerini Görüntüle", Menu = "BusinessImages İşletme Görselleri tablosu tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessImages İşletme Görselleri tablosu Bilgilerini Görüntüle", Menu = "BusinessImages İşletme Görselleri tablosu")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessImagesQueryResponse>>> GetAllDropboxesBusinessImages([FromQuery] GetAllDropboxesBusinessImagesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesBusinessImagesQueryRequest, GetAllDropboxesBusinessImagesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesBusinessImagesQueryRequest, GetAllDropboxesBusinessImagesQueryResponse>(request);
     }
 
     /// <summary>
@@ -98,6 +99,24 @@ namespace GuidePlatform.API.Controllers
     public async Task<ActionResult<TransactionResultPack<CreateBusinessImagesCommandResponse>>> CreateBusinessImages([FromBody] CreateBusinessImagesCommandRequest request)
     {
       return await SendCommand<CreateBusinessImagesCommandRequest, CreateBusinessImagesCommandResponse>(request, HttpStatusCode.Created);
+    }
+
+    /// <summary>
+    /// Gelen resim dosyasıyla yeni BusinessImages İşletme Görselleri tablosu ekler.
+    /// </summary>
+    /// <remarks>
+    /// Bu uç nokta, gelen resim dosyasıyla yeni BusinessImages İşletme Görselleri tablosu ekler.
+    /// </remarks>
+    /// <param name="request">Yeni BusinessImages İşletme Görselleri tablosu bilgilerini içeren istek.</param>
+    /// <returns>İşlem sonucunu döndürür.</returns>
+    /// <response code="201">BusinessImages İşletme Görselleri tablosu başarıyla oluşturuldu.</response>
+    /// <response code="400">İstek geçersizse.</response>
+    /// <response code="401">Kullanıcı yetkili değilse.</response>
+    [HttpPost("[action]")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Resimli Yeni BusinessImages İşletme Görselleri tablosu Oluşturma", Menu = "BusinessImages İşletme Görselleri tablosu")]
+    public async Task<ActionResult<TransactionResultPack<CreateBusinessImagesWithImageCommandResponse>>> CreateBusinessImagesWithImage([FromForm] CreateBusinessImagesWithImageCommandRequest request)
+    {
+      return await SendCommand<CreateBusinessImagesWithImageCommandRequest, CreateBusinessImagesWithImageCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>

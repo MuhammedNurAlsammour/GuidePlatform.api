@@ -10,6 +10,10 @@ namespace GuidePlatform.Application.Features.Queries.Banners.GetAllBanners
   public class GetAllBannersQueryRequest : BasePaginatedQueryRequest, IRequest<TransactionResultPack<GetAllBannersQueryResponse>>
   {
     /// <summary>
+    /// il durumu filtresi - Province status filter
+    /// </summary>
+    public Guid? ProvinceId { get; set; } // Belirli bir şehre ait arayanlar
+    /// <summary>
     /// Aktif durumu filtresi - Active status filter
     /// </summary>
     public bool? IsActive { get; set; }

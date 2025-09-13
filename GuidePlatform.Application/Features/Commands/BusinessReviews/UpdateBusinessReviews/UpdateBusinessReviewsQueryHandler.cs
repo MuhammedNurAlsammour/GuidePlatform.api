@@ -51,8 +51,8 @@ namespace GuidePlatform.Application.Features.Commands.BusinessReviews.UpdateBusi
         // 🎯 4. Değişiklikleri kaydet - 4. Değişiklikleri kaydet
         await _context.SaveChangesAsync(cancellationToken);
 
-        // 🎯 5. 🎯 Ek işlemler buraya eklenebilir (örn: ilişkili kayıtlar, validasyonlar, vb.)
-        // await ProcessAdditionalOperationsAsync(businessReviews.Id, request, cancellationToken);
+        // 🎯 5. Business'in TotalReviews ve Rating değerlerini güncelle
+        await UpdateBusinessRatingAndReviewCount(businessReviews.BusinessId, cancellationToken);
 
         // 🎯 6. 🎯 Durum değişikliği kontrolü (gerekirse)
         // if (request.Status != null && oldStatus != request.Status)
@@ -68,7 +68,7 @@ namespace GuidePlatform.Application.Features.Commands.BusinessReviews.UpdateBusi
           null,
           "İşlem Başarılı",
           "businessReviews başarıyla güncellendi.",
-          $"businessReviews Id: { businessReviews.Id} başarıyla güncellendi."
+          $"businessReviews Id: {businessReviews.Id} başarıyla güncellendi."
         );
       }
       catch (Exception ex)
@@ -91,6 +91,62 @@ namespace GuidePlatform.Application.Features.Commands.BusinessReviews.UpdateBusi
     //   // Ek işlemler buraya eklenebilir
     //   // Örnek: İlişkili kayıtlar güncelleme, validasyonlar, vb.
     // }
+
+    /// <summary>
+    /// Business'in TotalReviews ve Rating değerlerini günceller
+    /// </summary>
+    private async Task UpdateBusinessRatingAndReviewCount(Guid businessId, CancellationToken cancellationToken)
+    {
+      try
+      {
+        // 🎯 1. Business'i bul
+        var business = await _context.businesses
+            .Where(x => x.Id == businessId && x.RowIsActive && !x.RowIsDeleted)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        if (business == null) return; // Business bulunamazsa çık
+
+        // 🎯 2. Bu Business için onaylanmış ve aktif tüm yorumları al
+        var approvedReviews = await _context.businessReviews
+            .Where(x => x.BusinessId == businessId &&
+                       x.IsApproved &&
+                       x.RowIsActive &&
+                       !x.RowIsDeleted)
+            .AsNoTracking()
+            .ToListAsync(cancellationToken);
+
+        // 🎯 3. TotalReviews hesapla
+        business.TotalReviews = approvedReviews.Count;
+
+        // 🎯 4. Rating ortalamasını hesapla
+        if (approvedReviews.Any())
+        {
+          business.Rating = (decimal)approvedReviews.Average(x => x.Rating);
+        }
+        else
+        {
+          business.Rating = 0; // Hiç yorum yoksa 0
+        }
+
+        // 🎯 5. Güncelleme bilgilerini set et
+        business.RowUpdatedDate = DateTime.UtcNow;
+
+        var currentUserIdString = _currentUserService.GetUserId();
+        if (!string.IsNullOrEmpty(currentUserIdString) && Guid.TryParse(currentUserIdString, out var currentUserId))
+        {
+          business.UpdateUserId = currentUserId;
+        }
+
+        // 🎯 6. Değişiklikleri kaydet
+        _context.businesses.Update(business);
+        await _context.SaveChangesAsync(cancellationToken);
+      }
+      catch (Exception ex)
+      {
+        // Log error ama ana işlemi etkileme
+        // _logger.LogWarning($"Business rating güncellenemedi: {ex.Message}");
+      }
+    }
 
     /// <summary>
     /// Durum değişikliği işlemleri için örnek metod - ihtiyaca göre düzenlenebilir

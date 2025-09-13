@@ -12,11 +12,17 @@ namespace GuidePlatform.Domain.Entities
     // İşletme ID'si - business_id
     public Guid BusinessId { get; set; }
 
-    // Fotoğraf verisi - photo
+    // Fotoğraf verisi - photo (eski sistem için korunuyor)
     public byte[]? Photo { get; set; }
 
-    // Küçük resim verisi - thumbnail
+    // Küçük resim verisi - thumbnail (eski sistem için korunuyor)
     public byte[]? Thumbnail { get; set; }
+
+    // Fotoğraf URL'si - photo_url (yeni sistem)
+    public string? PhotoUrl { get; set; }
+
+    // Küçük resim URL'si - thumbnail_url (yeni sistem)
+    public string? ThumbnailUrl { get; set; }
 
     // Fotoğraf içerik tipi - photo_content_type
     public string? PhotoContentType { get; set; }
