@@ -28,112 +28,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran Businesses İşletmeler ve Organizasyonlar tablosu Listesi Getirir.
+    /// Admin Ana Ekran Businesses İşletmeler ve Organizasyonlar Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Businesses İşletmeler ve Organizasyonlar tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Businesses İşletmeler ve Organizasyonlarlerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm Businesses İşletmeler ve Organizasyonlar tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>Businesses İşletmeler ve Organizasyonlar tablosu listesini döndürür.</returns>
-    /// <response code="200">Businesses İşletmeler ve Organizasyonlar tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm Businesses İşletmeler ve Organizasyonlarleri getirme parametrelerini içeren istek.</param>
+    /// <returns>Businesses İşletmeler ve Organizasyonlar listesini döndürür.</returns>
+    /// <response code="200">Businesses İşletmeler ve Organizasyonlar listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Businesses İşletmeler ve Organizasyonlar tablosu Listesi Getirir", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Businesses İşletmeler ve Organizasyonlar Listesi Getirir", Menu = "Businesses-İşletmeler ve Organizasyonlar")]
     public async Task<ActionResult<TransactionResultPack<GetAllBusinessesQueryResponse>>> GetAllBusinesses([FromQuery] GetAllBusinessesQueryRequest request)
     {
       return await SendQuery<GetAllBusinessesQueryRequest, GetAllBusinessesQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre Businesses İşletmeler ve Organizasyonlar bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir Businesses İşletmeler ve Organizasyonlar tablosu kimliğine göre Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir Businesses İşletmeler ve Organizasyonlar kimliğine göre Businesses İşletmeler ve Organizasyonlar bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Businesses İşletmeler ve Organizasyonlar tablosu kimliğini içeren istek.</param>
-    /// <returns>Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Businesses İşletmeler ve Organizasyonlar kimliğini içeren istek.</param>
+    /// <returns>Businesses İşletmeler ve Organizasyonlar bilgilerini döndürür.</returns>
+    /// <response code="200">Businesses İşletmeler ve Organizasyonlar bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Businesses İşletmeler ve Organizasyonlar tablosu bulunamazsa.</response>
+    /// <response code="404">Businesses İşletmeler ve Organizasyonlar bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Businesses İşletmeler ve Organizasyonlar tablosu Bilgilerini Görüntüle", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Businesses İşletmeler ve Organizasyonlar Bilgilerini Görüntüle", Menu = "Businesses-İşletmeler ve Organizasyonlar")]
     public async Task<ActionResult<TransactionResultPack<GetBusinessesByIdQueryResponse>>> GetByIdBusinesses([FromQuery] GetBusinessesByIdQueryRequest request)
     {
       return await SendQuery<GetBusinessesByIdQueryRequest, GetBusinessesByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini getirir.
+    /// Dropboxes Businesses İşletmeler ve Organizasyonlar bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Businesses İşletmeler ve Organizasyonlar bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Businesses İşletmeler ve Organizasyonlar bilgilerini içeren istek.</param> 
+    /// <returns>Businesses İşletmeler ve Organizasyonlar bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Businesses İşletmeler ve Organizasyonlar bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Businesses İşletmeler ve Organizasyonlar tablosu bulunamazsa.</response>
+    /// <response code="404">Businesses İşletmeler ve Organizasyonlar bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Businesses İşletmeler ve Organizasyonlar tablosu Bilgilerini Görüntüle", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Businesses İşletmeler ve Organizasyonlar Bilgilerini Görüntüle", Menu = "Businesses-İşletmeler ve Organizasyonlar")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessesQueryResponse>>> GetAllDropboxesBusinesses([FromQuery] GetAllDropboxesBusinessesQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesBusinessesQueryRequest, GetAllDropboxesBusinessesQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir Businesses İşletmeler ve Organizasyonlar tablosu ekler.
+    /// Yeni bir Businesses İşletmeler ve Organizasyonlar ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir Businesses İşletmeler ve Organizasyonlar tablosu ekler.
+    /// Bu uç nokta, yeni bir Businesses İşletmeler ve Organizasyonlar ekler.
     /// </remarks>
-    /// <param name="request">Yeni Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni Businesses İşletmeler ve Organizasyonlar bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">Businesses İşletmeler ve Organizasyonlar tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">Businesses İşletmeler ve Organizasyonlar başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Businesses İşletmeler ve Organizasyonlar tablosu Eklemek", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Businesses İşletmeler ve Organizasyonlar Eklemek", Menu = "Businesses-İşletmeler ve Organizasyonlar")]
     public async Task<ActionResult<TransactionResultPack<CreateBusinessesCommandResponse>>> CreateBusinesses([FromBody] CreateBusinessesCommandRequest request)
     {
       return await SendCommand<CreateBusinessesCommandRequest, CreateBusinessesCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir Businesses İşletmeler ve Organizasyonlar tablosu kaydını günceller.
+    /// Mevcut bir Businesses İşletmeler ve Organizasyonlar kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Businesses İşletmeler ve Organizasyonlar tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip Businesses İşletmeler ve Organizasyonlarnin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek Businesses İşletmeler ve Organizasyonlar tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek Businesses İşletmeler ve Organizasyonlar bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Businesses İşletmeler ve Organizasyonlar tablosu başarıyla güncellendi.</response>
+    /// <response code="200">Businesses İşletmeler ve Organizasyonlar başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek Businesses İşletmeler ve Organizasyonlar tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek Businesses İşletmeler ve Organizasyonlar bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Businesses İşletmeler ve Organizasyonlar tablosu Güncelemek", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Businesses İşletmeler ve Organizasyonlar Güncelemek", Menu = "Businesses-İşletmeler ve Organizasyonlar")]
     public async Task<ActionResult<TransactionResultPack<UpdateBusinessesCommandResponse>>> UpdateBusinesses([FromBody] UpdateBusinessesCommandRequest request)
     {
       return await SendCommand<UpdateBusinessesCommandRequest, UpdateBusinessesCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip Businesses İşletmeler ve Organizasyonlar tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip Businesses İşletmeler ve Organizasyonlar kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Businesses İşletmeler ve Organizasyonlar tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip Businesses İşletmeler ve Organizasyonlar kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek Businesses İşletmeler ve Organizasyonlar tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek Businesses İşletmeler ve Organizasyonlar kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Businesses İşletmeler ve Organizasyonlar tablosu başarıyla silindi.</response>
+    /// <response code="200">Businesses İşletmeler ve Organizasyonlar başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek Businesses İşletmeler ve Organizasyonlar tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek Businesses İşletmeler ve Organizasyonlar bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Businesses İşletmeler ve Organizasyonlar tablosu Silme", Menu = "Businesses İşletmeler ve Organizasyonlar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Businesses İşletmeler ve Organizasyonlar Silme", Menu = "Businesses-İşletmeler ve Organizasyonlar")]
     public async Task<ActionResult<TransactionResultPack<DeleteBusinessesCommandResponse>>> DeleteBusinesses([FromRoute] DeleteBusinessesCommandRequest request)
     {
       return await SendCommand<DeleteBusinessesCommandRequest, DeleteBusinessesCommandResponse>(request);

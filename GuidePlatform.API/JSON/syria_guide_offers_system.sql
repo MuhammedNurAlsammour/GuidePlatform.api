@@ -49,7 +49,7 @@ CREATE TABLE offers (
     FOREIGN KEY (update_user_id) REFERENCES auth."AspNetUsers"("Id")
 );
 
--- business_locations table - Yeni: Müşteri lokasyonları tablosu
+-- business_locations table - Yeni: Müşteri lokasyonları
 CREATE TABLE business_locations (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     business_id UUID NOT NULL,

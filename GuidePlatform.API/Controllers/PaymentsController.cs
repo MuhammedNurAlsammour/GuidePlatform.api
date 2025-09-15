@@ -27,112 +27,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran Payments Ödemeler tablosu Listesi Getirir.
+    /// Admin Ana Ekran Payments Ödemeler Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Payments Ödemeler tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Payments Ödemelerlerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm Payments Ödemeler tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>Payments Ödemeler tablosu listesini döndürür.</returns>
-    /// <response code="200">Payments Ödemeler tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm Payments Ödemelerleri getirme parametrelerini içeren istek.</param>
+    /// <returns>Payments Ödemeler listesini döndürür.</returns>
+    /// <response code="200">Payments Ödemeler listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Payments Ödemeler tablosu Listesi Getirir", Menu = "Payments Ödemeler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Payments Ödemeler Listesi Getirir", Menu = "Payments-Ödemeler")]
     public async Task<ActionResult<TransactionResultPack<GetAllPaymentsQueryResponse>>> GetAllPayments([FromQuery] GetAllPaymentsQueryRequest request)
     {
       return await SendQuery<GetAllPaymentsQueryRequest, GetAllPaymentsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre Payments Ödemeler tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre Payments Ödemeler bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir Payments Ödemeler tablosu kimliğine göre Payments Ödemeler tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir Payments Ödemeler kimliğine göre Payments Ödemeler bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Payments Ödemeler tablosu kimliğini içeren istek.</param>
-    /// <returns>Payments Ödemeler tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Payments Ödemeler tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Payments Ödemeler kimliğini içeren istek.</param>
+    /// <returns>Payments Ödemeler bilgilerini döndürür.</returns>
+    /// <response code="200">Payments Ödemeler bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Payments Ödemeler tablosu bulunamazsa.</response>
+    /// <response code="404">Payments Ödemeler bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Payments Ödemeler tablosu Bilgilerini Görüntüle", Menu = "Payments Ödemeler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Payments Ödemeler Bilgilerini Görüntüle", Menu = "Payments-Ödemeler")]
     public async Task<ActionResult<TransactionResultPack<GetPaymentsByIdQueryResponse>>> GetByIdPayments([FromQuery] GetPaymentsByIdQueryRequest request)
     {
       return await SendQuery<GetPaymentsByIdQueryRequest, GetPaymentsByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes Payments Ödemeler tablosu bilgilerini getirir.
+    /// Dropboxes Payments Ödemeler bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Payments Ödemeler tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Payments Ödemeler bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Payments Ödemeler tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Payments Ödemeler tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Payments Ödemeler tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Payments Ödemeler bilgilerini içeren istek.</param> 
+    /// <returns>Payments Ödemeler bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Payments Ödemeler bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Payments Ödemeler tablosu bulunamazsa.</response>
+    /// <response code="404">Payments Ödemeler bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Payments Ödemeler tablosu Bilgilerini Görüntüle", Menu = "Payments Ödemeler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Payments Ödemeler Bilgilerini Görüntüle", Menu = "Payments-Ödemeler")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesPaymentsQueryResponse>>> GetAllDropboxesPayments([FromQuery] GetAllDropboxesPaymentsQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesPaymentsQueryRequest, GetAllDropboxesPaymentsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir Payments Ödemeler tablosu ekler.
+    /// Yeni bir Payments Ödemeler ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir Payments Ödemeler tablosu ekler.
+    /// Bu uç nokta, yeni bir Payments Ödemeler ekler.
     /// </remarks>
-    /// <param name="request">Yeni Payments Ödemeler tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni Payments Ödemeler bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">Payments Ödemeler tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">Payments Ödemeler başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Payments Ödemeler tablosu Eklemek", Menu = "Payments Ödemeler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Payments Ödemeler Eklemek", Menu = "Payments-Ödemeler")]
     public async Task<ActionResult<TransactionResultPack<CreatePaymentsCommandResponse>>> CreatePayments([FromBody] CreatePaymentsCommandRequest request)
     {
       return await SendCommand<CreatePaymentsCommandRequest, CreatePaymentsCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir Payments Ödemeler tablosu kaydını günceller.
+    /// Mevcut bir Payments Ödemeler kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Payments Ödemeler tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip Payments Ödemelernin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek Payments Ödemeler tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek Payments Ödemeler bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Payments Ödemeler tablosu başarıyla güncellendi.</response>
+    /// <response code="200">Payments Ödemeler başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek Payments Ödemeler tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek Payments Ödemeler bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Payments Ödemeler tablosu Güncelemek", Menu = "Payments Ödemeler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Payments Ödemeler Güncelemek", Menu = "Payments-Ödemeler")]
     public async Task<ActionResult<TransactionResultPack<UpdatePaymentsCommandResponse>>> UpdatePayments([FromBody] UpdatePaymentsCommandRequest request)
     {
       return await SendCommand<UpdatePaymentsCommandRequest, UpdatePaymentsCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip Payments Ödemeler tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip Payments Ödemeler kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Payments Ödemeler tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip Payments Ödemeler kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek Payments Ödemeler tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek Payments Ödemeler kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Payments Ödemeler tablosu başarıyla silindi.</response>
+    /// <response code="200">Payments Ödemeler başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek Payments Ödemeler tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek Payments Ödemeler bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Payments Ödemeler tablosu Silme", Menu = "Payments Ödemeler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Payments Ödemeler Silme", Menu = "Payments-Ödemeler")]
     public async Task<ActionResult<TransactionResultPack<DeletePaymentsCommandResponse>>> DeletePayments([FromRoute] DeletePaymentsCommandRequest request)
     {
       return await SendCommand<DeletePaymentsCommandRequest, DeletePaymentsCommandResponse>(request);

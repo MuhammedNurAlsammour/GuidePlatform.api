@@ -29,93 +29,93 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran JobSeekers İş Arayanları tablosu Listesi Getirir.
+    /// Admin Ana Ekran JobSeekers İş Arayanları Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm JobSeekers İş Arayanları tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm JobSeekers İş Arayanlarılerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm JobSeekers İş Arayanları tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>JobSeekers İş Arayanları tablosu listesini döndürür.</returns>
-    /// <response code="200">JobSeekers İş Arayanları tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm JobSeekers İş Arayanlarıleri getirme parametrelerini içeren istek.</param>
+    /// <returns>JobSeekers İş Arayanları listesini döndürür.</returns>
+    /// <response code="200">JobSeekers İş Arayanları listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "JobSeekers İş Arayanları tablosu Listesi Getirir", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "JobSeekers İş Arayanları Listesi Getirir", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<GetAllJobSeekersQueryResponse>>> GetAllJobSeekers([FromQuery] GetAllJobSeekersQueryRequest request)
     {
       return await SendQuery<GetAllJobSeekersQueryRequest, GetAllJobSeekersQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre JobSeekers İş Arayanları tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre JobSeekers İş Arayanları bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir JobSeekers İş Arayanları tablosu kimliğine göre JobSeekers İş Arayanları tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir JobSeekers İş Arayanları kimliğine göre JobSeekers İş Arayanları bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">JobSeekers İş Arayanları tablosu kimliğini içeren istek.</param>
-    /// <returns>JobSeekers İş Arayanları tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">JobSeekers İş Arayanları tablosu bilgilerini döndürür.</response>
+    /// <param name="request">JobSeekers İş Arayanları kimliğini içeren istek.</param>
+    /// <returns>JobSeekers İş Arayanları bilgilerini döndürür.</returns>
+    /// <response code="200">JobSeekers İş Arayanları bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">JobSeekers İş Arayanları tablosu bulunamazsa.</response>
+    /// <response code="404">JobSeekers İş Arayanları bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre JobSeekers İş Arayanları tablosu Bilgilerini Görüntüle", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre JobSeekers İş Arayanları Bilgilerini Görüntüle", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<GetJobSeekersByIdQueryResponse>>> GetByIdJobSeekers([FromQuery] GetJobSeekersByIdQueryRequest request)
     {
       return await SendQuery<GetJobSeekersByIdQueryRequest, GetJobSeekersByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes JobSeekers İş Arayanları tablosu bilgilerini getirir.
+    /// Dropboxes JobSeekers İş Arayanları bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes JobSeekers İş Arayanları tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes JobSeekers İş Arayanları bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes JobSeekers İş Arayanları tablosu bilgilerini içeren istek.</param> 
-    /// <returns>JobSeekers İş Arayanları tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes JobSeekers İş Arayanları tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes JobSeekers İş Arayanları bilgilerini içeren istek.</param> 
+    /// <returns>JobSeekers İş Arayanları bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes JobSeekers İş Arayanları bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">JobSeekers İş Arayanları tablosu bulunamazsa.</response>
+    /// <response code="404">JobSeekers İş Arayanları bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes JobSeekers İş Arayanları tablosu Bilgilerini Görüntüle", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes JobSeekers İş Arayanları Bilgilerini Görüntüle", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesJobSeekersQueryResponse>>> GetAllDropboxesJobSeekers([FromQuery] GetAllDropboxesJobSeekersQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesJobSeekersQueryRequest, GetAllDropboxesJobSeekersQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir JobSeekers İş Arayanları tablosu ekler.
+    /// Yeni bir JobSeekers İş Arayanları ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir JobSeekers İş Arayanları tablosu ekler.
+    /// Bu uç nokta, yeni bir JobSeekers İş Arayanları ekler.
     /// </remarks>
-    /// <param name="request">Yeni JobSeekers İş Arayanları tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni JobSeekers İş Arayanları bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">JobSeekers İş Arayanları tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">JobSeekers İş Arayanları başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "JobSeekers İş Arayanları tablosu Eklemek", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "JobSeekers İş Arayanları Eklemek", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<CreateJobSeekersCommandResponse>>> CreateJobSeekers([FromBody] CreateJobSeekersCommandRequest request)
     {
       return await SendCommand<CreateJobSeekersCommandRequest, CreateJobSeekersCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir JobSeekers İş Arayanları tablosu kaydını günceller.
+    /// Mevcut bir JobSeekers İş Arayanları kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip JobSeekers İş Arayanları tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip JobSeekers İş Arayanlarınin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek JobSeekers İş Arayanları tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek JobSeekers İş Arayanları bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">JobSeekers İş Arayanları tablosu başarıyla güncellendi.</response>
+    /// <response code="200">JobSeekers İş Arayanları başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek JobSeekers İş Arayanları tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek JobSeekers İş Arayanları bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "JobSeekers İş Arayanları tablosu Güncelemek", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "JobSeekers İş Arayanları Güncelemek", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<UpdateJobSeekersCommandResponse>>> UpdateJobSeekers([FromBody] UpdateJobSeekersCommandRequest request)
     {
       return await SendCommand<UpdateJobSeekersCommandRequest, UpdateJobSeekersCommandResponse>(request);
@@ -134,7 +134,7 @@ namespace GuidePlatform.API.Controllers
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     /// <response code="404">Güncellenecek JobSeeker bulunamazsa.</response>
     [HttpPatch("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "JobSeeker Durumu Güncelleme Onaylandı/Reddedildi/Süresi Doldu/Pasif/Silindi", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "JobSeeker Durumu Güncelleme Onaylandı/Reddedildi/Süresi Doldu/Pasif/Silindi", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<UpdateJobSeekerStatusCommandResponse>>> UpdateJobSeekerStatus([FromBody] UpdateJobSeekerStatusCommandRequest request)
     {
       return await SendCommand<UpdateJobSeekerStatusCommandRequest, UpdateJobSeekerStatusCommandResponse>(request);
@@ -153,26 +153,26 @@ namespace GuidePlatform.API.Controllers
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPatch("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "JobSeeker Toplu Onay/Red İşlemi", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "JobSeeker Toplu Onay/Red İşlemi", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<BulkApproveJobSeekersCommandResponse>>> BulkApproveJobSeekers([FromBody] BulkApproveJobSeekersCommandRequest request)
     {
       return await SendCommand<BulkApproveJobSeekersCommandRequest, BulkApproveJobSeekersCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip JobSeekers İş Arayanları tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip JobSeekers İş Arayanları kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip JobSeekers İş Arayanları tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip JobSeekers İş Arayanları kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek JobSeekers İş Arayanları tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek JobSeekers İş Arayanları kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">JobSeekers İş Arayanları tablosu başarıyla silindi.</response>
+    /// <response code="200">JobSeekers İş Arayanları başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek JobSeekers İş Arayanları tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek JobSeekers İş Arayanları bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "JobSeekers İş Arayanları tablosu Silme", Menu = "JobSeekers İş Arayanları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "JobSeekers İş Arayanları Silme", Menu = "JobSeekers-İş Arayanları")]
     public async Task<ActionResult<TransactionResultPack<DeleteJobSeekersCommandResponse>>> DeleteJobSeekers([FromRoute] DeleteJobSeekersCommandRequest request)
     {
       return await SendCommand<DeleteJobSeekersCommandRequest, DeleteJobSeekersCommandResponse>(request);

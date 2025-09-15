@@ -56,7 +56,7 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.IncrementViewCo
         _context.businesses.Update(business);
         await _context.SaveChangesAsync(cancellationToken);
 
-        // 🎯 4. İsteğe bağlı: UserVisits tablosuna kayıt ekle (analytics için)
+        // 🎯 4. İsteğe bağlı: UserVisitsna kayıt ekle (analytics için)
         await LogUserVisitAsync(request, business.Id, cancellationToken);
 
         return ResultFactory.CreateSuccessResult<IncrementViewCountCommandResponse>(
@@ -86,7 +86,7 @@ namespace GuidePlatform.Application.Features.Commands.Businesses.IncrementViewCo
     }
 
     /// <summary>
-    /// İsteğe bağlı: Kullanıcı ziyaretini UserVisits tablosuna kaydet (analytics için)
+    /// İsteğe bağlı: Kullanıcı ziyaretini UserVisitsna kaydet (analytics için)
     /// </summary>
     private async Task LogUserVisitAsync(IncrementViewCountCommandRequest request, Guid businessId, CancellationToken cancellationToken)
     {

@@ -10,7 +10,7 @@ namespace GuidePlatform.Domain.Entities
 {
   public class JobSeekersViewModel : BaseEntity
   {
-    public Guid BusinessId { get; set; }
+    public Guid? BusinessId { get; set; }
     public string FullName { get; set; } = string.Empty;
     public string? Description { get; set; }
     public string? Phone { get; set; }

@@ -24,8 +24,7 @@ namespace GuidePlatform.Domain.Maps
            .IsRequired();
 
       builder.Property(x => x.BusinessId)
-           .HasColumnName("business_id")
-           .IsRequired();
+           .HasColumnName("business_id");
 
       builder.Property(x => x.FullName)
            .HasColumnName("full_name")

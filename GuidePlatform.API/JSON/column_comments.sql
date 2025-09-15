@@ -9,7 +9,7 @@ COMMENT ON TABLE business_contacts IS 'İşletme İletişim Bilgileri';
 COMMENT ON TABLE business_services IS 'İşletme Hizmetleri';
 COMMENT ON TABLE business_working_hours IS 'Çalışma Saatleri';
 COMMENT ON TABLE business_reviews IS 'İşletme Değerlendirmeleri';
--- user_profiles tablosu kaldırıldı - doğrudan auth."AspNetUsers" kullanılıyor
+-- user_profiles kaldırıldı - doğrudan auth."AspNetUsers" kullanılıyor
 COMMENT ON TABLE user_favorites IS 'Favoriler';
 COMMENT ON TABLE user_visits IS 'Kullanıcı Ziyaretleri';
 COMMENT ON TABLE notifications IS 'Bildirimler';

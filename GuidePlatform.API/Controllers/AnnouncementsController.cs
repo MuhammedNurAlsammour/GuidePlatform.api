@@ -27,112 +27,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran Announcements Duyurular tablosu Listesi Getirir.
+    /// Admin Ana Ekran Announcements Duyurular Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Announcements Duyurular tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Announcements Duyurularlerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm Announcements Duyurular tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>Announcements Duyurular tablosu listesini döndürür.</returns>
-    /// <response code="200">Announcements Duyurular tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm Announcements Duyurularleri getirme parametrelerini içeren istek.</param>
+    /// <returns>Announcements Duyurular listesini döndürür.</returns>
+    /// <response code="200">Announcements Duyurular listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Announcements Duyurular tablosu Listesi Getirir", Menu = "Announcements Duyurular tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Announcements Duyurular Listesi Getirir", Menu = "Announcements-Duyurular")]
     public async Task<ActionResult<TransactionResultPack<GetAllAnnouncementsQueryResponse>>> GetAllAnnouncements([FromQuery] GetAllAnnouncementsQueryRequest request)
     {
       return await SendQuery<GetAllAnnouncementsQueryRequest, GetAllAnnouncementsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre Announcements Duyurular tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre Announcements Duyurular bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir Announcements Duyurular tablosu kimliğine göre Announcements Duyurular tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir Announcements Duyurular kimliğine göre Announcements Duyurular bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Announcements Duyurular tablosu kimliğini içeren istek.</param>
-    /// <returns>Announcements Duyurular tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Announcements Duyurular tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Announcements Duyurular kimliğini içeren istek.</param>
+    /// <returns>Announcements Duyurular bilgilerini döndürür.</returns>
+    /// <response code="200">Announcements Duyurular bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Announcements Duyurular tablosu bulunamazsa.</response>
+    /// <response code="404">Announcements Duyurular bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Announcements Duyurular tablosu Bilgilerini Görüntüle", Menu = "Announcements Duyurular tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Announcements Duyurular Bilgilerini Görüntüle", Menu = "Announcements-Duyurular")]
     public async Task<ActionResult<TransactionResultPack<GetAnnouncementsByIdQueryResponse>>> GetByIdAnnouncements([FromQuery] GetAnnouncementsByIdQueryRequest request)
     {
       return await SendQuery<GetAnnouncementsByIdQueryRequest, GetAnnouncementsByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes Announcements Duyurular tablosu bilgilerini getirir.
+    /// Dropboxes Announcements Duyurular bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Announcements Duyurular tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Announcements Duyurular bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Announcements Duyurular tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Announcements Duyurular tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Announcements Duyurular tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Announcements Duyurular bilgilerini içeren istek.</param> 
+    /// <returns>Announcements Duyurular bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Announcements Duyurular bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Announcements Duyurular tablosu bulunamazsa.</response>
+    /// <response code="404">Announcements Duyurular bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Announcements Duyurular tablosu Bilgilerini Görüntüle", Menu = "Announcements Duyurular tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Announcements Duyurular Bilgilerini Görüntüle", Menu = "Announcements-Duyurular")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesAnnouncementsQueryResponse>>> GetAllDropboxesAnnouncements([FromQuery] GetAllDropboxesAnnouncementsQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesAnnouncementsQueryRequest, GetAllDropboxesAnnouncementsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir Announcements Duyurular tablosu ekler.
+    /// Yeni bir Announcements Duyurular ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir Announcements Duyurular tablosu ekler.
+    /// Bu uç nokta, yeni bir Announcements Duyurular ekler.
     /// </remarks>
-    /// <param name="request">Yeni Announcements Duyurular tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni Announcements Duyurular bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">Announcements Duyurular tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">Announcements Duyurular başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Announcements Duyurular tablosu Eklemek", Menu = "Announcements Duyurular tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Announcements Duyurular Eklemek", Menu = "Announcements-Duyurular")]
     public async Task<ActionResult<TransactionResultPack<CreateAnnouncementsCommandResponse>>> CreateAnnouncements([FromBody] CreateAnnouncementsCommandRequest request)
     {
       return await SendCommand<CreateAnnouncementsCommandRequest, CreateAnnouncementsCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir Announcements Duyurular tablosu kaydını günceller.
+    /// Mevcut bir Announcements Duyurular kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Announcements Duyurular tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip Announcements Duyurularnin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek Announcements Duyurular tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek Announcements Duyurular bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Announcements Duyurular tablosu başarıyla güncellendi.</response>
+    /// <response code="200">Announcements Duyurular başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek Announcements Duyurular tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek Announcements Duyurular bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Announcements Duyurular tablosu Güncelemek", Menu = "Announcements Duyurular tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Announcements Duyurular Güncelemek", Menu = "Announcements-Duyurular")]
     public async Task<ActionResult<TransactionResultPack<UpdateAnnouncementsCommandResponse>>> UpdateAnnouncements([FromBody] UpdateAnnouncementsCommandRequest request)
     {
       return await SendCommand<UpdateAnnouncementsCommandRequest, UpdateAnnouncementsCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip Announcements Duyurular tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip Announcements Duyurular kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Announcements Duyurular tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip Announcements Duyurular kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek Announcements Duyurular tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek Announcements Duyurular kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Announcements Duyurular tablosu başarıyla silindi.</response>
+    /// <response code="200">Announcements Duyurular başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek Announcements Duyurular tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek Announcements Duyurular bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Announcements Duyurular tablosu Silme", Menu = "Announcements Duyurular tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Announcements Duyurular Silme", Menu = "Announcements-Duyurular")]
     public async Task<ActionResult<TransactionResultPack<DeleteAnnouncementsCommandResponse>>> DeleteAnnouncements([FromRoute] DeleteAnnouncementsCommandRequest request)
     {
       return await SendCommand<DeleteAnnouncementsCommandRequest, DeleteAnnouncementsCommandResponse>(request);

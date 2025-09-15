@@ -28,112 +28,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran Kategoriler tablosu Listesi Getirir.
+    /// Admin Ana Ekran Kategoriler Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Kategoriler tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Kategorilerlerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm Kategoriler tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>Kategoriler tablosu listesini döndürür.</returns>
-    /// <response code="200">Kategoriler tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm Kategorilerleri getirme parametrelerini içeren istek.</param>
+    /// <returns>Kategoriler listesini döndürür.</returns>
+    /// <response code="200">Kategoriler listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Kategoriler tablosu Listesi Getirir", Menu = "Kategoriler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Kategoriler Listesi Getirir", Menu = "Kategoriler")]
     public async Task<ActionResult<TransactionResultPack<GetAllCategoriesQueryResponse>>> GetAllcategories([FromQuery] GetAllCategoriesQueryRequest request)
     {
       return await SendQuery<GetAllCategoriesQueryRequest, GetAllCategoriesQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre Kategoriler tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre Kategoriler bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir Kategoriler tablosu kimliğine göre Kategoriler tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir Kategoriler kimliğine göre Kategoriler bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Kategoriler tablosu kimliğini içeren istek.</param>
-    /// <returns>Kategoriler tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Kategoriler tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Kategoriler kimliğini içeren istek.</param>
+    /// <returns>Kategoriler bilgilerini döndürür.</returns>
+    /// <response code="200">Kategoriler bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Kategoriler tablosu bulunamazsa.</response>
+    /// <response code="404">Kategoriler bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Kategoriler tablosu Bilgilerini Görüntüle", Menu = "Kategoriler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Kategoriler Bilgilerini Görüntüle", Menu = "Kategoriler")]
     public async Task<ActionResult<TransactionResultPack<GetCategoriesByIdQueryResponse>>> GetByIdcategories([FromQuery] GetCategoriesByIdQueryRequest request)
     {
       return await SendQuery<GetCategoriesByIdQueryRequest, GetCategoriesByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes Kategoriler tablosu bilgilerini getirir.
+    /// Dropboxes Kategoriler bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Kategoriler tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Kategoriler bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Kategoriler tablosu bilgilerini içeren istek.</param>
-    /// <returns>Kategoriler tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Kategoriler tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Kategoriler bilgilerini içeren istek.</param>
+    /// <returns>Kategoriler bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Kategoriler bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Kategoriler tablosu bulunamazsa.</response>
+    /// <response code="404">Kategoriler bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Kategoriler tablosu Bilgilerini Görüntüle", Menu = "Kategoriler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Kategoriler Bilgilerini Görüntüle", Menu = "Kategoriler")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesCategoriesQueryResponse>>> GetAllDropboxesCategories([FromQuery] GetAllDropboxesCategoriesQueryRequest request)
     {
-      return await SendQuery<GetAllDropboxesCategoriesQueryRequest, GetAllDropboxesCategoriesQueryResponse>(request); 
+      return await SendQuery<GetAllDropboxesCategoriesQueryRequest, GetAllDropboxesCategoriesQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir Kategoriler tablosu ekler.
+    /// Yeni bir Kategoriler ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir Kategoriler tablosu ekler.
+    /// Bu uç nokta, yeni bir Kategoriler ekler.
     /// </remarks>
-    /// <param name="request">Yeni Kategoriler tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni Kategoriler bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">Kategoriler tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">Kategoriler başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Kategoriler tablosu Eklemek", Menu = "Kategoriler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Kategoriler Eklemek", Menu = "Kategoriler")]
     public async Task<ActionResult<TransactionResultPack<CreateCategoriesCommandResponse>>> Createcategories([FromBody] CreateCategoriesCommandRequest request)
     {
       return await SendCommand<CreateCategoriesCommandRequest, CreateCategoriesCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir Kategoriler tablosu kaydını günceller.
+    /// Mevcut bir Kategoriler kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Kategoriler tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip Kategorilernin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek Kategoriler tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek Kategoriler bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Kategoriler tablosu başarıyla güncellendi.</response>
+    /// <response code="200">Kategoriler başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek Kategoriler tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek Kategoriler bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Kategoriler tablosu Güncelemek", Menu = "Kategoriler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Kategoriler Güncelemek", Menu = "Kategoriler")]
     public async Task<ActionResult<TransactionResultPack<UpdateCategoriesCommandResponse>>> Updatecategories([FromBody] UpdateCategoriesCommandRequest request)
     {
       return await SendCommand<UpdateCategoriesCommandRequest, UpdateCategoriesCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip Kategoriler tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip Kategoriler kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Kategoriler tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip Kategoriler kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek Kategoriler tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek Kategoriler kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Kategoriler tablosu başarıyla silindi.</response>
+    /// <response code="200">Kategoriler başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek Kategoriler tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek Kategoriler bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Kategoriler tablosu Silme", Menu = "Kategoriler tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Kategoriler Silme", Menu = "Kategoriler")]
     public async Task<ActionResult<TransactionResultPack<DeleteCategoriesCommandResponse>>> Deletecategories([FromRoute] DeleteCategoriesCommandRequest request)
     {
       return await SendCommand<DeleteCategoriesCommandRequest, DeleteCategoriesCommandResponse>(request);

@@ -6,7 +6,7 @@ namespace GuidePlatform.Application.Dtos.ResponseDtos.JobSeekers
 {
   public class JobSeekersDTO : BaseResponseDTO
   {
-    public Guid BusinessId { get; set; }
+    public Guid? BusinessId { get; set; }
     public string BusinessName { get; set; } = string.Empty;
     public string FullName { get; set; } = string.Empty;
     public string? Description { get; set; }

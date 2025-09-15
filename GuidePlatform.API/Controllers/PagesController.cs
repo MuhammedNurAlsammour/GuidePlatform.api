@@ -27,112 +27,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran Pages Sayfalar tablosu Listesi Getirir.
+    /// Admin Ana Ekran Pages Sayfalar Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Pages Sayfalar tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm Pages Sayfalarlerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm Pages Sayfalar tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>Pages Sayfalar tablosu listesini döndürür.</returns>
-    /// <response code="200">Pages Sayfalar tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm Pages Sayfalarleri getirme parametrelerini içeren istek.</param>
+    /// <returns>Pages Sayfalar listesini döndürür.</returns>
+    /// <response code="200">Pages Sayfalar listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Pages Sayfalar tablosu Listesi Getirir", Menu = "Pages Sayfalar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Pages Sayfalar Listesi Getirir", Menu = "Pages-Sayfalar")]
     public async Task<ActionResult<TransactionResultPack<GetAllPagesQueryResponse>>> GetAllPages([FromQuery] GetAllPagesQueryRequest request)
     {
       return await SendQuery<GetAllPagesQueryRequest, GetAllPagesQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre Pages Sayfalar tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre Pages Sayfalar bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir Pages Sayfalar tablosu kimliğine göre Pages Sayfalar tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir Pages Sayfalar kimliğine göre Pages Sayfalar bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Pages Sayfalar tablosu kimliğini içeren istek.</param>
-    /// <returns>Pages Sayfalar tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Pages Sayfalar tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Pages Sayfalar kimliğini içeren istek.</param>
+    /// <returns>Pages Sayfalar bilgilerini döndürür.</returns>
+    /// <response code="200">Pages Sayfalar bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Pages Sayfalar tablosu bulunamazsa.</response>
+    /// <response code="404">Pages Sayfalar bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Pages Sayfalar tablosu Bilgilerini Görüntüle", Menu = "Pages Sayfalar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre Pages Sayfalar Bilgilerini Görüntüle", Menu = "Pages-Sayfalar")]
     public async Task<ActionResult<TransactionResultPack<GetPagesByIdQueryResponse>>> GetByIdPages([FromQuery] GetPagesByIdQueryRequest request)
     {
       return await SendQuery<GetPagesByIdQueryRequest, GetPagesByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes Pages Sayfalar tablosu bilgilerini getirir.
+    /// Dropboxes Pages Sayfalar bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes Pages Sayfalar tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes Pages Sayfalar bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes Pages Sayfalar tablosu bilgilerini içeren istek.</param> 
-    /// <returns>Pages Sayfalar tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes Pages Sayfalar tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes Pages Sayfalar bilgilerini içeren istek.</param> 
+    /// <returns>Pages Sayfalar bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes Pages Sayfalar bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Pages Sayfalar tablosu bulunamazsa.</response>
+    /// <response code="404">Pages Sayfalar bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Pages Sayfalar tablosu Bilgilerini Görüntüle", Menu = "Pages Sayfalar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes Pages Sayfalar Bilgilerini Görüntüle", Menu = "Pages-Sayfalar")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesPagesQueryResponse>>> GetAllDropboxesPages([FromQuery] GetAllDropboxesPagesQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesPagesQueryRequest, GetAllDropboxesPagesQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir Pages Sayfalar tablosu ekler.
+    /// Yeni bir Pages Sayfalar ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir Pages Sayfalar tablosu ekler.
+    /// Bu uç nokta, yeni bir Pages Sayfalar ekler.
     /// </remarks>
-    /// <param name="request">Yeni Pages Sayfalar tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni Pages Sayfalar bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">Pages Sayfalar tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">Pages Sayfalar başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Pages Sayfalar tablosu Eklemek", Menu = "Pages Sayfalar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "Pages Sayfalar Eklemek", Menu = "Pages-Sayfalar")]
     public async Task<ActionResult<TransactionResultPack<CreatePagesCommandResponse>>> CreatePages([FromBody] CreatePagesCommandRequest request)
     {
       return await SendCommand<CreatePagesCommandRequest, CreatePagesCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir Pages Sayfalar tablosu kaydını günceller.
+    /// Mevcut bir Pages Sayfalar kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Pages Sayfalar tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip Pages Sayfalarnin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek Pages Sayfalar tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek Pages Sayfalar bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Pages Sayfalar tablosu başarıyla güncellendi.</response>
+    /// <response code="200">Pages Sayfalar başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek Pages Sayfalar tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek Pages Sayfalar bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Pages Sayfalar tablosu Güncelemek", Menu = "Pages Sayfalar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "Pages Sayfalar Güncelemek", Menu = "Pages-Sayfalar")]
     public async Task<ActionResult<TransactionResultPack<UpdatePagesCommandResponse>>> UpdatePages([FromBody] UpdatePagesCommandRequest request)
     {
       return await SendCommand<UpdatePagesCommandRequest, UpdatePagesCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip Pages Sayfalar tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip Pages Sayfalar kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip Pages Sayfalar tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip Pages Sayfalar kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek Pages Sayfalar tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek Pages Sayfalar kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">Pages Sayfalar tablosu başarıyla silindi.</response>
+    /// <response code="200">Pages Sayfalar başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek Pages Sayfalar tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek Pages Sayfalar bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Pages Sayfalar tablosu Silme", Menu = "Pages Sayfalar tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "Pages Sayfalar Silme", Menu = "Pages-Sayfalar")]
     public async Task<ActionResult<TransactionResultPack<DeletePagesCommandResponse>>> DeletePages([FromRoute] DeletePagesCommandRequest request)
     {
       return await SendCommand<DeletePagesCommandRequest, DeletePagesCommandResponse>(request);

@@ -64,19 +64,19 @@ namespace {{application}}.API.Controllers
     }
 
     /// <summary>
-    /// Dropboxes {{nameCon}} tablosu bilgilerini getirir.
+    /// Dropboxes {{nameCon}} bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes {{nameCon}} tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes {{nameCon}} bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes {{nameCon}} tablosu bilgilerini içeren istek.</param> 
-    /// <returns>{{nameCon}} tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes {{nameCon}} tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes {{nameCon}} bilgilerini içeren istek.</param> 
+    /// <returns>{{nameCon}} bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes {{nameCon}} bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">{{nameCon}} tablosu bulunamazsa.</response>
+    /// <response code="404">{{nameCon}} bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes {{nameCon}} tablosu Bilgilerini Görüntüle", Menu = "{{nameCon}} tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes {{nameCon}} Bilgilerini Görüntüle", Menu = "{{nameCon}}")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxes{{nameController}}QueryResponse>>> GetAllDropboxes{{nameController}}([FromQuery] GetAllDropboxes{{nameController}}QueryRequest request)
     {
       return await SendQuery<GetAllDropboxes{{nameController}}QueryRequest, GetAllDropboxes{{nameController}}QueryResponse>(request); 

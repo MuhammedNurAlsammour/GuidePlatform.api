@@ -33,7 +33,7 @@ module.exports = function (plop) {
 
   //Asp Controller
   let nameController = "JobSeekers"; //{{nameController}}Controller
-  let nameCon = "JobSeekers İş Arayanları tablosu";  
+  let nameCon = "JobSeekers-İş Arayanları";
 
   args.forEach((arg) => {
     if (arg.startsWith("--name=")) {

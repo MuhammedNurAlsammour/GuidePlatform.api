@@ -882,7 +882,7 @@ INSERT INTO business_contacts (business_id, contact_type, contact_value, is_prim
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'whatsapp', '+90 555 567 8901', false, 'contact_whatsapp', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'twitter', '@jarabulusmutfak', false, 'contact_twitter', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- business_contacts tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول معلومات الاتصال
+-- business_contacts için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول معلومات الاتصال
 
 -- business_services table için örnek veriler - بيانات نموذجية لجدول خدمات الأعمال
 INSERT INTO business_services (business_id, service_name, service_description, price, currency, is_available, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -927,7 +927,7 @@ INSERT INTO business_services (business_id, service_name, service_description, p
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'Salata Çeşitleri', 'Taze sebzeler, zeytinyağı ve limon sosu ile', 18.00, 'TRY', true, 'restaurant_menu', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'Kahve Servisi', 'Geleneksel Suriye kahvesi, Türk kahvesi tarzında', 12.00, 'TRY', true, 'coffee', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- business_services tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول خدمات الأعمال
+-- business_services için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول خدمات الأعمال
 
 -- business_working_hours table için örnek veriler - بيانات نموذجية لجدول ساعات العمل
 INSERT INTO business_working_hours (business_id, day_of_week, open_time, close_time, is_closed, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -977,7 +977,7 @@ INSERT INTO business_working_hours (business_id, day_of_week, open_time, close_t
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 6, '09:00:00', '21:00:00', false, 'schedule', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 7, '09:00:00', '21:00:00', false, 'schedule', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- business_working_hours tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول ساعات العمل
+-- business_working_hours için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول ساعات العمل
 
 -- business_reviews table için örnek veriler - بيانات نموذجية لجدول تقييمات الأعمال
 INSERT INTO business_reviews (business_id, reviewer_id, rating, comment, is_verified, is_approved, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -1017,7 +1017,7 @@ INSERT INTO business_reviews (business_id, reviewer_id, rating, comment, is_veri
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '129b3784-b9e7-4872-bdab-1666625890b6', 5, 'Mükemmel! Hem yemekler hem de kahve servisi çok iyiydi. Baklava özellikle harikaydı!', true, true, 'rate_review', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '129b3784-b9e7-4872-bdab-1666625890b6', 4, 'Çok güzel bir deneyimdi. Geleneksel Suriye kahvesi harikaydı. Atmosfer de çok sıcaktı.', false, true, 'rate_review', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- business_reviews tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول تقييمات الأعمال
+-- business_reviews için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول تقييمات الأعمال
 
 -- user_favorites table için örnek veriler - بيانات نموذجية لجدول المفضلات
 INSERT INTO user_favorites (business_id, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -1043,7 +1043,7 @@ INSERT INTO user_favorites (business_id, icon, auth_user_id, auth_customer_id, c
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'favorite', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'favorite', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- user_favorites tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول المفضلات
+-- user_favorites için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول المفضلات
 
 -- user_visits table için örnek veriler - بيانات نموذجية لجدول زيارات المستخدمين
 INSERT INTO user_visits (business_id, visit_date, visit_type, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -1083,7 +1083,7 @@ INSERT INTO user_visits (business_id, visit_date, visit_type, icon, auth_user_id
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-14 12:15:00+03:00', 'review', 'rate_review', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('7fb6d642-528b-4dcd-8e58-785b7c9542f4', '2025-01-15 17:45:00+03:00', 'view', 'visibility', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- user_visits tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول زيارات المستخدمين
+-- user_visits için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول زيارات المستخدمين
 
 -- notifications table için örnek veriler - بيانات نموذجية لجدول الإشعارات
 INSERT INTO notifications (recipient_user_id, title, message, notification_type, is_read, read_date, action_url, related_entity_id, related_entity_type, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -1113,7 +1113,7 @@ INSERT INTO notifications (recipient_user_id, title, message, notification_type,
 ('129b3784-b9e7-4872-bdab-1666625890b6', 'Kahve Servisi Hatırlatması', 'Jarabulus Mutfak geleneksel Suriye kahvesi servisi sunuyor. Türk kahvesi tarzında hazırlanan özel karışım.', 'warning', false, NULL, '/businesses/7fb6d642-528b-4dcd-8e58-785b7c9542f4', '7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'business', 'coffee', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('129b3784-b9e7-4872-bdab-1666625890b6', 'Çorba Çeşitleri Güncellendi', 'Jarabulus Mutfak günlük çorba önerileri güncellendi. Her gün farklı çorba çeşidi sunuluyor.', 'info', true, '2025-01-16 18:10:00+03:00', '/businesses/7fb6d642-528b-4dcd-8e58-785b7c9542f4', '7fb6d642-528b-4dcd-8e58-785b7c9542f4', 'business', 'restaurant_menu', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e');
 
--- notifications tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول الإشعارات
+-- notifications için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول الإشعارات
 
 -- notification_settings table için örnek veriler - بيانات نموذجية لجدول إعدادات الإشعارات
 INSERT INTO notification_settings (user_id, setting_type, is_enabled, icon, auth_user_id, auth_customer_id, create_user_id, update_user_id) VALUES
@@ -1127,7 +1127,7 @@ INSERT INTO notification_settings (user_id, setting_type, is_enabled, icon, auth
 ('129b3784-b9e7-4872-bdab-1666625890b6', 0, true, 'mail', '129b3784-b9e7-4872-bdab-1666625890b6', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '129b3784-b9e7-4872-bdab-1666625890b6', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('129b3784-b9e7-4872-bdab-1666625890b6', 1, true, 'notifications_active', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e'),
 ('129b3784-b9e7-4872-bdab-1666625890b6', 2, true, 'sms', '19a8b428-a57e-4a24-98e3-470258d3d83e', '72c54b1a-8e1c-45ea-8edd-b5da1091e325', '19a8b428-a57e-4a24-98e3-470258d3d83e', '19a8b428-a57e-4a24-98e3-470258d3d83e')
--- notification_settings tablosu için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول إعدادات الإشعارات
+-- notification_settings için örnek veri ekleme tamamlandı - تم إضافة البيانات النموذجية لجدول إعدادات الإشعارات
 
 
 
@@ -1232,11 +1232,11 @@ COMMENT ON COLUMN guideplatform.banners.is_active IS 'Aktif mi - Is active';
 COMMENT ON COLUMN guideplatform.banners.order_index IS 'Sıralama indeksi - Order index';
 
 -- =====================================================
--- JOB SEEKERS TABLE - İş Arayanlar Tablosu
+-- JOB SEEKERS TABLE - İş Arayanlar
 -- =====================================================
 CREATE TABLE job_seekers (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    business_id UUID NOT NULL, -- İşletme referansı
+    business_id UUID, -- İşletme referansı
     full_name VARCHAR(255) NOT NULL, -- İş arayanın tam adı
     description TEXT, -- İş arayan açıklaması
     phone VARCHAR(20), -- Telefon numarası
@@ -1259,7 +1259,7 @@ CREATE TABLE job_seekers (
 );
 
 -- =====================================================
--- JOB OPPORTUNITIES TABLE - İş İmkanları Tablosu
+-- JOB OPPORTUNITIES TABLE - İş İmkanları
 -- =====================================================
 CREATE TABLE job_opportunities (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

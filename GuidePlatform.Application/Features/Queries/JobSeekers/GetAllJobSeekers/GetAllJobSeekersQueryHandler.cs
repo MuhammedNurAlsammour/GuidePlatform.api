@@ -95,7 +95,7 @@ namespace GuidePlatform.Application.Features.Queries.JobSeekers.GetAllJobSeekers
         var allUserDetails = await _authUserService.GetAuthUserDetailsAsync(allUserIds.Distinct().ToList(), cancellationToken);
 
         // 🎯 Business isimlerini toplu olarak al (performans için)
-        var businessIds = jobSeekerss.Select(b => b.BusinessId).Distinct().ToList();
+        var businessIds = jobSeekerss.Where(b => b.BusinessId.HasValue).Select(b => b.BusinessId!.Value).Distinct().ToList();
         var businessNames = await _context.businesses
             .Where(b => businessIds.Contains(b.Id) && b.RowIsActive && !b.RowIsDeleted)
             .Select(b => new { b.Id, b.Name })
@@ -161,7 +161,9 @@ namespace GuidePlatform.Application.Features.Queries.JobSeekers.GetAllJobSeekers
           }
 
           // 🎯 BusinessName ve ProvinceName bilgilerini al
-          var businessName = businessNames.GetValueOrDefault(jobSeekers.BusinessId, "Unknown Business");
+          var businessName = jobSeekers.BusinessId.HasValue
+              ? businessNames.GetValueOrDefault<Guid, string>(jobSeekers.BusinessId.Value, "Unknown Business")
+              : "No Business";
           var provinceName = jobSeekers.ProvinceId.HasValue && provinceNames.ContainsKey(jobSeekers.ProvinceId.Value)
               ? provinceNames[jobSeekers.ProvinceId.Value].ProvinceName
               : "Unknown Province";
@@ -170,9 +172,9 @@ namespace GuidePlatform.Application.Features.Queries.JobSeekers.GetAllJobSeekers
           string? imageJobSeekerSponsored = null;
           string? textJobSeekerSponsored = null;
 
-          if (sponsoredImagesByBusiness.ContainsKey(jobSeekers.BusinessId))
+          if (jobSeekers.BusinessId.HasValue && sponsoredImagesByBusiness.ContainsKey(jobSeekers.BusinessId.Value))
           {
-            var sponsoredImage = sponsoredImagesByBusiness[jobSeekers.BusinessId];
+            var sponsoredImage = sponsoredImagesByBusiness[jobSeekers.BusinessId.Value];
             if (sponsoredImage != null)
             {
               imageJobSeekerSponsored = sponsoredImage.PhotoUrl;

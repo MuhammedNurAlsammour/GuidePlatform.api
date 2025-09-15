@@ -27,112 +27,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran BusinessWorkingHours İşletme Çalışma Saatleri tablosu Listesi Getirir.
+    /// Admin Ana Ekran BusinessWorkingHours İşletme Çalışma Saatleri Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessWorkingHours İşletme Çalışma Saatleri tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessWorkingHours İşletme Çalışma Saatlerilerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm BusinessWorkingHours İşletme Çalışma Saatleri tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>BusinessWorkingHours İşletme Çalışma Saatleri tablosu listesini döndürür.</returns>
-    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm BusinessWorkingHours İşletme Çalışma Saatlerileri getirme parametrelerini içeren istek.</param>
+    /// <returns>BusinessWorkingHours İşletme Çalışma Saatleri listesini döndürür.</returns>
+    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu Listesi Getirir", Menu = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri Listesi Getirir", Menu = "BusinessWorkingHours-İşletme Çalışma Saatleri")]
     public async Task<ActionResult<TransactionResultPack<GetAllBusinessWorkingHoursQueryResponse>>> GetAllBusinessWorkingHours([FromQuery] GetAllBusinessWorkingHoursQueryRequest request)
     {
       return await SendQuery<GetAllBusinessWorkingHoursQueryRequest, GetAllBusinessWorkingHoursQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu kimliğine göre BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir BusinessWorkingHours İşletme Çalışma Saatleri kimliğine göre BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">BusinessWorkingHours İşletme Çalışma Saatleri tablosu kimliğini içeren istek.</param>
-    /// <returns>BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini döndürür.</response>
+    /// <param name="request">BusinessWorkingHours İşletme Çalışma Saatleri kimliğini içeren istek.</param>
+    /// <returns>BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini döndürür.</returns>
+    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessWorkingHours İşletme Çalışma Saatleri bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre BusinessWorkingHours İşletme Çalışma Saatleri tablosu Bilgilerini Görüntüle", Menu = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre BusinessWorkingHours İşletme Çalışma Saatleri Bilgilerini Görüntüle", Menu = "BusinessWorkingHours-İşletme Çalışma Saatleri")]
     public async Task<ActionResult<TransactionResultPack<GetBusinessWorkingHoursByIdQueryResponse>>> GetByIdBusinessWorkingHours([FromQuery] GetBusinessWorkingHoursByIdQueryRequest request)
     {
       return await SendQuery<GetBusinessWorkingHoursByIdQueryRequest, GetBusinessWorkingHoursByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini getirir.
+    /// Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini içeren istek.</param> 
-    /// <returns>BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini içeren istek.</param> 
+    /// <returns>BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessWorkingHours İşletme Çalışma Saatleri bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri tablosu Bilgilerini Görüntüle", Menu = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessWorkingHours İşletme Çalışma Saatleri Bilgilerini Görüntüle", Menu = "BusinessWorkingHours-İşletme Çalışma Saatleri")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessWorkingHoursQueryResponse>>> GetAllDropboxesBusinessWorkingHours([FromQuery] GetAllDropboxesBusinessWorkingHoursQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesBusinessWorkingHoursQueryRequest, GetAllDropboxesBusinessWorkingHoursQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu ekler.
+    /// Yeni bir BusinessWorkingHours İşletme Çalışma Saatleri ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu ekler.
+    /// Bu uç nokta, yeni bir BusinessWorkingHours İşletme Çalışma Saatleri ekler.
     /// </remarks>
-    /// <param name="request">Yeni BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">BusinessWorkingHours İşletme Çalışma Saatleri tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">BusinessWorkingHours İşletme Çalışma Saatleri başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu Eklemek", Menu = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri Eklemek", Menu = "BusinessWorkingHours-İşletme Çalışma Saatleri")]
     public async Task<ActionResult<TransactionResultPack<CreateBusinessWorkingHoursCommandResponse>>> CreateBusinessWorkingHours([FromBody] CreateBusinessWorkingHoursCommandRequest request)
     {
       return await SendCommand<CreateBusinessWorkingHoursCommandRequest, CreateBusinessWorkingHoursCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir BusinessWorkingHours İşletme Çalışma Saatleri tablosu kaydını günceller.
+    /// Mevcut bir BusinessWorkingHours İşletme Çalışma Saatleri kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatlerinin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek BusinessWorkingHours İşletme Çalışma Saatleri bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu başarıyla güncellendi.</response>
+    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek BusinessWorkingHours İşletme Çalışma Saatleri bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu Güncelemek", Menu = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri Güncelemek", Menu = "BusinessWorkingHours-İşletme Çalışma Saatleri")]
     public async Task<ActionResult<TransactionResultPack<UpdateBusinessWorkingHoursCommandResponse>>> UpdateBusinessWorkingHours([FromBody] UpdateBusinessWorkingHoursCommandRequest request)
     {
       return await SendCommand<UpdateBusinessWorkingHoursCommandRequest, UpdateBusinessWorkingHoursCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip BusinessWorkingHours İşletme Çalışma Saatleri kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek BusinessWorkingHours İşletme Çalışma Saatleri kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri tablosu başarıyla silindi.</response>
+    /// <response code="200">BusinessWorkingHours İşletme Çalışma Saatleri başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek BusinessWorkingHours İşletme Çalışma Saatleri tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek BusinessWorkingHours İşletme Çalışma Saatleri bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu Silme", Menu = "BusinessWorkingHours İşletme Çalışma Saatleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "BusinessWorkingHours İşletme Çalışma Saatleri Silme", Menu = "BusinessWorkingHours-İşletme Çalışma Saatleri")]
     public async Task<ActionResult<TransactionResultPack<DeleteBusinessWorkingHoursCommandResponse>>> DeleteBusinessWorkingHours([FromRoute] DeleteBusinessWorkingHoursCommandRequest request)
     {
       return await SendCommand<DeleteBusinessWorkingHoursCommandRequest, DeleteBusinessWorkingHoursCommandResponse>(request);

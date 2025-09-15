@@ -27,112 +27,112 @@ namespace GuidePlatform.API.Controllers
     }
 
     /// <summary>
-    /// Admin Ana Ekran SearchLogs Arama Kayıtları tablosu Listesi Getirir.
+    /// Admin Ana Ekran SearchLogs Arama Kayıtları Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm SearchLogs Arama Kayıtları tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm SearchLogs Arama Kayıtlarılerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm SearchLogs Arama Kayıtları tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>SearchLogs Arama Kayıtları tablosu listesini döndürür.</returns>
-    /// <response code="200">SearchLogs Arama Kayıtları tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm SearchLogs Arama Kayıtlarıleri getirme parametrelerini içeren istek.</param>
+    /// <returns>SearchLogs Arama Kayıtları listesini döndürür.</returns>
+    /// <response code="200">SearchLogs Arama Kayıtları listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "SearchLogs Arama Kayıtları tablosu Listesi Getirir", Menu = "SearchLogs Arama Kayıtları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "SearchLogs Arama Kayıtları Listesi Getirir", Menu = "SearchLogs-Arama Kayıtları")]
     public async Task<ActionResult<TransactionResultPack<GetAllSearchLogsQueryResponse>>> GetAllSearchLogs([FromQuery] GetAllSearchLogsQueryRequest request)
     {
       return await SendQuery<GetAllSearchLogsQueryRequest, GetAllSearchLogsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre SearchLogs Arama Kayıtları tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre SearchLogs Arama Kayıtları bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir SearchLogs Arama Kayıtları tablosu kimliğine göre SearchLogs Arama Kayıtları tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir SearchLogs Arama Kayıtları kimliğine göre SearchLogs Arama Kayıtları bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">SearchLogs Arama Kayıtları tablosu kimliğini içeren istek.</param>
-    /// <returns>SearchLogs Arama Kayıtları tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">SearchLogs Arama Kayıtları tablosu bilgilerini döndürür.</response>
+    /// <param name="request">SearchLogs Arama Kayıtları kimliğini içeren istek.</param>
+    /// <returns>SearchLogs Arama Kayıtları bilgilerini döndürür.</returns>
+    /// <response code="200">SearchLogs Arama Kayıtları bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">SearchLogs Arama Kayıtları tablosu bulunamazsa.</response>
+    /// <response code="404">SearchLogs Arama Kayıtları bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre SearchLogs Arama Kayıtları tablosu Bilgilerini Görüntüle", Menu = "SearchLogs Arama Kayıtları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre SearchLogs Arama Kayıtları Bilgilerini Görüntüle", Menu = "SearchLogs-Arama Kayıtları")]
     public async Task<ActionResult<TransactionResultPack<GetSearchLogsByIdQueryResponse>>> GetByIdSearchLogs([FromQuery] GetSearchLogsByIdQueryRequest request)
     {
       return await SendQuery<GetSearchLogsByIdQueryRequest, GetSearchLogsByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes SearchLogs Arama Kayıtları tablosu bilgilerini getirir.
+    /// Dropboxes SearchLogs Arama Kayıtları bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes SearchLogs Arama Kayıtları tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes SearchLogs Arama Kayıtları bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes SearchLogs Arama Kayıtları tablosu bilgilerini içeren istek.</param> 
-    /// <returns>SearchLogs Arama Kayıtları tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes SearchLogs Arama Kayıtları tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes SearchLogs Arama Kayıtları bilgilerini içeren istek.</param> 
+    /// <returns>SearchLogs Arama Kayıtları bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes SearchLogs Arama Kayıtları bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">SearchLogs Arama Kayıtları tablosu bulunamazsa.</response>
+    /// <response code="404">SearchLogs Arama Kayıtları bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes SearchLogs Arama Kayıtları tablosu Bilgilerini Görüntüle", Menu = "SearchLogs Arama Kayıtları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes SearchLogs Arama Kayıtları Bilgilerini Görüntüle", Menu = "SearchLogs-Arama Kayıtları")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesSearchLogsQueryResponse>>> GetAllDropboxesSearchLogs([FromQuery] GetAllDropboxesSearchLogsQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesSearchLogsQueryRequest, GetAllDropboxesSearchLogsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir SearchLogs Arama Kayıtları tablosu ekler.
+    /// Yeni bir SearchLogs Arama Kayıtları ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir SearchLogs Arama Kayıtları tablosu ekler.
+    /// Bu uç nokta, yeni bir SearchLogs Arama Kayıtları ekler.
     /// </remarks>
-    /// <param name="request">Yeni SearchLogs Arama Kayıtları tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni SearchLogs Arama Kayıtları bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">SearchLogs Arama Kayıtları tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">SearchLogs Arama Kayıtları başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "SearchLogs Arama Kayıtları tablosu Eklemek", Menu = "SearchLogs Arama Kayıtları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "SearchLogs Arama Kayıtları Eklemek", Menu = "SearchLogs-Arama Kayıtları")]
     public async Task<ActionResult<TransactionResultPack<CreateSearchLogsCommandResponse>>> CreateSearchLogs([FromBody] CreateSearchLogsCommandRequest request)
     {
       return await SendCommand<CreateSearchLogsCommandRequest, CreateSearchLogsCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir SearchLogs Arama Kayıtları tablosu kaydını günceller.
+    /// Mevcut bir SearchLogs Arama Kayıtları kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip SearchLogs Arama Kayıtları tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip SearchLogs Arama Kayıtlarınin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek SearchLogs Arama Kayıtları tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek SearchLogs Arama Kayıtları bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">SearchLogs Arama Kayıtları tablosu başarıyla güncellendi.</response>
+    /// <response code="200">SearchLogs Arama Kayıtları başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek SearchLogs Arama Kayıtları tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek SearchLogs Arama Kayıtları bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "SearchLogs Arama Kayıtları tablosu Güncelemek", Menu = "SearchLogs Arama Kayıtları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "SearchLogs Arama Kayıtları Güncelemek", Menu = "SearchLogs-Arama Kayıtları")]
     public async Task<ActionResult<TransactionResultPack<UpdateSearchLogsCommandResponse>>> UpdateSearchLogs([FromBody] UpdateSearchLogsCommandRequest request)
     {
       return await SendCommand<UpdateSearchLogsCommandRequest, UpdateSearchLogsCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip SearchLogs Arama Kayıtları tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip SearchLogs Arama Kayıtları kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip SearchLogs Arama Kayıtları tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip SearchLogs Arama Kayıtları kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek SearchLogs Arama Kayıtları tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek SearchLogs Arama Kayıtları kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">SearchLogs Arama Kayıtları tablosu başarıyla silindi.</response>
+    /// <response code="200">SearchLogs Arama Kayıtları başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek SearchLogs Arama Kayıtları tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek SearchLogs Arama Kayıtları bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "SearchLogs Arama Kayıtları tablosu Silme", Menu = "SearchLogs Arama Kayıtları tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "SearchLogs Arama Kayıtları Silme", Menu = "SearchLogs-Arama Kayıtları")]
     public async Task<ActionResult<TransactionResultPack<DeleteSearchLogsCommandResponse>>> DeleteSearchLogs([FromRoute] DeleteSearchLogsCommandRequest request)
     {
       return await SendCommand<DeleteSearchLogsCommandRequest, DeleteSearchLogsCommandResponse>(request);

@@ -14,7 +14,7 @@ namespace GuidePlatform.Application.Features.Commands.JobSeekers.CreateJobSeeker
   {
     [RegularExpression(@"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
       ErrorMessage = "Geçersiz GUID formatı")]
-    public string BusinessId { get; set; } = string.Empty;
+    public string? BusinessId { get; set; }
 
     [Required(ErrorMessage = "FullName gerekli")]
     [StringLength(255, MinimumLength = 1, ErrorMessage = "FullName 1 ile 255 karakter arasında olmalı")]
@@ -46,7 +46,7 @@ namespace GuidePlatform.Application.Features.Commands.JobSeekers.CreateJobSeeker
         AuthCustomerId = customerId,
         AuthUserId = userId,
         CreateUserId = createUserId, // 🎯 Otomatik token'dan alınan CreateUserId
-        BusinessId = Guid.Parse(request.BusinessId),
+        BusinessId = !string.IsNullOrWhiteSpace(request.BusinessId) ? Guid.Parse(request.BusinessId) : (Guid?)null,
         FullName = request.FullName,
         Description = request.Description,
         Phone = request.Phone,

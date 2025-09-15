@@ -3,88 +3,16 @@
   "WorkspaceRootPath": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\appsettings.testing.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\appsettings.testing.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\categories\\getallcategories\\getallcategoriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\categories\\createcategories\\createcategoriesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\appsettings.local.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\appsettings.local.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\api_development_plan.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\api_development_plan.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobseekers\\updatejobseekerstatus\\updatejobseekerstatuscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobseekers\\updatejobseekerstatus\\updatejobseekerstatuscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobopportunities\\updatejobopportunitystatus\\updatejobopportunitystatuscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobopportunities\\updatejobopportunitystatus\\updatejobopportunitystatuscommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\jobopportunities\\getalljobopportunities\\getalljobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\jobopportunities\\getalljobopportunities\\getalljobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\jobopportunities\\getjobopportunitiesbyid\\getjobopportunitiesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\jobopportunities\\getjobopportunitiesbyid\\getjobopportunitiesbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobseekers\\updatejobseekers\\updatejobseekersqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobseekers\\updatejobseekers\\updatejobseekersqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobseekers\\updatejobseekers\\updatejobseekersqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobseekers\\updatejobseekers\\updatejobseekersqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobseekers\\createjobseekers\\createjobseekersqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobseekers\\createjobseekers\\createjobseekersqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobopportunities\\updatejobopportunities\\updatejobopportunitiesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobopportunities\\updatejobopportunities\\updatejobopportunitiesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobopportunities\\updatejobopportunities\\updatejobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobopportunities\\updatejobopportunities\\updatejobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobopportunities\\deletejobopportunities\\deletejobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobopportunities\\deletejobopportunities\\deletejobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobopportunities\\createjobopportunities\\createjobopportunitiesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobopportunities\\createjobopportunities\\createjobopportunitiesqueryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\commands\\jobopportunities\\createjobopportunities\\createjobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\commands\\jobopportunities\\createjobopportunities\\createjobopportunitiesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\applicationservicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\applicationservicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.api\\controllers\\authorizationendpointscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{305EB0D0-78D8-4622-8709-E34E34E5C53F}|GuidePlatform.API\\GuidePlatform.API.csproj|solutionrelative:guideplatform.api\\controllers\\authorizationendpointscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|d:\\development\\personal\\platforms\\guideplatform\\backend\\guideplatform.api\\guideplatform.application\\features\\queries\\jobseekers\\getalljobseekers\\getalljobseekersqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B41407D-76B0-4132-BFCB-9BA5242534C9}|GuidePlatform.Application\\GuidePlatform.Application.csproj|solutionrelative:guideplatform.application\\features\\queries\\jobseekers\\getalljobseekers\\getalljobseekersqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,34 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.Testing.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Testing.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\appsettings.Testing.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Testing.json",
-              "RelativeToolTip": "GuidePlatform.API\\appsettings.Testing.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-13T22:16:36.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.Local.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Local.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\appsettings.Local.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Local.json*",
-              "RelativeToolTip": "GuidePlatform.API\\appsettings.Local.json*",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAABXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-13T22:16:05.58Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -132,234 +34,42 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GetAllCategoriesQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\categories\\GetAllCategories\\GetAllCategoriesQueryHandler.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAowE8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T20:01:43.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.Production.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Production.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\appsettings.Production.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Production.json",
-              "RelativeToolTip": "GuidePlatform.API\\appsettings.Production.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-13T22:16:11.985Z",
+              "Title": "CreateCategoriesQueryRequest.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\categories\\CreateCategories\\CreateCategoriesQueryRequest.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T20:00:59.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\appsettings.Development.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.Development.json",
-              "RelativeToolTip": "GuidePlatform.API\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-13T18:41:24.883Z",
+              "DocumentIndex": 2,
+              "Title": "GetAllJobSeekersQueryHandler.cs",
+              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\JobSeekers\\GetAllJobSeekers\\GetAllJobSeekersQueryHandler.cs",
+              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\JobSeekers\\GetAllJobSeekers\\GetAllJobSeekersQueryHandler.cs",
+              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\JobSeekers\\GetAllJobSeekers\\GetAllJobSeekersQueryHandler.cs",
+              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\JobSeekers\\GetAllJobSeekers\\GetAllJobSeekersQueryHandler.cs",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAjwKUAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T14:58:48.209Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.json",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\appsettings.json",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\appsettings.json",
-              "RelativeToolTip": "GuidePlatform.API\\appsettings.json",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-13T16:50:17.479Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "API_Development_Plan.html",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\API_Development_Plan.html",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\API_Development_Plan.html",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\API_Development_Plan.html",
-              "RelativeToolTip": "GuidePlatform.API\\API_Development_Plan.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-13T16:50:12.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UpdateJobSeekerStatusCommandHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekerStatus\\UpdateJobSeekerStatusCommandHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekerStatus\\UpdateJobSeekerStatusCommandHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekerStatus\\UpdateJobSeekerStatusCommandHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekerStatus\\UpdateJobSeekerStatusCommandHandler.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowC8AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:11:54.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GetJobOpportunitiesByIdQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetJobOpportunitiesById\\GetJobOpportunitiesByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetJobOpportunitiesById\\GetJobOpportunitiesByIdQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetJobOpportunitiesById\\GetJobOpportunitiesByIdQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetJobOpportunitiesById\\GetJobOpportunitiesByIdQueryHandler.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwDEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:07:37.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UpdateJobOpportunityStatusCommandHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunityStatus\\UpdateJobOpportunityStatusCommandHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunityStatus\\UpdateJobOpportunityStatusCommandHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunityStatus\\UpdateJobOpportunityStatusCommandHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunityStatus\\UpdateJobOpportunityStatusCommandHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:07:19.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GetAllJobOpportunitiesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetAllJobOpportunities\\GetAllJobOpportunitiesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetAllJobOpportunities\\GetAllJobOpportunitiesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetAllJobOpportunities\\GetAllJobOpportunitiesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Queries\\JobOpportunities\\GetAllJobOpportunities\\GetAllJobOpportunitiesQueryHandler.cs",
-              "ViewState": "AQIAAAoBAAAAAAAAAAAwwKEAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:05:04.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UpdateJobSeekersQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryRequest.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAowCUAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:04:09.705Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UpdateJobSeekersQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\UpdateJobSeekers\\UpdateJobSeekersQueryHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:04:08.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateJobSeekersQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\CreateJobSeekers\\CreateJobSeekersQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\CreateJobSeekers\\CreateJobSeekersQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobSeekers\\CreateJobSeekers\\CreateJobSeekersQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobSeekers\\CreateJobSeekers\\CreateJobSeekersQueryRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:03:59.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UpdateJobOpportunitiesQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryRequest.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:03:37.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "UpdateJobOpportunitiesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\UpdateJobOpportunities\\UpdateJobOpportunitiesQueryHandler.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:03:34.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DeleteJobOpportunitiesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\DeleteJobOpportunities\\DeleteJobOpportunitiesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\DeleteJobOpportunities\\DeleteJobOpportunitiesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\DeleteJobOpportunities\\DeleteJobOpportunitiesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\DeleteJobOpportunities\\DeleteJobOpportunitiesQueryHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:03:31.34Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CreateJobOpportunitiesQueryRequest.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryRequest.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryRequest.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryRequest.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryRequest.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAowA4AAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:03:08.711Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CreateJobOpportunitiesQueryHandler.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryHandler.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryHandler.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryHandler.cs",
-              "RelativeToolTip": "GuidePlatform.Application\\Features\\Commands\\JobOpportunities\\CreateJobOpportunities\\CreateJobOpportunitiesQueryHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T23:03:06.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Program.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Program.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Program.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Program.cs",
-              "ViewState": "AQIAAPEAAAAAAAAAAAAQwP8AAAADAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T21:49:52.723Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ApplicationServicesController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\ApplicationServicesController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\ApplicationServicesController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\ApplicationServicesController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\ApplicationServicesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T21:23:51.337Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AuthorizationEndpointsController.cs",
-              "DocumentMoniker": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\AuthorizationEndpointsController.cs",
-              "RelativeDocumentMoniker": "GuidePlatform.API\\Controllers\\AuthorizationEndpointsController.cs",
-              "ToolTip": "D:\\Development\\Personal\\Platforms\\GuidePlatform\\backend\\GuidePlatform.api\\GuidePlatform.API\\Controllers\\AuthorizationEndpointsController.cs",
-              "RelativeToolTip": "GuidePlatform.API\\Controllers\\AuthorizationEndpointsController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T21:23:43.489Z"
             }
           ]
         }

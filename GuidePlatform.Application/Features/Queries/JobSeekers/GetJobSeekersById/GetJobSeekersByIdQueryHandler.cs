@@ -143,7 +143,11 @@ namespace GuidePlatform.Application.Features.Queries.JobSeekers.GetJobSeekersByI
         }
 
         // 🎯 Business isimlerini toplu olarak al (performans için)
-        var businessIds = new List<Guid> { jobSeekers.BusinessId };
+        var businessIds = new List<Guid>();
+        if (jobSeekers.BusinessId.HasValue)
+        {
+          businessIds.Add(jobSeekers.BusinessId.Value);
+        }
         var businessNames = await _context.businesses
             .Where(b => businessIds.Contains(b.Id) && b.RowIsActive && !b.RowIsDeleted)
             .Select(b => new { b.Id, b.Name })
@@ -167,7 +171,9 @@ namespace GuidePlatform.Application.Features.Queries.JobSeekers.GetJobSeekersByI
         }
 
         // 🎯 BusinessName bilgilerini al
-        var businessName = businessNames.GetValueOrDefault(jobSeekers.BusinessId, "Unknown Business");
+        var businessName = jobSeekers.BusinessId.HasValue
+            ? businessNames.GetValueOrDefault<Guid, string>(jobSeekers.BusinessId.Value, "Unknown Business")
+            : "No Business";
 
         // 🎯 Province bilgisini Shared API'den al
         string? provinceName = null;

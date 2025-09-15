@@ -55,7 +55,7 @@ namespace GuidePlatform.API.Controllers
     /// <response code="400">OData sorgusu geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("odata")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "OData BusinessReviews Sorgulama", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "OData BusinessReviews Sorgulama", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<GetODataBusinessReviewsQueryResponse>>> GetODataBusinessReviews(
       [FromQuery(Name = "$filter")] string? filter = null,
       [FromQuery(Name = "$orderby")] string? orderby = null,
@@ -80,112 +80,112 @@ namespace GuidePlatform.API.Controllers
 
 
     /// <summary>
-    /// Admin Ana Ekran BusinessReviews İşletme Değerlendirmeleri tablosu Listesi Getirir.
+    /// Admin Ana Ekran BusinessReviews İşletme Değerlendirmeleri Listesi Getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessReviews İşletme Değerlendirmeleri tablosulerin listesini getirir.
+    /// Bu uç nokta, belirtilen sayfa ve boyuta göre tüm BusinessReviews İşletme Değerlendirmelerilerin listesini getirir.
     /// </remarks>
-    /// <param name="request">Tüm BusinessReviews İşletme Değerlendirmeleri tablosuleri getirme parametrelerini içeren istek.</param>
-    /// <returns>BusinessReviews İşletme Değerlendirmeleri tablosu listesini döndürür.</returns>
-    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri tablosu listesini döndürür.</response>
+    /// <param name="request">Tüm BusinessReviews İşletme Değerlendirmelerileri getirme parametrelerini içeren istek.</param>
+    /// <returns>BusinessReviews İşletme Değerlendirmeleri listesini döndürür.</returns>
+    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri listesini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "BusinessReviews İşletme Değerlendirmeleri tablosu Listesi Getirir", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "BusinessReviews İşletme Değerlendirmeleri Listesi Getirir", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<GetAllBusinessReviewsQueryResponse>>> GetAllBusinessReviews([FromQuery] GetAllBusinessReviewsQueryRequest request)
     {
       return await SendQuery<GetAllBusinessReviewsQueryRequest, GetAllBusinessReviewsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye göre BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini getirir.
+    /// Belirtilen ID'ye göre BusinessReviews İşletme Değerlendirmeleri bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirli bir BusinessReviews İşletme Değerlendirmeleri tablosu kimliğine göre BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini getirir.
+    /// Bu uç nokta, belirli bir BusinessReviews İşletme Değerlendirmeleri kimliğine göre BusinessReviews İşletme Değerlendirmeleri bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">BusinessReviews İşletme Değerlendirmeleri tablosu kimliğini içeren istek.</param>
-    /// <returns>BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini döndürür.</response>
+    /// <param name="request">BusinessReviews İşletme Değerlendirmeleri kimliğini içeren istek.</param>
+    /// <returns>BusinessReviews İşletme Değerlendirmeleri bilgilerini döndürür.</returns>
+    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessReviews İşletme Değerlendirmeleri tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessReviews İşletme Değerlendirmeleri bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre BusinessReviews İşletme Değerlendirmeleri tablosu Bilgilerini Görüntüle", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "ID ye Göre BusinessReviews İşletme Değerlendirmeleri Bilgilerini Görüntüle", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<GetBusinessReviewsByIdQueryResponse>>> GetByIdBusinessReviews([FromQuery] GetBusinessReviewsByIdQueryRequest request)
     {
       return await SendQuery<GetBusinessReviewsByIdQueryRequest, GetBusinessReviewsByIdQueryResponse>(request);
     }
 
     /// <summary>
-    /// Dropboxes BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini getirir.
+    /// Dropboxes BusinessReviews İşletme Değerlendirmeleri bilgilerini getirir.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, Dropboxes BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini getirir.
+    /// Bu uç nokta, Dropboxes BusinessReviews İşletme Değerlendirmeleri bilgilerini getirir.
     /// </remarks>
-    /// <param name="request">Dropboxes BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini içeren istek.</param> 
-    /// <returns>BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini döndürür.</returns>
-    /// <response code="200">Dropboxes BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini döndürür.</response>
+    /// <param name="request">Dropboxes BusinessReviews İşletme Değerlendirmeleri bilgilerini içeren istek.</param> 
+    /// <returns>BusinessReviews İşletme Değerlendirmeleri bilgilerini döndürür.</returns>
+    /// <response code="200">Dropboxes BusinessReviews İşletme Değerlendirmeleri bilgilerini döndürür.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">BusinessReviews İşletme Değerlendirmeleri tablosu bulunamazsa.</response>
+    /// <response code="404">BusinessReviews İşletme Değerlendirmeleri bulunamazsa.</response>
     [HttpGet("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessReviews İşletme Değerlendirmeleri tablosu Bilgilerini Görüntüle", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Reading, Definition = "Dropboxes BusinessReviews İşletme Değerlendirmeleri Bilgilerini Görüntüle", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<GetAllDropboxesBusinessReviewsQueryResponse>>> GetAllDropboxesBusinessReviews([FromQuery] GetAllDropboxesBusinessReviewsQueryRequest request)
     {
       return await SendQuery<GetAllDropboxesBusinessReviewsQueryRequest, GetAllDropboxesBusinessReviewsQueryResponse>(request);
     }
 
     /// <summary>
-    /// Yeni bir BusinessReviews İşletme Değerlendirmeleri tablosu ekler.
+    /// Yeni bir BusinessReviews İşletme Değerlendirmeleri ekler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, yeni bir BusinessReviews İşletme Değerlendirmeleri tablosu ekler.
+    /// Bu uç nokta, yeni bir BusinessReviews İşletme Değerlendirmeleri ekler.
     /// </remarks>
-    /// <param name="request">Yeni BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Yeni BusinessReviews İşletme Değerlendirmeleri bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="201">BusinessReviews İşletme Değerlendirmeleri tablosu başarıyla oluşturuldu.</response>
+    /// <response code="201">BusinessReviews İşletme Değerlendirmeleri başarıyla oluşturuldu.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
     [HttpPost("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "BusinessReviews İşletme Değerlendirmeleri tablosu Eklemek", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Writing, Definition = "BusinessReviews İşletme Değerlendirmeleri Eklemek", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<CreateBusinessReviewsCommandResponse>>> CreateBusinessReviews([FromBody] CreateBusinessReviewsCommandRequest request)
     {
       return await SendCommand<CreateBusinessReviewsCommandRequest, CreateBusinessReviewsCommandResponse>(request, HttpStatusCode.Created);
     }
 
     /// <summary>
-    /// Mevcut bir BusinessReviews İşletme Değerlendirmeleri tablosu kaydını günceller.
+    /// Mevcut bir BusinessReviews İşletme Değerlendirmeleri kaydını günceller.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip BusinessReviews İşletme Değerlendirmeleri tablosunin bilgilerini günceller.
+    /// Bu uç nokta, belirtilen ID'ye sahip BusinessReviews İşletme Değerlendirmelerinin bilgilerini günceller.
     /// </remarks>
-    /// <param name="request">Güncellenecek BusinessReviews İşletme Değerlendirmeleri tablosu bilgilerini içeren istek.</param>
+    /// <param name="request">Güncellenecek BusinessReviews İşletme Değerlendirmeleri bilgilerini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri tablosu başarıyla güncellendi.</response>
+    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri başarıyla güncellendi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Güncellenecek BusinessReviews İşletme Değerlendirmeleri tablosu bulunamazsa.</response>
+    /// <response code="404">Güncellenecek BusinessReviews İşletme Değerlendirmeleri bulunamazsa.</response>
     [HttpPut("[action]")]
-    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "BusinessReviews İşletme Değerlendirmeleri tablosu Güncelemek", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Updating, Definition = "BusinessReviews İşletme Değerlendirmeleri Güncelemek", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<UpdateBusinessReviewsCommandResponse>>> UpdateBusinessReviews([FromBody] UpdateBusinessReviewsCommandRequest request)
     {
       return await SendCommand<UpdateBusinessReviewsCommandRequest, UpdateBusinessReviewsCommandResponse>(request);
     }
 
     /// <summary>
-    /// Belirtilen ID'ye sahip BusinessReviews İşletme Değerlendirmeleri tablosu kaydını siler.
+    /// Belirtilen ID'ye sahip BusinessReviews İşletme Değerlendirmeleri kaydını siler.
     /// </summary>
     /// <remarks>
-    /// Bu uç nokta, belirtilen ID'ye sahip BusinessReviews İşletme Değerlendirmeleri tablosu kaydını siler.
+    /// Bu uç nokta, belirtilen ID'ye sahip BusinessReviews İşletme Değerlendirmeleri kaydını siler.
     /// </remarks>
-    /// <param name="request">Silinecek BusinessReviews İşletme Değerlendirmeleri tablosu kimliğini içeren istek.</param>
+    /// <param name="request">Silinecek BusinessReviews İşletme Değerlendirmeleri kimliğini içeren istek.</param>
     /// <returns>İşlem sonucunu döndürür.</returns>
-    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri tablosu başarıyla silindi.</response>
+    /// <response code="200">BusinessReviews İşletme Değerlendirmeleri başarıyla silindi.</response>
     /// <response code="400">İstek geçersizse.</response>
     /// <response code="401">Kullanıcı yetkili değilse.</response>
-    /// <response code="404">Silinecek BusinessReviews İşletme Değerlendirmeleri tablosu bulunamazsa.</response>
+    /// <response code="404">Silinecek BusinessReviews İşletme Değerlendirmeleri bulunamazsa.</response>
     [HttpDelete("[action]/{Id}")]
-    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "BusinessReviews İşletme Değerlendirmeleri tablosu Silme", Menu = "BusinessReviews İşletme Değerlendirmeleri tablosu")]
+    [AuthorizeDefinition(ActionType = ActionType.Deleting, Definition = "BusinessReviews İşletme Değerlendirmeleri Silme", Menu = "BusinessReviews-İşletme Değerlendirmeleri")]
     public async Task<ActionResult<TransactionResultPack<DeleteBusinessReviewsCommandResponse>>> DeleteBusinessReviews([FromRoute] DeleteBusinessReviewsCommandRequest request)
     {
       return await SendCommand<DeleteBusinessReviewsCommandRequest, DeleteBusinessReviewsCommandResponse>(request);
